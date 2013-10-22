@@ -29,14 +29,14 @@
 		07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263551816B28E0060E3E9 /* Icon@2x.png */; };
 		07D263591816B28E0060E3E9 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 07D263581816B28E0060E3E9 /* iTunesArtwork */; };
 		07D264D11816B28F0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264D01816B28F0060E3E9 /* main.m */; };
-		07D264D41816B28F0060E3E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264D31816B28F0060E3E9 /* AppDelegate.m */; };
-		07D264D71816B28F0060E3E9 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264D61816B28F0060E3E9 /* HelloWorldLayer.m */; };
-		07D264DA1816B28F0060E3E9 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264D91816B28F0060E3E9 /* IntroLayer.m */; };
 		07D264E61816B64A0060E3E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263371816B28E0060E3E9 /* UIKit.framework */; };
 		07D264E71816B64A0060E3E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263391816B28E0060E3E9 /* Foundation.framework */; };
 		07D264E81816B64A0060E3E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633B1816B28E0060E3E9 /* CoreGraphics.framework */; };
 		07D264EE1816B64A0060E3E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D264EC1816B64A0060E3E9 /* InfoPlist.strings */; };
 		07D264F01816B64A0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264EF1816B64A0060E3E9 /* main.m */; };
+		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
+		2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD73921DBD4533469C9 /* IntroLayer.m */; };
+		2FA28C81C391BD41E6ACAA07 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* HelloWorldLayer.m */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -67,18 +67,18 @@
 		07D263581816B28E0060E3E9 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		07D264CF1816B28F0060E3E9 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		07D264D01816B28F0060E3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		07D264D21816B28F0060E3E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		07D264D31816B28F0060E3E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		07D264D51816B28F0060E3E9 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		07D264D61816B28F0060E3E9 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
-		07D264D81816B28F0060E3E9 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
-		07D264D91816B28F0060E3E9 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		07D264E51816B64A0060E3E9 /* Specs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Specs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D264EB1816B64A0060E3E9 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		07D264ED1816B64A0060E3E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07D264EF1816B64A0060E3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D264F11816B64A0060E3E9 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		2E835FC4C4834368AA6DCF9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
+		2FA28CD18454BBC990A7AD78 /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
+		2FA28CD73921DBD4533469C9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2FA28F43377C8334BFCE6A95 /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		799DE03DBF83466DBB282E6F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = "<group>"; };
 		B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,14 +160,9 @@
 		07D263411816B28E0060E3E9 /* Kaboom */ = {
 			isa = PBXGroup;
 			children = (
-				07D264D21816B28F0060E3E9 /* AppDelegate.h */,
-				07D264D31816B28F0060E3E9 /* AppDelegate.m */,
-				07D264D51816B28F0060E3E9 /* HelloWorldLayer.h */,
-				07D264D61816B28F0060E3E9 /* HelloWorldLayer.m */,
-				07D264D81816B28F0060E3E9 /* IntroLayer.h */,
-				07D264D91816B28F0060E3E9 /* IntroLayer.m */,
 				07D263421816B28E0060E3E9 /* Resources */,
 				07D264CE1816B28F0060E3E9 /* Supporting Files */,
+				2FA28E47EE21C30A5784314C /* Cocos */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -217,6 +212,19 @@
 				07D264F11816B64A0060E3E9 /* Specs-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FA28E47EE21C30A5784314C /* Cocos */ = {
+			isa = PBXGroup;
+			children = (
+				2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */,
+				2FA2828C94913DB7D43B33D7 /* IntroLayer.h */,
+				2FA28F43377C8334BFCE6A95 /* HelloWorldLayer.m */,
+				2FA28CD73921DBD4533469C9 /* IntroLayer.m */,
+				2FA28F5202D6444CC2ABC705 /* AppDelegate.m */,
+				2FA28CD18454BBC990A7AD78 /* HelloWorldLayer.h */,
+			);
+			path = Cocos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,10 +406,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D264D41816B28F0060E3E9 /* AppDelegate.m in Sources */,
-				07D264DA1816B28F0060E3E9 /* IntroLayer.m in Sources */,
 				07D264D11816B28F0060E3E9 /* main.m in Sources */,
-				07D264D71816B28F0060E3E9 /* HelloWorldLayer.m in Sources */,
+				2FA28C81C391BD41E6ACAA07 /* HelloWorldLayer.m in Sources */,
+				2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */,
+				2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
