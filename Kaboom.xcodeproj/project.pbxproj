@@ -37,11 +37,12 @@
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
+		2FA288FEE49CFAADEEA0BF55 /* BucketsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28AA88E0D958362D9515B /* BucketsSprite.m */; };
+		2FA28917A410A7D71147541B /* buckets.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2879935C30175FC46E403 /* buckets.png */; };
 		2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD73921DBD4533469C9 /* IntroLayer.m */; };
 		2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */; };
-		2FA28C2E6A894F1B92FED008 /* BucketsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */; };
-		2FA28C81C391BD41E6ACAA07 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* HelloWorldLayer.m */; };
+		2FA28C81C391BD41E6ACAA07 /* BombingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* BombingLayer.m */; };
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
@@ -83,11 +84,14 @@
 		2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
+		2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsSprite.h; sourceTree = "<group>"; };
+		2FA2879935C30175FC46E403 /* buckets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buckets.png; sourceTree = "<group>"; };
 		2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsSpec.m; sourceTree = "<group>"; };
-		2FA28CD18454BBC990A7AD78 /* HelloWorldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
+		2FA28AA88E0D958362D9515B /* BucketsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsSprite.m; sourceTree = "<group>"; };
+		2FA28CD18454BBC990A7AD78 /* BombingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombingLayer.h; sourceTree = "<group>"; };
 		2FA28CD73921DBD4533469C9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2FA28F43377C8334BFCE6A95 /* HelloWorldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		2FA28F43377C8334BFCE6A95 /* BombingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombingLayer.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		799DE03DBF83466DBB282E6F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 				07D263551816B28E0060E3E9 /* Icon@2x.png */,
 				07D263571816B28E0060E3E9 /* Info.plist */,
 				07D263581816B28E0060E3E9 /* iTunesArtwork */,
+				2FA2879935C30175FC46E403 /* buckets.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -233,10 +238,12 @@
 			children = (
 				2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */,
 				2FA2828C94913DB7D43B33D7 /* IntroLayer.h */,
-				2FA28F43377C8334BFCE6A95 /* HelloWorldLayer.m */,
+				2FA28F43377C8334BFCE6A95 /* BombingLayer.m */,
 				2FA28CD73921DBD4533469C9 /* IntroLayer.m */,
 				2FA28F5202D6444CC2ABC705 /* AppDelegate.m */,
-				2FA28CD18454BBC990A7AD78 /* HelloWorldLayer.h */,
+				2FA28CD18454BBC990A7AD78 /* BombingLayer.h */,
+				2FA28AA88E0D958362D9515B /* BucketsSprite.m */,
+				2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -327,6 +334,7 @@
 				07D263481816B28E0060E3E9 /* Default-568h@2x.png in Resources */,
 				07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */,
 				2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */,
+				2FA28917A410A7D71147541B /* buckets.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,11 +431,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D264D11816B28F0060E3E9 /* main.m in Sources */,
-				2FA28C81C391BD41E6ACAA07 /* HelloWorldLayer.m in Sources */,
+				2FA28C81C391BD41E6ACAA07 /* BombingLayer.m in Sources */,
 				2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */,
 				2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */,
-				2FA28C2E6A894F1B92FED008 /* BucketsSpec.m in Sources */,
 				2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */,
+				2FA288FEE49CFAADEEA0BF55 /* BucketsSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
