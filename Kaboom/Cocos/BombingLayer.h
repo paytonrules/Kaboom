@@ -2,7 +2,7 @@
 #import <cocos2d/cocos2d.h>
 
 // BombingLayer
-@interface BombingLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface BombingLayer : CCLayer <CCTouchOneByOneDelegate>
 {
 }
 

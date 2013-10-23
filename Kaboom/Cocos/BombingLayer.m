@@ -1,7 +1,16 @@
 #import "BombingLayer.h"
-#import "AppDelegate.h"
 #import "Buckets.h"
 #import "BucketsSprite.h"
+
+enum TAGS {
+  kBucket
+};
+
+@interface BombingLayer()
+
+@property(assign) float movement;
+
+@end
 
 @implementation BombingLayer
 
@@ -23,7 +32,7 @@
 
 -(id) init
 {
-  if( (self=[super init]) ) {
+  if( (self = [super init]) ) {
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
@@ -31,9 +40,49 @@
     BucketsSprite *sprite = [BucketsSprite spriteWithBuckets:buckets];
 
 		// add the sprite as a child to this Layer
-		[self addChild: sprite];
-	}
+    [self addChild:sprite z:0 tag:kBucket];
+    self.touchEnabled = YES;
+    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+    [self scheduleUpdate];
+  }
 	return self;
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+  CGPoint point = [touch locationInView:[touch view]];
+  CGSize size = [[CCDirector sharedDirector] winSize];
+
+  if (point.x > size.width / 2)
+  {
+    self.movement++;
+  }
+  else
+  {
+    self.movement--;
+  }
+  return YES;
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+  CGPoint point = [touch locationInView:[touch view]];
+  CGSize size = [[CCDirector sharedDirector] winSize];
+
+  if (point.x > size.width / 2)
+  {
+    self.movement--;
+  }
+  else
+  {
+    self.movement++;
+  }
+}
+
+-(void)update:(ccTime)delta
+{
+  BucketsSprite *sprite = (BucketsSprite *)[self getChildByTag:kBucket];
+  [sprite move:self.movement];
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -45,17 +94,5 @@
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];
-}
-
--(void) achievementViewControllerDidFinish:(GKAchievementViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
-}
-
--(void) leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController
-{
-	AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-	[[app navController] dismissModalViewControllerAnimated:YES];
 }
 @end
