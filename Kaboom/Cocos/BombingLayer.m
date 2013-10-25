@@ -36,7 +36,7 @@ enum TAGS {
 
 -(id) init
 {
-  if( (self = [super init]) ) {
+  if( (self = [super initWithColor:ccc4(57, 109, 58, 255)]) ) {
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 

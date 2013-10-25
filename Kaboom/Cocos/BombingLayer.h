@@ -2,7 +2,7 @@
 #import <cocos2d/cocos2d.h>
 
 // BombingLayer
-@interface BombingLayer : CCLayer <CCTouchOneByOneDelegate>
+@interface BombingLayer : CCLayerColor <CCTouchOneByOneDelegate>
 {
 }
 
