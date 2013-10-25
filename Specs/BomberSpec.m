@@ -170,7 +170,7 @@ OCDSpec2Context(BomberSpec) {
       CGPoint bombPosition;
       [(NSValue *) bomber.bombs[0] getValue:&bombPosition];
       [ExpectInt(bombPosition.x) toBe:18];
-      [ExpectInt(bombPosition.y) toBe:55 + kGravity];
+      [ExpectInt(bombPosition.y) toBe:55 - kGravity];
     });
   });
   

@@ -95,7 +95,7 @@
     CGPoint bombLocation;
     [bombPosition getValue:&bombLocation];
 
-    bombLocation = CGPointMake(bombLocation.x, bombLocation.y + kGravity);
+    bombLocation = CGPointMake(bombLocation.x, bombLocation.y - kGravity);
     [newBombs addObject:[NSValue valueWithBytes:&bombLocation objCType:@encode(CGPoint)]];
   }
   self.droppedBombs = newBombs;
