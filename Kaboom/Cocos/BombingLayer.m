@@ -37,7 +37,6 @@ enum TAGS {
 -(id) init
 {
   if( (self = [super initWithColor:ccc4(57, 109, 58, 255)]) ) {
-		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
     Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 2)];
@@ -52,9 +51,11 @@ enum TAGS {
     [self addChild:bucketSprite z:0 tag:kBucket];
     [self addChild:bomberSprite z:0 tag:kBomber];
     self.touchEnabled = YES;
+    
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-    [bomber start];
     [self scheduleUpdate];
+    
+    [bomber start];
   }
 	return self;
 }

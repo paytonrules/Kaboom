@@ -23,5 +23,4 @@
   [self setPosition:self.bomber.position];
 }
 
-
 @end
