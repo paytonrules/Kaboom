@@ -47,7 +47,6 @@ OCDSpec2Context(RandomLocationChooser) {
       RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, 10)];
 
       [ExpectObj(chooser.rand) toBeKindOfClass:[StandardRandomNumberGenerator class]];
-
     });
 
   });
