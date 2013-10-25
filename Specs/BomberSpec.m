@@ -1,5 +1,6 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "Bomber.h"
+#import "Constants.h"
 
 @interface RiggedLocations : NSObject<LocationChooser>
 + (RiggedLocations *)newWithValues:(NSArray *)array;
@@ -119,7 +120,58 @@ OCDSpec2Context(BomberSpec) {
       [ExpectFloat(bomber.position.x) toBe:17.0 withPrecision:0.0001];
     });
 
-    // It drops bombs (like Eminem) - for the moment you'll just keep track of your bombs
+    It(@"starts without any bombs", ^{
+      RiggedLocations *locations = [RiggedLocations newWithValues:@[]];
+      Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(17, 40) speed:2.0 locationChooser:locations];
+
+      [ExpectInt(bomber.bombCount) toBe:0];
+    });
+
+    It(@"drops a bomb when it changes direction", ^{
+      RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
+      Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(17.0, 40) speed:1.0 locationChooser:locations];
+
+      [bomber start];
+      [bomber update:1.0];
+
+      [ExpectInt(bomber.bombCount) toBe:1];
+    });
+
+    It(@"starts the bomb right below the bomber", ^{
+      RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
+      Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(17.0, 40)
+                                                  speed:1.0
+                                        locationChooser:locations
+                                                 height:10
+                                             bombHeight:20];
+
+      [bomber start];
+      [bomber update:1.0];
+
+      // 1/2 of the bombHeight + 1/2 of the bomber height
+      CGPoint bombPosition;
+      [(NSValue *) bomber.bombs[0] getValue:&bombPosition];
+      [ExpectInt(bombPosition.x) toBe:18];
+      [ExpectInt(bombPosition.y) toBe:55];
+    });
+
+    It(@"moves the bomb on each update", ^{
+      RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
+      Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(17.0, 40)
+                                                  speed:1.0
+                                        locationChooser:locations
+                                                 height:10
+                                             bombHeight:20];
+
+      [bomber start];
+      [bomber update:1.0];
+      [bomber update:1.0];
+
+      CGPoint bombPosition;
+      [(NSValue *) bomber.bombs[0] getValue:&bombPosition];
+      [ExpectInt(bombPosition.x) toBe:18];
+      [ExpectInt(bombPosition.y) toBe:55 + kGravity];
+    });
   });
   
 }

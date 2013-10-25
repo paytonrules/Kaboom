@@ -1,0 +1,1 @@
+#define kGravity 3.0
