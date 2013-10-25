@@ -4,7 +4,7 @@
 
 @interface BucketsSprite : CCSprite
 
-+(id) spriteWithBuckets:(Buckets *)buckets;
++(id)newSpriteWithBuckets:(Buckets *)buckets;
 -(void) move:(float) movement;
 
 @end

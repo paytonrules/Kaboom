@@ -1,9 +1,13 @@
 #import "BombingLayer.h"
 #import "Buckets.h"
 #import "BucketsSprite.h"
+#import "Bomber.h"
+#import "RandomLocationChooser.h"
+#import "BomberSprite.h"
 
 enum TAGS {
-  kBucket
+  kBucket,
+  kBomber
 };
 
 @interface BombingLayer()
@@ -37,12 +41,19 @@ enum TAGS {
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
     Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 2)];
-    BucketsSprite *sprite = [BucketsSprite spriteWithBuckets:buckets];
+    RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
+    BucketsSprite *bucketSprite = [BucketsSprite newSpriteWithBuckets:buckets];
+    Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 40)
+                                                speed:60.0
+                                      locationChooser:chooser];
+    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:bomber];
 
-		// add the sprite as a child to this Layer
-    [self addChild:sprite z:0 tag:kBucket];
+
+    [self addChild:bucketSprite z:0 tag:kBucket];
+    [self addChild:bomberSprite z:0 tag:kBomber];
     self.touchEnabled = YES;
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+    [bomber start];
     [self scheduleUpdate];
   }
 	return self;

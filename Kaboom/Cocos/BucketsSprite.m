@@ -9,7 +9,7 @@
 
 @implementation BucketsSprite
 
-+(id) spriteWithBuckets:(Buckets *)buckets
++(id)newSpriteWithBuckets:(Buckets *)buckets
 {
   BucketsSprite *sprite = [BucketsSprite spriteWithFile:@"buckets.png"];
   sprite.buckets = buckets;

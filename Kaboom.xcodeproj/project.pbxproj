@@ -37,7 +37,6 @@
 		07D264F01816B64A0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264EF1816B64A0060E3E9 /* main.m */; };
 		2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
-		2FA2813151777813FD264454 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber.m */; };
 		2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
@@ -50,9 +49,11 @@
 		2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD73921DBD4533469C9 /* IntroLayer.m */; };
 		2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */; };
+		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
 		2FA28C81C391BD41E6ACAA07 /* BombingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* BombingLayer.m */; };
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber.m */; };
+		2FA28F2DA1C7B230BD8889A6 /* bomber.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28E569B51FB5D94F34D3E /* bomber.png */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -95,7 +96,9 @@
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
+		2FA285481EF46AADB0F024DB /* BomberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BomberSprite.m; sourceTree = "<group>"; };
 		2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsSprite.h; sourceTree = "<group>"; };
+		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
 		2FA2879935C30175FC46E403 /* buckets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buckets.png; sourceTree = "<group>"; };
 		2FA288C49F5E6138D1521493 /* Bomber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber.m; sourceTree = "<group>"; };
 		2FA2891355F773A6B44F6DEF /* RandomLocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomLocationChooser.h; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		2FA28D7F03762665680A3DCF /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FA28E033F3091031ECC9F1F /* LocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChooser.h; sourceTree = "<group>"; };
+		2FA28E569B51FB5D94F34D3E /* bomber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomber.png; sourceTree = "<group>"; };
 		2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardRandomNumberGenerator.m; sourceTree = "<group>"; };
 		2FA28F43377C8334BFCE6A95 /* BombingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombingLayer.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				07D263571816B28E0060E3E9 /* Info.plist */,
 				07D263581816B28E0060E3E9 /* iTunesArtwork */,
 				2FA2879935C30175FC46E403 /* buckets.png */,
+				2FA28E569B51FB5D94F34D3E /* bomber.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -273,6 +278,8 @@
 				2FA28CD18454BBC990A7AD78 /* BombingLayer.h */,
 				2FA28AA88E0D958362D9515B /* BucketsSprite.m */,
 				2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */,
+				2FA285481EF46AADB0F024DB /* BomberSprite.m */,
+				2FA286E20151357C47C0D9CF /* BomberSprite.h */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -364,6 +371,7 @@
 				07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */,
 				2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */,
 				2FA28917A410A7D71147541B /* buckets.png in Resources */,
+				2FA28F2DA1C7B230BD8889A6 /* bomber.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,9 +474,9 @@
 				2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */,
 				2FA288FEE49CFAADEEA0BF55 /* BucketsSprite.m in Sources */,
 				2FA28446EDF0DD2103EEDC43 /* Bomber.m in Sources */,
-				2FA2813151777813FD264454 /* RandomLocationChooserSpec.m in Sources */,
 				2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */,
 				2FA2866F546500DC3C127660 /* StandardRandomNumberGenerator.m in Sources */,
+				2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
