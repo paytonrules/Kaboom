@@ -53,5 +53,23 @@ OCDSpec2Context(InputTranslatorSpec) {
       [trans newTouch:touchTwo at:touchLocationTwo];
       [ExpectInt(trans.movement) toBe:2];
     });
+
+    It(@"updates a touch with movement", ^{
+      trans = [InputTranslator newTranslatorWithWidth:100];
+
+      [trans newTouch:touch at:CGPointMake(51, 0)];
+      [trans moveTouch:touch to:CGPointMake(49, 0)];
+
+      [ExpectInt(trans.movement) toBe:-1];
+    });
+
+    It(@"removes a touch from the movement calculation", ^{
+      trans = [InputTranslator newTranslatorWithWidth:100];
+
+      [trans newTouch:touch at:CGPointMake(51, 0)];
+      [trans removeTouch:touch];
+
+      [ExpectInt(trans.movement) toBe:0];
+    });
   });
 }

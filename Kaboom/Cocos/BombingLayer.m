@@ -4,6 +4,7 @@
 #import "Bomber.h"
 #import "RandomLocationChooser.h"
 #import "BomberSprite.h"
+#import "InputTranslator.h"
 
 enum TAGS {
   kBucket,
@@ -11,9 +12,7 @@ enum TAGS {
 };
 
 @interface BombingLayer()
-
-@property(assign) float movement;
-
+@property(strong) InputTranslator *translator;
 @end
 
 @implementation BombingLayer
@@ -54,7 +53,8 @@ enum TAGS {
     
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
     [self scheduleUpdate];
-    
+
+    self.translator = [InputTranslator newTranslatorWithWidth:size.width];
     [bomber start];
   }
 	return self;
@@ -62,39 +62,24 @@ enum TAGS {
 
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-  CGPoint point = [touch locationInView:[touch view]];
-  CGSize size = [[CCDirector sharedDirector] winSize];
-
-  if (point.x > size.width / 2)
-  {
-    self.movement++;
-  }
-  else
-  {
-    self.movement--;
-  }
+  [self.translator newTouch:touch at:[touch locationInView:[touch view]]];
   return YES;
+}
+
+-(void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+  [self.translator moveTouch:touch to:[touch locationInView:[touch view]]];
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-  CGPoint point = [touch locationInView:[touch view]];
-  CGSize size = [[CCDirector sharedDirector] winSize];
-
-  if (point.x > size.width / 2)
-  {
-    self.movement--;
-  }
-  else
-  {
-    self.movement++;
-  }
+  [self.translator removeTouch:touch];
 }
 
 -(void)update:(ccTime)delta
 {
   BucketsSprite *sprite = (BucketsSprite *)[self getChildByTag:kBucket];
-  [sprite move:self.movement];
+  [sprite move:self.translator.movement];
 }
 
 @end

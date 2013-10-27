@@ -59,7 +59,6 @@
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber.m */; };
 		2FA28F2DA1C7B230BD8889A6 /* bomber.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28E569B51FB5D94F34D3E /* bomber.png */; };
-		565729BC3AFD47259C3D6021 /* libPods-Kaboom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED61CA0C6924F2E930BD93C /* libPods-Kaboom.a */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -151,7 +150,6 @@
 				07D263341816B28E0060E3E9 /* AudioToolbox.framework in Frameworks */,
 				07D263401816B28E0060E3E9 /* GameKit.framework in Frameworks */,
 				D103E86B684445668EB844A3 /* libPods.a in Frameworks */,
-				565729BC3AFD47259C3D6021 /* libPods-Kaboom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +382,6 @@
 			mainGroup = 07D263211816B28E0060E3E9;
 			productRefGroup = 07D2632B1816B28E0060E3E9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				07D263291816B28E0060E3E9 /* Kaboom */,

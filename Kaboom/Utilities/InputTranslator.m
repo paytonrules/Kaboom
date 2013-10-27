@@ -5,6 +5,8 @@
 @property(assign) int width;
 @property(strong) NSMutableDictionary *touches;
 
+-(void) updateTouch:(id<NSObject>) touch to:(CGPoint) location;
+-(NSValue *) hashValueFor:(id<NSObject>) obj;
 @end
 
 @implementation InputTranslator
@@ -41,15 +43,29 @@
   return movement;
 }
 
--(void)newTouch:(id)touch at:(CGPoint)location
+-(void)newTouch:(id<NSObject>)touch at:(CGPoint)location
 {
-  NSUInteger hash = [touch hash];
-  NSValue *hashAsValue = [NSValue valueWithBytes:&hash objCType:@encode(NSUInteger)];
-  self.touches[hashAsValue] = [NSValue valueWithCGPoint:location];
+  [self updateTouch:touch to:location];
 }
 
--(void) newTouch:(id)touch inView:(id)view
+-(void) moveTouch:(id<NSObject>)touch to:(CGPoint)location
 {
-  self.touches[touch] = [NSValue valueWithCGPoint:[touch locationInView:view]];
+  [self updateTouch:touch to:location];
+}
+
+-(void) updateTouch:(id<NSObject>) obj to:(CGPoint) location
+{
+  self.touches[[self hashValueFor:obj]] = [NSValue valueWithCGPoint:location];
+}
+
+-(void) removeTouch:(id<NSObject>)touch
+{
+  [self.touches removeObjectForKey:[self hashValueFor:touch]];
+}
+
+-(NSValue *) hashValueFor:(id<NSObject>) obj
+{
+  NSUInteger hash = [obj hash];
+  return [NSValue valueWithBytes:&hash objCType:@encode(NSUInteger)];
 }
 @end
