@@ -1,6 +1,8 @@
 platform :ios, '7.0'
 
-pod 'cocos2d'
+target :Kaboom do
+  pod 'cocos2d'
+end
 
 target :Specs do
   pod 'OCMock'
