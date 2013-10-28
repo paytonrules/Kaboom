@@ -18,11 +18,6 @@
   return sprite;
 }
 
--(void) move:(float) movement
-{
-  [self.buckets move:movement];
-}
-
 -(void)update:(ccTime)delta {
   [self setPosition:self.buckets.position];
 }

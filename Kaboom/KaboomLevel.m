@@ -30,8 +30,25 @@
   return level;
 }
 
++(id) newLevelWithBuckets:(Buckets *) buckets
+{
+  KaboomLevel *level = [KaboomLevel new];
+  level.buckets = buckets;
+  return level;
+}
+
 -(void) start
 {
   [self.bomber start];
+}
+
+-(void) update:(CGFloat) deltaTime
+{
+  [self.bomber update:deltaTime];
+}
+
+-(void) moveBuckets:(CGFloat) movement
+{
+  [self.buckets move:movement];
 }
 @end

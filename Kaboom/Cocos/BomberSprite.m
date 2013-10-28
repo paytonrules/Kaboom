@@ -21,7 +21,6 @@ const int kBomb = 200;
 
 -(void)update:(ccTime)delta
 {
-  [self.bomber update:delta];
   [self setPosition:self.bomber.position];
 
   [self.bomber.bombs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

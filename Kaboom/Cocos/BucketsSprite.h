@@ -5,6 +5,5 @@
 @interface BucketsSprite : CCSprite
 
 +(id)newSpriteWithBuckets:(Buckets *)buckets;
--(void) move:(float) movement;
 
 @end

@@ -74,8 +74,8 @@ enum TAGS {
 
 -(void)update:(ccTime)delta
 {
-  BucketsSprite *sprite = (BucketsSprite *)[self getChildByTag:kBucket];
-  [sprite move:self.translator.movement];
+  [self.level moveBuckets:self.translator.movement];
+  [self.level update:delta];
 }
 
 @end
