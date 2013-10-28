@@ -1,10 +1,9 @@
 #import "BombingLayer.h"
-#import "Buckets.h"
 #import "BucketsSprite.h"
-#import "Bomber.h"
 #import "RandomLocationChooser.h"
 #import "BomberSprite.h"
 #import "InputTranslator.h"
+#import "KaboomLevel.h"
 
 enum TAGS {
   kBucket,
@@ -13,6 +12,7 @@ enum TAGS {
 
 @interface BombingLayer()
 @property(strong) InputTranslator *translator;
+@property(strong) KaboomLevel *level;
 @end
 
 @implementation BombingLayer
@@ -37,25 +37,21 @@ enum TAGS {
 {
   if( (self = [super initWithColor:ccc4(57, 109, 58, 255)]) ) {
 		CGSize size = [[CCDirector sharedDirector] winSize];
-
-    Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 2)];
-    RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
-    BucketsSprite *bucketSprite = [BucketsSprite newSpriteWithBuckets:buckets];
-    Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 40)
-                                                speed:60.0
-                                      locationChooser:chooser];
-    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:bomber];
-
-
-    [self addChild:bucketSprite z:0 tag:kBucket];
-    [self addChild:bomberSprite z:0 tag:kBomber];
     self.touchEnabled = YES;
     
     [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-    [self scheduleUpdate];
 
     self.translator = [InputTranslator newTranslatorWithWidth:size.width];
-    [bomber start];
+
+    self.level = [KaboomLevel newLevelWithSize:size];
+
+    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.level.bomber];
+    BucketsSprite *bucketSprite = [BucketsSprite newSpriteWithBuckets:self.level.buckets];
+    [self addChild:bucketSprite z:0 tag:kBucket];
+    [self addChild:bomberSprite z:0 tag:kBomber];
+    [self scheduleUpdate];
+
+    [self.level start];
   }
 	return self;
 }
