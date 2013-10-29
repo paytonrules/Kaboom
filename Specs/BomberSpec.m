@@ -53,7 +53,7 @@ OCDSpec2Context(BomberSpec) {
       [ExpectFloat(bomber.position.x) toBe:8.0 withPrecision:0.0001];
     });
 
-    It(@"accounts for the update time when calculating movement (speed is per second, update is in seconds)", ^{
+    It(@"accounts for the update time when calculating tilt (speed is per second, update is in seconds)", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
       Bomber *bomber = [[Bomber alloc] initWithPosition:CGPointMake(10, 40) speed:2.0 locationChooser:locations];
 

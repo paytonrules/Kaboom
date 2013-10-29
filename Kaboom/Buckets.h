@@ -4,6 +4,8 @@
 
 @property(nonatomic, readonly) CGPoint position;
 
--(id) initWithPosition:(CGPoint) position;
-- (void)move:(float)movement;
+-(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed;
+
+-(void) update:(CGFloat) deltaTime;
+-(void) tilt:(float)angle;
 @end

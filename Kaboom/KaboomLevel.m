@@ -15,7 +15,7 @@
 +(id)newLevelWithSize:(CGSize)size
 {
   KaboomLevel *level = [KaboomLevel new];
-  level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 2)];
+  level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 2) speed:1.0];
   RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
   level.bomber = [[Bomber alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 40)
                                                 speed:60.0
@@ -45,10 +45,11 @@
 -(void) update:(CGFloat) deltaTime
 {
   [self.bomber update:deltaTime];
+  [self.buckets update:deltaTime];
 }
 
--(void) moveBuckets:(CGFloat) movement
+-(void) tilt:(CGFloat) tilt
 {
-  [self.buckets move:movement];
+  [self.buckets tilt:tilt];
 }
 @end

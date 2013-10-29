@@ -1,5 +1,13 @@
 #include "InputTranslator.h"
 
+@interface InputValue : NSObject
+@property(assign) CGPoint location;
+@property(assign) int updates;
+@end
+
+@implementation InputValue
+@end
+
 @interface InputTranslator()
 
 @property(assign) int width;
@@ -27,17 +35,14 @@
   return self;
 }
 
--(int) movement
+-(float) tilt
 {
-  __block int movement = 0;
-  [self.touches enumerateKeysAndObjectsUsingBlock:^(id touch, id locationValue, BOOL *stop) {
-    CGPoint point;
-    [locationValue getValue:&point];
-
-    if (point.x >= (self.width / 2))
-      movement++;
+  __block float movement = 0;
+  [self.touches enumerateKeysAndObjectsUsingBlock:^(id touch, InputValue *input, BOOL *stop) {
+    if (input.location.x >= (self.width / 2))
+      movement += input.updates * 0.01;
     else
-      movement--;
+      movement -= input.updates * 0.01;
   }];
 
   return movement;
@@ -55,7 +60,17 @@
 
 -(void) updateTouch:(id<NSObject>) obj to:(CGPoint) location
 {
-  self.touches[[self hashValueFor:obj]] = [NSValue valueWithCGPoint:location];
+  InputValue *value = [InputValue new];
+  value.location = location;
+  value.updates = 1;
+  self.touches[[self hashValueFor:obj]] = value;
+}
+
+-(void) update
+{
+  [self.touches enumerateKeysAndObjectsUsingBlock:^(id key, InputValue *input, BOOL *stop) {
+    input.updates++;
+  }];
 }
 
 -(void) removeTouch:(id<NSObject>)touch

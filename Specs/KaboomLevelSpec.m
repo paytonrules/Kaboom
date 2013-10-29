@@ -49,13 +49,24 @@ OCDSpec2Context(KaboomLevelSpec) {
       [bomber verify];
     });
 
-    It(@"delegates move to the buckets", ^{
+    It(@"delegates update to the bucket", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
 
-      [[buckets expect] move:2.0];
+      [[buckets expect] update:1.0];
 
-      [level moveBuckets:2.0];
+      [level update:1.0];
+
+      [buckets verify];
+    });
+
+    It(@"delegates tilt to the buckets", ^{
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
+
+      [[buckets expect] tilt:2.0];
+
+      [level tilt:2.0];
 
       [buckets verify];
     });

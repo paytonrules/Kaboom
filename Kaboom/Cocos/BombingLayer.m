@@ -74,7 +74,7 @@ enum TAGS {
 
 -(void)update:(ccTime)delta
 {
-  [self.level moveBuckets:self.translator.movement];
+  [self.level tilt:self.translator.tilt];
   [self.level update:delta];
 }
 
