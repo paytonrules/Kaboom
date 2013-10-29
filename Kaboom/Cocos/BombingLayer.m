@@ -1,8 +1,6 @@
 #import "BombingLayer.h"
 #import "BucketsSprite.h"
-#import "RandomLocationChooser.h"
 #import "BomberSprite.h"
-#import "InputTranslator.h"
 #import "KaboomLevel.h"
 
 enum TAGS {
@@ -11,7 +9,6 @@ enum TAGS {
 };
 
 @interface BombingLayer()
-@property(strong) InputTranslator *translator;
 @property(strong) KaboomLevel *level;
 @end
 
@@ -38,10 +35,7 @@ enum TAGS {
   if( (self = [super initWithColor:ccc4(57, 109, 58, 255)]) ) {
 		CGSize size = [[CCDirector sharedDirector] winSize];
     self.touchEnabled = YES;
-    
-    [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-
-    self.translator = [InputTranslator newTranslatorWithWidth:size.width];
+    self.accelerometerEnabled = YES;
 
     self.level = [KaboomLevel newLevelWithSize:size];
 
@@ -56,25 +50,12 @@ enum TAGS {
 	return self;
 }
 
--(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-  [self.translator newTouch:touch at:[touch locationInView:[touch view]]];
-  return YES;
+-(void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+  [self.level tilt:acceleration.y];
 }
 
--(void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+-(void) update:(ccTime)delta
 {
-  [self.translator moveTouch:touch to:[touch locationInView:[touch view]]];
-}
-
--(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
-{
-  [self.translator removeTouch:touch];
-}
-
--(void)update:(ccTime)delta
-{
-  [self.level tilt:self.translator.tilt];
   [self.level update:delta];
 }
 

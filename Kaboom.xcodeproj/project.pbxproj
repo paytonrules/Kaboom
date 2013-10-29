@@ -40,16 +40,13 @@
 		2FA281B6E050D46C06F78375 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28EFAA67F8049B3B882B8 /* bomb.png */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber.m */; };
-		2FA284ABE29449D8A4897A7A /* InputTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DB0B19A543ECF84578F /* InputTranslator.m */; };
 		2FA2850029BDCDB0D2BE7EBC /* KaboomLevelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomLevelSpec.m */; };
 		2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
-		2FA28629FA0D7B82A71851A1 /* InputTranslatorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA286E901676955B47EF2D0 /* InputTranslatorSpec.m */; };
 		2FA2866F546500DC3C127660 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
 		2FA2883B02F5B0DE568C0706 /* KaboomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* KaboomLevel.m */; };
 		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
-		2FA2889CBA6EFF3000119A31 /* InputTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DB0B19A543ECF84578F /* InputTranslator.m */; };
 		2FA288FEE49CFAADEEA0BF55 /* BucketsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28AA88E0D958362D9515B /* BucketsSprite.m */; };
 		2FA28917A410A7D71147541B /* buckets.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2879935C30175FC46E403 /* buckets.png */; };
 		2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
@@ -109,9 +106,7 @@
 		2FA285481EF46AADB0F024DB /* BomberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BomberSprite.m; sourceTree = "<group>"; };
 		2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsSprite.h; sourceTree = "<group>"; };
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
-		2FA286E901676955B47EF2D0 /* InputTranslatorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTranslatorSpec.m; sourceTree = "<group>"; };
 		2FA2879935C30175FC46E403 /* buckets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buckets.png; sourceTree = "<group>"; };
-		2FA28851C643FBD334CE62E9 /* InputTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTranslator.h; sourceTree = "<group>"; };
 		2FA288C49F5E6138D1521493 /* Bomber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber.m; sourceTree = "<group>"; };
 		2FA2891355F773A6B44F6DEF /* RandomLocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomLocationChooser.h; sourceTree = "<group>"; };
 		2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooserSpec.m; sourceTree = "<group>"; };
@@ -123,7 +118,6 @@
 		2FA28CD73921DBD4533469C9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		2FA28D7F03762665680A3DCF /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
-		2FA28DB0B19A543ECF84578F /* InputTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTranslator.m; sourceTree = "<group>"; };
 		2FA28DCCDD0B042977B8775F /* KaboomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLevel.m; sourceTree = "<group>"; };
 		2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FA28E033F3091031ECC9F1F /* LocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChooser.h; sourceTree = "<group>"; };
@@ -298,8 +292,6 @@
 		2FA283FB21DAC661A2A41C64 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2FA28DB0B19A543ECF84578F /* InputTranslator.m */,
-				2FA28851C643FBD334CE62E9 /* InputTranslator.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -308,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */,
-				2FA286E901676955B47EF2D0 /* InputTranslatorSpec.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -525,7 +516,6 @@
 				2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */,
 				2FA2866F546500DC3C127660 /* StandardRandomNumberGenerator.m in Sources */,
 				2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */,
-				2FA2889CBA6EFF3000119A31 /* InputTranslator.m in Sources */,
 				2FA2883B02F5B0DE568C0706 /* KaboomLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,8 +532,6 @@
 				2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */,
 				2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */,
 				2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */,
-				2FA284ABE29449D8A4897A7A /* InputTranslator.m in Sources */,
-				2FA28629FA0D7B82A71851A1 /* InputTranslatorSpec.m in Sources */,
 				2FA2850029BDCDB0D2BE7EBC /* KaboomLevelSpec.m in Sources */,
 				2FA28D1BBCF9EAF7B2B86FA9 /* KaboomLevel.m in Sources */,
 			);
