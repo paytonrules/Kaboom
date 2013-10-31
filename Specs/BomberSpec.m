@@ -173,5 +173,4 @@ OCDSpec2Context(BomberSpec) {
       [ExpectInt(bombPosition.y) toBe:55 - kGravity];
     });
   });
-  
 }
