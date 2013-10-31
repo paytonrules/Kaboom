@@ -1,4 +1,6 @@
 #import <OCDSpec2/OCDSpec2.h>
+#import <OCMock/OCMock.h>
+#import "Buckets.h"
 #import "Bomber.h"
 #import "Constants.h"
 
@@ -171,6 +173,46 @@ OCDSpec2Context(BomberSpec) {
       [(NSValue *) bomber.bombs[0] getValue:&bombPosition];
       [ExpectInt(bombPosition.x) toBe:18];
       [ExpectInt(bombPosition.y) toBe:55 - kGravity];
+    });
+
+    It(@"does nothing if the bomber hasn't dropped bombs", ^{
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      Bomber *bomber = [Bomber new];
+
+      [bomber checkBombs:buckets];
+
+      [buckets verify];
+    });
+
+    It(@"removes any bombs that intersect buckets", ^{
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      Bomber *bomber = [Bomber new];
+      [bomber dropBomb];
+      [bomber move:1.0];
+      [bomber dropBomb];
+
+      [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[0]];
+      [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[1]];
+
+      [bomber checkBombs:buckets];
+
+      [ExpectInt(bomber.bombCount) toBe:0];
+    });
+
+    It(@"doesn't remove bombs if they don't intersect buckets", ^{
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      Bomber *bomber = [Bomber new];
+
+      [bomber dropBomb];
+      [bomber move:1.0];
+      [bomber dropBomb];
+
+      [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[0]];
+      [[[buckets stub] andReturnValue:@NO] caughtBomb:bomber.bombs[1]];
+
+      [bomber checkBombs:buckets];
+
+      [ExpectInt(bomber.bombCount) toBe:1];
     });
   });
 }

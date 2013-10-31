@@ -32,4 +32,9 @@ const float kSpeed = 5.0;
 {
   self.tilt = angle;
 }
+
+-(BOOL) caughtBomb:(NSValue *)bomb
+{
+  return NO;
+}
 @end

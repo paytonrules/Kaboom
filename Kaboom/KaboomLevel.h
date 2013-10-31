@@ -8,6 +8,7 @@
 +(id) newLevelWithSize:(CGSize) size;
 +(id) newLevelWithBomber:(Bomber *) bomber;
 +(id) newLevelWithBuckets:(Buckets *) buckets;
++(id) newLevelWithBuckets:(Buckets *) buckets bomber:(Bomber *) bomber;
 -(void) start;
 -(void) update:(CGFloat) deltaTime;
 -(void) tilt:(CGFloat) tilt;

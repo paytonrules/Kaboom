@@ -40,6 +40,7 @@ OCDSpec2Context(KaboomLevelSpec) {
 
     It(@"delegates update to the bomber", ^{
       id bomber = [OCMockObject mockForClass:[Bomber class]];
+      [[bomber stub] checkBombs:[OCMArg any]];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
       [[bomber expect] update:1.0];
@@ -68,6 +69,23 @@ OCDSpec2Context(KaboomLevelSpec) {
 
       [level tilt:2.0];
 
+      [buckets verify];
+    });
+
+    It(@"checks for caught buckets after updating their positions", ^{
+      id bomber = [OCMockObject mockForClass:[Bomber class]];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [bomber setExpectationOrderMatters:YES];
+      [[bomber expect] update:10];
+      [[buckets expect] update:10];
+
+      [[bomber expect] checkBombs:buckets];
+
+      [level update:10];
+
+      [bomber verify];
       [buckets verify];
     });
   });

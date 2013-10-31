@@ -37,6 +37,14 @@
   return level;
 }
 
++(id) newLevelWithBuckets:(Buckets *) buckets bomber:(Bomber *) bomber
+{
+  KaboomLevel *level = [KaboomLevel new];
+  level.buckets = buckets;
+  level.bomber = bomber;
+  return level;
+}
+
 -(void) start
 {
   [self.bomber start];
@@ -46,6 +54,8 @@
 {
   [self.bomber update:deltaTime];
   [self.buckets update:deltaTime];
+
+  [self.bomber checkBombs:self.buckets];
 }
 
 -(void) tilt:(CGFloat) tilt

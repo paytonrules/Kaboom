@@ -1,5 +1,6 @@
 #import "Bomber.h"
 #import "Constants.h"
+#import "Buckets.h"
 
 @interface Bomber()
 @property(assign) CGPoint position;
@@ -12,10 +13,18 @@
 @property(strong) NSMutableArray *droppedBombs;
 
 -(void) updateBombs;
--(void) addNewBomb;
 @end
 
 @implementation Bomber
+
+-(id)init
+{
+  return [self initWithPosition:CGPointMake(0, 0)
+                          speed:0
+                locationChooser:nil
+                         height:0
+                     bombHeight:0];
+}
 
 -(id) initWithPosition:(CGPoint)position speed:(float)speed locationChooser:(NSObject <LocationChooser> *)locations
 {
@@ -57,7 +66,7 @@
   self.started = YES;
 }
 
--(void)update:(float)deltaTime
+-(void) update:(float)deltaTime
 {
   if (self.started)
   {
@@ -65,26 +74,30 @@
     float distanceRemaining = abs(self.location - self.position.x);
 
     if (self.location > self.position.x) {
-      self.position = CGPointMake(self.position.x + moveDistance, self.position.y);
+      [self move:moveDistance];
     }
     else {
-      self.position = CGPointMake(self.position.x - moveDistance, self.position.y);
+      [self move:-moveDistance];
     }
 
     [self updateBombs];
 
     if (moveDistance >= distanceRemaining) {
-      [self addNewBomb];
+      [self dropBomb];
+      self.location = [self.locations next];
     }
   }
 }
 
--(void) addNewBomb
+-(void) move:(float)amount
+{
+  self.position = CGPointMake(self.position.x + amount, self.position.y);
+}
+
+-(void) dropBomb
 {
   CGPoint bombLocation = CGPointMake(self.position.x, self.position.y + (self.height / 2) + (self.bombHeight / 2));
   [self.droppedBombs addObject:[NSValue valueWithBytes:&bombLocation objCType:@encode(CGPoint)]];
-
-  self.location = [self.locations next];
 }
 
 -(void) updateBombs
@@ -99,5 +112,19 @@
     [newBombs addObject:[NSValue valueWithBytes:&bombLocation objCType:@encode(CGPoint)]];
   }
   self.droppedBombs = newBombs;
+}
+
+-(void) checkBombs:(Buckets *)buckets
+{
+  NSMutableArray *remainingBombs = [NSMutableArray new];
+  for (NSValue *bombPosition in self.droppedBombs)
+  {
+    if (![buckets caughtBomb:bombPosition])
+    {
+      [remainingBombs addObject:bombPosition];
+    }
+  }
+
+  self.droppedBombs = [NSMutableArray arrayWithArray:remainingBombs];
 }
 @end

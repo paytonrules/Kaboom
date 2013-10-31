@@ -8,4 +8,6 @@
 
 -(void) update:(CGFloat) deltaTime;
 -(void) tilt:(float)angle;
+-(BOOL) caughtBomb:(NSValue *)bomb;
+
 @end
