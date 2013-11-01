@@ -14,4 +14,5 @@
 
 @property(readonly) NSObject<Bomber> *bomber;
 @property(readonly) NSObject<Buckets> *buckets;
+@property(readonly) int score;
 @end

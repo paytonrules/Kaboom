@@ -10,6 +10,7 @@ enum TAGS {
 
 @interface BombingLayer()
 @property(strong) KaboomLevel *level;
+@property(strong) CCLabelTTF *score;
 @end
 
 @implementation BombingLayer
@@ -25,7 +26,7 @@ enum TAGS {
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
-	
+  
 	// return the scene
 	return scene;
 }
@@ -43,6 +44,15 @@ enum TAGS {
     BucketsSprite *bucketSprite = [BucketsSprite newSpriteWithBuckets:self.level.buckets];
     [self addChild:bucketSprite z:0 tag:kBucket];
     [self addChild:bomberSprite z:0 tag:kBomber];
+    CCLabelTTF  *score = [CCLabelTTF labelWithString:@"TEST"
+                                            fontName:@"Helvetica"
+                                            fontSize:24];
+    score.position = ccp(400, 300);
+    
+    [self addChild:score];
+    self.score = score;
+
+    
     [self scheduleUpdate];
 
     [self.level start];
@@ -57,6 +67,7 @@ enum TAGS {
 -(void) update:(ccTime)delta
 {
   [self.level update:delta];
+  [self.score setString:[NSString stringWithFormat:@"%d", self.level.score]];
 }
 
 @end
