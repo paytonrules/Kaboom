@@ -47,7 +47,7 @@ enum TAGS {
     CCLabelTTF  *score = [CCLabelTTF labelWithString:@"TEST"
                                             fontName:@"Helvetica"
                                             fontSize:24];
-    score.position = ccp(400, 300);
+    score.position = ccp(size.width - 40, size.height - 40);
     
     [self addChild:score];
     self.score = score;
@@ -61,7 +61,7 @@ enum TAGS {
 }
 
 -(void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-  [self.level tilt:acceleration.y];
+  [self.level tilt:-acceleration.y];
 }
 
 -(void) update:(ccTime)delta
