@@ -1,6 +1,7 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import <OCMock/OCMock.h>
 #import "Buckets.h"
+#import "Bomb.h"
 #import "Bomber2D.h"
 #import "Constants.h"
 
@@ -151,14 +152,13 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber update:1.0];
 
       // 1/2 of the bombHeight + 1/2 of the bomber height
-      CGPoint bombPosition;
-      [(NSValue *) bomber.bombs[0] getValue:&bombPosition];
-      [ExpectInt(bombPosition.x) toBe:18];
-      [ExpectInt(bombPosition.y) toBe:55];
+      NSObject<Bomb> *bomb = bomber.bombs[0];
+      [ExpectInt(bomb.position.x) toBe:18];
+      [ExpectInt(bomb.position.y) toBe:55];
     });
 
     It(@"moves the bomb on each update", ^{
-      RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
+      RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0, @40.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 40)
                                                   speed:1.0
                                         locationChooser:locations
@@ -169,8 +169,7 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber update:1.0];
       [bomber update:1.0];
 
-      CGPoint bombPosition;
-      [(NSValue *) bomber.bombs[0] getValue:&bombPosition];
+      CGPoint bombPosition = ((NSObject<Bomb> *) bomber.bombs[0]).position;
       [ExpectInt(bombPosition.x) toBe:18];
       [ExpectInt(bombPosition.y) toBe:55 - kGravity];
     });
