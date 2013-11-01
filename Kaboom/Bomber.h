@@ -1,4 +1,5 @@
-@class Buckets2D;
+#import <Foundation/Foundation.h>
+#import "Buckets.h"
 
 @protocol Bomber
 
@@ -6,7 +7,7 @@
 @property(readonly) int bombCount;
 @property(readonly) NSArray *bombs;
 -(void) start;
--(void) checkBombs:(Buckets2D *)buckets;
+-(void) checkBombs:(NSObject<Buckets> *)buckets;
 -(void) update:(float)deltaTime;
 
 @end

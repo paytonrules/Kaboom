@@ -30,14 +30,14 @@
   return level;
 }
 
-+(id) newLevelWithBuckets:(Buckets2D *) buckets
++(id) newLevelWithBuckets:(NSObject<Buckets> *) buckets
 {
   KaboomLevel *level = [KaboomLevel new];
   level.buckets = buckets;
   return level;
 }
 
-+(id) newLevelWithBuckets:(Buckets2D *) buckets bomber:(NSObject<Bomber> *) bomber
++(id) newLevelWithBuckets:(NSObject<Buckets> *) buckets bomber:(NSObject<Bomber> *) bomber
 {
   KaboomLevel *level = [KaboomLevel new];
   level.buckets = buckets;

@@ -1,15 +1,14 @@
 #import "BucketsSprite.h"
-#import "Buckets2D.h"
 
 @interface BucketsSprite()
 
-@property(strong) Buckets2D *buckets;
+@property(strong) NSObject<Buckets> *buckets;
 
 @end
 
 @implementation BucketsSprite
 
-+(id)newSpriteWithBuckets:(Buckets2D *)buckets
++(id)newSpriteWithBuckets:(NSObject<Buckets> *)buckets
 {
   BucketsSprite *sprite = [BucketsSprite spriteWithFile:@"buckets.png"];
   sprite.buckets = buckets;

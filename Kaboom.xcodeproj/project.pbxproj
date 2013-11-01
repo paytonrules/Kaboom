@@ -122,6 +122,7 @@
 		2FA28DCCDD0B042977B8775F /* KaboomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLevel.m; sourceTree = "<group>"; };
 		2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FA28E033F3091031ECC9F1F /* LocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChooser.h; sourceTree = "<group>"; };
+		2FA28E116E673BF95228D5FE /* Buckets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buckets.h; sourceTree = "<group>"; };
 		2FA28E569B51FB5D94F34D3E /* bomber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomber.png; sourceTree = "<group>"; };
 		2FA28EFAA67F8049B3B882B8 /* bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bomb.png; sourceTree = "<group>"; };
 		2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardRandomNumberGenerator.m; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 				2FA28DCCDD0B042977B8775F /* KaboomLevel.m */,
 				2FA281E7BE0861494079A694 /* KaboomLevel.h */,
 				2FA289962B51500947CF5EA5 /* Bomber.h */,
+				2FA28E116E673BF95228D5FE /* Buckets.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";

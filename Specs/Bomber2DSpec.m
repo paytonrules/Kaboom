@@ -1,6 +1,6 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import <OCMock/OCMock.h>
-#import "Buckets2D.h"
+#import "Buckets.h"
 #import "Bomber2D.h"
 #import "Constants.h"
 
@@ -176,7 +176,7 @@ OCDSpec2Context(Bomber2DSpec) {
     });
 
     It(@"does nothing if the bomber hasn't dropped bombs", ^{
-      id buckets = [OCMockObject mockForClass:[Buckets2D class]];
+      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
       Bomber2D *bomber = [Bomber2D new];
 
       [bomber checkBombs:buckets];
@@ -185,7 +185,7 @@ OCDSpec2Context(Bomber2DSpec) {
     });
 
     It(@"removes any bombs that intersect buckets", ^{
-      id buckets = [OCMockObject mockForClass:[Buckets2D class]];
+      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
       Bomber2D *bomber = [Bomber2D new];
       [bomber dropBomb];
       [bomber move:1.0];
@@ -200,7 +200,7 @@ OCDSpec2Context(Bomber2DSpec) {
     });
 
     It(@"doesn't remove bombs if they don't intersect buckets", ^{
-      id buckets = [OCMockObject mockForClass:[Buckets2D class]];
+      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
       Bomber2D *bomber = [Bomber2D new];
 
       [bomber dropBomb];

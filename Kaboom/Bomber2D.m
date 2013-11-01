@@ -114,7 +114,7 @@
   self.droppedBombs = newBombs;
 }
 
--(void) checkBombs:(Buckets2D *)buckets
+-(void) checkBombs:(NSObject<Buckets> *)buckets
 {
   NSMutableArray *remainingBombs = [NSMutableArray new];
   for (NSValue *bombPosition in self.droppedBombs)

@@ -1,7 +1,5 @@
 #import "Buckets2D.h"
 
-const float kSpeed = 5.0;
-
 @interface Buckets2D ()
 
 @property(assign) CGPoint position;
