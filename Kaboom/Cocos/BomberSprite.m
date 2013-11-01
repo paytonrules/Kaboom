@@ -1,4 +1,5 @@
 #import "BomberSprite.h"
+#import "BombSprite.h"
 
 const int kBomb = 200;
 
@@ -18,19 +19,18 @@ const int kBomb = 200;
   return sprite;
 }
 
--(void)update:(ccTime)delta
+-(void) update:(ccTime)delta
 {
   [self setPosition:self.bomber.position];
 
-  [self.bomber.bombs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [self.parent removeChildByTag:kBomb + idx];
-    NSValue *bombValue = (NSValue *)obj;
-    CGPoint location;
-    [bombValue getValue:&location];
+  while ([self.parent getChildByTag:kBomb])
+  {
+    [self.parent removeChildByTag:kBomb cleanup:YES];
+  }
 
-    CCSprite *bombSprite = [CCSprite spriteWithFile:@"bomb.png"];
-    bombSprite.position = location;
-    [self.parent addChild:bombSprite z:0 tag:kBomb + idx];
+  [self.bomber.bombs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    BombSprite *bombSprite = [BombSprite newSpriteWithBomb:obj];
+    [self.parent addChild:bombSprite z:0 tag:kBomb];
   }];
 }
 

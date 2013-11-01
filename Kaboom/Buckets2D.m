@@ -34,6 +34,9 @@
 
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb
 {
-  return CGRectIntersectsRect(self.boundingBox, ((Bomb2D *) bomb).boundingBox);
+  if (!CGRectIsEmpty(self.boundingBox)) {
+    return CGRectIntersectsRect(self.boundingBox, ((Bomb2D *) bomb).boundingBox);
+  }
+  return NO;
 }
 @end

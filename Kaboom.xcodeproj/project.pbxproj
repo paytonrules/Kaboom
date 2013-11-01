@@ -61,6 +61,7 @@
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA28F2DA1C7B230BD8889A6 /* bomber.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28E569B51FB5D94F34D3E /* bomber.png */; };
+		2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DFAA6766D477DC0BEF /* BombSprite.m */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		2FA285481EF46AADB0F024DB /* BomberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BomberSprite.m; sourceTree = "<group>"; };
 		2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsSprite.h; sourceTree = "<group>"; };
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
+		2FA286FCDD89AA9093552F70 /* BombSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombSprite.h; sourceTree = "<group>"; };
 		2FA2879935C30175FC46E403 /* buckets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buckets.png; sourceTree = "<group>"; };
 		2FA28831461D09EEC3799121 /* Bomb2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb2D.h; sourceTree = "<group>"; };
 		2FA288C49F5E6138D1521493 /* Bomber2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2D.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooserSpec.m; sourceTree = "<group>"; };
 		2FA2893A4D9A61B3A1D7A549 /* Buckets2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets2DSpec.m; sourceTree = "<group>"; };
 		2FA289962B51500947CF5EA5 /* Bomber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber.h; sourceTree = "<group>"; };
+		2FA289DFAA6766D477DC0BEF /* BombSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombSprite.m; sourceTree = "<group>"; };
 		2FA28A0F951445B45AF12061 /* Bomb2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2D.m; sourceTree = "<group>"; };
 		2FA28A4CA415D5DBA2C1798E /* StandardRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardRandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28AA88E0D958362D9515B /* BucketsSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsSprite.m; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 				2FA285C9DAB47003A6FBA0FA /* BucketsSprite.h */,
 				2FA285481EF46AADB0F024DB /* BomberSprite.m */,
 				2FA286E20151357C47C0D9CF /* BomberSprite.h */,
+				2FA289DFAA6766D477DC0BEF /* BombSprite.m */,
+				2FA286FCDD89AA9093552F70 /* BombSprite.h */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -530,6 +535,7 @@
 				2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */,
 				2FA2883B02F5B0DE568C0706 /* KaboomLevel.m in Sources */,
 				2FA286855900F769D7D19113 /* Bomb2D.m in Sources */,
+				2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,5 +75,16 @@ OCDSpec2Context(Buckets2DSpec) {
       [ExpectBool([bucket caughtBomb:bomb]) toBeFalse];
     });
 
+    It(@"cant catch a bomb if it doesn't have a bounding box", ^{
+      Buckets2D *bucket =  [[Buckets2D alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      bucket.boundingBox = CGRectMake(0, 0, 0, 0);
+
+      Bomb2D *bomb = [Bomb2D new];
+      bomb.boundingBox = CGRectMake(0, 0, 0, 0);
+
+      [ExpectBool([bucket caughtBomb:bomb]) toBeFalse];
+
+    });
+
   });
 }
