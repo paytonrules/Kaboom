@@ -5,4 +5,6 @@
 
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed;
 
+@property(assign) CGRect boundingBox;
+
 @end

@@ -111,7 +111,7 @@
 -(void) checkBombs:(NSObject<Buckets> *)buckets
 {
   NSMutableArray *remainingBombs = [NSMutableArray new];
-  for (NSValue *bombPosition in self.droppedBombs)
+  for (NSObject<Bomb> *bombPosition in self.droppedBombs)
   {
     if (![buckets caughtBomb:bombPosition])
     {

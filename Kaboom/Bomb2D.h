@@ -5,4 +5,6 @@
 
 +(id) bombAtX:(float) x y:(float) y;
 
+@property(assign) CGRect boundingBox;
+
 @end

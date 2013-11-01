@@ -1,4 +1,5 @@
 #import "Buckets2D.h"
+#import "Bomb2D.h"
 
 @interface Buckets2D ()
 
@@ -31,8 +32,8 @@
   self.tilt = angle;
 }
 
--(BOOL) caughtBomb:(NSValue *)bomb
+-(BOOL) caughtBomb:(NSObject<Bomb> *)bomb
 {
-  return NO;
+  return CGRectIntersectsRect(self.boundingBox, ((Bomb2D *) bomb).boundingBox);
 }
 @end

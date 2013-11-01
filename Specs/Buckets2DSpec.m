@@ -1,5 +1,6 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "Buckets2D.h"
+#import "Bomb2D.h"
 
 OCDSpec2Context(Buckets2DSpec) {
   
@@ -50,7 +51,29 @@ OCDSpec2Context(Buckets2DSpec) {
 
       [ExpectFloat(buckets.position.x) toBe:9.5 withPrecision:0.00001];
     });
+  });
+
+  Describe(@"catching bombs", ^{
+
+    It(@"Catches a bomb if it intersects with the buckets", ^{
+      Buckets2D *bucket =  [[Buckets2D alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      bucket.boundingBox = CGRectMake(0, 0, 10, 10);
+
+      Bomb2D *bomb = [Bomb2D new];
+      bomb.boundingBox = CGRectMake(2, 2, 10, 10);
+
+      [ExpectBool([bucket caughtBomb:bomb]) toBeTrue];
+    });
+
+    It(@"doesn't catch the bomb if the bounding boxes don't intersect", ^{
+      Buckets2D *bucket =  [[Buckets2D alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      bucket.boundingBox = CGRectMake(0, 0, 10, 10);
+
+      Bomb2D *bomb = [Bomb2D new];
+      bomb.boundingBox = CGRectMake(20, 20, 10, 10);
+
+      [ExpectBool([bucket caughtBomb:bomb]) toBeFalse];
+    });
 
   });
-  
 }
