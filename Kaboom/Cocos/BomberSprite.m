@@ -1,17 +1,17 @@
 #import "BomberSprite.h"
-#import "Bomber.h"
+#import "Bomber2D.h"
 
 const int kBomb = 200;
 
 @interface BomberSprite()
 
-@property(strong) Bomber *bomber;
+@property(strong) Bomber2D *bomber;
 
 @end
 
 @implementation BomberSprite
 
-+(id) newSpriteWithBomber:(Bomber *)bomber
++(id) newSpriteWithBomber:(Bomber2D *)bomber
 {
   BomberSprite *sprite = [BomberSprite spriteWithFile:@"bomber.png"];
   sprite.bomber = bomber;

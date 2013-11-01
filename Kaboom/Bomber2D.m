@@ -1,8 +1,8 @@
-#import "Bomber.h"
+#import "Bomber2D.h"
 #import "Constants.h"
 #import "Buckets.h"
 
-@interface Bomber()
+@interface Bomber2D ()
 @property(assign) CGPoint position;
 @property(assign) float speed;
 @property(strong) NSObject<LocationChooser> *locations;
@@ -15,7 +15,7 @@
 -(void) updateBombs;
 @end
 
-@implementation Bomber
+@implementation Bomber2D
 
 -(id)init
 {

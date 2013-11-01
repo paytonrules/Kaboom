@@ -1,7 +1,7 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import <OCMock/OCMock.h>
 #import "KaboomLevel.h"
-#import "Bomber.h"
+#import "Bomber2D.h"
 #import "Buckets.h"
 
 OCDSpec2Context(KaboomLevelSpec) {
@@ -28,10 +28,10 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates start to the bomber", ^{
-      id bomber = [OCMockObject mockForClass:[Bomber class]];
+      id bomber = [OCMockObject mockForClass:[Bomber2D class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
-      [(Bomber *)[bomber expect] start];
+      [(Bomber2D *)[bomber expect] start];
 
       [level start];
 
@@ -39,7 +39,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates update to the bomber", ^{
-      id bomber = [OCMockObject mockForClass:[Bomber class]];
+      id bomber = [OCMockObject mockForClass:[Bomber2D class]];
       [[bomber stub] checkBombs:[OCMArg any]];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
@@ -73,7 +73,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"checks for caught buckets after updating their positions", ^{
-      id bomber = [OCMockObject mockForClass:[Bomber class]];
+      id bomber = [OCMockObject mockForClass:[Bomber2D class]];
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
 

@@ -3,7 +3,7 @@
 
 @class Buckets;
 
-@interface Bomber : NSObject
+@interface Bomber2D : NSObject
 @property(readonly) CGPoint position;
 @property(readonly) int bombCount;
 @property(readonly) NSArray *bombs;
