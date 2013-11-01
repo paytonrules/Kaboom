@@ -1,8 +1,7 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import <OCMock/OCMock.h>
 #import "KaboomLevel.h"
-#import "Bomber2D.h"
-#import "Buckets.h"
+#import "Buckets2D.h"
 
 OCDSpec2Context(KaboomLevelSpec) {
 
@@ -28,10 +27,10 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates start to the bomber", ^{
-      id bomber = [OCMockObject mockForClass:[Bomber2D class]];
+      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
-      [(Bomber2D *)[bomber expect] start];
+      [(NSObject<Bomber> *)[bomber expect] start];
 
       [level start];
 
@@ -39,7 +38,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates update to the bomber", ^{
-      id bomber = [OCMockObject mockForClass:[Bomber2D class]];
+      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       [[bomber stub] checkBombs:[OCMArg any]];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
@@ -51,7 +50,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates update to the bucket", ^{
-      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      id buckets = [OCMockObject mockForClass:[Buckets2D class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
 
       [[buckets expect] update:1.0];
@@ -62,7 +61,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates tilt to the buckets", ^{
-      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      id buckets = [OCMockObject mockForClass:[Buckets2D class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
 
       [[buckets expect] tilt:2.0];
@@ -73,8 +72,8 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"checks for caught buckets after updating their positions", ^{
-      id bomber = [OCMockObject mockForClass:[Bomber2D class]];
-      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject mockForClass:[Buckets2D class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
 
       [bomber setExpectationOrderMatters:YES];

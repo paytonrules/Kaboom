@@ -1,12 +1,12 @@
 #import <OCDSpec2/OCDSpec2.h>
-#import "Buckets.h"
+#import "Buckets2D.h"
 
-OCDSpec2Context(BucketsSpec) {
+OCDSpec2Context(Buckets2DSpec) {
   
   Describe(@"moving", ^{
     
     It(@"slides to the right when the screen is tilted in a positive direction", ^{
-      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:1.0];
@@ -15,7 +15,7 @@ OCDSpec2Context(BucketsSpec) {
     });
 
     It(@"slides at the passed in speed per second", ^{
-      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:2.0];
@@ -24,7 +24,7 @@ OCDSpec2Context(BucketsSpec) {
     });
 
     It(@"continues sliding on each update", ^{
-      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:2.0];
@@ -34,7 +34,7 @@ OCDSpec2Context(BucketsSpec) {
     });
 
     It(@"moves to the left when the tilt is negative", ^{
-      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:-1.0];
       [buckets update:1.0];
@@ -43,7 +43,7 @@ OCDSpec2Context(BucketsSpec) {
     });
 
     It(@"is tilted a percentage, so 0.5 should only move half the speed", ^{
-      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:-0.5];
       [buckets update:1.0];

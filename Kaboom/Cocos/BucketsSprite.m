@@ -1,15 +1,15 @@
 #import "BucketsSprite.h"
-#import "Buckets.h"
+#import "Buckets2D.h"
 
 @interface BucketsSprite()
 
-@property(strong) Buckets *buckets;
+@property(strong) Buckets2D *buckets;
 
 @end
 
 @implementation BucketsSprite
 
-+(id)newSpriteWithBuckets:(Buckets *)buckets
++(id)newSpriteWithBuckets:(Buckets2D *)buckets
 {
   BucketsSprite *sprite = [BucketsSprite spriteWithFile:@"buckets.png"];
   sprite.buckets = buckets;

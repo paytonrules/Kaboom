@@ -1,9 +1,8 @@
 #import <cocos2d/cocos2d.h>
-
-@class Bomber2D;
+#import "Bomber.h"
 
 @interface BomberSprite : CCSprite
 
-+(id) newSpriteWithBomber:(Bomber2D *) bomber;
++(id) newSpriteWithBomber:(NSObject<Bomber> *) bomber;
 
 @end

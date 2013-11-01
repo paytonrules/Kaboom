@@ -1,8 +1,8 @@
-#import "Buckets.h"
+#import "Buckets2D.h"
 
 const float kSpeed = 5.0;
 
-@interface Buckets()
+@interface Buckets2D ()
 
 @property(assign) CGPoint position;
 @property(assign) CGFloat speed;
@@ -10,7 +10,7 @@ const float kSpeed = 5.0;
 
 @end
 
-@implementation Buckets
+@implementation Buckets2D
 
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed
 {
