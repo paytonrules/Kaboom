@@ -1,10 +1,9 @@
 #import <cocos2d/cocos2d.h>
-#import "Buckets.h"
 
-@class Buckets2D;
+@class Buckets;
 
 @interface BucketsSprite : CCSprite
 
-+(id)newSpriteWithBuckets:(NSObject<Buckets> *)buckets;
++(id)newSpriteWithBuckets:(Buckets *)buckets;
 
 @end

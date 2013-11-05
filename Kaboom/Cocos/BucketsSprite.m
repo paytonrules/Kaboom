@@ -1,15 +1,15 @@
 #import "BucketsSprite.h"
-#import "Buckets2D.h"
+#import "Buckets.h"
 
 @interface BucketsSprite()
 
-@property(strong) NSObject<Buckets> *buckets;
+@property(strong) Buckets *buckets;
 
 @end
 
 @implementation BucketsSprite
 
-+(id)newSpriteWithBuckets:(NSObject<Buckets> *)buckets
++(id)newSpriteWithBuckets:(Buckets *)buckets
 {
   BucketsSprite *sprite = [BucketsSprite spriteWithFile:@"buckets.png"];
   sprite.buckets = buckets;
@@ -19,7 +19,7 @@
 }
 
 -(void)update:(ccTime)delta {
-  ((Buckets2D *) self.buckets).boundingBox = self.boundingBox;
+  ((Buckets *) self.buckets).boundingBox = self.boundingBox;
   [self setPosition:self.buckets.position];
 }
 

@@ -1,8 +1,7 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import <OCMock/OCMock.h>
-#import "Buckets.h"
-#import "Bomb.h"
 #import "Bomber2D.h"
+#import "Buckets.h"
 #import "Constants.h"
 
 @interface RiggedLocations : NSObject<LocationChooser>
@@ -175,7 +174,7 @@ OCDSpec2Context(Bomber2DSpec) {
     });
 
     It(@"does nothing if the bomber hasn't dropped bombs", ^{
-      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
       Bomber2D *bomber = [Bomber2D new];
 
       [ExpectInt([bomber checkBombs:buckets]) toBe:0];
@@ -184,7 +183,7 @@ OCDSpec2Context(Bomber2DSpec) {
     });
 
     It(@"removes any bombs that intersect buckets", ^{
-      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
       Bomber2D *bomber = [Bomber2D new];
       [bomber dropBomb];
       [bomber move:1.0];
@@ -199,7 +198,7 @@ OCDSpec2Context(Bomber2DSpec) {
     });
 
     It(@"doesn't remove bombs if they don't intersect buckets", ^{
-      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
       Bomber2D *bomber = [Bomber2D new];
 
       [bomber dropBomb];

@@ -1,10 +1,14 @@
+#import <Foundation/Foundation.h>
 #import "Bomb.h"
 
-@protocol Buckets
+@interface Buckets : NSObject
 
 @property(nonatomic, readonly) CGPoint position;
 -(void) update:(CGFloat) deltaTime;
 -(void) tilt:(float)angle;
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb;
+-(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed;
+
+@property(assign) CGRect boundingBox;
 
 @end

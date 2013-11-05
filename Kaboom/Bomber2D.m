@@ -1,6 +1,7 @@
 #import "Bomber2D.h"
 #import "Constants.h"
 #import "Bomb2D.h"
+#import "Buckets.h"
 
 @interface Bomber2D ()
 @property(assign) CGPoint position;
@@ -108,7 +109,7 @@
   }
 }
 
--(NSInteger) checkBombs:(NSObject<Buckets> *)buckets
+-(NSInteger) checkBombs:(Buckets *)buckets
 {
   int caughtBombs = 0;
   NSMutableArray *remainingBombs = [NSMutableArray new];

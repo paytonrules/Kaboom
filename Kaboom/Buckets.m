@@ -1,7 +1,7 @@
-#import "Buckets2D.h"
+#import "Buckets.h"
 #import "Bomb2D.h"
 
-@interface Buckets2D ()
+@interface Buckets ()
 
 @property(assign) CGPoint position;
 @property(assign) CGFloat speed;
@@ -9,7 +9,7 @@
 
 @end
 
-@implementation Buckets2D
+@implementation Buckets
 
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed
 {

@@ -1,6 +1,7 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import <OCMock/OCMock.h>
 #import "KaboomLevel.h"
+#import "Buckets.h"
 
 OCDSpec2Context(KaboomLevelSpec) {
 
@@ -49,7 +50,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates update to the bucket", ^{
-      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
 
       [[buckets expect] update:1.0];
@@ -60,7 +61,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"delegates tilt to the buckets", ^{
-      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
 
       [[buckets expect] tilt:2.0];
@@ -72,7 +73,7 @@ OCDSpec2Context(KaboomLevelSpec) {
 
     It(@"checks for caught buckets after updating their positions", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
 
       [bomber setExpectationOrderMatters:YES];
@@ -89,7 +90,7 @@ OCDSpec2Context(KaboomLevelSpec) {
     
     It(@"updates the score", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      id buckets = [OCMockObject niceMockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
       
       [[[bomber stub] andReturnValue:@2] checkBombs:buckets];
@@ -101,7 +102,7 @@ OCDSpec2Context(KaboomLevelSpec) {
 
     It(@"accumlates multiple scores", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      id buckets = [OCMockObject niceMockForProtocol:@protocol(Buckets)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
       level.score = 1;
 

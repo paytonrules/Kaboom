@@ -1,5 +1,5 @@
 #import <OCDSpec2/OCDSpec2.h>
-#import "Buckets2D.h"
+#import "Buckets.h"
 #import "Bomb2D.h"
 
 OCDSpec2Context(Buckets2DSpec) {
@@ -7,7 +7,7 @@ OCDSpec2Context(Buckets2DSpec) {
   Describe(@"moving", ^{
     
     It(@"slides to the right when the screen is tilted in a positive direction", ^{
-      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:1.0];
@@ -16,7 +16,7 @@ OCDSpec2Context(Buckets2DSpec) {
     });
 
     It(@"slides at the passed in speed per second", ^{
-      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:2.0];
@@ -25,7 +25,7 @@ OCDSpec2Context(Buckets2DSpec) {
     });
 
     It(@"continues sliding on each update", ^{
-      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:2.0];
@@ -35,7 +35,7 @@ OCDSpec2Context(Buckets2DSpec) {
     });
 
     It(@"moves to the left when the tilt is negative", ^{
-      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:-1.0];
       [buckets update:1.0];
@@ -44,7 +44,7 @@ OCDSpec2Context(Buckets2DSpec) {
     });
 
     It(@"is tilted a percentage, so 0.5 should only move half the speed", ^{
-      Buckets2D *buckets = [[Buckets2D alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:-0.5];
       [buckets update:1.0];
@@ -56,7 +56,7 @@ OCDSpec2Context(Buckets2DSpec) {
   Describe(@"catching bombs", ^{
 
     It(@"Catches a bomb if it intersects with the buckets", ^{
-      Buckets2D *bucket =  [[Buckets2D alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      Buckets *bucket =  [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
       bucket.boundingBox = CGRectMake(0, 0, 10, 10);
 
       Bomb2D *bomb = [Bomb2D new];
@@ -66,7 +66,7 @@ OCDSpec2Context(Buckets2DSpec) {
     });
 
     It(@"doesn't catch the bomb if the bounding boxes don't intersect", ^{
-      Buckets2D *bucket =  [[Buckets2D alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      Buckets *bucket =  [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
       bucket.boundingBox = CGRectMake(0, 0, 10, 10);
 
       Bomb2D *bomb = [Bomb2D new];
@@ -76,7 +76,7 @@ OCDSpec2Context(Buckets2DSpec) {
     });
 
     It(@"cant catch a bomb if it doesn't have a bounding box", ^{
-      Buckets2D *bucket =  [[Buckets2D alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      Buckets *bucket =  [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
       bucket.boundingBox = CGRectMake(0, 0, 0, 0);
 
       Bomb2D *bomb = [Bomb2D new];
