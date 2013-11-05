@@ -86,5 +86,31 @@ OCDSpec2Context(KaboomLevelSpec) {
       [bomber verify];
       [buckets verify];
     });
+    
+    It(@"updates the score", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForProtocol:@protocol(Buckets)];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+      
+      [[[bomber stub] andReturnValue:@2] checkBombs:buckets];
+      
+      [level update:10];
+      
+      [ExpectInt(level.score) toBe:2];
+    });
+
+    It(@"accumlates multiple scores", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForProtocol:@protocol(Buckets)];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+      level.score = 1;
+
+      [[[bomber stub] andReturnValue:@2] checkBombs:buckets];
+
+      [level update:10];
+
+      [ExpectInt(level.score) toBe:3];
+    });
+
   });
 }

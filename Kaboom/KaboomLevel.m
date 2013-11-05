@@ -55,7 +55,7 @@
   [self.bomber update:deltaTime];
   [self.buckets update:deltaTime];
 
-  [self.bomber checkBombs:self.buckets];
+  self.score += [self.bomber checkBombs:self.buckets];
 }
 
 -(void) tilt:(CGFloat) tilt

@@ -178,7 +178,7 @@ OCDSpec2Context(Bomber2DSpec) {
       id buckets = [OCMockObject mockForProtocol:@protocol(Buckets)];
       Bomber2D *bomber = [Bomber2D new];
 
-      [bomber checkBombs:buckets];
+      [ExpectInt([bomber checkBombs:buckets]) toBe:0];
 
       [buckets verify];
     });
@@ -193,7 +193,7 @@ OCDSpec2Context(Bomber2DSpec) {
       [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[0]];
       [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[1]];
 
-      [bomber checkBombs:buckets];
+      [ExpectInt([bomber checkBombs:buckets]) toBe:2];
 
       [ExpectInt(bomber.bombCount) toBe:0];
     });
