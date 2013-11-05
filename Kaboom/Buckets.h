@@ -10,5 +10,6 @@
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed;
 
 @property(assign) CGRect boundingBox;
+@property(readonly) NSArray *buckets;
 
 @end

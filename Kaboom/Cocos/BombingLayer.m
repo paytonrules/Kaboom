@@ -1,5 +1,5 @@
 #import "BombingLayer.h"
-#import "BucketsSprite.h"
+#import "BucketsNode.h"
 #import "BomberSprite.h"
 #import "KaboomLevel.h"
 
@@ -41,7 +41,7 @@ enum TAGS {
     self.level = [KaboomLevel newLevelWithSize:size];
 
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.level.bomber];
-    BucketsSprite *bucketSprite = [BucketsSprite newSpriteWithBuckets:self.level.buckets];
+    BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.level.buckets];
     [self addChild:bucketSprite z:0 tag:kBucket];
     [self addChild:bomberSprite z:0 tag:kBomber];
     CCLabelTTF  *score = [CCLabelTTF labelWithString:@"TEST"
