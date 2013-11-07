@@ -34,7 +34,13 @@
 
 -(void) update:(CGFloat) deltaTime
 {
-  self.position = CGPointMake(self.position.x + (self.tilt * (self.speed / deltaTime)), self.position.y);
+  CGPoint newLocation = CGPointMake(self.position.x + (self.tilt * (self.speed / deltaTime)), self.position.y);
+  self.position = newLocation;
+
+  for (Bucket2D *bucket in self.buckets)
+  {
+    bucket.position = newLocation;
+  }
 }
 
 -(void) tilt:(float)angle
@@ -44,9 +50,11 @@
 
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb
 {
-  if (!CGRectIsEmpty(self.boundingBox)) {
-    return CGRectIntersectsRect(self.boundingBox, ((Bomb2D *) bomb).boundingBox);
+  for (Bucket2D *bucket in self.buckets) {
+    if ([bucket caughtBomb:bomb])
+      return YES;
   }
+
   return NO;
 }
 @end
