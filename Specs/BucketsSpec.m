@@ -1,8 +1,35 @@
 #import <OCDSpec2/OCDSpec2.h>
 #import "Buckets.h"
 #import "Bomb2D.h"
+#import "Bucket.h"
 
-OCDSpec2Context(Buckets2DSpec) {
+OCDSpec2Context(BucketsSpec) {
+
+  Describe(@"initializing buckets", ^{
+
+    It(@"starts with three buckets", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:0];
+
+      [ExpectInt(buckets.buckets.count) toBe:3];
+    });
+
+    It(@"positions the buckets relative to the position", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10, 40) speed:0];
+
+      NSObject<Bucket> *bucket = buckets.buckets[0];
+      [ExpectInt(bucket.position.x) toBe:10];
+      [ExpectInt(bucket.position.y) toBe:0];
+
+      bucket = buckets.buckets[1];
+      [ExpectInt(bucket.position.x) toBe:10];
+      [ExpectInt(bucket.position.y) toBe:40];
+
+      bucket = buckets.buckets[2];
+      [ExpectInt(bucket.position.x) toBe:10];
+      [ExpectInt(bucket.position.y) toBe:80];
+    });
+
+  });
   
   Describe(@"moving", ^{
     

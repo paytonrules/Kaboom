@@ -3,6 +3,8 @@
 
 @interface Bucket2D : NSObject<Bucket>
 
++(id) newBucketWithPosition:(CGPoint) position;
+
 @property(assign) CGRect boundingBox;
 
 @end
