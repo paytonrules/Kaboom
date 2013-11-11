@@ -34,13 +34,17 @@ OCDSpec2Context(BucketsSpec) {
   
   Describe(@"moving", ^{
     
-    It(@"slides to the right when the screen is tilted in a positive direction", ^{
+    It(@"slides all buckets to the right when the screen is tilted in a positive direction", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:1.0];
       [buckets update:1.0];
 
-      [ExpectFloat(buckets.position.x) toBe:11.0 withPrecision:0.00001];
+      [ExpectInt(buckets.buckets.count) toBe:3];
+
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:11.0 withPrecision:0.0001];
+      }];
     });
 
     It(@"slides at the passed in speed per second", ^{
@@ -49,7 +53,9 @@ OCDSpec2Context(BucketsSpec) {
       [buckets tilt:1.0];
       [buckets update:2.0];
 
-      [ExpectFloat(buckets.position.x) toBe:10.5 withPrecision:0.00001];
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:10.5 withPrecision:0.0001];
+      }];
     });
 
     It(@"continues sliding on each update", ^{
@@ -59,7 +65,9 @@ OCDSpec2Context(BucketsSpec) {
       [buckets update:2.0];
       [buckets update:2.0];
 
-      [ExpectFloat(buckets.position.x) toBe:11.0 withPrecision:0.00001];
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:11.0 withPrecision:0.0001];
+      }];
     });
 
     It(@"moves to the left when the tilt is negative", ^{
@@ -68,7 +76,9 @@ OCDSpec2Context(BucketsSpec) {
       [buckets tilt:-1.0];
       [buckets update:1.0];
 
-      [ExpectFloat(buckets.position.x) toBe:9.0 withPrecision:0.00001];
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:9.0 withPrecision:0.0001];
+      }];
     });
 
     It(@"is tilted a percentage, so 0.5 should only move half the speed", ^{
@@ -77,22 +87,27 @@ OCDSpec2Context(BucketsSpec) {
       [buckets tilt:-0.5];
       [buckets update:1.0];
 
-      [ExpectFloat(buckets.position.x) toBe:9.5 withPrecision:0.00001];
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:9.5 withPrecision:0.0001];
+      }];
     });
 
-    It(@"moves its buckets", ^{
+    It(@"is doesn't change their Y value", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:-0.5];
       [buckets update:1.0];
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
-      [ExpectFloat(bucket.position.x) toBe:9.5 withPrecision:0.00001];
+      [ExpectInt(bucket.position.y) toBe:-30];
+
       bucket = buckets.buckets[1];
-      [ExpectFloat(bucket.position.x) toBe:9.5 withPrecision:0.00001];
+      [ExpectInt(bucket.position.y) toBe:10];
+
       bucket = buckets.buckets[2];
-      [ExpectFloat(bucket.position.x) toBe:9.5 withPrecision:0.00001];
+      [ExpectInt(bucket.position.y) toBe:50];
     });
+
   });
 
   Describe(@"catching bombs", ^{
