@@ -11,4 +11,9 @@
   return bomb;
 }
 
+-(BOOL) hit {
+  return self.boundingBox.origin.y - self.boundingBox.size.height < 0;
+}
+
+
 @end

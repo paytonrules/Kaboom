@@ -16,4 +16,5 @@
 @property(readonly) NSObject<Bomber> *bomber;
 @property(readonly) Buckets *buckets;
 @property(assign) int score;
+@property(readonly) BOOL gameOver;
 @end

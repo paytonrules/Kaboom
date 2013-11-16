@@ -10,5 +10,7 @@
 -(void) start;
 -(NSInteger) checkBombs:(Buckets *)buckets;
 -(void) update:(float)deltaTime;
+-(BOOL) bombHit;
+-(void) explode;
 
 @end

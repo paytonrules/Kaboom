@@ -2,6 +2,7 @@
 #import <OCMock/OCMock.h>
 #import "KaboomLevel.h"
 #import "Buckets.h"
+#import "CCActionInterval.h"
 
 OCDSpec2Context(KaboomLevelSpec) {
 
@@ -39,6 +40,7 @@ OCDSpec2Context(KaboomLevelSpec) {
 
     It(@"delegates update to the bomber", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      [[[bomber stub] andReturnValue:@NO] bombHit];
       [[bomber stub] checkBombs:[OCMArg any]];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
@@ -51,6 +53,7 @@ OCDSpec2Context(KaboomLevelSpec) {
 
     It(@"delegates update to the bucket", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
+      [[[buckets stub] andReturnValue:@1] bucketCount];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets];
 
       [[buckets expect] update:1.0];
@@ -73,7 +76,9 @@ OCDSpec2Context(KaboomLevelSpec) {
 
     It(@"checks for caught buckets after updating their positions", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      [[[bomber stub] andReturnValue:@NO] bombHit];
       id buckets = [OCMockObject mockForClass:[Buckets class]];
+      [[[buckets stub] andReturnValue:@1] bucketCount];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
 
       [bomber setExpectationOrderMatters:YES];
@@ -113,5 +118,95 @@ OCDSpec2Context(KaboomLevelSpec) {
       [ExpectInt(level.score) toBe:3];
     });
 
+    It(@"asks if the bomber hit the ground, and removes a bucket", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets expect] removeBucket];
+
+      [level update:10];
+
+      [buckets verify];
+    });
+
+    It(@"ends the game if there are no buckets left", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@0] bucketCount];
+
+      [level update:10];
+
+      [ExpectBool(level.gameOver) toBeTrue];
+    });
+
+    It(@"doesn't end the game if there are bombs", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@1] bucketCount];
+
+      [level update:10];
+
+      [ExpectBool(level.gameOver) toBeFalse];
+    });
+
+    It(@"doesn't end the game if there are bombs", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [bomber setExpectationOrderMatters:YES];
+      [buckets setExpectationOrderMatters:YES];
+      [[[bomber expect] andReturnValue:@YES] bombHit];
+      [[buckets expect] removeBucket];
+      [[[buckets expect] andReturnValue:@1] bucketCount];
+
+      [level update:10];
+
+      [buckets verify];
+      [bomber verify];
+    });
+
+    It(@"doesn't continue updating after game is over", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@0] bucketCount];
+
+      [level update:10];
+
+      [[bomber reject] update:10];
+      [[buckets reject] update:10];
+
+      [level update:10];
+
+      [buckets verify];
+      [bomber verify];
+    });
+
+    It(@"Tells the bomber to blow up when a bomb hits", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[bomber expect] explode];
+
+      [level update:10];
+
+      [bomber verify];
+    });
   });
 }

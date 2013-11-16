@@ -8,6 +8,8 @@
 -(void) tilt:(float)angle;
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb;
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed;
+-(void) removeBucket;
+-(int) bucketCount;
 
 @property(readonly) NSArray *buckets;
 

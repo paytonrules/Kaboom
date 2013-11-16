@@ -3,6 +3,7 @@
 #import "Bomber2D.h"
 #import "Buckets.h"
 #import "Constants.h"
+#import "Bomb2D.h"
 
 @interface RiggedLocations : NSObject<LocationChooser>
 + (RiggedLocations *)newWithValues:(NSArray *)array;
@@ -211,6 +212,30 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber checkBombs:buckets];
 
       [ExpectInt(bomber.bombCount) toBe:1];
+    });
+
+    It(@"says a bomb hit if any of its bombs hit", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber dropBomb];
+      Bomb2D *bomb = (Bomb2D *) bomber.bombs[0];
+      bomb.boundingBox = CGRectMake(0, 1, 0, 2);
+
+      [ExpectBool([bomber bombHit]) toBeTrue];
+    });
+
+    It(@"doesnt say a bomb hit if it there are no dropped bombs", ^{
+      Bomber2D *bomber = [Bomber2D new];
+
+      [ExpectBool([bomber bombHit]) toBeFalse];
+    });
+
+    It(@"removes any dropped bombs on explode", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber dropBomb];
+
+      [bomber explode];
+
+      [ExpectInt(bomber.bombCount) toBe:0];
     });
   });
 }

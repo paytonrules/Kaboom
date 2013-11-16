@@ -7,6 +7,7 @@
 
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
+@property(assign) BOOL gameOver;
 
 @end
 
@@ -45,6 +46,15 @@
   return level;
 }
 
+-(id) init {
+
+  if (self = [super init])
+  {
+    self.gameOver = NO;
+  }
+  return self;
+}
+
 -(void) start
 {
   [self.bomber start];
@@ -52,10 +62,21 @@
 
 -(void) update:(CGFloat) deltaTime
 {
-  [self.bomber update:deltaTime];
-  [self.buckets update:deltaTime];
+  if (!self.gameOver) {
+    [self.bomber update:deltaTime];
+    [self.buckets update:deltaTime];
 
-  self.score += [self.bomber checkBombs:self.buckets];
+    if ([self.bomber bombHit]) {
+      [self.buckets removeBucket];
+      [self.bomber explode];
+
+      if ([self.buckets bucketCount] == 0) {
+        self.gameOver = YES;
+      }
+    }
+
+    self.score += [self.bomber checkBombs:self.buckets];
+  }
 }
 
 -(void) tilt:(CGFloat) tilt

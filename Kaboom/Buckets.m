@@ -48,6 +48,14 @@
   self.tilt = angle;
 }
 
+-(void) removeBucket
+{
+  if ([self bucketCount] != 0)
+  {
+    [self.theBuckets removeObjectAtIndex:self.theBuckets.count - 1];
+  }
+}
+
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb
 {
   for (Bucket2D *bucket in self.buckets) {
@@ -56,5 +64,10 @@
   }
 
   return NO;
+}
+
+-(int) bucketCount
+{
+  return self.theBuckets.count;
 }
 @end

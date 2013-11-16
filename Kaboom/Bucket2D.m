@@ -16,5 +16,4 @@
       CGRectIntersectsRect(self.boundingBox, ((Bomb2D *) bomb).boundingBox);
 }
 
-
 @end

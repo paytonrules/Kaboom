@@ -51,6 +51,11 @@
   return self;
 }
 
+-(void) explode
+{
+  self.droppedBombs = [NSMutableArray new];
+}
+
 -(int) bombCount
 {
   return self.bombs.count;
@@ -128,4 +133,17 @@
   self.droppedBombs = [NSMutableArray arrayWithArray:remainingBombs];
   return caughtBombs;
 }
+
+-(BOOL) bombHit
+{
+  __block BOOL bombHit = false;
+  [self.droppedBombs enumerateObjectsUsingBlock:^(NSObject<Bomb> *bomb, NSUInteger idx, BOOL *stop) {
+    if ([bomb hit]) {
+      bombHit = YES;
+      *stop = YES;
+    }
+  }];
+  return bombHit;
+}
+
 @end

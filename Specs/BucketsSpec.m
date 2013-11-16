@@ -155,4 +155,36 @@ OCDSpec2Context(BucketsSpec) {
       [ExpectBool([buckets caughtBomb:bomb]) toBeFalse];
     });
   });
+
+  Describe(@"removing buckets", ^{
+
+    It(@"removes the bottom-most bucket", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+
+      [buckets removeBucket];
+
+      [ExpectInt(buckets.buckets.count) toBe:2];
+      NSObject<Bucket> *bucket = buckets.buckets[1];
+      [ExpectInt(bucket.position.y) toBe:0];
+    });
+
+    It(@"doesnt blow up when you are out of buckets", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+
+      [buckets removeBucket];
+      [buckets removeBucket];
+      [buckets removeBucket];
+
+      [buckets removeBucket];
+    });
+
+    It(@"properly counts after updates", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+
+      [buckets removeBucket];
+
+      [ExpectInt([buckets bucketCount]) toBe:2];
+    });
+
+  });
 }

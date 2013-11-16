@@ -3,4 +3,5 @@
 @protocol Bomb
 
 @property(assign) CGPoint position;
+-(BOOL) hit;
 @end
