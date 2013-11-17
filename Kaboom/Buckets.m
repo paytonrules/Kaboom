@@ -52,7 +52,10 @@
 {
   if ([self bucketCount] != 0)
   {
-    [self.theBuckets removeObjectAtIndex:self.theBuckets.count - 1];
+    int lastBucket = self.theBuckets.count - 1;
+    NSObject<Bucket> *bucket = self.theBuckets[lastBucket];
+    [bucket remove];
+    [self.theBuckets removeObjectAtIndex:lastBucket];
   }
 }
 

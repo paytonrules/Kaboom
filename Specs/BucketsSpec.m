@@ -178,6 +178,15 @@ OCDSpec2Context(BucketsSpec) {
       [buckets removeBucket];
     });
 
+    It(@"marks any removed buckets as removed", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+
+      NSObject<Bucket> *bucket = buckets.buckets[2];
+      [buckets removeBucket];
+
+      [ExpectBool(bucket.removed) toBeTrue];
+    });
+
     It(@"properly counts after updates", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
 

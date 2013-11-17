@@ -1,5 +1,4 @@
 #import "BucketSprite.h"
-#import "Bucket.h"
 #import "Bucket2D.h"
 
 @interface BucketSprite()
@@ -19,8 +18,15 @@
 
 -(void)update:(ccTime)delta
 {
-  [self setPosition:self.bucket.position];
-  ((Bucket2D *) self.bucket).boundingBox = self.boundingBox;
+  if (self.bucket.removed)
+  {
+    [self removeFromParentAndCleanup:YES];
+  }
+  else
+  {
+    [self setPosition:self.bucket.position];
+    ((Bucket2D *) self.bucket).boundingBox = self.boundingBox;
+  }
 }
 
 @end

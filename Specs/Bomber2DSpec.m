@@ -218,7 +218,7 @@ OCDSpec2Context(Bomber2DSpec) {
       Bomber2D *bomber = [Bomber2D new];
       [bomber dropBomb];
       Bomb2D *bomb = (Bomb2D *) bomber.bombs[0];
-      bomb.boundingBox = CGRectMake(0, 1, 0, 2);
+      bomb.boundingBox = CGRectMake(0, -1, 1, 2);
 
       [ExpectBool([bomber bombHit]) toBeTrue];
     });

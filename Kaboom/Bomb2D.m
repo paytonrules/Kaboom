@@ -12,7 +12,10 @@
 }
 
 -(BOOL) hit {
-  return self.boundingBox.origin.y - self.boundingBox.size.height < 0;
+  if (!CGRectIsEmpty(self.boundingBox)) {
+    return self.boundingBox.origin.y <= 0;
+  }
+  return NO;
 }
 
 

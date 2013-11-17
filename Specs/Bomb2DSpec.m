@@ -11,16 +11,23 @@ OCDSpec2Context(Bomb2DSpec) {
       [ExpectBool([bomb hit]) toBeFalse];
     });
 
+    It(@"is a hit if it's bottom-most bit is at 0", ^{
+      Bomb2D *bomb = [Bomb2D new];
+      bomb.boundingBox = CGRectMake(1, 0, 1, 10);
+
+      [ExpectBool([bomb hit]) toBeTrue];
+    });
+
     It(@"is a hit if it's bottom-most bit is below 0", ^{
       Bomb2D *bomb = [Bomb2D new];
-      bomb.boundingBox = CGRectMake(1, 10, 1, 11);
+      bomb.boundingBox = CGRectMake(1, -1, 1, 10);
 
       [ExpectBool([bomb hit]) toBeTrue];
     });
 
     It(@"is not a hit if its bottom-most bit isn't below 0", ^{
       Bomb2D *bomb = [Bomb2D new];
-      bomb.boundingBox = CGRectMake(1, 10, 1, 6);
+      bomb.boundingBox = CGRectMake(1, 1, 1, 10);
 
       [ExpectBool([bomb hit]) toBeFalse];
     });

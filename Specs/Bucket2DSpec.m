@@ -33,5 +33,19 @@ OCDSpec2Context(Bucket2DSpec) {
 
       [ExpectBool([bucket caughtBomb:bomb]) toBeFalse];
     });
+
+    It(@"starts as not removed", ^{
+      NSObject<Bucket> *bucket =  [Bucket2D newBucketWithPosition:CGPointMake(0, 0)];
+
+      [ExpectBool(bucket.removed) toBeFalse];
+    });
+
+    It(@"is removed on remove", ^{
+      NSObject<Bucket> *bucket =  [Bucket2D newBucketWithPosition:CGPointMake(0, 0)];
+
+      [bucket remove];
+
+      [ExpectBool(bucket.removed) toBeTrue];
+    });
   });
 }
