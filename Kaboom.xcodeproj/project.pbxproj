@@ -41,6 +41,7 @@
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA2850029BDCDB0D2BE7EBC /* KaboomLevelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomLevelSpec.m */; };
+		2FA28534AD207A216C76BD7B /* bomber-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28CECA8E52455543D9256 /* bomber-ipadhd.png */; };
 		2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA2859A8529C4D803F27C97 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B28F938997A3C7B6FCB /* Utility.m */; };
@@ -143,6 +144,7 @@
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
 		2FA28CD18454BBC990A7AD78 /* BombingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombingLayer.h; sourceTree = "<group>"; };
 		2FA28CD73921DBD4533469C9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		2FA28CECA8E52455543D9256 /* bomber-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomber-ipadhd.png"; sourceTree = "<group>"; };
 		2FA28D7F03762665680A3DCF /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
 		2FA28DCCDD0B042977B8775F /* KaboomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLevel.m; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				2FA2879935C30175FC46E403 /* buckets.png */,
 				2FA28E569B51FB5D94F34D3E /* bomber.png */,
 				2FA28EFAA67F8049B3B882B8 /* bomb.png */,
+				2FA28CECA8E52455543D9256 /* bomber-ipadhd.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				2FA28F2DA1C7B230BD8889A6 /* bomber.png in Resources */,
 				2FA281B6E050D46C06F78375 /* bomb.png in Resources */,
 				2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */,
+				2FA28534AD207A216C76BD7B /* bomber-ipadhd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
