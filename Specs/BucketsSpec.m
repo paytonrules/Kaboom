@@ -19,7 +19,7 @@ OCDSpec2Context(BucketsSpec) {
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:0];
+      [ExpectInt(bucket.position.y) toBe:80];
 
       bucket = buckets.buckets[1];
       [ExpectInt(bucket.position.x) toBe:10];
@@ -27,7 +27,7 @@ OCDSpec2Context(BucketsSpec) {
 
       bucket = buckets.buckets[2];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:80];
+      [ExpectInt(bucket.position.y) toBe:0];
     });
 
   });
@@ -99,15 +99,14 @@ OCDSpec2Context(BucketsSpec) {
       [buckets update:1.0];
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
-      [ExpectInt(bucket.position.y) toBe:-30];
+      [ExpectInt(bucket.position.y) toBe:50];
 
       bucket = buckets.buckets[1];
       [ExpectInt(bucket.position.y) toBe:10];
 
       bucket = buckets.buckets[2];
-      [ExpectInt(bucket.position.y) toBe:50];
+      [ExpectInt(bucket.position.y) toBe:-30];
     });
-
   });
 
   Describe(@"catching bombs", ^{

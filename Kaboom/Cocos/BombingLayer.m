@@ -2,6 +2,7 @@
 #import "BucketsNode.h"
 #import "BomberSprite.h"
 #import "KaboomLevel.h"
+#import "Utility.h"
 
 enum TAGS {
   kBucket,
@@ -38,7 +39,7 @@ enum TAGS {
     self.touchEnabled = YES;
     self.accelerometerEnabled = YES;
 
-    self.level = [KaboomLevel newLevelWithSize:size];
+    self.level = [KaboomLevel newLevelWithSize:[Utility designSize]];
 
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.level.bomber];
     BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.level.buckets];
@@ -47,6 +48,7 @@ enum TAGS {
     CCLabelTTF  *score = [CCLabelTTF labelWithString:@"TEST"
                                             fontName:@"Helvetica"
                                             fontSize:24];
+    // DesignSize?
     score.position = ccp(size.width - 40, size.height - 40);
     
     [self addChild:score];

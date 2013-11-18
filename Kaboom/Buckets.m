@@ -20,9 +20,10 @@
     self.position = position;
     self.speed = speed;
     self.theBuckets = [NSMutableArray arrayWithArray:@[
-        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y - 40)],
+        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y + 40)],
         [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y)],
-        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y + 40)]]];
+        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y - 40)]
+        ]];
   }
   return self;
 }

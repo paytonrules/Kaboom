@@ -1,5 +1,6 @@
 #import "BomberSprite.h"
 #import "BombSprite.h"
+#import "Utility.h"
 
 const int kBomb = 200;
 
@@ -21,7 +22,7 @@ const int kBomb = 200;
 
 -(void) update:(ccTime)delta
 {
-  [self setPosition:self.bomber.position];
+  [self setPosition:[Utility scalePoint:self.bomber.position toDimensions:[CCDirector sharedDirector].winSize]];
 
   while ([self.parent getChildByTag:kBomb])
   {
