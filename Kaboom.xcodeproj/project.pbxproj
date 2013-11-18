@@ -40,10 +40,10 @@
 		2FA281B6E050D46C06F78375 /* bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28EFAA67F8049B3B882B8 /* bomb.png */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
-		2FA284B829E8B57A17E172C8 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2809A9443D6596C24E803 /* Utility.m */; };
 		2FA2850029BDCDB0D2BE7EBC /* KaboomLevelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomLevelSpec.m */; };
 		2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
+		2FA2859A8529C4D803F27C97 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B28F938997A3C7B6FCB /* Utility.m */; };
 		2FA285A0E29ED47D1417F7BC /* Bomb2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A0F951445B45AF12061 /* Bomb2D.m */; };
 		2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28622B00C64CDC2A430FB /* Bucket2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */; };
@@ -54,13 +54,13 @@
 		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
 		2FA288FEE49CFAADEEA0BF55 /* BucketsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28AA88E0D958362D9515B /* BucketsNode.m */; };
 		2FA28917A410A7D71147541B /* buckets.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2879935C30175FC46E403 /* buckets.png */; };
+		2FA28958EEBC6641CB4397A3 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B28F938997A3C7B6FCB /* Utility.m */; };
 		2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD73921DBD4533469C9 /* IntroLayer.m */; };
 		2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28288670853BDF8083AB2 /* BucketSprite.m */; };
 		2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */; };
 		2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
-		2FA28B934B425636DF731DB2 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2809A9443D6596C24E803 /* Utility.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
 		2FA28C81C391BD41E6ACAA07 /* BombingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* BombingLayer.m */; };
@@ -107,7 +107,7 @@
 		07D264EF1816B64A0060E3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D264F11816B64A0060E3E9 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		2E835FC4C4834368AA6DCF9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FA2809A9443D6596C24E803 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = SOURCE_ROOT; };
+		2FA2800275EACB12CB297F4B /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		2FA280A9F6A3A42AACBB0972 /* Buckets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buckets.h; sourceTree = "<group>"; };
 		2FA280BAB876740B963BBB44 /* BucketSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketSprite.h; sourceTree = "<group>"; };
 		2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
@@ -137,6 +137,7 @@
 		2FA28A0F951445B45AF12061 /* Bomb2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2D.m; sourceTree = "<group>"; };
 		2FA28A4CA415D5DBA2C1798E /* StandardRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardRandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28AA88E0D958362D9515B /* BucketsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsNode.m; sourceTree = "<group>"; };
+		2FA28B28F938997A3C7B6FCB /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2DSpec.m; sourceTree = "<group>"; };
 		2FA28C951EF791E384FF0C5E /* KaboomLevelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLevelSpec.m; sourceTree = "<group>"; };
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
@@ -153,7 +154,6 @@
 		2FA28F43377C8334BFCE6A95 /* BombingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombingLayer.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2FA28F71CD039144C4E294F7 /* Bomber2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber2D.h; sourceTree = "<group>"; };
-		2FA28FDCBD8729CB2F818A7C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = SOURCE_ROOT; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3AC467CF45DB460C935BFE36 /* Pods-Kaboom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaboom.xcconfig"; path = "Pods/Pods-Kaboom.xcconfig"; sourceTree = "<group>"; };
 		3ED61CA0C6924F2E930BD93C /* libPods-Kaboom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kaboom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -253,7 +253,6 @@
 				2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */,
 				2FA28A4CA415D5DBA2C1798E /* StandardRandomNumberGenerator.h */,
 				2FA284271FF8A675D4E0D818 /* Constants.h */,
-				2FA283FB21DAC661A2A41C64 /* Utilities */,
 				2FA28DCCDD0B042977B8775F /* KaboomLevel.m */,
 				2FA281E7BE0861494079A694 /* KaboomLevel.h */,
 				2FA289962B51500947CF5EA5 /* Bomber.h */,
@@ -263,6 +262,7 @@
 				2FA2857D24C15E52AF2D4F2F /* Bucket.h */,
 				2FA28CAED8819D4BCC149376 /* Bucket2D.h */,
 				2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */,
+				2FA2889680288B70E3EEB1E1 /* Utilities */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -325,20 +325,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2FA283FB21DAC661A2A41C64 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				2FA2809A9443D6596C24E803 /* Utility.m */,
-				2FA28FDCBD8729CB2F818A7C /* Utility.h */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
 		2FA287C679C14D69014463AE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */,
 				2FA2870A8066144664A454D0 /* UtilitySpec.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2FA2889680288B70E3EEB1E1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2FA2800275EACB12CB297F4B /* Utility.h */,
+				2FA28B28F938997A3C7B6FCB /* Utility.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -564,7 +564,7 @@
 				2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */,
 				2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */,
 				2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */,
-				2FA284B829E8B57A17E172C8 /* Utility.m in Sources */,
+				2FA28958EEBC6641CB4397A3 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +587,7 @@
 				2FA28622B00C64CDC2A430FB /* Bucket2DSpec.m in Sources */,
 				2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */,
 				2FA287C0A9BC150C012013EB /* UtilitySpec.m in Sources */,
-				2FA28B934B425636DF731DB2 /* Utility.m in Sources */,
+				2FA2859A8529C4D803F27C97 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
