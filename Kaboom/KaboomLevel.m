@@ -16,7 +16,7 @@
 +(id) newLevelWithSize:(CGSize)size
 {
   KaboomLevel *level = [KaboomLevel new];
-  level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 4)
+  level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, 180.0f)
                                               speed:1.0];
   RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
 
