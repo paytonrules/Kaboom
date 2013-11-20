@@ -102,7 +102,7 @@
 
 -(void) dropBomb
 {
-  NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y + (self.height / 2) + (self.bombHeight / 2)];
+  NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2) - (self.bombHeight / 2)];
   [self.droppedBombs addObject:bomb];
 }
 

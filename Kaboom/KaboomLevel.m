@@ -19,7 +19,7 @@
   level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, size.height / 4) speed:1.0];
   RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
 
-  level.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 40)
+  level.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 60.0    )
                                                 speed:60.0
                                       locationChooser:chooser];
   return level;
