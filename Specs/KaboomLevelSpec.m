@@ -15,10 +15,10 @@ OCDSpec2Context(KaboomLevelSpec) {
     });
 
     It(@"puts the bomber at the middle top", ^{
-      KaboomLevel *level = [KaboomLevel newLevelWithSize:CGSizeMake(100.0, 50.0)];
+      KaboomLevel *level = [KaboomLevel newLevelWithSize:CGSizeMake(100.0, 100.0)];
 
       [ExpectInt(level.bomber.position.x) toBe:50.0];
-      [ExpectInt(level.bomber.position.y) toBe:10.0];
+      [ExpectInt(level.bomber.position.y) toBe:40.0];
     });
 
     It(@"puts the buckets in the middle", ^{
