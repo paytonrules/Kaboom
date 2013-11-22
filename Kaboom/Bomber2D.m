@@ -8,7 +8,6 @@
 @property(assign) float speed;
 @property(strong) NSObject<LocationChooser> *locations;
 @property(assign) float location;
-@property(assign) BOOL started;
 @property(assign) int height;
 @property(assign) int bombHeight;
 @property(strong) NSMutableArray *droppedBombs;
@@ -43,6 +42,7 @@
     self.height = height;
     self.bombHeight = bombHeight;
     self.droppedBombs = [NSMutableArray new];
+    self.speed = 0;
   }
   return self;
 }
@@ -65,13 +65,12 @@
 -(void) startAtSpeed:(float) speed withBombs:(int) count
 {
   self.location = [self.locations next];
-  self.started = YES;
   self.speed = speed;
 }
 
 -(void) update:(float)deltaTime
 {
-  if (self.started)
+  if (self.speed > 0)
   {
     float moveDistance = self.speed * deltaTime;
     float distanceRemaining = abs(self.location - self.position.x);
