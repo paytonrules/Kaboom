@@ -38,7 +38,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:1.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:1.0 withBombs:1];
 
       [bomber update:1.0];
 
@@ -49,7 +49,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:2.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:2.0 withBombs:1];
 
       [bomber update:1.0];
 
@@ -60,7 +60,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:2.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:2.0 withBombs:1];
 
       [bomber update:2.0];
 
@@ -71,7 +71,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@20.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:1.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:1.0 withBombs:1];
 
       [bomber update:1.0];
 
@@ -82,7 +82,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @25.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) speed:1.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:1.0 withBombs:1];
 
       [bomber update:1.0];
       [bomber update:1.0];
@@ -94,7 +94,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @15.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) speed:2.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:2.0 withBombs:1];
 
       [bomber update:1.0];
       [bomber update:1.0];
@@ -106,7 +106,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @22.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) speed:2.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:2.0 withBombs:1];
 
       [bomber update:1.0];
       [bomber update:1.0];
@@ -134,7 +134,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 40) speed:1.0 locationChooser:locations];
 
-      [bomber start];
+      [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
 
       [ExpectInt(bomber.bombCount) toBe:1];
@@ -148,7 +148,7 @@ OCDSpec2Context(Bomber2DSpec) {
                                                  height:10
                                              bombHeight:20];
 
-      [bomber start];
+      [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
 
       // 1/2 of the bombHeight + 1/2 of the bomber height
@@ -165,7 +165,7 @@ OCDSpec2Context(Bomber2DSpec) {
                                                  height:10
                                              bombHeight:20];
 
-      [bomber start];
+      [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
       [bomber update:1.0];
 

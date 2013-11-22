@@ -31,7 +31,7 @@ OCDSpec2Context(KaboomLevelSpec) {
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
 
-      [(NSObject<Bomber> *)[bomber expect] start];
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:2.0 withBombs:0];
 
       [level start];
 

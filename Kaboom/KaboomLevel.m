@@ -59,7 +59,7 @@
 
 -(void) start
 {
-  [self.bomber start];
+  [self.bomber startAtSpeed:2.0 withBombs:0];
 }
 
 -(void) update:(CGFloat) deltaTime

@@ -66,7 +66,7 @@
   return [NSArray arrayWithArray: self.droppedBombs];
 }
 
--(void) start
+-(void) startAtSpeed:(float) speed withBombs:(int) count
 {
   self.location = [self.locations next];
   self.started = YES;
