@@ -21,28 +21,24 @@
 -(id)init
 {
   return [self initWithPosition:CGPointMake(0, 0)
-                          speed:0
                 locationChooser:nil
                          height:0
                      bombHeight:0];
 }
 
--(id) initWithPosition:(CGPoint)position speed:(float)speed locationChooser:(NSObject <LocationChooser> *)locations
+-(id) initWithPosition:(CGPoint)position locationChooser:(NSObject <LocationChooser> *)locations
 {
   return [self initWithPosition:position
-                          speed:speed
                 locationChooser:locations
                          height:0
                      bombHeight:0];
-
 }
 
--(id) initWithPosition:(CGPoint)position speed:(float)speed locationChooser:(NSObject <LocationChooser> *)locations height:(int)height bombHeight:(int)bombHeight
+-(id) initWithPosition:(CGPoint)position locationChooser:(NSObject <LocationChooser> *)locations height:(int)height bombHeight:(int)bombHeight
 {
   if (self = [super init])
   {
     self.position = position;
-    self.speed = speed;
     self.locations = locations;
     self.height = height;
     self.bombHeight = bombHeight;
@@ -70,6 +66,7 @@
 {
   self.location = [self.locations next];
   self.started = YES;
+  self.speed = speed;
 }
 
 -(void) update:(float)deltaTime

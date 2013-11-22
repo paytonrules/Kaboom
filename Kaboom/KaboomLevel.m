@@ -21,7 +21,6 @@
   RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
 
   level.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 60.0)
-                                              speed:60.0
                                     locationChooser:chooser];
   return level;
 }
@@ -59,7 +58,7 @@
 
 -(void) start
 {
-  [self.bomber startAtSpeed:2.0 withBombs:0];
+  [self.bomber startAtSpeed:60.0 withBombs:0];
 }
 
 -(void) update:(CGFloat) deltaTime

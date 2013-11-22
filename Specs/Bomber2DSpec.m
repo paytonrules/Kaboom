@@ -36,7 +36,7 @@ OCDSpec2Context(Bomber2DSpec) {
     
     It(@"moves towards its next spot", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:1.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:1];
 
@@ -47,7 +47,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"moves its speed per update (per second)", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:2.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) locationChooser:locations];
 
       [bomber startAtSpeed:2.0 withBombs:1];
 
@@ -58,7 +58,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"accounts for the update time when calculating tilt (speed is per second, update is in seconds)", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:2.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) locationChooser:locations];
 
       [bomber startAtSpeed:2.0 withBombs:1];
 
@@ -69,7 +69,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"goes in the direction of the spot", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@20.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) speed:1.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:1];
 
@@ -80,7 +80,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"begins heading to the next location when it hits the first location", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @25.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) speed:1.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:1];
 
@@ -92,7 +92,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"begins heading to the next location when it crosses - even if it doesn't hit it the next location", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @15.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) speed:2.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) locationChooser:locations];
 
       [bomber startAtSpeed:2.0 withBombs:1];
 
@@ -104,7 +104,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"stops at the location when coming from the left", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @22.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) speed:2.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) locationChooser:locations];
 
       [bomber startAtSpeed:2.0 withBombs:1];
 
@@ -116,7 +116,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"doesn't move until it is started", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @22.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) speed:2.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) locationChooser:locations];
 
       [bomber update:1.0];
 
@@ -125,14 +125,14 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"starts without any bombs", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) speed:2.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) locationChooser:locations];
 
       [ExpectInt(bomber.bombCount) toBe:0];
     });
 
     It(@"drops a bomb when it changes direction", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
-      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 40) speed:1.0 locationChooser:locations];
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 40) locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
@@ -143,7 +143,6 @@ OCDSpec2Context(Bomber2DSpec) {
     It(@"starts the bomb right below the bomber", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
-                                                  speed:1.0
                                         locationChooser:locations
                                                  height:10
                                              bombHeight:20];
@@ -160,7 +159,6 @@ OCDSpec2Context(Bomber2DSpec) {
     It(@"moves the bomb on each update", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0, @40.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
-                                                  speed:1.0
                                         locationChooser:locations
                                                  height:10
                                              bombHeight:20];
