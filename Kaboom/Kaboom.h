@@ -4,7 +4,7 @@
 @class Buckets;
 @protocol LevelLoader;
 
-@interface KaboomLevel : NSObject
+@interface Kaboom : NSObject
 
 +(id) newLevelWithSize:(CGSize) size;
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber;

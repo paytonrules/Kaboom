@@ -1,7 +1,7 @@
 #import "BombingLayer.h"
 #import "BucketsNode.h"
 #import "BomberSprite.h"
-#import "KaboomLevel.h"
+#import "Kaboom.h"
 
 enum TAGS {
   kBucket,
@@ -9,7 +9,7 @@ enum TAGS {
 };
 
 @interface BombingLayer()
-@property(strong) KaboomLevel *level;
+@property(strong) Kaboom *level;
 @property(strong) CCLabelTTF *score;
 @end
 
@@ -38,7 +38,7 @@ enum TAGS {
     self.touchEnabled = YES;
     self.accelerometerEnabled = YES;
 
-    self.level = [KaboomLevel newLevelWithSize:[CCDirector sharedDirector].winSize];
+    self.level = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
 
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.level.bomber];
     BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.level.buckets];

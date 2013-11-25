@@ -1,11 +1,11 @@
-#import "KaboomLevel.h"
+#import "Kaboom.h"
 #import "Bomber2D.h"
 #import "Buckets.h"
 #import "RandomLocationChooser.h"
 #import "PlistLevelsLoader.h"
 #import "Level.h"
 
-@interface KaboomLevel()
+@interface Kaboom ()
 
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
@@ -15,11 +15,11 @@
 
 @end
 
-@implementation KaboomLevel : NSObject
+@implementation Kaboom : NSObject
 
 +(id) newLevelWithSize:(CGSize)size
 {
-  KaboomLevel *level = [KaboomLevel new];
+  Kaboom *level = [Kaboom new];
   level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, 180.0f)
                                               speed:1.0];
   RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
@@ -31,28 +31,28 @@
 
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber
 {
-  KaboomLevel *level = [KaboomLevel new];
+  Kaboom *level = [Kaboom new];
   level.bomber = bomber;
   return level;
 }
 
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber andLevelLoader:(Class<LevelLoader>) loader
 {
-  KaboomLevel *level = [self newLevelWithBomber:bomber];
+  Kaboom *level = [self newLevelWithBomber:bomber];
   level.levelLoader = loader;
   return level;
 }
 
 +(id) newLevelWithBuckets:(Buckets *) buckets
 {
-  KaboomLevel *level = [KaboomLevel new];
+  Kaboom *level = [Kaboom new];
   level.buckets = buckets;
   return level;
 }
 
 +(id) newLevelWithBuckets:(Buckets *) buckets bomber:(NSObject<Bomber> *) bomber
 {
-  KaboomLevel *level = [KaboomLevel new];
+  Kaboom *level = [Kaboom new];
   level.buckets = buckets;
   level.bomber = bomber;
   return level;
