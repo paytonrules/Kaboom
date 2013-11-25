@@ -2,12 +2,16 @@
 #import "Bomber2D.h"
 #import "Buckets.h"
 #import "RandomLocationChooser.h"
+#import "PlistLevelsLoader.h"
+#import "Level.h"
 
 @interface KaboomLevel()
 
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
 @property(assign) BOOL gameOver;
+@property(strong) Class<LevelLoader> levelLoader;
+@property(assign) BOOL exploding;
 
 @end
 
@@ -32,6 +36,13 @@
   return level;
 }
 
++(id) newLevelWithBomber:(NSObject<Bomber> *) bomber andLevelLoader:(Class<LevelLoader>) loader
+{
+  KaboomLevel *level = [self newLevelWithBomber:bomber];
+  level.levelLoader = loader;
+  return level;
+}
+
 +(id) newLevelWithBuckets:(Buckets *) buckets
 {
   KaboomLevel *level = [KaboomLevel new];
@@ -52,13 +63,18 @@
   if (self = [super init])
   {
     self.gameOver = NO;
+    self.levelLoader = [PlistLevelsLoader class];
+    self.exploding = NO;
   }
   return self;
 }
 
 -(void) start
 {
-  [self.bomber startAtSpeed:60.0 withBombs:0];
+  NSArray *levels = [self.levelLoader load];
+  Level *firstLevel = levels[0];
+
+  [self.bomber startAtSpeed:firstLevel.speed withBombs:firstLevel.bombs];
 }
 
 -(void) update:(CGFloat) deltaTime
@@ -68,6 +84,7 @@
     [self.buckets update:deltaTime];
 
     if ([self.bomber bombHit]) {
+      self.exploding = YES;
       [self.buckets removeBucket];
       [self.bomber explode];
 
@@ -80,6 +97,7 @@
   }
 }
 
+// Does this belong here?  You don't tilt the game
 -(void) tilt:(CGFloat) tilt
 {
   [self.buckets tilt:tilt];

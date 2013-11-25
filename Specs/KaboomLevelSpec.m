@@ -3,6 +3,22 @@
 #import "KaboomLevel.h"
 #import "Buckets.h"
 #import "CCActionInterval.h"
+#import "LevelLoader.h"
+#import "Level.h"
+
+@interface PhonyLevelLoader : NSObject<LevelLoader>
+@end
+
+@implementation PhonyLevelLoader
+
++(NSArray *) load
+{
+  return @[
+      [Level newLevelWithBombs:0 speed:60.0]
+  ];
+}
+
+@end
 
 OCDSpec2Context(KaboomLevelSpec) {
 
@@ -27,9 +43,9 @@ OCDSpec2Context(KaboomLevelSpec) {
       [ExpectInt(level.buckets.position.x) toBe:50.0];
     });
 
-    It(@"delegates start to the bomber", ^{
+    It(@"starts the bomber on the first level", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber];
+      KaboomLevel *level = [KaboomLevel newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
 
@@ -159,7 +175,7 @@ OCDSpec2Context(KaboomLevelSpec) {
       [ExpectBool(level.gameOver) toBeFalse];
     });
 
-    It(@"doesn't end the game if there are bombs", ^{
+    It(@"removes the bucket and checks the bucket count AFTER checking if the bomb hit", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];
       KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
@@ -207,6 +223,30 @@ OCDSpec2Context(KaboomLevelSpec) {
       [level update:10];
 
       [bomber verify];
+    });
+
+    It(@"says its exploding when a bomb hits", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+
+      [level update:10];
+
+      [ExpectBool(level.exploding) toBeTrue];
+    });
+
+    It(@"starts with nothing exploding", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      KaboomLevel *level = [KaboomLevel newLevelWithBuckets:buckets bomber:bomber];
+
+      [[[bomber stub] andReturnValue:@NO] bombHit];
+
+      [level update:10];
+
+      [ExpectBool(level.exploding) toBeFalse];
     });
   });
 }
