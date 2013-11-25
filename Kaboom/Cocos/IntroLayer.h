@@ -10,12 +10,12 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 
-// BombingLayer
+// KaboomLayer
 @interface IntroLayer : CCLayer
 {
 }
 
-// returns a CCScene that contains the BombingLayer as the only child
+// returns a CCScene that contains the KaboomLayer as the only child
 +(CCScene *) scene;
 
 @end

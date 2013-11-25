@@ -68,7 +68,7 @@
 		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
-		2FA28C81C391BD41E6ACAA07 /* BombingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* BombingLayer.m */; };
+		2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */; };
 		2FA28C99D74E192153936D49 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
@@ -153,7 +153,7 @@
 		2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2DSpec.m; sourceTree = "<group>"; };
 		2FA28C951EF791E384FF0C5E /* KaboomSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomSpec.m; sourceTree = "<group>"; };
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
-		2FA28CD18454BBC990A7AD78 /* BombingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombingLayer.h; sourceTree = "<group>"; };
+		2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomLayer.h; sourceTree = "<group>"; };
 		2FA28CD73921DBD4533469C9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		2FA28CECA8E52455543D9256 /* bomber-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomber-ipadhd.png"; sourceTree = "<group>"; };
 		2FA28D7F03762665680A3DCF /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		2FA28DE3F164F6A7FCD6C43C /* bomb-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-ipad.png"; sourceTree = "<group>"; };
 		2FA28E033F3091031ECC9F1F /* LocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChooser.h; sourceTree = "<group>"; };
 		2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardRandomNumberGenerator.m; sourceTree = "<group>"; };
-		2FA28F43377C8334BFCE6A95 /* BombingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombingLayer.m; sourceTree = "<group>"; };
+		2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLayer.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2FA28F71CD039144C4E294F7 /* Bomber2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber2D.h; sourceTree = "<group>"; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -367,10 +367,10 @@
 			children = (
 				2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */,
 				2FA2828C94913DB7D43B33D7 /* IntroLayer.h */,
-				2FA28F43377C8334BFCE6A95 /* BombingLayer.m */,
+				2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */,
 				2FA28CD73921DBD4533469C9 /* IntroLayer.m */,
 				2FA28F5202D6444CC2ABC705 /* AppDelegate.m */,
-				2FA28CD18454BBC990A7AD78 /* BombingLayer.h */,
+				2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */,
 				2FA28AA88E0D958362D9515B /* BucketsNode.m */,
 				2FA285C9DAB47003A6FBA0FA /* BucketsNode.h */,
 				2FA285481EF46AADB0F024DB /* BomberSprite.m */,
@@ -575,7 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D264D11816B28F0060E3E9 /* main.m in Sources */,
-				2FA28C81C391BD41E6ACAA07 /* BombingLayer.m in Sources */,
+				2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */,
 				2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */,
 				2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */,
 				2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */,

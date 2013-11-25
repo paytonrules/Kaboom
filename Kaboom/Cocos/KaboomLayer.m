@@ -1,4 +1,4 @@
-#import "BombingLayer.h"
+#import "KaboomLayer.h"
 #import "BucketsNode.h"
 #import "BomberSprite.h"
 #import "Kaboom.h"
@@ -8,21 +8,21 @@ enum TAGS {
   kBomber
 };
 
-@interface BombingLayer()
+@interface KaboomLayer ()
 @property(strong) Kaboom *level;
 @property(strong) CCLabelTTF *score;
 @end
 
-@implementation BombingLayer
+@implementation KaboomLayer
 
-// Helper class method that creates a Scene with the BombingLayer as the only child.
+// Helper class method that creates a Scene with the KaboomLayer as the only child.
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	BombingLayer *layer = [BombingLayer node];
+	KaboomLayer *layer = [KaboomLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];

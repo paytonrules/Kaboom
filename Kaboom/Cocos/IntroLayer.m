@@ -9,15 +9,15 @@
 
 // Import the interfaces
 #import "IntroLayer.h"
-#import "BombingLayer.h"
+#import "KaboomLayer.h"
 
 
 #pragma mark - IntroLayer
 
-// BombingLayer implementation
+// KaboomLayer implementation
 @implementation IntroLayer
 
-// Helper class method that creates a Scene with the BombingLayer as the only child.
+// Helper class method that creates a Scene with the KaboomLayer as the only child.
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -61,6 +61,6 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[BombingLayer scene] ]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[KaboomLayer scene] ]];
 }
 @end
