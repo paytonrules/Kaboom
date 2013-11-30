@@ -14,7 +14,7 @@
 +(NSArray *) load
 {
   return @[
-      [Level newLevelWithBombs:0 speed:60.0]
+      @{@"Speed" : @"60.0", @"Bombs" : @"0"}
   ];
 }
 

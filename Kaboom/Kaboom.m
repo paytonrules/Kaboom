@@ -70,9 +70,10 @@
 -(void) start
 {
   NSArray *levels = [self.levelLoader load];
-  Level *firstLevel = levels[0];
+  float speed = [levels[0][@"Speed"] floatValue];
+  int bombs = [levels[0][@"Bombs"] floatValue];
 
-  [self.bomber startAtSpeed:firstLevel.speed withBombs:firstLevel.bombs];
+  [self.bomber startAtSpeed:speed withBombs:bombs];
 }
 
 -(void) update:(CGFloat) deltaTime

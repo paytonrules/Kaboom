@@ -1,5 +1,4 @@
 #import "PlistLevelsLoader.h"
-#import "LevelLoader.h"
 
 @implementation PlistLevelsLoader
 
