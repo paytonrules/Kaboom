@@ -51,6 +51,7 @@
 -(void) explode
 {
   self.droppedBombs = [NSMutableArray new];
+  self.exploding = YES;
 }
 
 -(int) bombCount
@@ -67,6 +68,7 @@
 {
   self.location = [self.locations next];
   self.speed = speed;
+  self.exploding = NO;
 }
 
 -(void) update:(float)deltaTime

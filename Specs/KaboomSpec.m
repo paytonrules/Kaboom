@@ -224,5 +224,6 @@ OCDSpec2Context(KaboomSpec) {
 
       [bomber verify];
     });
+
   });
 }
