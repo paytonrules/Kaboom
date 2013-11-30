@@ -11,6 +11,7 @@
 @property(assign) int height;
 @property(assign) int bombHeight;
 @property(strong) NSMutableArray *droppedBombs;
+@property(assign) BOOL exploding;
 
 -(void) updateBombs;
 @end

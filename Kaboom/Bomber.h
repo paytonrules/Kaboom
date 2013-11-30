@@ -12,5 +12,6 @@
 -(void) update:(float)deltaTime;
 -(BOOL) bombHit;
 -(void) explode;
+@property(readonly) BOOL exploding;
 
 @end

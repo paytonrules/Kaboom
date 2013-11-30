@@ -54,7 +54,7 @@ enum TAGS {
 
     [self scheduleUpdate];
 
-    [self.level start];
+    [self startLevel];
   }
   return self;
 }
@@ -66,25 +66,16 @@ enum TAGS {
 -(void) update:(ccTime)delta {
   [self.level update:delta];
   [self.score setString:[NSString stringWithFormat:@"%d", self.level.score]];
-
-  if (self.level.exploding && [self numberOfRunningActions] == 0) {
-    [self runAction: [CCSequence actions:
-        [CCDelayTime actionWithDuration:3],
-        [CCCallFunc actionWithTarget:self selector:@selector(restartLevel)],
-        nil ]];
-  }
 }
 
-// Bomb hits
-  // Game says "Bomber explode"
-    // Bomber stops moving
-    // Bombs - explode (so Bomber tells bombs to explode)
-      // Bombs say "exploding"
-      // Bomb Sprites play explode animation
-        // When the bombs are done exploding, you re-start
-        // "Update" would say "if [bomber.bombs] == 0 -> restart
-          // ?
+-(void) restartLevel
+{
+  [self scheduleOnce:@selector(startLevel) delay:1];
+}
 
-  // How do we start again?  What I'm doing here doesn't make sense
+-(void) startLevel
+{
+  [self.level start];
+}
 
 @end
