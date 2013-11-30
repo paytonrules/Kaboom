@@ -11,7 +11,6 @@
 @property(strong) Buckets *buckets;
 @property(assign) BOOL gameOver;
 @property(strong) Class<LevelLoader> levelLoader;
-@property(assign) BOOL exploding;
 
 @end
 
@@ -64,7 +63,6 @@
   {
     self.gameOver = NO;
     self.levelLoader = [PlistLevelsLoader class];
-    self.exploding = NO;
   }
   return self;
 }
@@ -84,7 +82,6 @@
     [self.buckets update:deltaTime];
 
     if ([self.bomber bombHit]) {
-      self.exploding = YES;
       [self.buckets removeBucket];
       [self.bomber explode];
 

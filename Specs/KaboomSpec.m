@@ -224,29 +224,5 @@ OCDSpec2Context(KaboomSpec) {
 
       [bomber verify];
     });
-
-    It(@"says its exploding when a bomb hits", ^{
-      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
-      [[[bomber stub] andReturnValue:@YES] bombHit];
-
-      [level update:10];
-
-      [ExpectBool(level.exploding) toBeTrue];
-    });
-
-    It(@"starts with nothing exploding", ^{
-      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
-      [[[bomber stub] andReturnValue:@NO] bombHit];
-
-      [level update:10];
-
-      [ExpectBool(level.exploding) toBeFalse];
-    });
   });
 }

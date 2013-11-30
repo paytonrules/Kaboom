@@ -19,5 +19,4 @@
 @property(readonly) Buckets *buckets;
 @property(assign) int score;
 @property(readonly) BOOL gameOver;
-@property(readonly) BOOL exploding;
 @end
