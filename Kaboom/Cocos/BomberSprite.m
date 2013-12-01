@@ -6,18 +6,8 @@ const int kBomb = 200;
 
 @interface BomberSprite()
 @property(strong) NSObject<Bomber> *bomber;
+@property(assign) BOOL explodingAnimation;
 @end
-
-// Waaaay too much code here
-// There's a state here - updating/not updating, managing that animation
-// Abstraction?
-// Actually the new implementation idea would fix that problem
-
-// So here's what we really want to do:
- // Start level
-    // On hit set BOMBER exploding not Level exploding
-    // On restart level wait a few seconds
-      // Then the level should start up again in the same spot
 
 // NEW IMPLEMENTATION:
   // Requires solving the constant clear and rebinding of sprites
@@ -40,9 +30,9 @@ const int kBomb = 200;
 {
   [self setPosition:self.bomber.position];
 
-  if (self.bomber.exploding) {
+  if (self.bomber.exploding && !self.explodingAnimation) {
+    self.explodingAnimation = YES;
     [self startBlowingUpBombs];
-    [self unscheduleAllSelectors];
   } else {
     [self redrawBombs];
   }
@@ -90,8 +80,8 @@ const int kBomb = 200;
 
 -(void) restartLevel
 {
+  self.explodingAnimation = NO;
   [(KaboomLayer *) self.parent restartLevel];
-  [self scheduleUpdate];
 }
 
 @end
