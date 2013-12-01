@@ -1,6 +1,7 @@
 #import "BombSprite.h"
 #import "Bomb2D.h"
 #import "BomberSprite.h"
+#import "BombExplosion.h"
 
 @interface BombSprite()
 @property(strong) NSObject<Bomb> *bomb;
@@ -22,21 +23,23 @@
 {
   self.position = self.bomb.position;
   ((Bomb2D *) self.bomb).boundingBox = self.boundingBox;
+
+  if (self.bomb.exploding) {
+    [self explode];
+    [self unscheduleUpdate];
+  }
 }
 
--(void) blowUp:(BomberSprite *) bomber
+-(void) explode
 {
-  CCParticleExplosion *explosion = [CCParticleExplosion node];
-  [self addChild:explosion z:1];
-  self.bomber = bomber;
-  [self scheduleOnce:@selector(endExplosion) delay:1];
+  BombExplosion *explosion = [BombExplosion newWithBombSprite:self];
+  [self addChild:explosion];
 }
 
--(void) endExplosion
+-(void) explosionComplete
 {
-  BomberSprite *bomberSprite = self.bomber;
-  self.bomber = nil;
-  [bomberSprite bombBlownUp:self];
+  [self.bomb explosionComplete];
+  [self removeFromParentAndCleanup:YES];
 }
 
 @end

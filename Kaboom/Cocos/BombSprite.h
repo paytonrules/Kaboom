@@ -7,5 +7,6 @@
 
 +(id) newSpriteWithBomb:(NSObject<Bomb> *) bomb;
 -(void) blowUp:(BomberSprite *) bomber;
+-(void) explosionComplete;
 
 @end
