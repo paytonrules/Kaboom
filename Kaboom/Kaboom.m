@@ -3,7 +3,7 @@
 #import "Buckets.h"
 #import "RandomLocationChooser.h"
 #import "PlistLevelsLoader.h"
-#import "Level.h"
+#import "KaboomPresenter.h"
 
 @interface Kaboom ()
 
@@ -100,4 +100,10 @@
 {
   [self.buckets tilt:tilt];
 }
+
+-(KaboomPresenter *) presenter
+{
+  return nil;
+}
+
 @end

@@ -1,11 +1,12 @@
 #import "BombSprite.h"
 #import "Bomb2D.h"
-#import "BomberSprite.h"
+#import "KaboomLayer.h"
 #import "BombExplosion.h"
+
+const int kBomb = 200;
 
 @interface BombSprite()
 @property(strong) NSObject<Bomb> *bomb;
-@property(strong) BomberSprite* bomber;
 @end
 
 @implementation BombSprite
@@ -23,11 +24,6 @@
 {
   self.position = self.bomb.position;
   ((Bomb2D *) self.bomb).boundingBox = self.boundingBox;
-
-  if (self.bomb.exploding) {
-    [self explode];
-    [self unscheduleUpdate];
-  }
 }
 
 -(void) explode
@@ -38,8 +34,8 @@
 
 -(void) explosionComplete
 {
-  [self.bomb explosionComplete];
   [self removeFromParentAndCleanup:YES];
+  [(KaboomLayer *) self.parent explosionComplete];
 }
 
 @end

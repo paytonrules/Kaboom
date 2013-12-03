@@ -2,6 +2,8 @@
 #import "BucketsNode.h"
 #import "BomberSprite.h"
 #import "Kaboom.h"
+#import "BombSprite.h"
+#import "KaboomPresenter.h"
 
 enum TAGS {
   kBucket,
@@ -9,9 +11,8 @@ enum TAGS {
 };
 
 @interface KaboomLayer ()
-@property(strong) Kaboom *level;
+@property(strong) KaboomPresenter *presenter;
 @property(strong) CCLabelTTF *score;
-@property(strong) CCSequence *explosionAnimation;
 @end
 
 @implementation KaboomLayer
@@ -37,10 +38,11 @@ enum TAGS {
     self.touchEnabled = YES;
     self.accelerometerEnabled = YES;
 
-    self.level = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
+    Kaboom *game = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
+    self.presenter = [KaboomPresenter newPresenterWithGame:game];
 
-    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.level.bomber];
-    BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.level.buckets];
+    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:game.bomber];
+    BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:game.buckets];
     [self addChild:bucketSprite z:0 tag:kBucket];
     [self addChild:bomberSprite z:0 tag:kBomber];
     CCLabelTTF *score = [CCLabelTTF labelWithString:@"TEST"
@@ -60,12 +62,55 @@ enum TAGS {
 }
 
 -(void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-  [self.level tilt:-acceleration.y];
+  [self.presenter tilt:-acceleration.y];
 }
 
 -(void) update:(ccTime)delta {
-  [self.level update:delta];
-  [self.score setString:[NSString stringWithFormat:@"%d", self.level.score]];
+  // Mayhap you should go through the presenter for everything
+  [self.presenter update:delta];
+  [self.score setString:[NSString stringWithFormat:@"%d", self.presenter.score]];
+
+  if (self.presenter.explode)
+  {
+    [self.presenter explosionStarted];
+    [self blowUpBombs];
+  }
+
+  for (NSObject<Bomb> *bomb in self.presenter.removedBombs)
+  {
+    for (CCNode *node in self.children)
+    {
+      if (node.tag == kBomb && [node isEqual:bomb])
+      {
+        [node removeFromParentAndCleanup:YES];
+      }
+    }
+  }
+
+  for (NSObject<Bomb> *bomb in self.presenter.createdBombs)
+  {
+    BombSprite *bombSprite = [BombSprite newSpriteWithBomb:bomb];
+    [self addChild:bombSprite z:0 tag:kBomb];
+  }
+}
+
+-(void) blowUpBombs
+{
+  BombSprite *sprite = (BombSprite *) [self getChildByTag:kBomb];
+
+  if (sprite != nil)
+  {
+    [sprite explode];
+  }
+  else
+  {
+    [self restartLevel];
+  }
+}
+
+-(void) explosionComplete
+{
+  [self blowUpBombs];
 }
 
 -(void) restartLevel
@@ -75,7 +120,7 @@ enum TAGS {
 
 -(void) startLevel
 {
-  [self.level start];
+  [self.presenter start];
 }
 
 @end

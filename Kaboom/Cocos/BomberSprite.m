@@ -1,8 +1,4 @@
 #import "BomberSprite.h"
-#import "BombSprite.h"
-#import "KaboomLayer.h"
-
-const int kBomb = 200;
 
 @interface BomberSprite()
 @property(strong) NSObject<Bomber> *bomber;
@@ -21,23 +17,5 @@ const int kBomb = 200;
 -(void) update:(ccTime)delta
 {
   [self setPosition:self.bomber.position];
-
-  if (!self.bomber.exploding) {
-    [self redrawBombs];
-  }
 }
-
--(void) redrawBombs
-{
-  while ([self.parent getChildByTag:kBomb])
-  {
-    [self.parent removeChildByTag:kBomb cleanup:YES];
-  }
-
-  [self.bomber.bombs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    BombSprite *bombSprite = [BombSprite newSpriteWithBomb:obj];
-    [self.parent addChild:bombSprite z:0 tag:kBomb];
-  }];
-}
-
 @end

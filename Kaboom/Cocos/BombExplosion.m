@@ -12,7 +12,7 @@
 {
   BombExplosion *explosion = [BombExplosion new];
   explosion.sprite = sprite;
-  return sprite;
+  return explosion;
 }
 
 - (id)init {
