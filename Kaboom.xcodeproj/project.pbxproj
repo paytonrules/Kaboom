@@ -78,6 +78,7 @@
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28EF3472AD27B423BA8EE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
+		2FA28FAB0CA126DA821EDAA6 /* KaboomPresenterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28211B0DA553358E83D38 /* KaboomPresenterSpec.m */; };
 		2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DFAA6766D477DC0BEF /* BombSprite.m */; };
 		2FA28FFC1B5232CB8BD1E36A /* bomb-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28DE3F164F6A7FCD6C43C /* bomb-ipad.png */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
@@ -123,6 +124,7 @@
 		2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
 		2FA281E7BE0861494079A694 /* Kaboom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kaboom.h; sourceTree = "<group>"; };
 		2FA281F9C8EF645AF53CC76D /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
+		2FA28211B0DA553358E83D38 /* KaboomPresenterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomPresenterSpec.m; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				2FA28C951EF791E384FF0C5E /* KaboomSpec.m */,
 				2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */,
 				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
+				2FA28211B0DA553358E83D38 /* KaboomPresenterSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				2FA28EF3472AD27B423BA8EE /* Level.m in Sources */,
 				2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */,
 				2FA28D56DCA4B548E70D5840 /* KaboomPresenter.m in Sources */,
+				2FA28FAB0CA126DA821EDAA6 /* KaboomPresenterSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

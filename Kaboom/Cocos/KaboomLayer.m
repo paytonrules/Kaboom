@@ -66,7 +66,6 @@ enum TAGS {
 }
 
 -(void) update:(ccTime)delta {
-  // Mayhap you should go through the presenter for everything
   [self.presenter update:delta];
   [self.score setString:[NSString stringWithFormat:@"%d", self.presenter.score]];
 
