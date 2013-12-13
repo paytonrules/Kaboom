@@ -15,7 +15,6 @@
 -(void) start;
 -(void) update:(CGFloat) deltaTime;
 -(void) tilt:(CGFloat) tilt;
--(KaboomPresenter *) presenter;
 
 @property(readonly) NSObject<Bomber> *bomber;
 @property(readonly) Buckets *buckets;

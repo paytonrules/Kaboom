@@ -4,7 +4,6 @@
 #import "Buckets.h"
 #import "CCActionInterval.h"
 #import "LevelLoader.h"
-#import "Level.h"
 
 @interface PhonyLevelLoader : NSObject<LevelLoader>
 @end
@@ -212,6 +211,7 @@ OCDSpec2Context(KaboomSpec) {
       [bomber verify];
     });
 
+    // Test may not be true
     It(@"Tells the bomber to blow up when a bomb hits", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];
@@ -224,6 +224,5 @@ OCDSpec2Context(KaboomSpec) {
 
       [bomber verify];
     });
-
   });
 }

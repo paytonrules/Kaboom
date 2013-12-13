@@ -101,9 +101,4 @@
   [self.buckets tilt:tilt];
 }
 
--(KaboomPresenter *) presenter
-{
-  return nil;
-}
-
 @end

@@ -72,6 +72,8 @@
 		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
 		2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */; };
 		2FA28C99D74E192153936D49 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
+		2FA28CE1AB5D5A5EA388D782 /* NullBomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */; };
+		2FA28D0A5173AC70B0036B58 /* NullBomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28D56DCA4B548E70D5840 /* KaboomPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28868C8856C40CF6C754E /* KaboomPresenter.m */; };
@@ -128,6 +130,7 @@
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
+		2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullBomber.m; sourceTree = "<group>"; };
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284271FF8A675D4E0D818 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
 		2FA286FCDD89AA9093552F70 /* BombSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombSprite.h; sourceTree = "<group>"; };
 		2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2D.m; sourceTree = "<group>"; };
+		2FA287E7A1D82D106B2BDC02 /* NullBomber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullBomber.h; sourceTree = "<group>"; };
 		2FA28831461D09EEC3799121 /* Bomb2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb2D.h; sourceTree = "<group>"; };
 		2FA28868C8856C40CF6C754E /* KaboomPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomPresenter.m; sourceTree = "<group>"; };
 		2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-ipadhd.png"; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				2FA283ED09D1A0D33B271365 /* Utilities */,
 				2FA28868C8856C40CF6C754E /* KaboomPresenter.m */,
 				2FA28D0BD03EA9B5B2559E62 /* KaboomPresenter.h */,
+				2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */,
+				2FA287E7A1D82D106B2BDC02 /* NullBomber.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -607,6 +613,7 @@
 				2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */,
 				2FA28A4C733A233C5C9C32A6 /* BombExplosion.m in Sources */,
 				2FA284FF71A28EEAF949D09F /* KaboomPresenter.m in Sources */,
+				2FA28D0A5173AC70B0036B58 /* NullBomber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +639,7 @@
 				2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */,
 				2FA28D56DCA4B548E70D5840 /* KaboomPresenter.m in Sources */,
 				2FA28FAB0CA126DA821EDAA6 /* KaboomPresenterSpec.m in Sources */,
+				2FA28CE1AB5D5A5EA388D782 /* NullBomber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
