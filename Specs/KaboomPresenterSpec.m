@@ -22,6 +22,18 @@ OCDSpec2Context(KaboomPresenter) {
       [game verify];
     });
 
+    It(@"is not exploded when started", ^{
+      id game = [OCMockObject niceMockForClass:[Kaboom class]];
+      KaboomPresenter *presenter = [KaboomPresenter newPresenterWithGame:game];
+
+      [presenter explosionStarted];
+      [presenter start];
+
+      [ExpectBool(presenter.exploding) toBeFalse];
+
+      [game verify];
+    });
+
     It(@"delegates update to its game", ^{
       id game = [OCMockObject mockForClass:[Kaboom class]];
       KaboomPresenter *presenter = [KaboomPresenter newPresenterWithGame:game];

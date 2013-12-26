@@ -37,6 +37,7 @@
 
 -(void) start
 {
+  self.exploding = NO;
   [self.game start];
 }
 

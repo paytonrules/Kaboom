@@ -7,6 +7,7 @@
 
 @property(readonly) NSArray *createdBombs;
 @property(readonly) int score;
+@property(readonly) BOOL exploding;
 
 +(id) newPresenterWithGame:(Kaboom *) game;
 
