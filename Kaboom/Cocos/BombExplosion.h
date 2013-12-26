@@ -4,6 +4,4 @@
 
 @interface BombExplosion : CCParticleExplosion
 
-+(id) newWithBombSprite:(BombSprite *) sprite;
-
 @end

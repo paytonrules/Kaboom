@@ -28,14 +28,9 @@ const int kBomb = 200;
 
 -(void) explode
 {
-  BombExplosion *explosion = [BombExplosion newWithBombSprite:self];
-  [self addChild:explosion];
-}
-
--(void) explosionComplete
-{
-  [self removeFromParentAndCleanup:YES];
-  [(KaboomLayer *) self.parent explosionComplete];
+  BombExplosion *explosion = [BombExplosion new];
+  [self.parent addChild:explosion];
+  [self removeFromParent];
 }
 
 @end
