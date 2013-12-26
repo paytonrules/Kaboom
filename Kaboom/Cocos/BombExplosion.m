@@ -17,7 +17,6 @@
 
 -(void) onExit
 {
-  NSLog(@"Here I am %@", self);
   [(KaboomLayer *)self.parent explosionComplete];
 }
 @end

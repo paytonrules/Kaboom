@@ -29,6 +29,7 @@ const int kBomb = 200;
 -(void) explode
 {
   BombExplosion *explosion = [BombExplosion new];
+  explosion.position = self.position;
   [self.parent addChild:explosion];
   [self removeFromParent];
 }

@@ -102,7 +102,6 @@ enum TAGS {
 -(void) blowUpBombs
 {
   BombSprite *sprite = (BombSprite *) [self getChildByTag:kBomb];
-  NSLog(@"Blowing up sprite %@", sprite);
 
   if (sprite != nil)
   {
