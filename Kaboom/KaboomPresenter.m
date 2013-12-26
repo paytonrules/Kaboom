@@ -1,14 +1,15 @@
 #import "KaboomPresenter.h"
 #import "Kaboom.h"
 #import "NullBomber.h"
+#import "GameBlackboard.h"
+#import "Event.h"
 
 @interface KaboomPresenter()
 
 @property(strong) Kaboom *game;
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) NSArray *createdBombs;
-@property(strong) NSObject<Bomber> *previousFramesBombs;
-
+@property(assign) BOOL exploding;
 @end
 
 @implementation KaboomPresenter
@@ -16,11 +17,6 @@
 +(id) newPresenterWithGame:(Kaboom *)game
 {
   return [self newPresenterWithGame:game bomber:[NullBomber new]];
-}
-
-+(id) newPresenterWithBomber:(NSObject<Bomber> *) bomber
-{
-  return [self newPresenterWithGame:[Kaboom new] bomber:bomber];
 }
 
 +(id) newPresenterWithGame:(Kaboom *)game bomber:(NSObject<Bomber> *) bomber
@@ -31,6 +27,14 @@
   return presenter;
 }
 
+-(id) init {
+  if (self = [super init]) {
+    [[GameBlackboard sharedBlackboard] registerWatcher:self action:@selector(addBomb:) event:kBombDropped];
+    self.createdBombs = [NSArray array];
+  }
+  return self;
+}
+
 -(void) start
 {
   [self.game start];
@@ -38,22 +42,24 @@
 
 -(void) update:(CGFloat)delta
 {
-  [self.game update:delta];
-
-  // Check the difference
-  self.createdBombs = self.bomber.bombs;
-
-
-  self.previousFramesBombs = self.bomber.bombs;
+  if (!self.exploding) {
+    self.createdBombs = [NSArray array];
+    [self.game update:delta];
+  }
 }
 
--(void) tilt:(UIAccelerationValue)acceleration
+-(void) addBomb:(Event *)evt
 {
+  self.createdBombs = [self.createdBombs arrayByAddingObject:evt.data];
+}
 
+-(void) tilt:(float)acceleration
+{
+  [self.game tilt:acceleration];
 }
 
 -(void) explosionStarted
 {
-
+  self.exploding = YES;
 }
 @end

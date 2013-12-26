@@ -4,6 +4,8 @@
 #import "Buckets.h"
 #import "CCActionInterval.h"
 #import "LevelLoader.h"
+#import "GameBlackboard.h"
+#import "Event.h"
 
 @interface PhonyLevelLoader : NSObject<LevelLoader>
 @end
@@ -15,6 +17,18 @@
   return @[
       @{@"Speed" : @"60.0", @"Bombs" : @"0"}
   ];
+}
+@end
+
+@interface BombHitWatcher : NSObject
+@property (assign) BOOL bombHit;
+@end
+
+@implementation BombHitWatcher
+
+-(void) bombHit:(Event *) evt
+{
+  self.bombHit = YES;
 }
 
 @end
@@ -144,6 +158,21 @@ OCDSpec2Context(KaboomSpec) {
       [level update:10];
 
       [buckets verify];
+    });
+
+    It(@"writes a notification when a bomb hits", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
+
+      BombHitWatcher *watcher = [BombHitWatcher new];
+      GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+      [blackboard registerWatcher:watcher action:@selector(bombHit:) event:kBombHit];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [level update:10];
+
+      [ExpectBool(watcher.bombHit) toBeTrue];
     });
 
     It(@"ends the game if there are no buckets left", ^{

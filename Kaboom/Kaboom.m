@@ -4,6 +4,8 @@
 #import "RandomLocationChooser.h"
 #import "PlistLevelsLoader.h"
 #import "KaboomPresenter.h"
+#import "GameBlackboard.h"
+#import "Event.h"
 
 @interface Kaboom ()
 
@@ -83,6 +85,7 @@
     [self.buckets update:deltaTime];
 
     if ([self.bomber bombHit]) {
+      [[GameBlackboard sharedBlackboard] notify:kBombHit event:nil];
       [self.buckets removeBucket];
       [self.bomber explode];
 

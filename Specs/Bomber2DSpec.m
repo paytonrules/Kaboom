@@ -4,6 +4,8 @@
 #import "Buckets.h"
 #import "Constants.h"
 #import "Bomb2D.h"
+#import "GameBlackboard.h"
+#import "Event.h"
 
 @interface RiggedLocations : NSObject<LocationChooser>
 + (RiggedLocations *)newWithValues:(NSArray *)array;
@@ -28,6 +30,18 @@
   return locations;
 }
 
+@end
+
+@interface Bomber2DWatcher : NSObject
+@property Event *evt;
+@end
+
+@implementation Bomber2DWatcher
+
+-(void) action:(Event *)evt
+{
+  self.evt = evt;
+}
 @end
 
 OCDSpec2Context(Bomber2DSpec) {
@@ -251,6 +265,40 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber startAtSpeed:1.0 withBombs:1];
 
       [ExpectBool(bomber.exploding) toBeFalse];
+    });
+
+    It(@"Writes an event to the blackboard when it drops a bomb", ^{
+      GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+      [blackboard clear];
+      Bomber2DWatcher *watcher = [Bomber2DWatcher new];
+      [blackboard registerWatcher:watcher action:@selector(action:) event:kBombDropped];
+
+      Bomber2D *bomber = [Bomber2D new];
+
+      [bomber dropBomb];
+
+      [ExpectObj(watcher.evt.data) toBe:bomber.bombs[0]];
+    });
+
+    It(@"Writes an event to the blackboard when a bomb is caught", ^{
+      //Setup watcher
+      GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+      [blackboard clear];
+      Bomber2DWatcher *watcher = [Bomber2DWatcher new];
+      [blackboard registerWatcher:watcher action:@selector(action:) event:kBombCaught];
+
+      // Drop a bomb
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber dropBomb];
+      NSObject<Bomb> *bomb = bomber.bombs[0];
+
+      // Catch said bomb
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[0]];
+
+      // Verify notification is sent
+      [bomber checkBombs:buckets];
+      [ExpectObj(watcher.evt.data) toBe:bomb];
     });
   });
 }

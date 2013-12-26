@@ -2,6 +2,8 @@
 #import "Constants.h"
 #import "Bomb2D.h"
 #import "Buckets.h"
+#import "GameBlackboard.h"
+#import "Event.h"
 
 @interface Bomber2D ()
 @property(assign) CGPoint position;
@@ -103,6 +105,7 @@
 {
   NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2) - (self.bombHeight / 2)];
   [self.droppedBombs addObject:bomb];
+  [[GameBlackboard sharedBlackboard] notify:kBombDropped event:[Event newEventWithData:bomb]];
 }
 
 -(void) updateBombs
@@ -113,18 +116,20 @@
   }
 }
 
+// Way too many side effects here.
 -(NSInteger) checkBombs:(Buckets *)buckets
 {
   int caughtBombs = 0;
   NSMutableArray *remainingBombs = [NSMutableArray new];
-  for (NSObject<Bomb> *bombPosition in self.droppedBombs)
+  for (NSObject<Bomb> *bomb in self.droppedBombs)
   {
-    if (![buckets caughtBomb:bombPosition])
+    if (![buckets caughtBomb:bomb])
     {
-      [remainingBombs addObject:bombPosition];
+      [remainingBombs addObject:bomb];
     }
     else
     {
+      [[GameBlackboard sharedBlackboard] notify:kBombCaught event:[Event newEventWithData:bomb]];
       caughtBombs++ ;
     }
   }

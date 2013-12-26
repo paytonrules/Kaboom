@@ -4,6 +4,8 @@
 #import "Kaboom.h"
 #import "BombSprite.h"
 #import "KaboomPresenter.h"
+#import "GameBlackboard.h"
+#import "Event.h"
 
 enum TAGS {
   kBucket,
@@ -51,6 +53,10 @@ enum TAGS {
     // DesignSize?
     score.position = ccp(size.width - 40, size.height - 40);
 
+    GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+    [blackboard registerWatcher:self action:@selector(removeBomb:) event:kBombCaught];
+    [blackboard registerWatcher:self action:@selector(bombHit:) event:kBombHit];
+
     [self addChild:score];
     self.score = score;
 
@@ -69,28 +75,28 @@ enum TAGS {
   [self.presenter update:delta];
   [self.score setString:[NSString stringWithFormat:@"%d", self.presenter.score]];
 
-  if (self.presenter.explode)
-  {
-    [self.presenter explosionStarted];
-    [self blowUpBombs];
-  }
-
-  for (NSObject<Bomb> *bomb in self.presenter.removedBombs)
-  {
-    for (CCNode *node in self.children)
-    {
-      if (node.tag == kBomb && [node isEqual:bomb])
-      {
-        [node removeFromParentAndCleanup:YES];
-      }
-    }
-  }
-
   for (NSObject<Bomb> *bomb in self.presenter.createdBombs)
   {
     BombSprite *bombSprite = [BombSprite newSpriteWithBomb:bomb];
     [self addChild:bombSprite z:0 tag:kBomb];
   }
+}
+
+-(void) removeBomb:(Event *) evt
+{
+  for (CCNode *node in self.children)
+  {
+    if (node.tag == kBomb && [node isEqual:evt.data])
+    {
+      [node removeFromParentAndCleanup:YES];
+    }
+  }
+}
+
+-(void) bombHit:(Event *) evt
+{
+  [self.presenter explosionStarted];
+  [self blowUpBombs];
 }
 
 -(void) blowUpBombs
