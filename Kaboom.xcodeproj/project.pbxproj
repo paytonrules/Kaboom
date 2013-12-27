@@ -44,6 +44,7 @@
 		2FA2850029BDCDB0D2BE7EBC /* KaboomSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomSpec.m */; };
 		2FA28522E9A7CE30113818E2 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
 		2FA28534AD207A216C76BD7B /* bomber-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28CECA8E52455543D9256 /* bomber-ipadhd.png */; };
+		2FA28536E014D17846EEA7C8 /* Explosion.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 2FA284407AA62D6D0D16734A /* Explosion.ccbi */; };
 		2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA285A0E29ED47D1417F7BC /* Bomb2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A0F951445B45AF12061 /* Bomb2D.m */; };
@@ -66,6 +67,7 @@
 		2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */; };
 		2FA28A4C733A233C5C9C32A6 /* BombExplosion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284B4C0D2EDB6A139A2E0 /* BombExplosion.m */; };
 		2FA28A522C69779A46FC8B92 /* levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28D81C30296DC88C95456 /* levels.plist */; };
+		2FA28AB5646A4158A188BCDA /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2821851BD13F77BC6DB45 /* fire.png */; };
 		2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28B50C9E063A7A90D5662 /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
@@ -133,12 +135,14 @@
 		2FA281F9C8EF645AF53CC76D /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
 		2FA2820F7F26FF1AB604EBDF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		2FA28211B0DA553358E83D38 /* KaboomPresenterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomPresenterSpec.m; sourceTree = "<group>"; };
+		2FA2821851BD13F77BC6DB45 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
 		2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullBomber.m; sourceTree = "<group>"; };
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284271FF8A675D4E0D818 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2FA284407AA62D6D0D16734A /* Explosion.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file.ccbi; path = Explosion.ccbi; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
 		2FA284B4C0D2EDB6A139A2E0 /* BombExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombExplosion.m; sourceTree = "<group>"; };
 		2FA285481EF46AADB0F024DB /* BomberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BomberSprite.m; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				2FA28DE3F164F6A7FCD6C43C /* bomb-ipad.png */,
 				2FA28923F9066842A8F8F5C5 /* buckets-ipad.png */,
 				2FA286532A831D492022AA18 /* buckets-ipadhd.png */,
+				2FA2821851BD13F77BC6DB45 /* fire.png */,
+				2FA28D20F389D15DD3CE3212 /* Explosion */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -393,6 +399,15 @@
 				2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2FA28D20F389D15DD3CE3212 /* Explosion */ = {
+			isa = PBXGroup;
+			children = (
+				2FA284407AA62D6D0D16734A /* Explosion.ccbi */,
+			);
+			name = Explosion;
+			path = Resources/Explosion;
 			sourceTree = "<group>";
 		};
 		2FA28E47EE21C30A5784314C /* Cocos */ = {
@@ -513,6 +528,8 @@
 				2FA28804601BF16A2FF13E8E /* buckets-ipadhd.png in Resources */,
 				2FA28A522C69779A46FC8B92 /* levels.plist in Resources */,
 				2FA28B50C9E063A7A90D5662 /* Level.h in Resources */,
+				2FA28AB5646A4158A188BCDA /* fire.png in Resources */,
+				2FA28536E014D17846EEA7C8 /* Explosion.ccbi in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

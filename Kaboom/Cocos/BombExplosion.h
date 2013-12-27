@@ -2,6 +2,6 @@
 
 @class BombSprite;
 
-@interface BombExplosion : CCParticleExplosion
+@interface BombExplosion : CCParticleSmoke
 
 @end

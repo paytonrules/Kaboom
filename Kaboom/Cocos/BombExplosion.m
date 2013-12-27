@@ -8,7 +8,6 @@
 - (id)init {
   self = [super init];
   if (self) {
-    self.duration = 1.0f;
     self.autoRemoveOnFinish = YES;
   }
 

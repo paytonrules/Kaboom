@@ -8,7 +8,6 @@ FOUNDATION_EXPORT const int kBomb;
 @interface BombSprite : CCSprite
 
 +(id) newSpriteWithBomb:(NSObject<Bomb> *) bomb;
--(void) explosionComplete;
 -(void) explode;
 
 @end

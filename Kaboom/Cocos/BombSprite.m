@@ -1,6 +1,5 @@
 #import "BombSprite.h"
 #import "Bomb2D.h"
-#import "KaboomLayer.h"
 #import "BombExplosion.h"
 
 const int kBomb = 200;
