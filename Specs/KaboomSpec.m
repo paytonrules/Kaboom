@@ -67,6 +67,21 @@ OCDSpec2Context(KaboomSpec) {
       [bomber verify];
     });
 
+    It(@"only does that once, not on each update", ^{
+      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      [[bomber stub] checkBombs:[OCMArg any]];
+      [[bomber stub] update:1.0];
+      [[[bomber stub] andReturnValue:@NO] bombHit];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
+
+      [level start];
+      [level update:1.0];
+
+      [bomber verify];
+    });
+
     It(@"delegates update to the bomber", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       [[[bomber stub] andReturnValue:@NO] bombHit];
@@ -89,6 +104,21 @@ OCDSpec2Context(KaboomSpec) {
       [[buckets expect] update:1.0];
 
       [level start];
+      [level update:1.0];
+
+      [buckets verify];
+    });
+
+    It(@"delegates update to the bucket repeatedly", ^{
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      [[[buckets stub] andReturnValue:@1] bucketCount];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets];
+
+      [[buckets expect] update:1.0];
+      [[buckets expect] update:1.0];
+
+      [level start];
+      [level update:1.0];
       [level update:1.0];
 
       [buckets verify];

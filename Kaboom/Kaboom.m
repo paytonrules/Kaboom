@@ -73,7 +73,7 @@
     TKState *exploding = [TKState stateWithName:@"Exploding"];
     TKState *gameOver = [TKState stateWithName:@"Game Over"];
 
-    [droppingBombs setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
+    [waitingForStart setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
       [self startBombing];
     }];
 
@@ -91,8 +91,9 @@
     TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart, exploding ] toState:droppingBombs];
     TKEvent *bombHit = [TKEvent eventWithName:@"Bomb Hit" transitioningFromStates:@[ checkingBombs ] toState:exploding];
     TKEvent *endGame = [TKEvent eventWithName:@"End Game" transitioningFromStates:@[ checkingBombs ] toState:gameOver];
+    TKEvent *noHits = [TKEvent eventWithName:@"No Hit" transitioningFromStates:@[ checkingBombs ] toState:droppingBombs];
     TKEvent *update = [TKEvent eventWithName:@"Update" transitioningFromStates:@[ droppingBombs ] toState:checkingBombs];
-    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, update ]];
+    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update ]];
 
     [self.gameStateMachine activate];
 
@@ -136,6 +137,8 @@
     } else {
       [self.gameStateMachine fireEvent:@"Bomb Hit" userInfo:nil error:nil];
     }
+  } else {
+    [self.gameStateMachine fireEvent:@"No Hit" userInfo:nil error: nil];
   }
 
   self.score += [self.bomber checkBombs:self.buckets];
