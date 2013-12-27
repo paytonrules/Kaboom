@@ -1,7 +1,6 @@
 #import "BombExplosion.h"
 #import "KaboomLayer.h"
 
-
 @implementation BombExplosion
 
 - (id)init {

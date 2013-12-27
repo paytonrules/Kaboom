@@ -3,7 +3,6 @@
 #import "Buckets.h"
 #import "RandomLocationChooser.h"
 #import "PlistLevelsLoader.h"
-#import "KaboomPresenter.h"
 #import "GameBlackboard.h"
 #import "Event.h"
 
@@ -12,6 +11,7 @@
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
 @property(assign) BOOL gameOver;
+@property(assign) BOOL exploding;
 @property(strong) Class<LevelLoader> levelLoader;
 
 @end
@@ -74,13 +74,14 @@
   NSArray *levels = [self.levelLoader load];
   float speed = [levels[0][@"Speed"] floatValue];
   int bombs = [levels[0][@"Bombs"] floatValue];
+  self.exploding = NO;
 
   [self.bomber startAtSpeed:speed withBombs:bombs];
 }
 
 -(void) update:(CGFloat) deltaTime
 {
-  if (!self.gameOver) {
+  if (!self.gameOver && !self.exploding) {
     [self.bomber update:deltaTime];
     [self.buckets update:deltaTime];
 
@@ -88,6 +89,7 @@
       [[GameBlackboard sharedBlackboard] notify:kBombHit event:nil];
       [self.buckets removeBucket];
       [self.bomber explode];
+      self.exploding = YES;
 
       if ([self.buckets bucketCount] == 0) {
         self.gameOver = YES;

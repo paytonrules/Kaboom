@@ -3,7 +3,6 @@
 #import "BomberSprite.h"
 #import "Kaboom.h"
 #import "BombSprite.h"
-#import "KaboomPresenter.h"
 #import "GameBlackboard.h"
 #import "Event.h"
 
@@ -13,7 +12,7 @@ enum TAGS {
 };
 
 @interface KaboomLayer ()
-@property(strong) KaboomPresenter *presenter;
+@property(strong) Kaboom *game;
 @property(strong) CCLabelTTF *score;
 @end
 
@@ -40,11 +39,10 @@ enum TAGS {
     self.touchEnabled = YES;
     self.accelerometerEnabled = YES;
 
-    Kaboom *game = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
-    self.presenter = [KaboomPresenter newPresenterWithGame:game];
+    self.game = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
 
-    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:game.bomber];
-    BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:game.buckets];
+    BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.game.bomber];
+    BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.game.buckets];
     [self addChild:bucketSprite z:0 tag:kBucket];
     [self addChild:bomberSprite z:0 tag:kBomber];
     CCLabelTTF *score = [CCLabelTTF labelWithString:@"TEST"
@@ -56,6 +54,8 @@ enum TAGS {
     GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
     [blackboard registerWatcher:self action:@selector(removeBomb:) event:kBombCaught];
     [blackboard registerWatcher:self action:@selector(bombHit:) event:kBombHit];
+    [blackboard registerWatcher:self action:@selector(addBomb:) event:kBombDropped];
+
 
     [self addChild:score];
     self.score = score;
@@ -68,18 +68,12 @@ enum TAGS {
 }
 
 -(void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-  [self.presenter tilt:-acceleration.y];
+  [self.game tilt:-acceleration.y];
 }
 
 -(void) update:(ccTime)delta {
-  [self.presenter update:delta];
-  [self.score setString:[NSString stringWithFormat:@"%d", self.presenter.score]];
-
-  for (NSObject<Bomb> *bomb in self.presenter.createdBombs)
-  {
-    BombSprite *bombSprite = [BombSprite newSpriteWithBomb:bomb];
-    [self addChild:bombSprite z:0 tag:kBomb];
-  }
+  [self.game update:delta];
+  [self.score setString:[NSString stringWithFormat:@"%d", self.game.score]];
 }
 
 -(void) removeBomb:(Event *) evt
@@ -93,9 +87,14 @@ enum TAGS {
   }
 }
 
+-(void) addBomb:(Event *) evt
+{
+  BombSprite *bombSprite = [BombSprite newSpriteWithBomb:evt.data];
+  [self addChild:bombSprite z:0 tag:kBomb];
+}
+
 -(void) bombHit:(Event *) evt
 {
-  [self.presenter explosionStarted];
   [self blowUpBombs];
 }
 
@@ -125,7 +124,7 @@ enum TAGS {
 
 -(void) startLevel
 {
-  [self.presenter start];
+  [self.game start];
 }
 
 @end
