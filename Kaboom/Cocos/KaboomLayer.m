@@ -56,7 +56,6 @@ enum TAGS {
     [blackboard registerWatcher:self action:@selector(bombHit:) event:kBombHit];
     [blackboard registerWatcher:self action:@selector(addBomb:) event:kBombDropped];
 
-
     [self addChild:score];
     self.score = score;
 
@@ -78,11 +77,11 @@ enum TAGS {
 
 -(void) removeBomb:(Event *) evt
 {
-  for (CCNode *node in self.children)
+  for (BombSprite *bombSprite in self.children)
   {
-    if (node.tag == kBomb && [node isEqual:evt.data])
+    if (bombSprite.tag == kBomb && [bombSprite.bomb isEqual:evt.data])
     {
-      [node removeFromParentAndCleanup:YES];
+      [bombSprite removeFromParentAndCleanup:YES];
     }
   }
 }
