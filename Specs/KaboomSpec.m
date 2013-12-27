@@ -68,13 +68,14 @@ OCDSpec2Context(KaboomSpec) {
     });
 
     It(@"delegates update to the bomber", ^{
-      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       [[[bomber stub] andReturnValue:@NO] bombHit];
       [[bomber stub] checkBombs:[OCMArg any]];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber];
 
       [[bomber expect] update:1.0];
 
+      [level start];
       [level update:1.0];
 
       [bomber verify];
@@ -87,6 +88,7 @@ OCDSpec2Context(KaboomSpec) {
 
       [[buckets expect] update:1.0];
 
+      [level start];
       [level update:1.0];
 
       [buckets verify];
@@ -105,6 +107,7 @@ OCDSpec2Context(KaboomSpec) {
 
     It(@"checks for caught buckets after updating their positions", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      [[bomber stub] startAtSpeed:0.0 withBombs:0];
       [[[bomber stub] andReturnValue:@NO] bombHit];
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       [[[buckets stub] andReturnValue:@1] bucketCount];
@@ -116,6 +119,7 @@ OCDSpec2Context(KaboomSpec) {
 
       [[bomber expect] checkBombs:buckets];
 
+      [level start];
       [level update:10];
 
       [bomber verify];
@@ -128,7 +132,8 @@ OCDSpec2Context(KaboomSpec) {
       Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
       
       [[[bomber stub] andReturnValue:@2] checkBombs:buckets];
-      
+
+      [level start];
       [level update:10];
       
       [ExpectInt(level.score) toBe:2];
@@ -142,6 +147,7 @@ OCDSpec2Context(KaboomSpec) {
 
       [[[bomber stub] andReturnValue:@2] checkBombs:buckets];
 
+      [level start];
       [level update:10];
 
       [ExpectInt(level.score) toBe:3];
@@ -155,6 +161,7 @@ OCDSpec2Context(KaboomSpec) {
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[buckets expect] removeBucket];
 
+      [level start];
       [level update:10];
 
       [buckets verify];
@@ -170,9 +177,30 @@ OCDSpec2Context(KaboomSpec) {
       [blackboard registerWatcher:watcher action:@selector(bombHit:) event:kBombHit];
 
       [[[bomber stub] andReturnValue:@YES] bombHit];
+
+      [level start];
       [level update:10];
 
       [ExpectBool(watcher.bombHit) toBeTrue];
+    });
+
+    It(@"does not write mulitiple notifications for the same bomb hit", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
+
+      BombHitWatcher *watcher = [BombHitWatcher new];
+      GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+      [blackboard registerWatcher:watcher action:@selector(bombHit:) event:kBombHit];
+
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+
+      [level start];
+      [level update:10];
+      watcher.bombHit = NO;
+      [level update:10];
+
+      [ExpectBool(watcher.bombHit) toBeFalse];
     });
 
     It(@"ends the game if there are no buckets left", ^{
@@ -184,6 +212,7 @@ OCDSpec2Context(KaboomSpec) {
       [[buckets stub] removeBucket];
       [[[buckets stub] andReturnValue:@0] bucketCount];
 
+      [level start];
       [level update:10];
 
       [ExpectBool(level.gameOver) toBeTrue];
@@ -214,6 +243,7 @@ OCDSpec2Context(KaboomSpec) {
       [[buckets expect] removeBucket];
       [[[buckets expect] andReturnValue:@1] bucketCount];
 
+      [level start];
       [level update:10];
 
       [buckets verify];
@@ -248,6 +278,7 @@ OCDSpec2Context(KaboomSpec) {
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[bomber expect] explode];
 
+      [level start];
       [level update:10];
 
       [bomber verify];
@@ -255,6 +286,7 @@ OCDSpec2Context(KaboomSpec) {
 
     It(@"doesn't keep checking for bomb hits after a bomb hits", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
+      [[bomber stub] startAtSpeed:0.0 withBombs:0];
       [[bomber stub] checkBombs:[OCMArg any]];
       [[bomber stub] update:10];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];
@@ -264,6 +296,7 @@ OCDSpec2Context(KaboomSpec) {
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[bomber expect] explode];
 
+      [level start];
       [level update:10];
       [level update:10];
 
@@ -284,6 +317,7 @@ OCDSpec2Context(KaboomSpec) {
       [[bomber expect] explode];
       [[bomber expect] explode];
 
+      [level start];
       [level update:10];
       [level start];
       [level update:10];
