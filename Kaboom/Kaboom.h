@@ -9,7 +9,6 @@
 
 +(id) newLevelWithSize:(CGSize) size;
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber;
-+(id) newLevelWithBuckets:(Buckets *) buckets;
 +(id) newLevelWithBuckets:(Buckets *) buckets bomber:(NSObject<Bomber> *) bomber;
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber andLevelLoader:(Class<LevelLoader>) loader;
 -(void) start;

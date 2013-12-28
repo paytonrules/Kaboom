@@ -40,6 +40,7 @@
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA2846A44C520438B5D3184 /* bomb-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */; };
+		2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollection.m */; };
 		2FA2848DBEA0DE68A420B424 /* ccbParticleFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */; };
 		2FA2850029BDCDB0D2BE7EBC /* KaboomSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomSpec.m */; };
 		2FA28522E9A7CE30113818E2 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
@@ -57,6 +58,7 @@
 		2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C348025798254AAD049 /* GameBlackboardSpec.m */; };
 		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
 		2FA2889FA9FC0F6AF87FD3EB /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
+		2FA288ED10E147DC9C66C8A7 /* LevelCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollection.m */; };
 		2FA288FEE49CFAADEEA0BF55 /* BucketsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28AA88E0D958362D9515B /* BucketsNode.m */; };
 		2FA2891D27F45A0A110C345C /* buckets-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28923F9066842A8F8F5C5 /* buckets-ipad.png */; };
 		2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
@@ -83,6 +85,7 @@
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28E4937C3999A510C3470 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
 		2FA28EF3472AD27B423BA8EE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
+		2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
 		2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DFAA6766D477DC0BEF /* BombSprite.m */; };
@@ -146,6 +149,7 @@
 		2FA28598FD82B4383D5476A4 /* LevelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLoader.h; sourceTree = "<group>"; };
 		2FA285B4F1CB77AEE9B1B660 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		2FA285C9DAB47003A6FBA0FA /* BucketsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsNode.h; sourceTree = "<group>"; };
+		2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionSpec.m; sourceTree = "<group>"; };
 		2FA28612CEA00A6F1F1D8BC2 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		2FA286532A831D492022AA18 /* buckets-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buckets-ipadhd.png"; sourceTree = "<group>"; };
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		2FA28A0F951445B45AF12061 /* Bomb2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2D.m; sourceTree = "<group>"; };
 		2FA28A17E04A7E30DBEBC6F6 /* PlistLevelsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistLevelsLoader.h; sourceTree = "<group>"; };
 		2FA28A1F15291BDB03525501 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		2FA28A213D5E2AA4D42254DE /* LevelCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollection.m; sourceTree = "<group>"; };
 		2FA28A4CA415D5DBA2C1798E /* StandardRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardRandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28AA88E0D958362D9515B /* BucketsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsNode.m; sourceTree = "<group>"; };
 		2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2DSpec.m; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 		2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLayer.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2FA28F71CD039144C4E294F7 /* Bomber2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber2D.h; sourceTree = "<group>"; };
+		2FA28FC9C046626D7FB3CF48 /* LevelCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollection.h; sourceTree = "<group>"; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3AC467CF45DB460C935BFE36 /* Pods-Kaboom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaboom.xcconfig"; path = "Pods/Pods-Kaboom.xcconfig"; sourceTree = "<group>"; };
 		3ED61CA0C6924F2E930BD93C /* libPods-Kaboom.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Kaboom.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,6 +386,8 @@
 			children = (
 				2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */,
 				2FA28A17E04A7E30DBEBC6F6 /* PlistLevelsLoader.h */,
+				2FA28A213D5E2AA4D42254DE /* LevelCollection.m */,
+				2FA28FC9C046626D7FB3CF48 /* LevelCollection.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */,
+				2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -629,6 +638,7 @@
 				2FA28D0A5173AC70B0036B58 /* NullBomber.m in Sources */,
 				2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */,
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
+				2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,6 +666,8 @@
 				2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */,
 				2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */,
 				2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */,
+				2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */,
+				2FA288ED10E147DC9C66C8A7 /* LevelCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

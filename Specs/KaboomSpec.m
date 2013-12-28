@@ -6,18 +6,19 @@
 #import "LevelLoader.h"
 #import "GameBlackboard.h"
 #import "Event.h"
+#import "LevelCollection.h"
 
 @interface PhonyLevelLoader : NSObject<LevelLoader>
 @end
 
 @implementation PhonyLevelLoader
 
-+(NSArray *) load
++(LevelCollection *) load
 {
-  return @[
-      @{@"Speed" : @"60.0", @"Bombs" : @"0"},
+  return [LevelCollection newWithArray:@[
+      @{@"Speed" : @"60.0", @"Bombs" : @"1"},
       @{@"Speed" : @"90.0", @"Bombs" : @"2"}
-  ];
+  ]];
 }
 @end
 
@@ -61,7 +62,7 @@ OCDSpec2Context(KaboomSpec) {
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
 
       [level start];
 
@@ -72,7 +73,8 @@ OCDSpec2Context(KaboomSpec) {
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
+      [[[bomber stub] andReturnValue:@0] bombCount];
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:90.0 withBombs:2];
 
       [level start];
@@ -81,7 +83,7 @@ OCDSpec2Context(KaboomSpec) {
       [bomber verify];
     });
 
-    It(@"only does that once, not on each update", ^{
+    It(@"only starts the bomber once, not on each update", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       [[bomber stub] checkBombs:[OCMArg any]];
       [[bomber stub] update:1.0];
@@ -89,7 +91,7 @@ OCDSpec2Context(KaboomSpec) {
       [[[bomber stub] andReturnValue:@1] bombCount];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
 
       [level start];
       [level update:1.0];
@@ -114,7 +116,8 @@ OCDSpec2Context(KaboomSpec) {
     It(@"delegates update to the bucket", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       [[[buckets stub] andReturnValue:@1] bucketCount];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets];
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
 
       [[buckets expect] update:1.0];
 
@@ -127,7 +130,9 @@ OCDSpec2Context(KaboomSpec) {
     It(@"delegates update to the bucket repeatedly", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       [[[buckets stub] andReturnValue:@1] bucketCount];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets];
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      [[[bomber stub] andReturnValue:@1] bombCount];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
 
       [[buckets expect] update:1.0];
       [[buckets expect] update:1.0];
@@ -141,7 +146,8 @@ OCDSpec2Context(KaboomSpec) {
 
     It(@"delegates tilt to the buckets", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets];
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
 
       [[buckets expect] tilt:2.0];
 

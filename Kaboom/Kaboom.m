@@ -5,7 +5,7 @@
 #import "PlistLevelsLoader.h"
 #import "GameBlackboard.h"
 #import "Event.h"
-#import "NullBomber.h"
+#import "LevelCollection.h"
 #import <TransitionKit/TransitionKit.h>
 
 @interface Kaboom ()
@@ -14,8 +14,8 @@
 @property(strong) Buckets *buckets;
 @property(assign) BOOL gameOver;
 @property(strong) Class<LevelLoader> levelLoader;
+@property(strong) LevelCollection *levels;
 @property(strong) TKStateMachine *gameStateMachine;
-@property(assign) int currentLevel;
 @end
 
 @implementation Kaboom : NSObject
@@ -45,14 +45,6 @@
 {
   Kaboom *level = [self newLevelWithBomber:bomber];
   level.levelLoader = loader;
-  return level;
-}
-
-+(id) newLevelWithBuckets:(Buckets *) buckets
-{
-  Kaboom *level = [Kaboom new];
-  level.buckets = buckets;
-  level.bomber = [NullBomber new];
   return level;
 }
 
@@ -107,7 +99,6 @@
     [self.gameStateMachine activate];
 
     self.levelLoader = [PlistLevelsLoader class];
-    self.currentLevel = 0;
   }
   return self;
 }
@@ -119,20 +110,15 @@
 
 -(void) startBombing
 {
-  NSArray *levels = [self.levelLoader load];
-  float speed = [levels[0][@"Speed"] floatValue];
-  int bombs = [levels[0][@"Bombs"] floatValue];
-
-  [self.bomber startAtSpeed:speed withBombs:bombs];
+  self.levels = [self.levelLoader load];
+  [self advanceToNextLevel];
 }
 
 -(void) advanceToNextLevel
 {
-  self.currentLevel++;
-
-  NSArray *levels = [self.levelLoader load];
-  float speed = [levels[self.currentLevel][@"Speed"] floatValue];
-  int bombs = [levels[self.currentLevel][@"Bombs"] floatValue];
+  NSDictionary *level = [self.levels next];
+  float speed = [level[@"Speed"] floatValue];
+  int bombs = [level[@"Bombs"] floatValue];
   [self.bomber startAtSpeed:speed withBombs:bombs];
 }
 

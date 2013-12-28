@@ -1,5 +1,7 @@
+@class LevelCollection;
+
 @protocol LevelLoader
 
-+(NSArray *) load;
++(LevelCollection *) load;
 
 @end

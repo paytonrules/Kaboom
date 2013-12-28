@@ -1,11 +1,12 @@
 #import "PlistLevelsLoader.h"
+#import "LevelCollection.h"
 
 @implementation PlistLevelsLoader
 
-+(NSArray *) load
++(LevelCollection *) load
 {
   NSString *plistLevels = [[NSBundle mainBundle] pathForResource:@"levels" ofType:@"plist"];
-  return [[NSArray alloc] initWithContentsOfFile:plistLevels];
+  return [LevelCollection newWithArray:[[NSArray alloc] initWithContentsOfFile:plistLevels]];
 }
 
 @end
