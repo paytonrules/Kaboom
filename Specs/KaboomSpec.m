@@ -73,7 +73,8 @@ OCDSpec2Context(KaboomSpec) {
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
-      [[[bomber stub] andReturnValue:@0] droppedBombCount];
+      [[[bomber stub] andReturnValue:@1] droppedBombCount];
+      [[[bomber stub] andReturnValue:@YES] isOut];
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:90.0 withBombs:2];
 
@@ -89,6 +90,7 @@ OCDSpec2Context(KaboomSpec) {
       [[bomber stub] update:1.0];
       [[[bomber stub] andReturnValue:@NO] bombHit];
       [[[bomber stub] andReturnValue:@1] droppedBombCount];
+      [[[bomber stub] andReturnValue:@NO] isOut];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
@@ -161,6 +163,7 @@ OCDSpec2Context(KaboomSpec) {
       [[bomber stub] startAtSpeed:0.0 withBombs:0];
       [[[bomber stub] andReturnValue:@NO] bombHit];
       [[[bomber stub] andReturnValue:@1] droppedBombCount];
+      [[[bomber stub] andReturnValue:@NO] isOut];
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       [[[buckets stub] andReturnValue:@1] bucketCount];
       Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
