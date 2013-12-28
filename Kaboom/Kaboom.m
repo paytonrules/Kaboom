@@ -5,6 +5,7 @@
 #import "PlistLevelsLoader.h"
 #import "GameBlackboard.h"
 #import "Event.h"
+#import "NullBomber.h"
 #import <TransitionKit/TransitionKit.h>
 
 @interface Kaboom ()
@@ -14,6 +15,7 @@
 @property(assign) BOOL gameOver;
 @property(strong) Class<LevelLoader> levelLoader;
 @property(strong) TKStateMachine *gameStateMachine;
+@property(assign) int currentLevel;
 @end
 
 @implementation Kaboom : NSObject
@@ -50,6 +52,7 @@
 {
   Kaboom *level = [Kaboom new];
   level.buckets = buckets;
+  level.bomber = [NullBomber new];
   return level;
 }
 
@@ -72,6 +75,7 @@
     TKState *checkingBombs = [TKState stateWithName:@"Dropping"];
     TKState *exploding = [TKState stateWithName:@"Exploding"];
     TKState *gameOver = [TKState stateWithName:@"Game Over"];
+    TKState *finishingLevel = [TKState stateWithName:@"Finishing Level"];
 
     [waitingForStart setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
       [self startBombing];
@@ -85,19 +89,25 @@
       self.gameOver = YES;
     }];
 
-    [self.gameStateMachine addStates:@[waitingForStart, droppingBombs, checkingBombs, exploding, gameOver]];
+    [finishingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
+      [self advanceToNextLevel];
+    }];
+
+    [self.gameStateMachine addStates:@[waitingForStart, droppingBombs, checkingBombs, exploding, gameOver, finishingLevel]];
     self.gameStateMachine.initialState = waitingForStart;
 
     TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart, exploding ] toState:droppingBombs];
     TKEvent *bombHit = [TKEvent eventWithName:@"Bomb Hit" transitioningFromStates:@[ checkingBombs ] toState:exploding];
     TKEvent *endGame = [TKEvent eventWithName:@"End Game" transitioningFromStates:@[ checkingBombs ] toState:gameOver];
+    TKEvent *nextLevel = [TKEvent eventWithName:@"Next Level" transitioningFromStates:@[ checkingBombs ] toState:finishingLevel];
     TKEvent *noHits = [TKEvent eventWithName:@"No Hit" transitioningFromStates:@[ checkingBombs ] toState:droppingBombs];
     TKEvent *update = [TKEvent eventWithName:@"Update" transitioningFromStates:@[ droppingBombs ] toState:checkingBombs];
-    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update ]];
+    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update, nextLevel ]];
 
     [self.gameStateMachine activate];
 
     self.levelLoader = [PlistLevelsLoader class];
+    self.currentLevel = 0;
   }
   return self;
 }
@@ -113,6 +123,16 @@
   float speed = [levels[0][@"Speed"] floatValue];
   int bombs = [levels[0][@"Bombs"] floatValue];
 
+  [self.bomber startAtSpeed:speed withBombs:bombs];
+}
+
+-(void) advanceToNextLevel
+{
+  self.currentLevel++;
+
+  NSArray *levels = [self.levelLoader load];
+  float speed = [levels[self.currentLevel][@"Speed"] floatValue];
+  int bombs = [levels[self.currentLevel][@"Bombs"] floatValue];
   [self.bomber startAtSpeed:speed withBombs:bombs];
 }
 
@@ -137,6 +157,8 @@
     } else {
       [self.gameStateMachine fireEvent:@"Bomb Hit" userInfo:nil error:nil];
     }
+  } else if (self.bomber.bombCount == 0) {
+    [self.gameStateMachine fireEvent:@"Next Level" userInfo:nil error: nil];
   } else {
     [self.gameStateMachine fireEvent:@"No Hit" userInfo:nil error: nil];
   }

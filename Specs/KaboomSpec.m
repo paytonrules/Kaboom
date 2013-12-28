@@ -15,7 +15,8 @@
 +(NSArray *) load
 {
   return @[
-      @{@"Speed" : @"60.0", @"Bombs" : @"0"}
+      @{@"Speed" : @"60.0", @"Bombs" : @"0"},
+      @{@"Speed" : @"90.0", @"Bombs" : @"2"}
   ];
 }
 @end
@@ -67,11 +68,25 @@ OCDSpec2Context(KaboomSpec) {
       [bomber verify];
     });
 
+    It(@"moves to the next level when the bomber uses up the bombs", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
+      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:90.0 withBombs:2];
+
+      [level start];
+      [level update:10.0];
+
+      [bomber verify];
+    });
+
     It(@"only does that once, not on each update", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       [[bomber stub] checkBombs:[OCMArg any]];
       [[bomber stub] update:1.0];
       [[[bomber stub] andReturnValue:@NO] bombHit];
+      [[[bomber stub] andReturnValue:@1] bombCount];
       Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
 
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:0];
@@ -139,6 +154,7 @@ OCDSpec2Context(KaboomSpec) {
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       [[bomber stub] startAtSpeed:0.0 withBombs:0];
       [[[bomber stub] andReturnValue:@NO] bombHit];
+      [[[bomber stub] andReturnValue:@1] bombCount];
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       [[[buckets stub] andReturnValue:@1] bucketCount];
       Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];

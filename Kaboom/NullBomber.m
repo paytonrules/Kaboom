@@ -9,7 +9,7 @@
 }
 
 - (int)bombCount {
-  return 0;
+  return 1;
 }
 
 - (NSArray *)bombs {
