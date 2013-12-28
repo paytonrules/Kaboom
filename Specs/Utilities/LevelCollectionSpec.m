@@ -31,6 +31,14 @@ OCDSpec2Context(LevelCollection) {
       [ExpectObj(next) toBeEqualTo:@{@"Speed" : @"1"}];
     });
 
+    It(@"returns the current entry in the list", ^{
+      LevelCollection *collection = [LevelCollection newWithArray:@[@{@"Speed" : @"1"}, @{@"Speed" : @"2"}]];
+
+      NSDictionary *next = [collection current];
+
+      [ExpectObj(next) toBeEqualTo:@{@"Speed" : @"1"}];
+    });
+
   });
 
 }

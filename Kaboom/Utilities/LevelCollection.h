@@ -4,5 +4,6 @@
 
 +(id) newWithArray:(NSArray *) levels;
 
-- (NSDictionary *)next;
+-(NSDictionary *) next;
+-(NSDictionary *) current;
 @end

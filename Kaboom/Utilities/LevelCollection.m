@@ -14,10 +14,15 @@
 }
 
 
-- (NSDictionary *)next {
-  NSDictionary *current = self.levels[self.currentLevel];
+-(NSDictionary *) next {
+  NSDictionary *current = [self current];
   if (self.currentLevel < self.levels.count - 1)
     self.currentLevel++;
   return current;
 }
+
+-(NSDictionary *) current {
+  return self.levels[self.currentLevel];
+}
+
 @end

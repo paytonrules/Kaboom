@@ -20,7 +20,7 @@
 
 }
 
-- (NSInteger)checkBombs:(Buckets *)buckets {
+- (NSInteger)updateDroppedBombs:(Buckets *)buckets {
   return 0;
 }
 
@@ -35,10 +35,5 @@
 - (void)explode {
 
 }
-
-- (BOOL)exploding {
-  return NO;
-}
-
 
 @end

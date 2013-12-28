@@ -8,7 +8,7 @@
 @property(readonly) int bombCount;
 @property(readonly) NSArray *bombs;
 -(void) startAtSpeed:(float) speed withBombs:(int) count;
--(NSInteger) checkBombs:(Buckets *)buckets;
+-(NSInteger)updateDroppedBombs:(Buckets *)buckets;
 -(void) update:(float)deltaTime;
 -(BOOL) bombHit;
 -(void) explode;

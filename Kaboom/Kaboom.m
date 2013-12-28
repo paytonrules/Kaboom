@@ -64,7 +64,8 @@
 
     TKState *waitingForStart = [TKState stateWithName:@"Waiting"];
     TKState *droppingBombs = [TKState stateWithName:@"Dropping"];
-    TKState *checkingBombs = [TKState stateWithName:@"Dropping"];
+    TKState *updatingSystem = [TKState stateWithName:@"Updating"];
+    TKState *restartingLevel = [TKState stateWithName:@"Restarting"];
     TKState *exploding = [TKState stateWithName:@"Exploding"];
     TKState *gameOver = [TKState stateWithName:@"Game Over"];
     TKState *finishingLevel = [TKState stateWithName:@"Finishing Level"];
@@ -73,8 +74,9 @@
       [self startBombing];
     }];
 
-    [checkingBombs setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      [self checkBombs:[transition.userInfo[@"deltaTime"] floatValue]];
+    [updatingSystem setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
+      [self updatePlayers:[transition.userInfo[@"deltaTime"] floatValue]];
+      [self checkBombs];
     }];
 
     [gameOver setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
@@ -85,16 +87,23 @@
       [self advanceToNextLevel];
     }];
 
-    [self.gameStateMachine addStates:@[waitingForStart, droppingBombs, checkingBombs, exploding, gameOver, finishingLevel]];
+    [restartingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
+      [self restartLevel];
+    }];
+
+    [self.gameStateMachine addStates:@[waitingForStart, droppingBombs, updatingSystem, exploding, gameOver,
+        finishingLevel, restartingLevel]];
     self.gameStateMachine.initialState = waitingForStart;
 
-    TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart, exploding ] toState:droppingBombs];
-    TKEvent *bombHit = [TKEvent eventWithName:@"Bomb Hit" transitioningFromStates:@[ checkingBombs ] toState:exploding];
-    TKEvent *endGame = [TKEvent eventWithName:@"End Game" transitioningFromStates:@[ checkingBombs ] toState:gameOver];
-    TKEvent *nextLevel = [TKEvent eventWithName:@"Next Level" transitioningFromStates:@[ checkingBombs ] toState:finishingLevel];
-    TKEvent *noHits = [TKEvent eventWithName:@"No Hit" transitioningFromStates:@[ checkingBombs ] toState:droppingBombs];
-    TKEvent *update = [TKEvent eventWithName:@"Update" transitioningFromStates:@[ droppingBombs ] toState:checkingBombs];
-    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update, nextLevel ]];
+    TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart ] toState:droppingBombs];
+    TKEvent *restart = [TKEvent eventWithName:@"Restart Level" transitioningFromStates:@[ exploding ] toState:restartingLevel];
+    TKEvent *restarted = [TKEvent eventWithName:@"Restarted" transitioningFromStates:@[ restartingLevel ] toState:droppingBombs];
+    TKEvent *bombHit = [TKEvent eventWithName:@"Bomb Hit" transitioningFromStates:@[updatingSystem] toState:exploding];
+    TKEvent *endGame = [TKEvent eventWithName:@"End Game" transitioningFromStates:@[updatingSystem] toState:gameOver];
+    TKEvent *nextLevel = [TKEvent eventWithName:@"Next Level" transitioningFromStates:@[updatingSystem] toState:finishingLevel];
+    TKEvent *noHits = [TKEvent eventWithName:@"No Hit" transitioningFromStates:@[updatingSystem] toState:droppingBombs];
+    TKEvent *update = [TKEvent eventWithName:@"Update" transitioningFromStates:@[droppingBombs] toState:updatingSystem];
+    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update, nextLevel, restart, restarted ]];
 
     [self.gameStateMachine activate];
 
@@ -108,6 +117,11 @@
   [self.gameStateMachine fireEvent:@"Start Game" userInfo:nil error:nil];
 }
 
+-(void) restart
+{
+  [self.gameStateMachine fireEvent:@"Restart Level" userInfo:nil error:nil];
+}
+
 -(void) startBombing
 {
   self.levels = [self.levelLoader load];
@@ -117,8 +131,19 @@
 -(void) advanceToNextLevel
 {
   NSDictionary *level = [self.levels next];
+  [self startBomberAtLevel:level];
+}
+
+-(void) restartLevel
+{
+  NSDictionary *level = [self.levels current];
+  [self startBomberAtLevel:level];
+  [self.gameStateMachine fireEvent:@"Restarted" userInfo:nil error:nil];
+}
+
+-(void) startBomberAtLevel:(NSDictionary *)level {
   float speed = [level[@"Speed"] floatValue];
-  int bombs = [level[@"Bombs"] floatValue];
+  int bombs = [level[@"Bombs"] intValue];
   [self.bomber startAtSpeed:speed withBombs:bombs];
 }
 
@@ -128,11 +153,15 @@
   [self.gameStateMachine fireEvent:@"Update" userInfo:userInfo error:nil];
 }
 
--(void) checkBombs:(CGFloat) deltaTime
+-(void) updatePlayers:(CGFloat) deltaTime
 {
   [self.bomber update:deltaTime];
   [self.buckets update:deltaTime];
+  self.score += [self.bomber updateDroppedBombs:self.buckets];
+}
 
+-(void) checkBombs
+{
   if ([self.bomber bombHit]) {
     [[GameBlackboard sharedBlackboard] notify:kBombHit event:nil];
     [self.buckets removeBucket];
@@ -148,8 +177,6 @@
   } else {
     [self.gameStateMachine fireEvent:@"No Hit" userInfo:nil error: nil];
   }
-
-  self.score += [self.bomber checkBombs:self.buckets];
 }
 
 // Does this belong here?  You don't tilt the game

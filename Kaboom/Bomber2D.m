@@ -116,8 +116,7 @@
   }
 }
 
-// Way too many side effects here.
--(NSInteger) checkBombs:(Buckets *)buckets
+-(NSInteger)updateDroppedBombs:(Buckets *)buckets
 {
   int caughtBombs = 0;
   NSMutableArray *remainingBombs = [NSMutableArray new];

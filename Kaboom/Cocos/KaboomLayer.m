@@ -61,7 +61,7 @@ enum TAGS {
 
     [self scheduleUpdate];
 
-    [self startLevel];
+    [self startGame];
   }
   return self;
 }
@@ -121,9 +121,14 @@ enum TAGS {
   [self scheduleOnce:@selector(startLevel) delay:1];
 }
 
--(void) startLevel
+-(void) startGame
 {
   [self.game start];
+}
+
+-(void) startLevel
+{
+  [self.game restart];
 }
 
 @end
