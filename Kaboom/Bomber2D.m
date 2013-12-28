@@ -14,6 +14,7 @@
 @property(assign) int bombHeight;
 @property(strong) NSMutableArray *droppedBombs;
 @property(assign) BOOL exploding;
+@property(assign) int bombCount;
 
 -(void) updateBombs;
 @end
@@ -56,9 +57,14 @@
   self.exploding = YES;
 }
 
--(int) bombCount
+-(int) droppedBombCount
 {
   return self.bombs.count;
+}
+
+-(BOOL) isOut
+{
+  return self.bombCount == 0 && self.droppedBombs.count == 0;
 }
 
 -(NSArray *)bombs
@@ -71,6 +77,7 @@
   self.location = [self.locations next];
   self.speed = speed;
   self.exploding = NO;
+  self.bombCount = count;
 }
 
 -(void) update:(float)deltaTime
@@ -105,6 +112,7 @@
 {
   NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2) - (self.bombHeight / 2)];
   [self.droppedBombs addObject:bomb];
+  self.bombCount--;
   [[GameBlackboard sharedBlackboard] notify:kBombDropped event:[Event newEventWithData:bomb]];
 }
 

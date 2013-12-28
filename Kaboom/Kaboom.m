@@ -172,7 +172,7 @@
     } else {
       [self.gameStateMachine fireEvent:@"Bomb Hit" userInfo:nil error:nil];
     }
-  } else if (self.bomber.bombCount == 0) {
+  } else if (self.bomber.droppedBombCount == 0) {
     [self.gameStateMachine fireEvent:@"Next Level" userInfo:nil error: nil];
   } else {
     [self.gameStateMachine fireEvent:@"No Hit" userInfo:nil error: nil];

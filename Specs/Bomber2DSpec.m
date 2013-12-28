@@ -141,7 +141,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) locationChooser:locations];
 
-      [ExpectInt(bomber.bombCount) toBe:0];
+      [ExpectInt(bomber.droppedBombCount) toBe:0];
     });
 
     It(@"drops a bomb when it changes direction", ^{
@@ -151,7 +151,7 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
 
-      [ExpectInt(bomber.bombCount) toBe:1];
+      [ExpectInt(bomber.droppedBombCount) toBe:1];
     });
 
     It(@"starts the bomb right below the bomber", ^{
@@ -207,7 +207,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
       [ExpectInt([bomber updateDroppedBombs:buckets]) toBe:2];
 
-      [ExpectInt(bomber.bombCount) toBe:0];
+      [ExpectInt(bomber.droppedBombCount) toBe:0];
     });
 
     It(@"doesn't remove bombs if they don't intersect buckets", ^{
@@ -223,7 +223,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
       [bomber updateDroppedBombs:buckets];
 
-      [ExpectInt(bomber.bombCount) toBe:1];
+      [ExpectInt(bomber.droppedBombCount) toBe:1];
     });
 
     It(@"says a bomb hit if any of its bombs hit", ^{
@@ -247,7 +247,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
       [bomber explode];
 
-      [ExpectInt(bomber.bombCount) toBe:0];
+      [ExpectInt(bomber.droppedBombCount) toBe:0];
     });
 
     It(@"Is exploding on explode", ^{
@@ -297,8 +297,47 @@ OCDSpec2Context(Bomber2DSpec) {
       [[[buckets stub] andReturnValue:@YES] caughtBomb:bomber.bombs[0]];
 
       // Verify notification is sent
-      [bomber checkBombs:buckets];
+      [bomber updateDroppedBombs:buckets];
       [ExpectObj(watcher.evt.data) toBe:bomb];
     });
+  });
+
+  Describe(@"Out of bombs", ^{
+
+    It(@"is out of bombs when it doesn't have any", ^{
+      NSObject<Bomber> *bomber = [Bomber2D new];
+      [bomber startAtSpeed:100.0 withBombs:0];
+
+      [ExpectBool(bomber.isOut) toBeTrue];
+    });
+
+    It(@"is not out of bombs when it has some", ^{
+      NSObject<Bomber> *bomber = [Bomber2D new];
+      [bomber startAtSpeed:100.0 withBombs:1];
+
+      [ExpectBool(bomber.isOut) toBeFalse];
+    });
+
+    It(@"is not out of bombs when there are dropped, uncaught and unexploded, bombs", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:100.0 withBombs:1];
+
+      [bomber dropBomb];
+
+      [ExpectBool(bomber.isOut) toBeFalse];
+    });
+
+    It(@"is out of bombs when any dropped bombs are caught", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:100.0 withBombs:1];
+      [bomber dropBomb];
+
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      [[[buckets stub] andReturnValue:@YES] caughtBomb:[OCMArg any]];
+      [bomber updateDroppedBombs:buckets];
+
+      [ExpectBool(bomber.isOut) toBeTrue];
+    });
+
   });
 }
