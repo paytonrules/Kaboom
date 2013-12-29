@@ -77,8 +77,6 @@
 		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
 		2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */; };
 		2FA28C99D74E192153936D49 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
-		2FA28CE1AB5D5A5EA388D782 /* NullBomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */; };
-		2FA28D0A5173AC70B0036B58 /* NullBomber.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
@@ -139,7 +137,6 @@
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
 		2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ccbParticleFire.png; path = Resources/ccbParticleFire.png; sourceTree = "<group>"; };
-		2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullBomber.m; sourceTree = "<group>"; };
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284271FF8A675D4E0D818 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
@@ -155,7 +152,6 @@
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
 		2FA286FCDD89AA9093552F70 /* BombSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombSprite.h; sourceTree = "<group>"; };
 		2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2D.m; sourceTree = "<group>"; };
-		2FA287E7A1D82D106B2BDC02 /* NullBomber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullBomber.h; sourceTree = "<group>"; };
 		2FA28831461D09EEC3799121 /* Bomb2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb2D.h; sourceTree = "<group>"; };
 		2FA2887C8E68A7489401797D /* GameBlackboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBlackboard.h; sourceTree = "<group>"; };
 		2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-ipadhd.png"; sourceTree = "<group>"; };
@@ -306,8 +302,6 @@
 				2FA28612CEA00A6F1F1D8BC2 /* Level.h */,
 				2FA285B4F1CB77AEE9B1B660 /* Level.m */,
 				2FA283ED09D1A0D33B271365 /* Utilities */,
-				2FA283DE5B4E55F6AD5D2645 /* NullBomber.m */,
-				2FA287E7A1D82D106B2BDC02 /* NullBomber.h */,
 				2FA2887C8E68A7489401797D /* GameBlackboard.h */,
 				2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */,
 				2FA2820F7F26FF1AB604EBDF /* Event.h */,
@@ -635,7 +629,6 @@
 				2FA28522E9A7CE30113818E2 /* Level.m in Sources */,
 				2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */,
 				2FA28A4C733A233C5C9C32A6 /* BombExplosion.m in Sources */,
-				2FA28D0A5173AC70B0036B58 /* NullBomber.m in Sources */,
 				2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */,
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
 				2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */,
@@ -662,7 +655,6 @@
 				2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */,
 				2FA28EF3472AD27B423BA8EE /* Level.m in Sources */,
 				2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */,
-				2FA28CE1AB5D5A5EA388D782 /* NullBomber.m in Sources */,
 				2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */,
 				2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */,
 				2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */,
