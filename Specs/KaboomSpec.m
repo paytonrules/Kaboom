@@ -35,6 +35,18 @@
 
 @end
 
+@interface GameOverWatcher : NSObject
+@property (assign) BOOL gameOver;
+@end
+
+@implementation GameOverWatcher
+
+-(void) gameOver:(Event *) evt
+{
+  self.gameOver = YES;
+}
+@end
+
 OCDSpec2Context(KaboomSpec) {
 
   Describe(@"initialization", ^{
@@ -275,11 +287,15 @@ OCDSpec2Context(KaboomSpec) {
       [ExpectBool(watcher.bombHit) toBeFalse];
     });
 
-    It(@"ends the game if there are no buckets left", ^{
+    It(@"fires the endGame event when there are no buckets left", ^{
+      GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+      [blackboard clear];
+      GameOverWatcher *listener = [GameOverWatcher new];
+      [blackboard registerWatcher:listener action:@selector(gameOver:) event:kGameOver];
+
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];
       Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[buckets stub] removeBucket];
       [[[buckets stub] andReturnValue:@0] bucketCount];
@@ -287,21 +303,26 @@ OCDSpec2Context(KaboomSpec) {
       [level start];
       [level update:10];
 
-      [ExpectBool(level.gameOver) toBeTrue];
+      [ExpectBool(listener.gameOver) toBeTrue];
     });
 
-    It(@"doesn't end the game if there are bombs", ^{
+    It(@"doesn't fire the endGame event when there are buckets left", ^{
+      GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
+      [blackboard clear];
+      GameOverWatcher *listener = [GameOverWatcher new];
+      [blackboard registerWatcher:listener action:@selector(gameOver:) event:kGameOver];
+
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];
       Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[buckets stub] removeBucket];
       [[[buckets stub] andReturnValue:@1] bucketCount];
 
+      [level start];
       [level update:10];
 
-      [ExpectBool(level.gameOver) toBeFalse];
+      [ExpectBool(listener.gameOver) toBeFalse];
     });
 
     It(@"removes the bucket and checks the bucket count AFTER checking if the bomb hit", ^{

@@ -12,7 +12,6 @@
 
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
-@property(assign) BOOL gameOver;
 @property(strong) Class<LevelLoader> levelLoader;
 @property(strong) LevelCollection *levels;
 @property(strong) TKStateMachine *gameStateMachine;
@@ -80,7 +79,7 @@
     }];
 
     [gameOver setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      self.gameOver = YES;
+      [self gameOverNotification];
     }];
 
     [finishingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
@@ -180,6 +179,12 @@
     [self.gameStateMachine fireEvent:@"No Hit" userInfo:nil error: nil];
   }
 }
+
+-(void) gameOverNotification
+{
+  [[GameBlackboard sharedBlackboard] notify:kGameOver event:nil];
+}
+
 
 // Does this belong here?  You don't tilt the game
 -(void) tilt:(CGFloat) tilt

@@ -2,7 +2,8 @@
 enum {
   kBombDropped,
   kBombCaught,
-  kBombHit
+  kBombHit,
+  kGameOver
 };
 
 @interface Event : NSObject
