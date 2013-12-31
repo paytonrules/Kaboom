@@ -94,7 +94,7 @@
         finishingLevel, restartingLevel]];
     self.gameStateMachine.initialState = waitingForStart;
 
-    TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart ] toState:droppingBombs];
+    TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart, gameOver ] toState:droppingBombs];
     TKEvent *restart = [TKEvent eventWithName:@"Restart Level" transitioningFromStates:@[ exploding ] toState:restartingLevel];
     TKEvent *restarted = [TKEvent eventWithName:@"Restarted" transitioningFromStates:@[ restartingLevel ] toState:droppingBombs];
     TKEvent *newLevel = [TKEvent eventWithName:@"New Level" transitioningFromStates:@[finishingLevel] toState:droppingBombs];

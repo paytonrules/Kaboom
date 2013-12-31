@@ -325,6 +325,42 @@ OCDSpec2Context(KaboomSpec) {
       [ExpectBool(listener.gameOver) toBeFalse];
     });
 
+    It(@"stops updating the buckets when the game is over", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@0] bucketCount];
+
+      [[buckets expect] update:10];
+
+      [level start];
+      [level update:10];
+      [level update:11];
+
+      [buckets verify];
+    });
+
+    It(@"restarts updating game on new game", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject mockForClass:[Buckets class]];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@0] bucketCount];
+
+      [[buckets expect] update:10];
+      [[buckets expect] update:11];
+
+      [level start];
+      [level update:10];
+      [level start];
+      [level update:11];
+
+      [buckets verify];
+    });
+
     It(@"removes the bucket and checks the bucket count AFTER checking if the bomb hit", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];
