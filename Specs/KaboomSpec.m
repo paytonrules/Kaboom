@@ -84,6 +84,23 @@ OCDSpec2Context(KaboomSpec) {
       [bomber verify];
     });
 
+    It(@"Starts updating the bomber again after moving to the next level", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+
+      [[[bomber stub] andReturnValue:@1] droppedBombCount];
+      [[[bomber stub] andReturnValue:@YES] isOut];
+
+      [[bomber expect] update:10.0];
+      [[bomber expect] update:11.0];
+
+      [level start];
+      [level update:10.0];
+      [level update:11.0];
+
+      [bomber verify];
+    });
+
     It(@"only starts the bomber once, not on each update", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
       [[bomber stub] updateDroppedBombs:[OCMArg any]];
