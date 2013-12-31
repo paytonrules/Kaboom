@@ -6,7 +6,19 @@
 		<key>Bombs</key>
 		<integer>5</integer>
 		<key>Speed</key>
-		<real>60</real>
+		<real>90</real>
 	</dict>
+    <dict>
+        <key>Bombs</key>
+        <integer>10</integer>
+        <key>Speed</key>
+        <real>120</real>
+    </dict>
+    <dict>
+        <key>Bombs</key>
+        <integer>15</integer>
+        <key>Speed</key>
+        <real>150</real>
+    </dict>
 </array>
 </plist>

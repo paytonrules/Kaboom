@@ -5,6 +5,7 @@
 #import "BombSprite.h"
 #import "GameBlackboard.h"
 #import "Event.h"
+#import "SimpleAudioEngine.h"
 
 enum TAGS {
   kBucket,
@@ -56,6 +57,9 @@ enum TAGS {
     [blackboard registerWatcher:self action:@selector(bombHit:) event:kBombHit];
     [blackboard registerWatcher:self action:@selector(addBomb:) event:kBombDropped];
 
+    [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"Exhilarate.mp3"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"catch.wav"];
+
     [self addChild:score];
     self.score = score;
 
@@ -77,6 +81,7 @@ enum TAGS {
 
 -(void) removeBomb:(Event *) evt
 {
+  [[SimpleAudioEngine sharedEngine] playEffect:@"catch.wav"];
   for (BombSprite *bombSprite in self.children)
   {
     if (bombSprite.tag == kBomb && [bombSprite.bomb isEqual:evt.data])
@@ -124,6 +129,7 @@ enum TAGS {
 -(void) startGame
 {
   [self.game start];
+  [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Exhilarate.mp3"];
 }
 
 -(void) startLevel

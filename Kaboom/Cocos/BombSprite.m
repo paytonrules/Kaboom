@@ -1,6 +1,7 @@
 #import "BombSprite.h"
 #import "Bomb2D.h"
 #import "BombExplosion.h"
+#import "SimpleAudioEngine.h"
 
 const int kBomb = 200;
 
@@ -13,6 +14,7 @@ const int kBomb = 200;
 +(id) newSpriteWithBomb:(NSObject<Bomb> *) bomb
 {
   BombSprite *sprite = [BombSprite spriteWithFile:@"bomb.png"];
+  [[SimpleAudioEngine sharedEngine] preloadEffect:@"bomb.wav"];
   sprite.bomb = bomb;
 
   [sprite scheduleUpdate];
@@ -29,6 +31,7 @@ const int kBomb = 200;
 {
   BombExplosion *explosion = [BombExplosion new];
   explosion.position = self.position;
+  [[SimpleAudioEngine sharedEngine] playEffect:@"bomb.wav"];
   [self.parent addChild:explosion];
   [self removeFromParent];
 }
