@@ -82,6 +82,10 @@
       [self gameOverNotification];
     }];
 
+    [gameOver setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
+      [self.buckets reset];
+    }];
+
     [finishingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
       [self advanceToNextLevel];
     }];

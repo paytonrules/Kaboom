@@ -349,6 +349,7 @@ OCDSpec2Context(KaboomSpec) {
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[buckets stub] removeBucket];
       [[[buckets stub] andReturnValue:@0] bucketCount];
+      [[buckets stub] reset];
 
       [[buckets expect] update:10];
       [[buckets expect] update:11];
@@ -357,6 +358,24 @@ OCDSpec2Context(KaboomSpec) {
       [level update:10];
       [level start];
       [level update:11];
+
+      [buckets verify];
+    });
+
+    It(@"resets the buckets on new game to three buckets and center position", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@0] bucketCount];
+
+      [level start];
+      [level update:10];
+
+      [[buckets expect] reset];
+
+      [level start];
 
       [buckets verify];
     });

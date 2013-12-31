@@ -1,5 +1,4 @@
 #import "Buckets.h"
-#import "Bomb2D.h"
 #import "Bucket2D.h"
 
 @interface Buckets ()
@@ -8,6 +7,9 @@
 @property(assign) CGFloat speed;
 @property(assign) CGFloat tilt;
 @property(strong) NSMutableArray *theBuckets;
+@property(assign) CGPoint originalPosition;
+
+-(void) setupBuckets;
 
 @end
 
@@ -17,13 +19,9 @@
 {
   if (self = [super init])
   {
-    self.position = position;
+    self.originalPosition = self.position = position;
     self.speed = speed;
-    self.theBuckets = [NSMutableArray arrayWithArray:@[
-        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y + 90)],
-        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y)],
-        [Bucket2D newBucketWithPosition:CGPointMake(position.x, position.y - 90)]
-        ]];
+    [self setupBuckets];
   }
   return self;
 }
@@ -70,8 +68,23 @@
   return NO;
 }
 
+-(void) reset
+{
+  [self setupBuckets];
+}
+
 -(int) bucketCount
 {
   return self.theBuckets.count;
+}
+
+-(void) setupBuckets
+{
+  self.position = self.originalPosition;
+  self.theBuckets = [NSMutableArray arrayWithArray:@[
+      [Bucket2D newBucketWithPosition:CGPointMake(self.position.x, self.position.y + 90)],
+      [Bucket2D newBucketWithPosition:CGPointMake(self.position.x, self.position.y)],
+      [Bucket2D newBucketWithPosition:CGPointMake(self.position.x, self.position.y - 90)]
+  ]];
 }
 @end

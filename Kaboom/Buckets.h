@@ -10,6 +10,7 @@
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed;
 -(void) removeBucket;
 -(int) bucketCount;
+-(void) reset;
 
 @property(readonly) NSArray *buckets;
 

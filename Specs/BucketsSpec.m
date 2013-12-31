@@ -195,4 +195,30 @@ OCDSpec2Context(BucketsSpec) {
     });
 
   });
+
+  Describe(@"resetting the buckets", ^{
+
+    It(@"restores the buckets", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+
+      [buckets removeBucket];
+      [buckets removeBucket];
+      [buckets removeBucket];
+
+      [buckets reset];
+
+      [ExpectInt([buckets bucketCount]) toBe:3];
+    });
+
+    It(@"resets the position back to its original position", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      [buckets tilt:20];
+
+      [buckets update:2];
+      [buckets reset];
+
+      [ExpectInt(buckets.position.x) toBe:0];
+    });
+
+  });
 }
