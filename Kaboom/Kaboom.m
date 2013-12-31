@@ -84,6 +84,7 @@
 
     [gameOver setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
       [self.buckets reset];
+      [self startBombing];
     }];
 
     [finishingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
