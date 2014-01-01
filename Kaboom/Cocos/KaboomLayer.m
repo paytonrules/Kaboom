@@ -56,6 +56,7 @@ enum TAGS {
     [blackboard registerWatcher:self action:@selector(removeBomb:) event:kBombCaught];
     [blackboard registerWatcher:self action:@selector(bombHit:) event:kBombHit];
     [blackboard registerWatcher:self action:@selector(addBomb:) event:kBombDropped];
+    [blackboard registerWatcher:self action:@selector(gameOver:) event:kGameOver];
 
     [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"Exhilarate.mp3"];
     [[SimpleAudioEngine sharedEngine] preloadEffect:@"catch.wav"];
@@ -130,6 +131,24 @@ enum TAGS {
 {
   [self.game start];
   [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Exhilarate.mp3"];
+}
+
+-(void) gameOver:(Event *) evt
+{
+  __block CCMenu *newGameMenu = nil;
+  CCLabelTTF *newGameLabel = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica" fontSize:42];
+  CCMenuItem *item = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
+  [item setPosition:ccp(200, 230)];
+  newGameMenu = [CCMenu menuWithItems:item, nil];
+  newGameMenu.visible = YES;
+  [newGameMenu setPosition:CGPointZero];
+  [self addChild:newGameMenu z:1];
+}
+
+-(void) newGame:(CCMenuItem *) label
+{
+  [label.parent removeFromParent];
+  [self.game start];
 }
 
 -(void) startLevel
