@@ -9,6 +9,8 @@
 
 @implementation Bucket2D
 
+@synthesize position;
+
 +(id) newBucketWithPosition:(CGPoint)position
 {
   Bucket2D *bucket = [Bucket2D new];
@@ -34,6 +36,11 @@
 -(void) remove
 {
   self.removed = true;
+}
+
+-(void) putBack
+{
+  self.removed = false;
 }
 
 @end

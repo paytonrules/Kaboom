@@ -20,10 +20,11 @@
 {
   if (self.bucket.removed)
   {
-    [self removeFromParentAndCleanup:YES];
+    [self setVisible:NO];
   }
   else
   {
+    [self setVisible:YES];
     [self setPosition:self.bucket.position];
     ((Bucket2D *) self.bucket).boundingBox = self.boundingBox;
   }

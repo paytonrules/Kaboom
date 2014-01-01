@@ -5,17 +5,20 @@ PODS:
   - OCDSpec2 (1.5.1)
   - OCMock (2.2.1)
   - TransitionKit (2.0.0)
+  - Underscore.m (0.2.1)
 
 DEPENDENCIES:
   - cocos2d
   - OCDSpec2
   - OCMock
   - TransitionKit (~> 2.0.0)
+  - Underscore.m (~> 0.2.1)
 
 SPEC CHECKSUMS:
   cocos2d: 1ee107ccb03edf8f72f846e87b7d71c96fbfe6bc
   OCDSpec2: 69409a830da0e0ad80ea0cb6082cf29b6d148c27
   OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
+  Underscore.m: 593ea54a19d3cc4439387a83d36eb7ba6ffd1707
 
 COCOAPODS: 0.29.0

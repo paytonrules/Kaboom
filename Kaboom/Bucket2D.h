@@ -6,6 +6,5 @@
 +(id) newBucketWithPosition:(CGPoint) position;
 
 @property(assign) CGRect boundingBox;
-@property(assign) CGPoint position;
 
 @end

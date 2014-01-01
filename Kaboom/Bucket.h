@@ -3,9 +3,10 @@
 @protocol Bucket
 
 @property(readonly) BOOL removed;
-@property(readonly) CGPoint position;
+@property(assign) CGPoint position;
 
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb;
 -(void) remove;
+-(void) putBack;
 
 @end

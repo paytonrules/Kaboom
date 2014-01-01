@@ -157,14 +157,23 @@ OCDSpec2Context(BucketsSpec) {
 
   Describe(@"removing buckets", ^{
 
-    It(@"removes the bottom-most bucket", ^{
+    It(@"removes from the bottom up", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
 
       [buckets removeBucket];
 
-      [ExpectInt(buckets.buckets.count) toBe:2];
-      NSObject<Bucket> *bucket = buckets.buckets[1];
-      [ExpectInt(bucket.position.y) toBe:0];
+      [ExpectInt(buckets.bucketCount) toBe:2];
+      [ExpectBool(((NSObject<Bucket> *) buckets.buckets[2]).removed) toBeTrue];
+
+      [buckets removeBucket];
+
+      [ExpectInt(buckets.bucketCount) toBe:1];
+      [ExpectBool(((NSObject<Bucket> *) buckets.buckets[1]).removed) toBeTrue];
+
+      [buckets removeBucket];
+
+      [ExpectInt(buckets.bucketCount) toBe:0];
+      [ExpectBool(((NSObject<Bucket> *) buckets.buckets[0]).removed) toBeTrue];
     });
 
     It(@"doesnt blow up when you are out of buckets", ^{
@@ -218,6 +227,19 @@ OCDSpec2Context(BucketsSpec) {
       [buckets reset];
 
       [ExpectInt(buckets.position.x) toBe:0];
+    });
+
+    It(@"Does not create new buckets, just resets the existing ones", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      NSObject<Bucket> *bucket = buckets.buckets[0];
+
+      [buckets removeBucket];
+      [buckets removeBucket];
+      [buckets removeBucket];
+
+      [buckets reset];
+
+      [ExpectObj(bucket) toBe:buckets.buckets[0]];
     });
 
   });

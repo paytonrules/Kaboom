@@ -1,5 +1,6 @@
 #import "Buckets.h"
 #import "Bucket2D.h"
+#import <Underscore.m/Underscore.h>
 
 @interface Buckets ()
 
@@ -21,6 +22,10 @@
   {
     self.originalPosition = self.position = position;
     self.speed = speed;
+    self.theBuckets = [NSMutableArray arrayWithArray:@[
+        [Bucket2D new],
+        [Bucket2D new],
+        [Bucket2D new]]];
     [self setupBuckets];
   }
   return self;
@@ -51,10 +56,9 @@
 {
   if ([self bucketCount] != 0)
   {
-    int lastBucket = self.theBuckets.count - 1;
+    int lastBucket = [self bucketCount] - 1;
     NSObject<Bucket> *bucket = self.theBuckets[lastBucket];
     [bucket remove];
-    [self.theBuckets removeObjectAtIndex:lastBucket];
   }
 }
 
@@ -70,21 +74,25 @@
 
 -(void) reset
 {
+  self.position = self.originalPosition;
   [self setupBuckets];
 }
 
 -(int) bucketCount
 {
-  return self.theBuckets.count;
+  NSArray *availableBuckets = Underscore.filter(self.theBuckets, ^BOOL (NSObject<Bucket> *bucket) {
+    return !bucket.removed;
+  });
+  return availableBuckets.count;
 }
 
 -(void) setupBuckets
 {
-  self.position = self.originalPosition;
-  self.theBuckets = [NSMutableArray arrayWithArray:@[
-      [Bucket2D newBucketWithPosition:CGPointMake(self.position.x, self.position.y + 90)],
-      [Bucket2D newBucketWithPosition:CGPointMake(self.position.x, self.position.y)],
-      [Bucket2D newBucketWithPosition:CGPointMake(self.position.x, self.position.y - 90)]
-  ]];
+  ((NSObject<Bucket> *) self.theBuckets[0]).position = CGPointMake(self.originalPosition.x, self.originalPosition.y + 90);
+  ((NSObject<Bucket> *) self.theBuckets[1]).position = CGPointMake(self.originalPosition.x, self.originalPosition.y);
+  ((NSObject<Bucket> *) self.theBuckets[2]).position = CGPointMake(self.originalPosition.x, self.originalPosition.y - 90);
+  for (NSObject<Bucket> *bucket in self.theBuckets ) {
+    [bucket putBack];
+  }
 }
 @end
