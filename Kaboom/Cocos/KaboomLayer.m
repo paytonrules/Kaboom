@@ -135,11 +135,14 @@ enum TAGS {
 
 -(void) gameOver:(Event *) evt
 {
-  __block CCMenu *newGameMenu = nil;
+  CGSize size = [CCDirector sharedDirector].winSize;
+
   CCLabelTTF *newGameLabel = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica" fontSize:42];
-  CCMenuItem *item = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
-  [item setPosition:ccp(200, 230)];
-  newGameMenu = [CCMenu menuWithItems:item, nil];
+  CCMenuItemLabel *item = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
+  [item setPosition:ccp(size.width / 2, size.height / 2)];
+
+
+  CCMenu *newGameMenu = [CCMenu menuWithItems:item, nil];
   newGameMenu.visible = YES;
   [newGameMenu setPosition:CGPointZero];
   [self addChild:newGameMenu z:1];
