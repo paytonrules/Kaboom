@@ -6,6 +6,7 @@
 #import "GameBlackboard.h"
 #import "Event.h"
 #import "LevelCollection.h"
+#import "KaboomContext.h"
 #import <TransitionKit/TransitionKit.h>
 
 @interface Kaboom ()
@@ -15,6 +16,7 @@
 @property(strong) Class<LevelLoader> levelLoader;
 @property(strong) LevelCollection *levels;
 @property(strong) TKStateMachine *gameStateMachine;
+@property(strong) KaboomContext *gameContext;
 @end
 
 @implementation Kaboom : NSObject
@@ -60,6 +62,7 @@
   if (self = [super init])
   {
     self.gameStateMachine = [TKStateMachine new];
+    self.gameContext = [KaboomContext new];
 
     TKState *waitingForStart = [TKState stateWithName:@"Waiting"];
     TKState *droppingBombs = [TKState stateWithName:@"Dropping"];
@@ -114,6 +117,16 @@
     self.levelLoader = [PlistLevelsLoader class];
   }
   return self;
+}
+
+-(void) setScore:(int)score
+{
+  self.gameContext.score = score;
+}
+
+-(int) score
+{
+  return self.gameContext.score;
 }
 
 -(void) start

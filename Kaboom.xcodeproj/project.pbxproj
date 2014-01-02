@@ -72,6 +72,7 @@
 		2FA28A522C69779A46FC8B92 /* levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28D81C30296DC88C95456 /* levels.plist */; };
 		2FA28AB5646A4158A188BCDA /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2821851BD13F77BC6DB45 /* fire.png */; };
 		2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
+		2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
 		2FA28B50C9E063A7A90D5662 /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
@@ -82,6 +83,7 @@
 		2FA28C99D74E192153936D49 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
+		2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
 		2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28E4937C3999A510C3470 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
@@ -161,6 +163,7 @@
 		2FA2887C8E68A7489401797D /* GameBlackboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBlackboard.h; sourceTree = "<group>"; };
 		2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-ipadhd.png"; sourceTree = "<group>"; };
 		2FA288C49F5E6138D1521493 /* Bomber2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2D.m; sourceTree = "<group>"; };
+		2FA28909FD433915F3B7FE42 /* KaboomContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContext.m; sourceTree = "<group>"; };
 		2FA2891355F773A6B44F6DEF /* RandomLocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomLocationChooser.h; sourceTree = "<group>"; };
 		2FA2891AFACE214F27564198 /* bomber-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomber-ipad.png"; sourceTree = "<group>"; };
 		2FA28923F9066842A8F8F5C5 /* buckets-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buckets-ipad.png"; sourceTree = "<group>"; };
@@ -189,6 +192,7 @@
 		2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FA28DE3F164F6A7FCD6C43C /* bomb-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-ipad.png"; sourceTree = "<group>"; };
 		2FA28E033F3091031ECC9F1F /* LocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChooser.h; sourceTree = "<group>"; };
+		2FA28E7B22D205A3434596B5 /* KaboomContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomContext.h; sourceTree = "<group>"; };
 		2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardRandomNumberGenerator.m; sourceTree = "<group>"; };
 		2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBlackboard.m; sourceTree = "<group>"; };
 		2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLayer.m; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 				2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */,
 				2FA2820F7F26FF1AB604EBDF /* Event.h */,
 				2FA28A1F15291BDB03525501 /* Event.m */,
+				2FA28909FD433915F3B7FE42 /* KaboomContext.m */,
+				2FA28E7B22D205A3434596B5 /* KaboomContext.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -644,6 +650,7 @@
 				2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */,
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
 				2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */,
+				2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +679,7 @@
 				2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */,
 				2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */,
 				2FA288ED10E147DC9C66C8A7 /* LevelCollection.m in Sources */,
+				2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
