@@ -1,11 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "Bomber.h"
+#import "KaboomStateMachine.h"
+#import "LevelLoader.h"
 
 @class Buckets;
-@protocol LevelLoader;
-@class KaboomPresenter;
+@class KaboomContext;
 
-@interface Kaboom : NSObject
+@interface Kaboom : NSObject<KaboomStateMachine>
 
 +(id) newLevelWithSize:(CGSize) size;
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber;
@@ -17,7 +18,6 @@
 -(void) update:(CGFloat) deltaTime;
 -(void) tilt:(CGFloat) tilt;
 
-@property(readonly) NSObject<Bomber> *bomber;
-@property(readonly) Buckets *buckets;
 @property(assign) int score;
+@property(strong) KaboomContext *gameContext;
 @end

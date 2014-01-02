@@ -147,6 +147,7 @@
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284271FF8A675D4E0D818 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
+		2FA2847CA3FB760F6627C77D /* KaboomStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomStateMachine.h; sourceTree = "<group>"; };
 		2FA284B4C0D2EDB6A139A2E0 /* BombExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombExplosion.m; sourceTree = "<group>"; };
 		2FA285481EF46AADB0F024DB /* BomberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BomberSprite.m; sourceTree = "<group>"; };
 		2FA2857D24C15E52AF2D4F2F /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
@@ -318,6 +319,7 @@
 				2FA28A1F15291BDB03525501 /* Event.m */,
 				2FA28909FD433915F3B7FE42 /* KaboomContext.m */,
 				2FA28E7B22D205A3434596B5 /* KaboomContext.h */,
+				2FA2847CA3FB760F6627C77D /* KaboomStateMachine.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";

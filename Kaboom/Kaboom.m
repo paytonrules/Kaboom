@@ -11,15 +11,12 @@
 
 @interface Kaboom ()
 
-@property(strong) NSObject<Bomber> *bomber;
-@property(strong) Buckets *buckets;
-@property(strong) Class<LevelLoader> levelLoader;
-@property(strong) LevelCollection *levels;
 @property(strong) TKStateMachine *gameStateMachine;
-@property(strong) KaboomContext *gameContext;
 @end
 
 @implementation Kaboom : NSObject
+
+@synthesize levels, levelLoader, bomber, buckets;
 
 // Seems inappropriate - not sure the Kaboom game should know about size
 // it's the state of the system.
@@ -62,7 +59,7 @@
   if (self = [super init])
   {
     self.gameStateMachine = [TKStateMachine new];
-    self.gameContext = [KaboomContext new];
+    self.gameContext = [KaboomContext newWithMachine:self];
 
     TKState *waitingForStart = [TKState stateWithName:@"Waiting"];
     TKState *droppingBombs = [TKState stateWithName:@"Dropping"];
@@ -73,12 +70,11 @@
     TKState *finishingLevel = [TKState stateWithName:@"Finishing Level"];
 
     [waitingForStart setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
-      [self startBombing];
+      [self.gameContext startBombing];;
     }];
 
     [updatingSystem setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      [self updatePlayers:[transition.userInfo[@"deltaTime"] floatValue]];
-      [self checkBombs];
+      [self.gameContext updatePlayers:[transition.userInfo[@"deltaTime"] floatValue]];
     }];
 
     [gameOver setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
@@ -129,6 +125,11 @@
   return self.gameContext.score;
 }
 
+-(void)fire:(NSString *)eventName
+{
+  [self.gameStateMachine fireEvent:eventName userInfo:nil error:nil];
+}
+
 -(void) start
 {
   [self.gameStateMachine fireEvent:@"Start Game" userInfo:nil error:nil];
@@ -137,12 +138,6 @@
 -(void) restart
 {
   [self.gameStateMachine fireEvent:@"Restart Level" userInfo:nil error:nil];
-}
-
--(void) startBombing
-{
-  self.levels = [self.levelLoader load];
-  [self advanceToNextLevel];
 }
 
 -(void) advanceToNextLevel
@@ -163,7 +158,7 @@
 {
   self.score = 0;
   [self.buckets reset];
-  [self startBombing];
+  [self.gameContext startBombing];
 }
 
 -(void) startBomberAtLevel:(NSDictionary *)level {
@@ -176,32 +171,6 @@
 {
   NSDictionary *userInfo = @{@"deltaTime" : [NSNumber numberWithFloat:deltaTime]};
   [self.gameStateMachine fireEvent:@"Update" userInfo:userInfo error:nil];
-}
-
--(void) updatePlayers:(CGFloat) deltaTime
-{
-  [self.bomber update:deltaTime];
-  [self.buckets update:deltaTime];
-  self.score += [self.bomber updateDroppedBombs:self.buckets];
-}
-
--(void) checkBombs
-{
-  if ([self.bomber bombHit]) {
-    [[GameBlackboard sharedBlackboard] notify:kBombHit event:nil];
-    [self.buckets removeBucket];
-    [self.bomber explode];
-
-    if ([self.buckets bucketCount] == 0) {
-      [self.gameStateMachine fireEvent:@"End Game" userInfo:nil error:nil];
-    } else {
-      [self.gameStateMachine fireEvent:@"Bomb Hit" userInfo:nil error:nil];
-    }
-  } else if (self.bomber.isOut) {
-    [self.gameStateMachine fireEvent:@"Next Level" userInfo:nil error: nil];
-  } else {
-    [self.gameStateMachine fireEvent:@"No Hit" userInfo:nil error: nil];
-  }
 }
 
 -(void) gameOverNotification
