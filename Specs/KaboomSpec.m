@@ -399,6 +399,22 @@ OCDSpec2Context(KaboomSpec) {
       [buckets verify];
     });
 
+    It(@"resets the score on new game", ^{
+      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
+      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
+      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
+      [[[bomber stub] andReturnValue:@YES] bombHit];
+      [[buckets stub] removeBucket];
+      [[[buckets stub] andReturnValue:@0] bucketCount];
+
+      [level start];
+      [level update:10];
+      level.score = 2;
+      [level start];
+
+      [ExpectInt(level.score) toBe:0];
+    });
+
     It(@"removes the bucket and checks the bucket count AFTER checking if the bomb hit", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject niceMockForClass:[Buckets class]];

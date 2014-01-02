@@ -83,8 +83,7 @@
     }];
 
     [gameOver setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
-      [self.buckets reset];
-      [self startBombing];
+      [self resetGame];
     }];
 
     [finishingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
@@ -145,6 +144,13 @@
   NSDictionary *level = [self.levels current];
   [self startBomberAtLevel:level];
   [self.gameStateMachine fireEvent:@"Restarted" userInfo:nil error:nil];
+}
+
+-(void) resetGame
+{
+  self.score = 0;
+  [self.buckets reset];
+  [self startBombing];
 }
 
 -(void) startBomberAtLevel:(NSDictionary *)level {
