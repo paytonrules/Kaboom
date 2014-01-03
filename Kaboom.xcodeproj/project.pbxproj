@@ -39,6 +39,7 @@
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
 		2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
+		2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA2846A44C520438B5D3184 /* bomb-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */; };
 		2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollection.m */; };
@@ -78,15 +79,18 @@
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
 		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
+		2FA28C7735C51230240E21B1 /* SizeServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */; };
 		2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */; };
 		2FA28C8D7E43F5E71EA1F6DB /* catch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2802FCB805A565D204AC7 /* catch.wav */; };
 		2FA28C99D74E192153936D49 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
+		2FA28D3CB596C6B8E6CF7A5C /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
 		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
 		2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28E4937C3999A510C3470 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
+		2FA28EBE6573BD70FB5058EB /* CocosSizeStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */; };
 		2FA28EF3472AD27B423BA8EE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
 		2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
@@ -139,11 +143,13 @@
 		2FA281F9C8EF645AF53CC76D /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
 		2FA2820F7F26FF1AB604EBDF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		2FA2821851BD13F77BC6DB45 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
+		2FA2825B16BDD9E954374712 /* SizeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeService.h; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
 		2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ccbParticleFire.png; path = Resources/ccbParticleFire.png; sourceTree = "<group>"; };
 		2FA28408982A64B570F0A04F /* bomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bomb.wav; path = Resources/bomb.wav; sourceTree = "<group>"; };
+		2FA2841EA0EC00D6B039FC7E /* CocosSizeStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSizeStrategy.h; sourceTree = "<group>"; };
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284271FF8A675D4E0D818 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
@@ -159,10 +165,12 @@
 		2FA286532A831D492022AA18 /* buckets-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buckets-ipadhd.png"; sourceTree = "<group>"; };
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
 		2FA286FCDD89AA9093552F70 /* BombSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombSprite.h; sourceTree = "<group>"; };
+		2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSizeStrategy.m; sourceTree = "<group>"; };
 		2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2D.m; sourceTree = "<group>"; };
 		2FA28831461D09EEC3799121 /* Bomb2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb2D.h; sourceTree = "<group>"; };
 		2FA2887C8E68A7489401797D /* GameBlackboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBlackboard.h; sourceTree = "<group>"; };
 		2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb-ipadhd.png"; sourceTree = "<group>"; };
+		2FA288ADE3635DBCA6DA8C9C /* SizeStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeStrategy.h; sourceTree = "<group>"; };
 		2FA288C49F5E6138D1521493 /* Bomber2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2D.m; sourceTree = "<group>"; };
 		2FA28909FD433915F3B7FE42 /* KaboomContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContext.m; sourceTree = "<group>"; };
 		2FA2891355F773A6B44F6DEF /* RandomLocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomLocationChooser.h; sourceTree = "<group>"; };
@@ -181,6 +189,7 @@
 		2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2DSpec.m; sourceTree = "<group>"; };
 		2FA28B556A0975917DD905A9 /* BombExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombExplosion.h; sourceTree = "<group>"; };
 		2FA28C348025798254AAD049 /* GameBlackboardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBlackboardSpec.m; sourceTree = "<group>"; };
+		2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeServiceSpec.m; sourceTree = "<group>"; };
 		2FA28C951EF791E384FF0C5E /* KaboomSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomSpec.m; sourceTree = "<group>"; };
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
 		2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomLayer.h; sourceTree = "<group>"; };
@@ -197,6 +206,7 @@
 		2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardRandomNumberGenerator.m; sourceTree = "<group>"; };
 		2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBlackboard.m; sourceTree = "<group>"; };
 		2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomLayer.m; sourceTree = "<group>"; };
+		2FA28F4FF183F08F0285ECF1 /* SizeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeService.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2FA28F71CD039144C4E294F7 /* Bomber2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber2D.h; sourceTree = "<group>"; };
 		2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Exhilarate.mp3; path = Resources/Exhilarate.mp3; sourceTree = "<group>"; };
@@ -320,6 +330,7 @@
 				2FA28909FD433915F3B7FE42 /* KaboomContext.m */,
 				2FA28E7B22D205A3434596B5 /* KaboomContext.h */,
 				2FA2847CA3FB760F6627C77D /* KaboomStateMachine.h */,
+				2FA288ADE3635DBCA6DA8C9C /* SizeStrategy.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -399,6 +410,8 @@
 				2FA28A17E04A7E30DBEBC6F6 /* PlistLevelsLoader.h */,
 				2FA28A213D5E2AA4D42254DE /* LevelCollection.m */,
 				2FA28FC9C046626D7FB3CF48 /* LevelCollection.h */,
+				2FA2825B16BDD9E954374712 /* SizeService.h */,
+				2FA28F4FF183F08F0285ECF1 /* SizeService.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -408,6 +421,7 @@
 			children = (
 				2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */,
 				2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */,
+				2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -431,6 +445,8 @@
 				2FA280BAB876740B963BBB44 /* BucketSprite.h */,
 				2FA284B4C0D2EDB6A139A2E0 /* BombExplosion.m */,
 				2FA28B556A0975917DD905A9 /* BombExplosion.h */,
+				2FA2841EA0EC00D6B039FC7E /* CocosSizeStrategy.h */,
+				2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -653,6 +669,8 @@
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
 				2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */,
 				2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */,
+				2FA28EBE6573BD70FB5058EB /* CocosSizeStrategy.m in Sources */,
+				2FA28D3CB596C6B8E6CF7A5C /* SizeService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +700,8 @@
 				2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */,
 				2FA288ED10E147DC9C66C8A7 /* LevelCollection.m in Sources */,
 				2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */,
+				2FA28C7735C51230240E21B1 /* SizeServiceSpec.m in Sources */,
+				2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

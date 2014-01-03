@@ -38,7 +38,5 @@ OCDSpec2Context(LevelCollection) {
 
       [ExpectObj(next) toBeEqualTo:@{@"Speed" : @"1"}];
     });
-
   });
-
 }

@@ -10,6 +10,8 @@
 
 #import "AppDelegate.h"
 #import "IntroLayer.h"
+#import "SizeService.h"
+#import "CocosSizeStrategy.h"
 
 @implementation MyNavigationController
 
@@ -135,7 +137,8 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-	
+
+  [SizeService setStrategy:[CocosSizeStrategy new]];
 	return YES;
 }
 
