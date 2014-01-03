@@ -92,7 +92,18 @@ OCDSpec2Context(BucketsSpec) {
       }];
     });
 
-    It(@"is doesn't change their Y value", ^{
+    It(@"doesn't move anywhere if the delta time is 0.0", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
+
+      [buckets tilt:-0.5];
+      [buckets update:0.0];
+
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:10.0 withPrecision:0.0001];
+      }];
+    });
+
+    It(@"doesn't change their Y value", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
       [buckets tilt:-0.5];

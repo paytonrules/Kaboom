@@ -38,12 +38,14 @@
 
 -(void) update:(CGFloat) deltaTime
 {
-  float newX = self.position.x + (self.tilt * (self.speed / deltaTime));
-  self.position = CGPointMake(newX, self.position.y);
-
-  for (Bucket2D *bucket in self.buckets)
+  if (deltaTime > 0)
   {
-    bucket.position = CGPointMake(newX, bucket.position.y);
+    float newX = self.position.x + (self.tilt * (self.speed / deltaTime));
+    self.position = CGPointMake(newX, self.position.y);
+
+    for (Bucket2D *bucket in self.buckets) {
+      bucket.position = CGPointMake(newX, bucket.position.y);
+    }
   }
 }
 
