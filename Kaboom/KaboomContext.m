@@ -1,4 +1,5 @@
 #import "KaboomContext.h"
+#import "LevelCollection.h"
 #import "LevelLoader.h"
 #import "Buckets.h"
 #import "Bomber.h"
@@ -7,6 +8,7 @@
 
 @interface KaboomContext()
 
+-(void) startBomberAtLevel:(NSDictionary *)level;
 @property(strong) NSObject<KaboomStateMachine> *machine;
 
 @end
@@ -22,8 +24,46 @@
 
 -(void) startBombing
 {
-  self.machine.levels = [self.machine.levelLoader load];
-  [self.machine advanceToNextLevel];
+  self.machine.levels = [self.levelLoader load];
+  [self advanceToNextLevel];
+}
+
+-(void) gameOverNotification
+{
+  [[GameBlackboard sharedBlackboard] notify:kGameOver event:nil];
+}
+
+-(void) resetGame
+{
+  self.score = 0;
+  [self.machine.buckets reset];
+  [self startBombing];
+}
+
+-(void) advanceToNextLevel
+{
+  NSDictionary *level = [self.machine.levels next];
+  [self startBomberAtLevel:level];
+  [self.machine fire:@"New Level"];
+}
+
+-(void) restartLevel
+{
+  NSDictionary *level = [self.machine.levels current];
+  [self startBomberAtLevel:level];
+  [self.machine fire:@"Restarted"];
+}
+
+-(void) startBomberAtLevel:(NSDictionary *)level
+{
+  float speed = [level[@"Speed"] floatValue];
+  int bombs = [level[@"Bombs"] intValue];
+  [self.machine.bomber startAtSpeed:speed withBombs:bombs];
+}
+
+-(void) tilt:(CGFloat) tilt
+{
+  [self.machine.buckets tilt:tilt];
 }
 
 -(void) updatePlayers:(CGFloat) deltaTime

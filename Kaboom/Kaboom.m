@@ -3,8 +3,6 @@
 #import "Buckets.h"
 #import "RandomLocationChooser.h"
 #import "PlistLevelsLoader.h"
-#import "GameBlackboard.h"
-#import "Event.h"
 #import "LevelCollection.h"
 #import "KaboomContext.h"
 #import <TransitionKit/TransitionKit.h>
@@ -16,7 +14,7 @@
 
 @implementation Kaboom : NSObject
 
-@synthesize levels, levelLoader, bomber, buckets;
+@synthesize levels, bomber, buckets;
 
 // Seems inappropriate - not sure the Kaboom game should know about size
 // it's the state of the system.
@@ -42,7 +40,7 @@
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber andLevelLoader:(Class<LevelLoader>) loader
 {
   Kaboom *level = [self newLevelWithBomber:bomber];
-  level.levelLoader = loader;
+  level.gameContext.levelLoader = loader;
   return level;
 }
 
@@ -60,6 +58,7 @@
   {
     self.gameStateMachine = [TKStateMachine new];
     self.gameContext = [KaboomContext newWithMachine:self];
+    self.gameContext.levelLoader = [PlistLevelsLoader class];
 
     TKState *waitingForStart = [TKState stateWithName:@"Waiting"];
     TKState *droppingBombs = [TKState stateWithName:@"Dropping"];
@@ -78,19 +77,19 @@
     }];
 
     [gameOver setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      [self gameOverNotification];
+      [self.gameContext gameOverNotification];
     }];
 
     [gameOver setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
-      [self resetGame];
+      [self.gameContext resetGame];
     }];
 
     [finishingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      [self advanceToNextLevel];
+      [self.gameContext advanceToNextLevel];
     }];
 
     [restartingLevel setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      [self restartLevel];
+      [self.gameContext restartLevel];
     }];
 
     [self.gameStateMachine addStates:@[waitingForStart, droppingBombs, updatingSystem, exploding, gameOver,
@@ -109,8 +108,6 @@
     [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update, nextLevel, restart, restarted, newLevel ]];
 
     [self.gameStateMachine activate];
-
-    self.levelLoader = [PlistLevelsLoader class];
   }
   return self;
 }
@@ -140,49 +137,16 @@
   [self.gameStateMachine fireEvent:@"Restart Level" userInfo:nil error:nil];
 }
 
--(void) advanceToNextLevel
-{
-  NSDictionary *level = [self.levels next];
-  [self startBomberAtLevel:level];
-  [self.gameStateMachine fireEvent:@"New Level" userInfo:nil error: nil];
-}
-
--(void) restartLevel
-{
-  NSDictionary *level = [self.levels current];
-  [self startBomberAtLevel:level];
-  [self.gameStateMachine fireEvent:@"Restarted" userInfo:nil error:nil];
-}
-
--(void) resetGame
-{
-  self.score = 0;
-  [self.buckets reset];
-  [self.gameContext startBombing];
-}
-
--(void) startBomberAtLevel:(NSDictionary *)level {
-  float speed = [level[@"Speed"] floatValue];
-  int bombs = [level[@"Bombs"] intValue];
-  [self.bomber startAtSpeed:speed withBombs:bombs];
-}
-
 -(void) update:(CGFloat) deltaTime
 {
   NSDictionary *userInfo = @{@"deltaTime" : [NSNumber numberWithFloat:deltaTime]};
   [self.gameStateMachine fireEvent:@"Update" userInfo:userInfo error:nil];
 }
 
--(void) gameOverNotification
-{
-  [[GameBlackboard sharedBlackboard] notify:kGameOver event:nil];
-}
-
-
 // Does this belong here?  You don't tilt the game
 -(void) tilt:(CGFloat) tilt
 {
-  [self.buckets tilt:tilt];
+  [self.gameContext tilt:tilt];
 }
 
 @end
