@@ -20,4 +20,8 @@
 
 @property(assign) int score;
 @property(strong) KaboomContext *gameContext;
+
+// Possibly temp
+@property(readonly) NSObject<Bomber>  *bomber;
+@property(readonly) Buckets *buckets;
 @end

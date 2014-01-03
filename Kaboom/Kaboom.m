@@ -14,48 +14,40 @@
 
 @implementation Kaboom : NSObject
 
-@synthesize levels, bomber, buckets;
-
 // Seems inappropriate - not sure the Kaboom game should know about size
 // it's the state of the system.
-+(id) newLevelWithSize:(CGSize)size
-{
++ (id)newLevelWithSize:(CGSize)size {
   Kaboom *level = [Kaboom new];
-  level.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, 180.0f)
-                                              speed:1.0];
+  level.gameContext.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, 180.0f)
+                                                          speed:1.0];
   RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
 
-  level.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 60.0)
-                                    locationChooser:chooser];
+  level.gameContext.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 60.0)
+                                                locationChooser:chooser];
   return level;
 }
 
-+(id) newLevelWithBomber:(NSObject<Bomber> *) bomber
-{
++ (id)newLevelWithBomber:(NSObject <Bomber> *)bomber {
   Kaboom *level = [Kaboom new];
-  level.bomber = bomber;
+  level.gameContext.bomber = bomber;
   return level;
 }
 
-+(id) newLevelWithBomber:(NSObject<Bomber> *) bomber andLevelLoader:(Class<LevelLoader>) loader
-{
++ (id)newLevelWithBomber:(NSObject <Bomber> *)bomber andLevelLoader:(Class <LevelLoader>)loader {
   Kaboom *level = [self newLevelWithBomber:bomber];
   level.gameContext.levelLoader = loader;
   return level;
 }
 
-+(id) newLevelWithBuckets:(Buckets *) buckets bomber:(NSObject<Bomber> *) bomber
-{
++ (id)newLevelWithBuckets:(Buckets *)buckets bomber:(NSObject <Bomber> *)bomber {
   Kaboom *level = [Kaboom new];
-  level.buckets = buckets;
-  level.bomber = bomber;
+  level.gameContext.buckets = buckets;
+  level.gameContext.bomber = bomber;
   return level;
 }
 
--(id) init
-{
-  if (self = [super init])
-  {
+- (id)init {
+  if (self = [super init]) {
     self.gameStateMachine = [TKStateMachine new];
     self.gameContext = [KaboomContext newWithMachine:self];
     self.gameContext.levelLoader = [PlistLevelsLoader class];
@@ -96,56 +88,58 @@
         finishingLevel, restartingLevel]];
     self.gameStateMachine.initialState = waitingForStart;
 
-    TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[ waitingForStart, gameOver ] toState:droppingBombs];
-    TKEvent *restart = [TKEvent eventWithName:@"Restart Level" transitioningFromStates:@[ exploding ] toState:restartingLevel];
-    TKEvent *restarted = [TKEvent eventWithName:@"Restarted" transitioningFromStates:@[ restartingLevel ] toState:droppingBombs];
+    TKEvent *start = [TKEvent eventWithName:@"Start Game" transitioningFromStates:@[waitingForStart, gameOver] toState:droppingBombs];
+    TKEvent *restart = [TKEvent eventWithName:@"Restart Level" transitioningFromStates:@[exploding] toState:restartingLevel];
+    TKEvent *restarted = [TKEvent eventWithName:@"Restarted" transitioningFromStates:@[restartingLevel] toState:droppingBombs];
     TKEvent *newLevel = [TKEvent eventWithName:@"New Level" transitioningFromStates:@[finishingLevel] toState:droppingBombs];
     TKEvent *bombHit = [TKEvent eventWithName:@"Bomb Hit" transitioningFromStates:@[updatingSystem] toState:exploding];
     TKEvent *endGame = [TKEvent eventWithName:@"End Game" transitioningFromStates:@[updatingSystem] toState:gameOver];
     TKEvent *nextLevel = [TKEvent eventWithName:@"Next Level" transitioningFromStates:@[updatingSystem] toState:finishingLevel];
     TKEvent *noHits = [TKEvent eventWithName:@"No Hit" transitioningFromStates:@[updatingSystem] toState:droppingBombs];
     TKEvent *update = [TKEvent eventWithName:@"Update" transitioningFromStates:@[droppingBombs] toState:updatingSystem];
-    [self.gameStateMachine addEvents:@[ start, bombHit, endGame, noHits, update, nextLevel, restart, restarted, newLevel ]];
+    [self.gameStateMachine addEvents:@[start, bombHit, endGame, noHits, update, nextLevel, restart, restarted, newLevel]];
 
     [self.gameStateMachine activate];
   }
   return self;
 }
 
--(void) setScore:(int)score
-{
+- (void)setScore:(int)score {
   self.gameContext.score = score;
 }
 
--(int) score
-{
+- (int)score {
   return self.gameContext.score;
 }
 
--(void)fire:(NSString *)eventName
+- (NSObject <Bomber> *)bomber {
+  return self.gameContext.bomber;
+}
+
+-(Buckets*) buckets
 {
+  return self.gameContext.buckets;
+}
+
+- (void)fire:(NSString *)eventName {
   [self.gameStateMachine fireEvent:eventName userInfo:nil error:nil];
 }
 
--(void) start
-{
+- (void)start {
   [self.gameStateMachine fireEvent:@"Start Game" userInfo:nil error:nil];
 }
 
--(void) restart
-{
+- (void)restart {
   [self.gameStateMachine fireEvent:@"Restart Level" userInfo:nil error:nil];
 }
 
--(void) update:(CGFloat) deltaTime
-{
+- (void)update:(CGFloat)deltaTime {
   NSDictionary *userInfo = @{@"deltaTime" : [NSNumber numberWithFloat:deltaTime]};
   [self.gameStateMachine fireEvent:@"Update" userInfo:userInfo error:nil];
 }
 
 // Does this belong here?  You don't tilt the game
--(void) tilt:(CGFloat) tilt
-{
+- (void)tilt:(CGFloat)tilt {
   [self.gameContext tilt:tilt];
 }
 

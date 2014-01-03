@@ -14,5 +14,7 @@
 
 @property(assign) int score;
 @property(strong) Class<LevelLoader> levelLoader;
+@property(strong) NSObject<Bomber> *bomber;
+@property(strong) Buckets *buckets;
 
 @end
