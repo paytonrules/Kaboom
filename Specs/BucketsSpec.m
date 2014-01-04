@@ -1,8 +1,10 @@
 #import <OCDSpec2/OCDSpec2.h>
+#import <OCMock/OCMock.h>
 #import "Buckets.h"
 #import "Bomb2D.h"
 #import "Bucket.h"
 #import "Bucket2D.h"
+#import "SizeService.h"
 
 OCDSpec2Context(BucketsSpec) {
 
@@ -33,6 +35,12 @@ OCDSpec2Context(BucketsSpec) {
   });
   
   Describe(@"moving", ^{
+
+    BeforeEach(^{
+      id size = [OCMockObject mockForProtocol:@protocol(SizeStrategy)];
+      [[[size stub] andReturnValue:[NSValue valueWithCGSize:CGSizeMake(100, 0)]] screenSize];
+      [SizeService setStrategy:size];
+    });
     
     It(@"slides all buckets to the right when the screen is tilted in a positive direction", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
@@ -100,6 +108,32 @@ OCDSpec2Context(BucketsSpec) {
 
       [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
         [ExpectFloat(bucket.position.x) toBe:10.0 withPrecision:0.0001];
+      }];
+    });
+
+    It(@"stops moving left at 0.0", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(1.0, 10.0) speed:2.0];
+
+      [buckets tilt:-1.0];
+      [buckets update:1.0];
+
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:0.0 withPrecision:0.0001];
+      }];
+
+    });
+
+    It(@"stops moving right at the size of the screen", ^{
+      id size = [OCMockObject mockForProtocol:@protocol(SizeStrategy)];
+      [[[size stub] andReturnValue:[NSValue valueWithCGSize:CGSizeMake(100, 0)]] screenSize];
+      [SizeService setStrategy:size];
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(99.0, 10.0) speed:2.0];
+
+      [buckets tilt:1.0];
+      [buckets update:1.0];
+
+      [buckets.buckets enumerateObjectsUsingBlock:^(NSObject<Bucket> *bucket, NSUInteger idx, BOOL *stop) {
+        [ExpectFloat(bucket.position.x) toBe:100.0 withPrecision:0.0001];
       }];
     });
 
