@@ -37,9 +37,11 @@
 		07D264F01816B64A0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264EF1816B64A0060E3E9 /* main.m */; };
 		2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
+		2FA2806A2DB699A8664CEC11 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28BD5CDB7BDC427CD594C /* Star.png */; };
 		2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
+		2FA283B1B34EFF06D81F09F0 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F8FE3A22363A5185C71 /* background.png */; };
 		2FA28446EDF0DD2103EEDC43 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA2846A44C520438B5D3184 /* bomb-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28889A91D72FA16E94C99 /* bomb-ipadhd.png */; };
 		2FA2847B7ADE3F3A576E13ED /* LevelCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollection.m */; };
@@ -188,6 +190,7 @@
 		2FA28AA88E0D958362D9515B /* BucketsNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsNode.m; sourceTree = "<group>"; };
 		2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2DSpec.m; sourceTree = "<group>"; };
 		2FA28B556A0975917DD905A9 /* BombExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombExplosion.h; sourceTree = "<group>"; };
+		2FA28BD5CDB7BDC427CD594C /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Star.png; path = Resources/Star.png; sourceTree = "<group>"; };
 		2FA28C348025798254AAD049 /* GameBlackboardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBlackboardSpec.m; sourceTree = "<group>"; };
 		2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeServiceSpec.m; sourceTree = "<group>"; };
 		2FA28C951EF791E384FF0C5E /* KaboomSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomSpec.m; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 		2FA28F4FF183F08F0285ECF1 /* SizeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeService.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2FA28F71CD039144C4E294F7 /* Bomber2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber2D.h; sourceTree = "<group>"; };
+		2FA28F8FE3A22363A5185C71 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
 		2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Exhilarate.mp3; path = Resources/Exhilarate.mp3; sourceTree = "<group>"; };
 		2FA28FC9C046626D7FB3CF48 /* LevelCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollection.h; sourceTree = "<group>"; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 				2FA28408982A64B570F0A04F /* bomb.wav */,
 				2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */,
 				2FA2802FCB805A565D204AC7 /* catch.wav */,
+				2FA28BD5CDB7BDC427CD594C /* Star.png */,
+				2FA28F8FE3A22363A5185C71 /* background.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -551,6 +557,8 @@
 				2FA28584F239869EB9CABEC0 /* bomb.wav in Resources */,
 				2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */,
 				2FA28C8D7E43F5E71EA1F6DB /* catch.wav in Resources */,
+				2FA2806A2DB699A8664CEC11 /* Star.png in Resources */,
+				2FA283B1B34EFF06D81F09F0 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

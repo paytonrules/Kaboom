@@ -13,7 +13,7 @@ const int kBomb = 200;
 
 +(id) newSpriteWithBomb:(NSObject<Bomb> *) bomb
 {
-  BombSprite *sprite = [BombSprite spriteWithFile:@"bomb.png"];
+  BombSprite *sprite = [BombSprite spriteWithFile:@"Star.png"];
   [[SimpleAudioEngine sharedEngine] preloadEffect:@"bomb.wav"];
   sprite.bomb = bomb;
 

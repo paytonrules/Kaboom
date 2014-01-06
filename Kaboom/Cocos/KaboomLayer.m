@@ -35,12 +35,16 @@ enum TAGS {
 }
 
 - (id)init {
-  if ((self = [super initWithColor:ccc4(57, 109, 58, 255)])) {
+  if ((self = [super initWithColor:ccc4(0, 0, 0, 0)])) {
     CGSize size = [[CCDirector sharedDirector] winSize];
     self.touchEnabled = YES;
     self.accelerometerEnabled = YES;
 
     self.game = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
+
+    CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+    [background setPosition:ccp(size.width / 2, size.height / 2)];
+    [self addChild:background z:0];
 
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.game.bomber];
     BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.game.buckets];
