@@ -8,7 +8,7 @@
 
 +(id) newSpriteWithBomber:(NSObject<Bomber> *)bomber
 {
-  BomberSprite *sprite = [BomberSprite spriteWithFile:@"bomber.png"];
+  BomberSprite *sprite = [BomberSprite spriteWithSpriteFrameName:@"bomber.png"];
   sprite.bomber = bomber;
   [sprite scheduleUpdate];
   return sprite;

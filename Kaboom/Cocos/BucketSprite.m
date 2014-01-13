@@ -11,7 +11,7 @@
 
 +(id) newSpriteWithBucket:(NSObject<Bucket> *)bucket
 {
-  BucketSprite *sprite = [BucketSprite spriteWithFile:@"buckets.png"];
+  BucketSprite *sprite = [BucketSprite spriteWithSpriteFrameName:@"buckets.png"];
   sprite.bucket = bucket;
   return sprite;
 }
