@@ -74,7 +74,7 @@
 		2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
 		2FA28B50C9E063A7A90D5662 /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
-		2FA28B6B8AA4C797AB6541AF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28C6C9890168F1B8300C0 /* background.png */; };
+		2FA28B6B8AA4C797AB6541AF /* background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28C6C9890168F1B8300C0 /* background-ipadhd.png */; };
 		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
@@ -192,7 +192,7 @@
 		2FA28B556A0975917DD905A9 /* BombExplosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombExplosion.h; sourceTree = "<group>"; };
 		2FA28BC11023D3395D43C45B /* game-sprites-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites-ipadhd.pvr.ccz"; path = "Resources/game-sprites-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
 		2FA28C348025798254AAD049 /* GameBlackboardSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBlackboardSpec.m; sourceTree = "<group>"; };
-		2FA28C6C9890168F1B8300C0 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
+		2FA28C6C9890168F1B8300C0 /* background-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ipadhd.png"; path = "Resources/background-ipadhd.png"; sourceTree = "<group>"; };
 		2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeServiceSpec.m; sourceTree = "<group>"; };
 		2FA28C951EF791E384FF0C5E /* KaboomSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomSpec.m; sourceTree = "<group>"; };
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 				2FA28408982A64B570F0A04F /* bomb.wav */,
 				2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */,
 				2FA2802FCB805A565D204AC7 /* catch.wav */,
-				2FA28C6C9890168F1B8300C0 /* background.png */,
+				2FA28C6C9890168F1B8300C0 /* background-ipadhd.png */,
 				2FA2836A0F78CDAE43946430 /* game-sprites-hd.plist */,
 				2FA288D7BB03CD150495F014 /* game-sprites-hd.pvr.ccz */,
 				2FA2880C078D473DD00ACD95 /* game-sprites-ipadhd.plist */,
@@ -548,7 +548,7 @@
 				2FA28584F239869EB9CABEC0 /* bomb.wav in Resources */,
 				2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */,
 				2FA28C8D7E43F5E71EA1F6DB /* catch.wav in Resources */,
-				2FA28B6B8AA4C797AB6541AF /* background.png in Resources */,
+				2FA28B6B8AA4C797AB6541AF /* background-ipadhd.png in Resources */,
 				2FA2872C0F978D6A007CEE08 /* game-sprites-hd.plist in Resources */,
 				2FA28421E18E32E1C49C84AE /* game-sprites-hd.pvr.ccz in Resources */,
 				2FA289D0745311A2FE81EF41 /* game-sprites-ipadhd.plist in Resources */,
