@@ -37,6 +37,7 @@
 		07D264F01816B64A0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264EF1816B64A0060E3E9 /* main.m */; };
 		2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
+		2FA280B66F5869C57ED9D032 /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28A068DEBEF6897EC9A2B /* background-hd.png */; };
 		2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
@@ -182,6 +183,7 @@
 		2FA289962B51500947CF5EA5 /* Bomber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber.h; sourceTree = "<group>"; };
 		2FA289DFAA6766D477DC0BEF /* BombSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombSprite.m; sourceTree = "<group>"; };
 		2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites.pvr.ccz"; path = "Resources/game-sprites.pvr.ccz"; sourceTree = "<group>"; };
+		2FA28A068DEBEF6897EC9A2B /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-hd.png"; path = "Resources/background-hd.png"; sourceTree = "<group>"; };
 		2FA28A0F951445B45AF12061 /* Bomb2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2D.m; sourceTree = "<group>"; };
 		2FA28A17E04A7E30DBEBC6F6 /* PlistLevelsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistLevelsLoader.h; sourceTree = "<group>"; };
 		2FA28A1F15291BDB03525501 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				2FA28BC11023D3395D43C45B /* game-sprites-ipadhd.pvr.ccz */,
 				2FA28055740E6095D019B0DA /* game-sprites.plist */,
 				2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */,
+				2FA28A068DEBEF6897EC9A2B /* background-hd.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				2FA28C4DAF9C8586EE195C6B /* game-sprites-ipadhd.pvr.ccz in Resources */,
 				2FA2837BC25EB420FDDAD5D0 /* game-sprites.plist in Resources */,
 				2FA28DC2321038E98BA6527E /* game-sprites.pvr.ccz in Resources */,
+				2FA280B66F5869C57ED9D032 /* background-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

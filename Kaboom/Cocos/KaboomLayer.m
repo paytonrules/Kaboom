@@ -51,9 +51,9 @@ enum TAGS {
     [self addChild:gameArt];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"game-sprites.plist"];
 
-    CCSprite *planet = [CCSprite spriteWithSpriteFrameName:@"planet.png"];
-    [planet setPosition:ccp(size.width / 2, 10)];
-    [self addChild:planet z:0];
+    /*CCSprite *planet = [CCSprite spriteWithSpriteFrameName:@"planet.png"];
+    [planet setPosition:ccp(size.width / 2, 0)];
+    [self addChild:planet z:0];         */
 
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.game.bomber];
     BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.game.buckets];

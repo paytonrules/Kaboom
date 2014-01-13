@@ -7,7 +7,7 @@
             <key>Star.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,212},{18,18}}</string>
+                <string>{{2,488},{18,18}}</string>
                 <key>offset</key>
                 <string>{0,-3}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>bomber.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,166},{17,23}}</string>
+                <string>{{2,442},{17,23}}</string>
                 <key>offset</key>
                 <string>{0,-5}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>buckets.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,191},{16,19}}</string>
+                <string>{{2,467},{16,19}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,15 +46,15 @@
             <key>planet.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{144,162}}</string>
+                <string>{{2,2},{384,438}}</string>
                 <key>offset</key>
-                <string>{-10,-9}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{18,28},{144,162}}</string>
+                <string>{{0,0},{384,438}}</string>
                 <key>sourceSize</key>
-                <string>{200,200}</string>
+                <string>{384,438}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>game-sprites.pvr.ccz</string>
             <key>size</key>
-            <string>{256,256}</string>
+            <string>{512,512}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5de00fc64fe4ca2c2e7dad6c341e5dd3:72766d671f263a8d7941df2795fc324b:64b64a05b2a5c984ff6df54a3568955c$</string>
+            <string>$TexturePacker:SmartUpdate:355471e22ac1aaf576a766334b795361:83063796efe9063502cb050e99e56aa8:64b64a05b2a5c984ff6df54a3568955c$</string>
             <key>textureFileName</key>
             <string>game-sprites.pvr.ccz</string>
         </dict>

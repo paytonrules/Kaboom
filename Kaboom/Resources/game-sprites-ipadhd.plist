@@ -7,7 +7,7 @@
             <key>Star.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,822},{70,71}}</string>
+                <string>{{2,1924},{70,71}}</string>
                 <key>offset</key>
                 <string>{0,-11}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>bomber.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,654},{67,89}}</string>
+                <string>{{2,1756},{67,89}}</string>
                 <key>offset</key>
                 <string>{0,-21}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>buckets.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,745},{63,75}}</string>
+                <string>{{2,1847},{63,75}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,15 +46,15 @@
             <key>planet.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,2},{570,650}}</string>
+                <string>{{2,2},{1536,1752}}</string>
                 <key>offset</key>
-                <string>{-37,-37}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{78,112},{570,650}}</string>
+                <string>{{0,0},{1536,1752}}</string>
                 <key>sourceSize</key>
-                <string>{800,800}</string>
+                <string>{1536,1752}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -64,9 +64,9 @@
             <key>realTextureFileName</key>
             <string>game-sprites-ipadhd.pvr.ccz</string>
             <key>size</key>
-            <string>{1024,1024}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5de00fc64fe4ca2c2e7dad6c341e5dd3:72766d671f263a8d7941df2795fc324b:64b64a05b2a5c984ff6df54a3568955c$</string>
+            <string>$TexturePacker:SmartUpdate:355471e22ac1aaf576a766334b795361:83063796efe9063502cb050e99e56aa8:64b64a05b2a5c984ff6df54a3568955c$</string>
             <key>textureFileName</key>
             <string>game-sprites-ipadhd.pvr.ccz</string>
         </dict>
