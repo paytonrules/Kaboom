@@ -3,7 +3,10 @@
 
 @interface Buckets : NSObject
 
-@property(nonatomic, readonly) CGPoint position;
++(int) initialBucketLocation;
+@property(readonly) CGPoint position;
+@property(readonly) NSArray *buckets;
+
 -(void) update:(CGFloat) deltaTime;
 -(void) tilt:(float)angle;
 -(BOOL) caughtBomb:(NSObject<Bomb> *)bomb;
@@ -11,7 +14,6 @@
 -(void) removeBucket;
 -(int) bucketCount;
 -(void) reset;
-
-@property(readonly) NSArray *buckets;
+-(void) setBucketHeight:(int) height;
 
 @end

@@ -5,5 +5,6 @@
 @interface BucketsNode : CCNode
 
 +(id)newNodeWithBuckets:(Buckets *)buckets;
+-(int) bucketHeight;
 
 @end

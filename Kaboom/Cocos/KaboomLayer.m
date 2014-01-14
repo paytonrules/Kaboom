@@ -6,6 +6,7 @@
 #import "GameBlackboard.h"
 #import "Event.h"
 #import "SimpleAudioEngine.h"
+#import "Buckets.h"
 
 enum TAGS {
   kBucket,
@@ -51,14 +52,13 @@ enum TAGS {
     [self addChild:gameArt];
     [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"game-sprites.plist"];
 
-    /*CCSprite *planet = [CCSprite spriteWithSpriteFrameName:@"planet.png"];
-    [planet setPosition:ccp(size.width / 2, 0)];
-    [self addChild:planet z:0];         */
-
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.game.bomber];
-    BucketsNode *bucketSprite = [BucketsNode newNodeWithBuckets:self.game.buckets];
-    [self addChild:bucketSprite z:0 tag:kBucket];
     [self addChild:bomberSprite z:0 tag:kBomber];
+
+    BucketsNode *bucketsNode = [BucketsNode newNodeWithBuckets:self.game.buckets];
+    [self.game.buckets setBucketHeight: bucketsNode.bucketHeight]; // Demeter wept
+    [self addChild:bucketsNode z:0 tag:kBucket];
+
     CCLabelTTF *score = [CCLabelTTF labelWithString:@"TEST"
                                            fontName:@"Helvetica"
                                            fontSize:24];

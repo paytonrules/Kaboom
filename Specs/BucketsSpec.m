@@ -21,15 +21,29 @@ OCDSpec2Context(BucketsSpec) {
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:130];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
 
       bucket = buckets.buckets[1];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:40];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
 
       bucket = buckets.buckets[2];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:-50];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+    });
+
+    It(@"Adjusts the positions of the buckets to be 1.25 * the height apart", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      [buckets setBucketHeight: 40];
+
+      NSObject<Bucket> *bucket = buckets.buckets[0];
+      [ExpectInt(bucket.position.y) toBe:50 + [Buckets initialBucketLocation]] ;
+
+      bucket = buckets.buckets[1];
+      [ExpectInt(bucket.position.y) toBe:0 + [Buckets initialBucketLocation]];
+
+      bucket = buckets.buckets[2];
+      [ExpectInt(bucket.position.y) toBe:-50 + [Buckets initialBucketLocation]];
     });
 
   });
@@ -144,13 +158,13 @@ OCDSpec2Context(BucketsSpec) {
       [buckets update:1.0];
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
-      [ExpectInt(bucket.position.y) toBe:100];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
 
       bucket = buckets.buckets[1];
-      [ExpectInt(bucket.position.y) toBe:10];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
 
       bucket = buckets.buckets[2];
-      [ExpectInt(bucket.position.y) toBe:-80];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
     });
   });
 
@@ -272,6 +286,18 @@ OCDSpec2Context(BucketsSpec) {
       [buckets reset];
 
       [ExpectInt(buckets.position.x) toBe:0];
+    });
+
+    It(@"doesn't reset height values", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      [buckets setBucketHeight:40];
+      [buckets tilt:20];
+
+      [buckets update:2];
+      [buckets reset];
+
+      NSObject<Bucket> *bucket = buckets.buckets[0];
+      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation] + 50];
     });
 
     It(@"Does not create new buckets, just resets the existing ones", ^{

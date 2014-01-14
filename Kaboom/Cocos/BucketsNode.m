@@ -26,6 +26,11 @@
   return node;
 }
 
+-(int) bucketHeight
+{
+  return ((CCSprite *) self.bucketSprites[0]).boundingBox.size.height;
+}
+
 -(void)update:(ccTime)delta
 {
   for (BucketSprite *bucket in self.bucketSprites)

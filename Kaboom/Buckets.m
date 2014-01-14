@@ -4,6 +4,9 @@
 #import <Underscore.m/Underscore.h>
 
 @interface Buckets ()
+{
+  int _height;
+}
 
 @property(assign) CGPoint position;
 @property(assign) CGFloat speed;
@@ -11,11 +14,16 @@
 @property(strong) NSMutableArray *theBuckets;
 @property(assign) CGPoint originalPosition;
 
--(void) setupBuckets;
+-(void) setupBuckets:(int) height;
 
 @end
 
 @implementation Buckets
+
++(int) initialBucketLocation
+{
+  return 90;
+}
 
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed
 {
@@ -27,7 +35,7 @@
         [Bucket2D new],
         [Bucket2D new],
         [Bucket2D new]]];
-    [self setupBuckets];
+    [self setupBuckets:0];
   }
   return self;
 }
@@ -79,7 +87,7 @@
 -(void) reset
 {
   self.position = self.originalPosition;
-  [self setupBuckets];
+  [self setupBuckets:_height];
 }
 
 -(int) bucketCount
@@ -90,11 +98,17 @@
   return availableBuckets.count;
 }
 
--(void) setupBuckets
+-(void) setBucketHeight:(int) height
 {
-  ((NSObject<Bucket> *) self.theBuckets[0]).position = CGPointMake(self.originalPosition.x, self.originalPosition.y + 90);
-  ((NSObject<Bucket> *) self.theBuckets[1]).position = CGPointMake(self.originalPosition.x, self.originalPosition.y);
-  ((NSObject<Bucket> *) self.theBuckets[2]).position = CGPointMake(self.originalPosition.x, self.originalPosition.y - 90);
+  _height = height;
+  [self setupBuckets:height];
+}
+
+-(void) setupBuckets:(int) height
+{
+  ((NSObject<Bucket> *) self.theBuckets[0]).position = CGPointMake(self.originalPosition.x, [Buckets initialBucketLocation] + (height * 1.25));
+  ((NSObject<Bucket> *) self.theBuckets[1]).position = CGPointMake(self.originalPosition.x, [Buckets initialBucketLocation]);
+  ((NSObject<Bucket> *) self.theBuckets[2]).position = CGPointMake(self.originalPosition.x, [Buckets initialBucketLocation] + (height * -1.25));
   for (NSObject<Bucket> *bucket in self.theBuckets ) {
     [bucket putBack];
   }
