@@ -56,7 +56,7 @@ enum TAGS {
     [self addChild:bomberSprite z:0 tag:kBomber];
 
     BucketsNode *bucketsNode = [BucketsNode newNodeWithBuckets:self.game.buckets];
-    [self.game.buckets setBucketHeight: bucketsNode.bucketHeight]; // Demeter wept
+    [self.game.buckets setBucketHeight: bucketsNode.bucketHeight];
     [self addChild:bucketsNode z:0 tag:kBucket];
 
     CCLabelTTF *score = [CCLabelTTF labelWithString:@"TEST"

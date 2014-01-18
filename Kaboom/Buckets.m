@@ -3,7 +3,7 @@
 #import "SizeService.h"
 #import <Underscore.m/Underscore.h>
 
-@interface Buckets ()
+@interface Buckets()
 {
   int _height;
 }
