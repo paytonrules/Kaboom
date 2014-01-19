@@ -4,7 +4,6 @@
 
 @interface Bomber2D : NSObject<Bomber>
 -(id) initWithPosition:(CGPoint)position locationChooser:(NSObject <LocationChooser> *)locations;
--(id) initWithPosition:(CGPoint)position locationChooser:(NSObject <LocationChooser> *)locations height:(int)height bombHeight:(int)bombHeight;
 
 -(void) dropBomb;
 -(void) move:(float) amount;

@@ -8,10 +8,9 @@
 
 @interface Kaboom : NSObject<KaboomStateMachine>
 
-+(id) newLevelWithSize:(CGSize) size;
 +(id) newLevelWithBomber:(NSObject<Bomber> *) bomber;
 +(id) newLevelWithBuckets:(Buckets *) buckets bomber:(NSObject<Bomber> *) bomber;
-+(id) newLevelWithBomber:(NSObject<Bomber> *) bomber andLevelLoader:(Class<LevelLoader>) loader;
++(id) newLevelWithBomber:(NSObject<Bomber> *) bomber buckets:(Buckets *) buckets andLevelLoader:(Class<LevelLoader>) loader;
 -(void) start;
 -(void) restart;
 

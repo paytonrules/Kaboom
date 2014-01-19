@@ -9,6 +9,7 @@
 @property(readonly) NSArray *bombs;
 @property(readonly) BOOL exploding;
 @property(readonly) BOOL isOut;
+@property(assign) int height;
 -(void) startAtSpeed:(float) speed withBombs:(int) count;
 -(NSInteger)updateDroppedBombs:(Buckets *)buckets;
 -(void) update:(float)deltaTime;

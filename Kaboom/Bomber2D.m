@@ -5,12 +5,15 @@
 #import "GameBlackboard.h"
 #import "Event.h"
 
-@interface Bomber2D ()
+@interface Bomber2D()
+{
+  int _height;
+}
+
 @property(assign) CGPoint position;
 @property(assign) float speed;
 @property(strong) NSObject<LocationChooser> *locations;
 @property(assign) float location;
-@property(assign) int height;
 @property(assign) int bombHeight;
 @property(strong) NSMutableArray *droppedBombs;
 @property(assign) BOOL exploding;
@@ -23,32 +26,29 @@
 
 -(id)init
 {
-  return [self initWithPosition:CGPointMake(0, 0)
-                locationChooser:nil
-                         height:0
-                     bombHeight:0];
+  return [self initWithPosition:CGPointZero locationChooser:nil];
 }
 
 -(id) initWithPosition:(CGPoint)position locationChooser:(NSObject <LocationChooser> *)locations
 {
-  return [self initWithPosition:position
-                locationChooser:locations
-                         height:0
-                     bombHeight:0];
-}
-
--(id) initWithPosition:(CGPoint)position locationChooser:(NSObject <LocationChooser> *)locations height:(int)height bombHeight:(int)bombHeight
-{
   if (self = [super init])
   {
-    self.position = position;
-    self.locations = locations;
-    self.height = height;
-    self.bombHeight = bombHeight;
     self.droppedBombs = [NSMutableArray new];
-    self.speed = 0;
+    self.locations = locations;
+    self.position = position;
   }
   return self;
+}
+
+-(void)setHeight:(int) height
+{
+  _height = height;
+  self.position = CGPointMake(self.position.x, GAME_HEIGHT - (1.5 * height));
+}
+
+-(int) height
+{
+  return _height;
 }
 
 -(void) explode

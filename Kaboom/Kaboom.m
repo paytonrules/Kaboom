@@ -5,6 +5,7 @@
 #import "PlistLevelsLoader.h"
 #import "LevelCollection.h"
 #import "KaboomContext.h"
+#import "Constants.h"
 #import <TransitionKit/TransitionKit.h>
 
 @interface Kaboom ()
@@ -14,28 +15,9 @@
 
 @implementation Kaboom : NSObject
 
-// Seems inappropriate - not sure the Kaboom game should know about size
-// it's the state of the system.
-+ (id)newLevelWithSize:(CGSize)size {
-  Kaboom *level = [Kaboom new];
-  level.gameContext.buckets = [[Buckets alloc] initWithPosition:CGPointMake(size.width / 2, 180.0f)
-                                                          speed:1.0];
-  RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, size.width)];
-
-  level.gameContext.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(size.width / 2, size.height - 60.0)
-                                                locationChooser:chooser];
-  return level;
-}
-
 + (id)newLevelWithBomber:(NSObject <Bomber> *)bomber {
   Kaboom *level = [Kaboom new];
   level.gameContext.bomber = bomber;
-  return level;
-}
-
-+ (id)newLevelWithBomber:(NSObject <Bomber> *)bomber andLevelLoader:(Class <LevelLoader>)loader {
-  Kaboom *level = [self newLevelWithBomber:bomber];
-  level.gameContext.levelLoader = loader;
   return level;
 }
 
@@ -46,11 +28,24 @@
   return level;
 }
 
++ (id)newLevelWithBomber:(NSObject <Bomber> *)bomber buckets:(Buckets *) buckets andLevelLoader:(Class <LevelLoader>)loader {
+  Kaboom *level = [self newLevelWithBuckets:buckets bomber:bomber];
+  level.gameContext.levelLoader = loader;
+  return level;
+}
+
 - (id)init {
   if (self = [super init]) {
     self.gameStateMachine = [TKStateMachine new];
     self.gameContext = [KaboomContext newWithMachine:self];
     self.gameContext.levelLoader = [PlistLevelsLoader class];
+
+    // Seems not quite right from a dependency standpoint
+    RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, GAME_WIDTH)];
+    self.gameContext.bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(GAME_WIDTH / 2, 0)
+                                                locationChooser:chooser];
+    self.gameContext.buckets = [[Buckets alloc] initWithPosition:CGPointMake(GAME_WIDTH / 2, 180.0f)
+                                                            speed:1.0];
 
     TKState *waitingForStart = [TKState stateWithName:@"Waiting"];
     TKState *droppingBombs = [TKState stateWithName:@"Dropping"];

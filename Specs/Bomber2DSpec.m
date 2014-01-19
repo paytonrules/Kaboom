@@ -70,6 +70,14 @@ OCDSpec2Context(Bomber2DSpec) {
       [ExpectFloat(bomber.position.x) toBe:8.0 withPrecision:0.0001];
     });
 
+    It(@"adjusts its y position when its height is set", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      bomber.height = 10;
+
+      [ExpectInt(bomber.position.y) toBe:GAME_HEIGHT - 15];
+      [ExpectInt(bomber.height) toBe:10];
+    });
+
     It(@"accounts for the update time when calculating tilt (speed is per second, update is in seconds)", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@0.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(10, 40) locationChooser:locations];
@@ -157,25 +165,21 @@ OCDSpec2Context(Bomber2DSpec) {
     It(@"starts the bomb right below the bomber", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
-                                        locationChooser:locations
-                                                 height:10
-                                             bombHeight:20];
+                                            locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
 
-      // 1/2 of the bombHeight + 1/2 of the bomber height
       NSObject<Bomb> *bomb = bomber.bombs[0];
       [ExpectInt(bomb.position.x) toBe:18];
-      [ExpectInt(bomb.position.y) toBe:(90 - (10 / 2) - (20 / 2))];
+      // 1/2 of the bombHeight + 1/2 of the bomber height
+      [ExpectInt(bomb.position.y) toBe:90];
     });
 
     It(@"moves the bomb on each update", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0, @40.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
-                                        locationChooser:locations
-                                                 height:10
-                                             bombHeight:20];
+                                        locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:1];
       [bomber update:1.0];
@@ -183,7 +187,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
       CGPoint bombPosition = ((NSObject<Bomb> *) bomber.bombs[0]).position;
       [ExpectInt(bombPosition.x) toBe:18];
-      [ExpectInt(bombPosition.y) toBe:75 - kGravity];
+      [ExpectInt(bombPosition.y) toBe:90 - kGravity];
     });
 
     It(@"does nothing if the bomber hasn't dropped bombs", ^{

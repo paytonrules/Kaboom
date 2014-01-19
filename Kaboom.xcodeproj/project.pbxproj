@@ -40,6 +40,7 @@
 		2FA280B66F5869C57ED9D032 /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28A068DEBEF6897EC9A2B /* background-hd.png */; };
 		2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
+		2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28430631AA55FE5C45FD3 /* Constants.m */; };
 		2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
 		2FA2837BC25EB420FDDAD5D0 /* game-sprites.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28055740E6095D019B0DA /* game-sprites.plist */; };
 		2FA28421E18E32E1C49C84AE /* game-sprites-hd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2FA288D7BB03CD150495F014 /* game-sprites-hd.pvr.ccz */; };
@@ -81,12 +82,14 @@
 		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
+		2FA28C3BD6D0820F1456F781 /* ScaledSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */; };
 		2FA28C456D50E80F1F5FF4C8 /* BomberSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285481EF46AADB0F024DB /* BomberSprite.m */; };
 		2FA28C4DAF9C8586EE195C6B /* game-sprites-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28BC11023D3395D43C45B /* game-sprites-ipadhd.pvr.ccz */; };
 		2FA28C7735C51230240E21B1 /* SizeServiceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */; };
 		2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */; };
 		2FA28C8D7E43F5E71EA1F6DB /* catch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2802FCB805A565D204AC7 /* catch.wav */; };
 		2FA28C99D74E192153936D49 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
+		2FA28CBA92A5A6F7CA25505D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28430631AA55FE5C45FD3 /* Constants.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA28D3CB596C6B8E6CF7A5C /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
 		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
@@ -143,6 +146,7 @@
 		2FA28055740E6095D019B0DA /* game-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "game-sprites.plist"; path = "Resources/game-sprites.plist"; sourceTree = "<group>"; };
 		2FA280A9F6A3A42AACBB0972 /* Buckets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buckets.h; sourceTree = "<group>"; };
 		2FA280BAB876740B963BBB44 /* BucketSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketSprite.h; sourceTree = "<group>"; };
+		2FA280DEE4688ABC994032B6 /* ScaledSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledSprite.h; sourceTree = "<group>"; };
 		2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistLevelsLoader.m; sourceTree = "<group>"; };
 		2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
 		2FA281E7BE0861494079A694 /* Kaboom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kaboom.h; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		2FA2820F7F26FF1AB604EBDF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		2FA2821851BD13F77BC6DB45 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		2FA2825B16BDD9E954374712 /* SizeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeService.h; sourceTree = "<group>"; };
+		2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledSprite.m; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 		2FA2841EA0EC00D6B039FC7E /* CocosSizeStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSizeStrategy.h; sourceTree = "<group>"; };
 		2FA2841FD75301789CE52605 /* RandomLocationChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooser.m; sourceTree = "<group>"; };
 		2FA284271FF8A675D4E0D818 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2FA28430631AA55FE5C45FD3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		2FA284445034A66D23A69772 /* Buckets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buckets.m; sourceTree = "<group>"; };
 		2FA2847CA3FB760F6627C77D /* KaboomStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomStateMachine.h; sourceTree = "<group>"; };
 		2FA284B4C0D2EDB6A139A2E0 /* BombExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombExplosion.m; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 				2FA28E7B22D205A3434596B5 /* KaboomContext.h */,
 				2FA2847CA3FB760F6627C77D /* KaboomStateMachine.h */,
 				2FA288ADE3635DBCA6DA8C9C /* SizeStrategy.h */,
+				2FA28430631AA55FE5C45FD3 /* Constants.m */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -462,6 +469,8 @@
 				2FA28B556A0975917DD905A9 /* BombExplosion.h */,
 				2FA2841EA0EC00D6B039FC7E /* CocosSizeStrategy.h */,
 				2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */,
+				2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */,
+				2FA280DEE4688ABC994032B6 /* ScaledSprite.h */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -689,6 +698,8 @@
 				2FA28EBE6573BD70FB5058EB /* CocosSizeStrategy.m in Sources */,
 				2FA28D3CB596C6B8E6CF7A5C /* SizeService.m in Sources */,
 				2FA28F54212A0DE8FAC5B443 /* Scaler.m in Sources */,
+				2FA28CBA92A5A6F7CA25505D /* Constants.m in Sources */,
+				2FA28C3BD6D0820F1456F781 /* ScaledSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +733,7 @@
 				2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */,
 				2FA28617B8B29674F6E738CE /* ScalerSpec.m in Sources */,
 				2FA28952F8519C00B911B914 /* Scaler.m in Sources */,
+				2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,6 +3,7 @@
 #import "Kaboom.h"
 #import "Buckets.h"
 #import "CCActionInterval.h"
+#import "Constants.h"
 #import "LevelLoader.h"
 #import "GameBlackboard.h"
 #import "Event.h"
@@ -52,27 +53,28 @@ OCDSpec2Context(KaboomSpec) {
   Describe(@"initialization", ^{
 
     It(@"creates a bomber and buckets", ^{
-      Kaboom *level = [Kaboom newLevelWithSize:CGSizeMake(100.0, 50.0)];
+      Kaboom *level = [Kaboom new];
 
       [ExpectObj(level.bomber) toExist];
     });
 
     It(@"puts the bomber at the middle top", ^{
-      Kaboom *level = [Kaboom newLevelWithSize:CGSizeMake(100.0, 100.0)];
+      Kaboom *level = [Kaboom new];
 
-      [ExpectInt(level.bomber.position.x) toBe:50.0];
-      [ExpectInt(level.bomber.position.y) toBe:40.0];
+      [ExpectInt(level.bomber.position.x) toBe:GAME_WIDTH / 2];
+      [ExpectInt(level.bomber.position.y) toBe:0];
     });
 
     It(@"puts the buckets in the middle", ^{
-      Kaboom *level = [Kaboom newLevelWithSize:CGSizeMake(100.0, 50.0)];
+      Kaboom *level = [Kaboom new];
 
-      [ExpectInt(level.buckets.position.x) toBe:50.0];
+      [ExpectInt(level.buckets.position.x) toBe:GAME_WIDTH / 2];
+      [ExpectInt(level.buckets.position.y) toBe:180.0f];
     });
 
     It(@"starts the bomber on the first level", ^{
       id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
 
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
 
@@ -83,7 +85,7 @@ OCDSpec2Context(KaboomSpec) {
 
     It(@"moves to the next level when the bomber uses up the bombs", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
 
       [[[bomber stub] andReturnValue:@1] droppedBombCount];
       [[[bomber stub] andReturnValue:@YES] isOut];
@@ -98,7 +100,7 @@ OCDSpec2Context(KaboomSpec) {
 
     It(@"Starts updating the bomber again after moving to the next level", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
 
       [[[bomber stub] andReturnValue:@1] droppedBombCount];
       [[[bomber stub] andReturnValue:@YES] isOut];
@@ -120,7 +122,7 @@ OCDSpec2Context(KaboomSpec) {
       [[[bomber stub] andReturnValue:@NO] bombHit];
       [[[bomber stub] andReturnValue:@1] droppedBombCount];
       [[[bomber stub] andReturnValue:@NO] isOut];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
 
       [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
 
@@ -365,9 +367,11 @@ OCDSpec2Context(KaboomSpec) {
     It(@"starts bombing again on a new game", ^{
       id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
       id buckets = [OCMockObject mockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber andLevelLoader:[PhonyLevelLoader class]];
+      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:buckets andLevelLoader:[PhonyLevelLoader class]];
+
       [[[bomber stub] andReturnValue:@YES] bombHit];
       [[buckets stub] removeBucket];
+      [[buckets stub] update:10.0];
       [[[buckets stub] andReturnValue:@0] bucketCount];
       [[buckets stub] reset];
 

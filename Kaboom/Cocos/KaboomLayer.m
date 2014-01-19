@@ -41,7 +41,7 @@ enum TAGS {
     self.touchEnabled = YES;
     self.accelerometerEnabled = YES;
 
-    self.game = [Kaboom newLevelWithSize:[CCDirector sharedDirector].winSize];
+    self.game = [Kaboom new];
 
     CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
     [background setPosition:ccp(size.width / 2, size.height / 2)];
