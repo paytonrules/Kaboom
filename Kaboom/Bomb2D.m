@@ -25,7 +25,7 @@
 -(void) setHeight:(int) height
 {
   _height = height;
-  self.position = CGPointMake(self.position.x, self.position.y - (height / 2));
+  self.position = CGPointMake(self.position.x, self.position.y);
 }
 
 -(BOOL) hit

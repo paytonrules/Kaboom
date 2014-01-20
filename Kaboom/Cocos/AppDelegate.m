@@ -124,8 +124,10 @@
 	
 	// Assume that PVR images have premultiplied alpha
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
-	
-	// Create a Navigation Controller with the Director
+
+  [SizeService setStrategy:[CocosSizeStrategy new]];
+
+  // Create a Navigation Controller with the Director
 	navController_ = [[MyNavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
 
@@ -138,7 +140,6 @@
 	// make main window visible
 	[window_ makeKeyAndVisible];
 
-  [SizeService setStrategy:[CocosSizeStrategy new]];
 	return YES;
 }
 

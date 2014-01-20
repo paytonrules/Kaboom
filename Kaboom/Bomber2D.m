@@ -14,7 +14,6 @@
 @property(assign) float speed;
 @property(strong) NSObject<LocationChooser> *locations;
 @property(assign) float location;
-@property(assign) int bombHeight;
 @property(strong) NSMutableArray *droppedBombs;
 @property(assign) BOOL exploding;
 @property(assign) int bombCount;
@@ -43,7 +42,7 @@
 -(void) setHeight:(int) height
 {
   _height = height;
-  self.position = CGPointMake(self.position.x, GAME_HEIGHT - (1.5 * height));
+  self.position = CGPointMake(self.position.x, GAME_HEIGHT - height);
 }
 
 -(int) height
@@ -110,7 +109,7 @@
 
 -(void) dropBomb
 {
-  NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2) - (self.bombHeight / 2)];
+  NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2)];
   [self.droppedBombs addObject:bomb];
   self.bombCount--;
   [[GameBlackboard sharedBlackboard] notify:kBombDropped event:[Event newEventWithData:bomb]];

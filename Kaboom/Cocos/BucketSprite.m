@@ -1,5 +1,6 @@
 #import "BucketSprite.h"
 #import "Bucket2D.h"
+#import "Scaler.h"
 
 @interface BucketSprite()
 
@@ -25,7 +26,7 @@
   else
   {
     [self setVisible:YES];
-    [self setPosition:self.bucket.position];
+    [self setPosition:[[Scaler new] gameToView: self.bucket.position]];
     ((Bucket2D *) self.bucket).boundingBox = self.boundingBox;
   }
 }

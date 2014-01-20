@@ -12,7 +12,9 @@
 {
   BomberSprite *sprite = [BomberSprite spriteWithSpriteFrameName:@"bomber.png"];
   sprite.bomber = bomber;
-  bomber.height = sprite.boundingBox.size.height;
+  CGPoint boundingBoxAsPoint = CGPointMake(sprite.boundingBox.size.width, sprite.boundingBox.size.height);
+  CGPoint scaledBoundingBox = [[Scaler new] viewToGame:boundingBoxAsPoint];
+  bomber.height = scaledBoundingBox.y;
   [sprite scheduleUpdate];
   return sprite;
 }

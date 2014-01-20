@@ -74,7 +74,7 @@ OCDSpec2Context(Bomber2DSpec) {
       Bomber2D *bomber = [Bomber2D new];
       bomber.height = 10;
 
-      [ExpectInt(bomber.position.y) toBe:GAME_HEIGHT - 15];
+      [ExpectInt(bomber.position.y) toBe:GAME_HEIGHT - 10];
       [ExpectInt(bomber.height) toBe:10];
     });
 

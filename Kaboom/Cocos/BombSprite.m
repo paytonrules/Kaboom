@@ -17,7 +17,6 @@ const int kBomb = 200;
   BombSprite *sprite = [BombSprite spriteWithSpriteFrameName:@"Star.png"];
   [[SimpleAudioEngine sharedEngine] preloadEffect:@"bomb.wav"];
   sprite.bomb = bomb;
-  bomb.height = sprite.boundingBox.size.height;
 
   [sprite scheduleUpdate];
   return sprite;

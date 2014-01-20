@@ -1,6 +1,7 @@
 #import "Buckets.h"
 #import "Bucket2D.h"
 #import "SizeService.h"
+#import "Constants.h"
 #import <Underscore.m/Underscore.h>
 
 @interface Buckets()
@@ -50,7 +51,7 @@
   if (deltaTime > 0)
   {
     float xWithoutClamping = self.position.x + (self.tilt * (self.speed / deltaTime));
-    float newX = MIN( MAX(xWithoutClamping, 0), [SizeService screenSize].width);
+    float newX = MIN( MAX(xWithoutClamping, 0), GAME_WIDTH);
     self.position = CGPointMake(newX, self.position.y);
 
     for (Bucket2D *bucket in self.buckets) {
