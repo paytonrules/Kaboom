@@ -40,7 +40,7 @@
   return self;
 }
 
--(void)setHeight:(int) height
+-(void) setHeight:(int) height
 {
   _height = height;
   self.position = CGPointMake(self.position.x, GAME_HEIGHT - (1.5 * height));

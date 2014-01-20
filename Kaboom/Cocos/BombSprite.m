@@ -2,6 +2,7 @@
 #import "Bomb2D.h"
 #import "BombExplosion.h"
 #import "SimpleAudioEngine.h"
+#import "Scaler.h"
 
 const int kBomb = 200;
 
@@ -16,6 +17,7 @@ const int kBomb = 200;
   BombSprite *sprite = [BombSprite spriteWithSpriteFrameName:@"Star.png"];
   [[SimpleAudioEngine sharedEngine] preloadEffect:@"bomb.wav"];
   sprite.bomb = bomb;
+  bomb.height = sprite.boundingBox.size.height;
 
   [sprite scheduleUpdate];
   return sprite;
@@ -23,7 +25,7 @@ const int kBomb = 200;
 
 -(void) update:(ccTime)delta
 {
-  self.position = self.bomb.position;
+  self.position = [[Scaler new] gameToView:self.bomb.position];
   ((Bomb2D *) self.bomb).boundingBox = self.boundingBox;
 }
 

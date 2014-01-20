@@ -32,5 +32,13 @@ OCDSpec2Context(Bomb2DSpec) {
       [ExpectBool([bomb hit]) toBeFalse];
     });
 
+    It(@"Adjusts its position based on its new height", ^{
+      NSObject<Bomb> *bomb = [Bomb2D new];
+      bomb.position = CGPointMake(0, 50);
+      bomb.height = 10;
+
+      [ExpectInt(bomb.position.y) toBe:45];
+    });
+
   });
 }
