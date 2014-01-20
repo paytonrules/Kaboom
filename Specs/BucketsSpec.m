@@ -22,29 +22,37 @@ OCDSpec2Context(BucketsSpec) {
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+      [ExpectInt(bucket.position.y) toBe:[buckets initialBucketLocation]];
 
       bucket = buckets.buckets[1];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+      [ExpectInt(bucket.position.y) toBe:[buckets initialBucketLocation]];
 
       bucket = buckets.buckets[2];
       [ExpectInt(bucket.position.x) toBe:10];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+      [ExpectInt(bucket.position.y) toBe:[buckets initialBucketLocation]];
     });
 
-    It(@"Adjusts the positions of the buckets to be 1.25 * the height apart", ^{
+    It(@"Adjusts the positions of the buckets relative to the height", ^{
+      /* So the middle bucket is 2.5 times height
+      The bottom bucket is 1.25 times below
+      The top bucket is 1.25 times above that
+ height = 10
+ first bucket = 12.5
+ second bucket = 25
+ third bucket = 37.5
+  */
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
-      [buckets setBucketHeight: 40];
+      [buckets setBucketHeight: 10];
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
-      [ExpectInt(bucket.position.y) toBe:50 + [Buckets initialBucketLocation]] ;
+      [ExpectFloat(bucket.position.y) toBe:12.5 withPrecision:0.001];
 
       bucket = buckets.buckets[1];
-      [ExpectInt(bucket.position.y) toBe:0 + [Buckets initialBucketLocation]];
+      [ExpectFloat(bucket.position.y) toBe:25 withPrecision:0.001];
 
       bucket = buckets.buckets[2];
-      [ExpectInt(bucket.position.y) toBe:-50 + [Buckets initialBucketLocation]];
+      [ExpectFloat(bucket.position.y) toBe:37.5 withPrecision:0.001];
     });
 
   });
@@ -146,17 +154,18 @@ OCDSpec2Context(BucketsSpec) {
     It(@"doesn't change their Y value", ^{
       Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(10.0, 10.0) speed:1.0];
 
+      [buckets setBucketHeight:0];
       [buckets tilt:-0.5];
       [buckets update:1.0];
 
       NSObject<Bucket> *bucket = buckets.buckets[0];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+      [ExpectInt(bucket.position.y) toBe:0];
 
       bucket = buckets.buckets[1];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+      [ExpectInt(bucket.position.y) toBe:0];
 
       bucket = buckets.buckets[2];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation]];
+      [ExpectInt(bucket.position.y) toBe:0];
     });
   });
 
@@ -288,8 +297,8 @@ OCDSpec2Context(BucketsSpec) {
       [buckets update:2];
       [buckets reset];
 
-      NSObject<Bucket> *bucket = buckets.buckets[0];
-      [ExpectInt(bucket.position.y) toBe:[Buckets initialBucketLocation] + 50];
+      NSObject<Bucket> *bucket = buckets.buckets[1];
+      [ExpectInt(bucket.position.y) toBe:[buckets initialBucketLocation]];
     });
 
     It(@"Does not create new buckets, just resets the existing ones", ^{
@@ -303,6 +312,13 @@ OCDSpec2Context(BucketsSpec) {
       [buckets reset];
 
       [ExpectObj(bucket) toBe:buckets.buckets[0]];
+    });
+
+    It(@"calculates its initialBucketLocation based on bucket height", ^{
+      Buckets *buckets = [[Buckets alloc] initWithPosition:CGPointMake(0, 0) speed:1.0];
+      [buckets setBucketHeight:30];
+
+      [ExpectInt([buckets initialBucketLocation]) toBe:75];
     });
 
   });

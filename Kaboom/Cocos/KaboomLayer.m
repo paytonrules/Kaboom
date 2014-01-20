@@ -7,6 +7,7 @@
 #import "Event.h"
 #import "SimpleAudioEngine.h"
 #import "Buckets.h"
+#import "Scaler.h"
 
 enum TAGS {
   kBucket,
@@ -56,7 +57,9 @@ enum TAGS {
     [self addChild:bomberSprite z:0 tag:kBomber];
 
     BucketsNode *bucketsNode = [BucketsNode newNodeWithBuckets:self.game.buckets];
-    [self.game.buckets setBucketHeight: bucketsNode.bucketHeight];
+    CGPoint bucketSizeAsPoints = CGPointMake(0, bucketsNode.bucketHeight);
+    CGPoint scaledBucketSize = [[Scaler new] viewToGame:bucketSizeAsPoints];
+    [self.game.buckets setBucketHeight:scaledBucketSize.y];
     [self addChild:bucketsNode z:0 tag:kBucket];
 
     CCLabelTTF *score = [CCLabelTTF labelWithString:@"TEST"

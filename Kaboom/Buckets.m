@@ -14,17 +14,12 @@
 @property(assign) CGFloat tilt;
 @property(strong) NSMutableArray *theBuckets;
 @property(assign) CGPoint originalPosition;
-
 -(void) setupBuckets:(int) height;
 
 @end
 
 @implementation Buckets
 
-+(int) initialBucketLocation
-{
-  return 90;
-}
 
 -(id) initWithPosition:(CGPoint) position speed:(CGFloat) speed
 {
@@ -45,6 +40,12 @@
 {
   return [NSArray arrayWithArray:self.theBuckets];
 }
+
+-(int) initialBucketLocation
+{
+  return 2.5 * _height;
+}
+
 
 -(void) update:(CGFloat) deltaTime
 {
@@ -107,9 +108,14 @@
 
 -(void) setupBuckets:(int) height
 {
-  ((NSObject<Bucket> *) self.theBuckets[0]).position = CGPointMake(self.originalPosition.x, [Buckets initialBucketLocation] + (height * 1.25));
-  ((NSObject<Bucket> *) self.theBuckets[1]).position = CGPointMake(self.originalPosition.x, [Buckets initialBucketLocation]);
-  ((NSObject<Bucket> *) self.theBuckets[2]).position = CGPointMake(self.originalPosition.x, [Buckets initialBucketLocation] + (height * -1.25));
+
+  ((NSObject<Bucket> *) self.theBuckets[0]).position = CGPointMake(self.originalPosition.x,
+      [self initialBucketLocation] - (1.25 * _height));
+  ((NSObject<Bucket> *) self.theBuckets[1]).position = CGPointMake(self.originalPosition.x,
+      [self initialBucketLocation]);
+  ((NSObject<Bucket> *) self.theBuckets[2]).position = CGPointMake(self.originalPosition.x,
+      [self initialBucketLocation] + (1.25 * _height));
+
   for (NSObject<Bucket> *bucket in self.theBuckets ) {
     [bucket putBack];
   }
