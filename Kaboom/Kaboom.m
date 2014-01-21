@@ -116,7 +116,8 @@
   return self.gameContext.buckets;
 }
 
-- (void)fire:(NSString *)eventName {
+-(void) fire:(NSString *)eventName
+{
   [self.gameStateMachine fireEvent:eventName userInfo:nil error:nil];
 }
 

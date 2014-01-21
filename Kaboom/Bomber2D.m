@@ -109,10 +109,12 @@
 
 -(void) dropBomb
 {
-  NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2)];
-  [self.droppedBombs addObject:bomb];
-  self.bombCount--;
-  [[GameBlackboard sharedBlackboard] notify:kBombDropped event:[Event newEventWithData:bomb]];
+  if (self.bombCount > 0) {
+    NSObject<Bomb> *bomb = [Bomb2D bombAtX:self.position.x y:self.position.y - (self.height / 2)];
+    [self.droppedBombs addObject:bomb];
+    self.bombCount--;
+    [[GameBlackboard sharedBlackboard] notify:kBombDropped event:[Event newEventWithData:bomb]];
+  }
 }
 
 -(void) updateBombs

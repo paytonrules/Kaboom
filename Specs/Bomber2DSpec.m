@@ -202,6 +202,7 @@ OCDSpec2Context(Bomber2DSpec) {
     It(@"removes any bombs that intersect buckets", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:0 withBombs:2];
       [bomber dropBomb];
       [bomber move:1.0];
       [bomber dropBomb];
@@ -217,6 +218,7 @@ OCDSpec2Context(Bomber2DSpec) {
     It(@"doesn't remove bombs if they don't intersect buckets", ^{
       id buckets = [OCMockObject mockForClass:[Buckets class]];
       Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:0 withBombs:2];
 
       [bomber dropBomb];
       [bomber move:1.0];
@@ -232,6 +234,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
     It(@"says a bomb hit if any of its bombs hit", ^{
       Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:0 withBombs:1];
       [bomber dropBomb];
       Bomb2D *bomb = (Bomb2D *) bomber.bombs[0];
       bomb.boundingBox = CGRectMake(0, -1, 1, 2);
@@ -278,6 +281,7 @@ OCDSpec2Context(Bomber2DSpec) {
       [blackboard registerWatcher:watcher action:@selector(action:) event:kBombDropped];
 
       Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:0 withBombs:1];
 
       [bomber dropBomb];
 
@@ -293,6 +297,7 @@ OCDSpec2Context(Bomber2DSpec) {
 
       // Drop a bomb
       Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:0 withBombs:1];
       [bomber dropBomb];
       NSObject<Bomb> *bomb = bomber.bombs[0];
 
@@ -343,5 +348,12 @@ OCDSpec2Context(Bomber2DSpec) {
       [ExpectBool(bomber.isOut) toBeTrue];
     });
 
+    It(@"doesn't keep dropping bombs after 0", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:100.0 withBombs:0];
+      [bomber dropBomb];
+
+      [ExpectInt(bomber.droppedBombCount) toBe:0];
+    });
   });
 }

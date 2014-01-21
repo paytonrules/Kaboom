@@ -4,21 +4,21 @@
 <array>
 	<dict>
 		<key>Bombs</key>
-		<integer>5</integer>
+		<integer>2</integer>
 		<key>Speed</key>
-		<real>90</real>
+		<real>200</real>
 	</dict>
     <dict>
         <key>Bombs</key>
         <integer>10</integer>
         <key>Speed</key>
-        <real>120</real>
+        <real>40</real>
     </dict>
     <dict>
         <key>Bombs</key>
         <integer>15</integer>
         <key>Speed</key>
-        <real>150</real>
+        <real>300</real>
     </dict>
 </array>
 </plist>
