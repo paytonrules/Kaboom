@@ -7,16 +7,16 @@
 #import "LevelLoader.h"
 #import "GameBlackboard.h"
 #import "Event.h"
-#import "LevelCollection.h"
+#import "LevelCollectionArray.h"
 
 @interface PhonyLevelLoader : NSObject<LevelLoader>
 @end
 
 @implementation PhonyLevelLoader
 
-+(LevelCollection *) load
++(LevelCollectionArray *) load
 {
-  return [LevelCollection newWithArray:@[
+  return [LevelCollectionArray newWithArray:@[
       @{@"Speed" : @"60.0", @"Bombs" : @"1"},
       @{@"Speed" : @"90.0", @"Bombs" : @"2"}
   ]];

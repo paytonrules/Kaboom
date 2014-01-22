@@ -1,7 +1,7 @@
-@class LevelCollection;
+#import "LevelCollection.h"
 
 @protocol LevelLoader
 
-+(LevelCollection *) load;
++(NSObject<LevelCollection> *) load;
 
 @end

@@ -14,12 +14,14 @@
 }
 
 
--(void) next {
+-(void) next
+{
   if (self.currentLevel < self.levels.count - 1)
     self.currentLevel++;
 }
 
--(NSDictionary *) current {
+-(NSDictionary *) current
+{
   return self.levels[self.currentLevel];
 }
 

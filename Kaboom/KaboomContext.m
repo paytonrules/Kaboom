@@ -5,12 +5,13 @@
 #import "Bomber.h"
 #import "Event.h"
 #import "GameBlackboard.h"
+#import "LevelCollection.h"
 
 @interface KaboomContext()
 
 -(void) startBomberAtLevel:(NSDictionary *)level;
 @property(strong) NSObject<KaboomStateMachine> *machine;
-@property(strong) LevelCollection *levels;
+@property(strong) NSObject<LevelCollection> *levels;
 @end
 
 @implementation KaboomContext

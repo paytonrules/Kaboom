@@ -1,7 +1,7 @@
 @protocol LevelLoader;
 @protocol Bomber;
 @class Buckets;
-@class LevelCollection;
+@class LevelCollectionArray;
 
 @protocol KaboomStateMachine
 -(void) fire:(NSString *)eventName;
