@@ -104,19 +104,19 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @25.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) locationChooser:locations];
 
-      [bomber startAtSpeed:1.0 withBombs:1];
+      [bomber startAtSpeed:1.0 withBombs:3];
 
       [bomber update:1.0];
       [bomber update:1.0];
 
-      [ExpectFloat(bomber.position.x) toBe:20.0 withPrecision:0.0001];
+        [ExpectFloat(bomber.position.x) toBe:20.0 withPrecision:0.0001];
     });
 
     It(@"begins heading to the next location when it crosses - even if it doesn't hit it the next location", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @15.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(20, 40) locationChooser:locations];
 
-      [bomber startAtSpeed:2.0 withBombs:1];
+      [bomber startAtSpeed:2.0 withBombs:3];
 
       [bomber update:1.0];
       [bomber update:1.0];
@@ -128,7 +128,7 @@ OCDSpec2Context(Bomber2DSpec) {
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@19.0, @22.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17, 40) locationChooser:locations];
 
-      [bomber startAtSpeed:2.0 withBombs:1];
+      [bomber startAtSpeed:2.0 withBombs:3];
 
       [bomber update:1.0];
       [bomber update:1.0];
@@ -181,7 +181,7 @@ OCDSpec2Context(Bomber2DSpec) {
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
                                         locationChooser:locations];
 
-      [bomber startAtSpeed:1.0 withBombs:1];
+      [bomber startAtSpeed:1.0 withBombs:3];
       [bomber update:1.0];
       [bomber update:1.0];
 
@@ -354,6 +354,30 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber dropBomb];
 
       [ExpectInt(bomber.droppedBombCount) toBe:0];
+    });
+
+    It(@"stops moving when its got no bombs", ^{
+      Bomber2D *bomber = [Bomber2D new];
+      [bomber startAtSpeed:100.0 withBombs:1];
+      [bomber update:1];
+      [bomber dropBomb];
+
+      [bomber update:1];
+
+      [ExpectFloat(bomber.position.x) toBe:-100 withPrecision:0.001];
+    });
+
+    It(@"continues moving the dropped bombs when its got no bombs", ^{
+      Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
+                                            locationChooser:nil];
+      [bomber startAtSpeed:100.0 withBombs:1];
+      [bomber update:1];
+      [bomber dropBomb];
+
+      [bomber update:1];
+
+      CGPoint bombPosition = ((NSObject<Bomb> *) bomber.bombs[0]).position;
+      [ExpectInt(bombPosition.y) toBe:90 - kGravity];
     });
   });
 }

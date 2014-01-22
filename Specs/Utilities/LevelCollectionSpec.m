@@ -8,7 +8,7 @@ OCDSpec2Context(LevelCollection) {
     It(@"returns the first level", ^{
       LevelCollection *collection = [LevelCollection newWithArray:@[@{@"Speed" : @"1"}]];
 
-      NSDictionary *first = [collection next];
+      NSDictionary *first = [collection current];
 
       [ExpectObj(first) toBeEqualTo:@{@"Speed" : @"1"}];
     });
@@ -17,7 +17,7 @@ OCDSpec2Context(LevelCollection) {
       LevelCollection *collection = [LevelCollection newWithArray:@[@{@"Speed" : @"1"}, @{@"Speed" : @"2"}]];
 
       [collection next];
-      NSDictionary *next = [collection next];
+      NSDictionary *next = [collection current];
 
       [ExpectObj(next) toBeEqualTo:@{@"Speed" : @"2"}];
     });
@@ -26,7 +26,7 @@ OCDSpec2Context(LevelCollection) {
       LevelCollection *collection = [LevelCollection newWithArray:@[@{@"Speed" : @"1"}]];
 
       [collection next];
-      NSDictionary *next = [collection next];
+      NSDictionary *next = [collection current];
 
       [ExpectObj(next) toBeEqualTo:@{@"Speed" : @"1"}];
     });

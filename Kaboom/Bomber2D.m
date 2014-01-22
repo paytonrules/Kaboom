@@ -83,19 +83,28 @@
 {
   if (self.speed > 0)
   {
-    float moveDistance = self.speed * deltaTime;
-    float distanceRemaining = abs(self.location - self.position.x);
+    float moveDistance = 0.0;
+    float distanceRemaining = 0.0;
 
-    if (self.location > self.position.x) {
-      [self move:moveDistance];
-    }
-    else {
-      [self move:-moveDistance];
+    if (self.bombCount > 0)
+    {
+      moveDistance = self.speed * deltaTime;
+      distanceRemaining = abs(self.location - self.position.x);
+
+      if (self.location > self.position.x)
+      {
+        [self move:moveDistance];
+      }
+      else
+      {
+        [self move:-moveDistance];
+      }
     }
 
     [self updateBombs];
 
-    if (moveDistance >= distanceRemaining) {
+    if (moveDistance >= distanceRemaining)
+    {
       [self dropBomb];
       self.location = [self.locations next];
     }

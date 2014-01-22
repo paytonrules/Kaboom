@@ -1,24 +1,22 @@
-#import "LevelCollection.h"
+#import "LevelCollectionArray.h"
 
-@interface LevelCollection()
+@interface LevelCollectionArray ()
 @property(strong) NSArray *levels;
 @property(assign) int currentLevel;
 @end
 
-@implementation LevelCollection
+@implementation LevelCollectionArray
 
 +(id) newWithArray:(NSArray *)levels {
-  LevelCollection *levelCollection = [LevelCollection new];
+  LevelCollectionArray *levelCollection = [LevelCollectionArray new];
   levelCollection.levels = levels;
   return levelCollection;
 }
 
 
--(NSDictionary *) next {
-  NSDictionary *current = [self current];
+-(void) next {
   if (self.currentLevel < self.levels.count - 1)
     self.currentLevel++;
-  return current;
 }
 
 -(NSDictionary *) current {

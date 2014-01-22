@@ -25,7 +25,7 @@
 -(void) startBombing
 {
   self.levels = [self.levelLoader load];
-  [self advanceToNextLevel];
+  [self restartLevel];
 }
 
 -(void) gameOverNotification
@@ -42,7 +42,8 @@
 
 -(void) advanceToNextLevel
 {
-  NSDictionary *level = [self.levels next];
+  [self.levels next];
+  NSDictionary *level = [self.levels current];
   [self startBomberAtLevel:level];
   [self.machine fire:@"New Level"];
 }
@@ -54,7 +55,7 @@
   [self.machine fire:@"Restarted"];
 }
 
--(void) startBomberAtLevel:(NSDictionary *)level
+-(void) startBomberAtLevel:(NSDictionary *) level
 {
   float speed = [level[@"Speed"] floatValue];
   int bombs = [level[@"Bombs"] intValue];
