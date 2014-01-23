@@ -5,11 +5,11 @@
 #import "Bomber.h"
 #import "Event.h"
 #import "GameBlackboard.h"
-#import "LevelCollection.h"
+#import "Level.h"
 
 @interface KaboomContext()
 
--(void) startBomberAtLevel:(NSDictionary *)level;
+-(void) startBomberAtLevel:(Level *)level;
 @property(strong) NSObject<KaboomStateMachine> *machine;
 @property(strong) NSObject<LevelCollection> *levels;
 @end
@@ -44,22 +44,22 @@
 -(void) advanceToNextLevel
 {
   [self.levels next];
-  NSDictionary *level = [self.levels current];
+  Level *level = [self.levels current];
   [self startBomberAtLevel:level];
   [self.machine fire:@"New Level"];
 }
 
 -(void) restartLevel
 {
-  NSDictionary *level = [self.levels current];
+  Level *level = [self.levels current];
   [self startBomberAtLevel:level];
   [self.machine fire:@"Restarted"];
 }
 
--(void) startBomberAtLevel:(NSDictionary *) level
+-(void) startBomberAtLevel:(Level* ) level
 {
-  float speed = [level[@"Speed"] floatValue];
-  int bombs = [level[@"Bombs"] intValue];
+  float speed = level.speed;
+  int bombs = level.bombs;
   [self.bomber startAtSpeed:speed withBombs:bombs];
 }
 

@@ -1,5 +1,7 @@
+@class Level;
+
 @protocol LevelCollection
 
 -(void) next;
--(NSDictionary *) current;
+-(Level *) current;
 @end

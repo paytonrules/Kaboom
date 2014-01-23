@@ -1,7 +1,5 @@
 #import <Foundation/Foundation.h>
 
-@class KaboomPresenter;
-
 @interface Level : NSObject
 
 @property(assign) int bombs;

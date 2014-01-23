@@ -1,4 +1,5 @@
 #import "LevelCollectionArray.h"
+#import "Level.h"
 
 @interface LevelCollectionArray ()
 @property(strong) NSArray *levels;
@@ -20,9 +21,11 @@
     self.currentLevel++;
 }
 
--(NSDictionary *) current
+-(Level *) current
 {
-  return self.levels[self.currentLevel];
+  NSDictionary *currentLevel = self.levels[self.currentLevel];
+  return [Level newLevelWithBombs:[currentLevel[@"Bombs"] intValue]
+                            speed:[currentLevel[@"Speed"] floatValue]];
 }
 
 @end

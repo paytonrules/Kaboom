@@ -61,11 +61,13 @@
 		2FA2872C0F978D6A007CEE08 /* game-sprites-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2836A0F78CDAE43946430 /* game-sprites-hd.plist */; };
 		2FA2883B02F5B0DE568C0706 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C348025798254AAD049 /* GameBlackboardSpec.m */; };
+		2FA2886317E0E94DFC24C2A0 /* LevelCollectionProceduralSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA286604CD3EBA1BA926481 /* LevelCollectionProceduralSpec.m */; };
 		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
 		2FA2889FA9FC0F6AF87FD3EB /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA288ED10E147DC9C66C8A7 /* LevelCollectionArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollectionArray.m */; };
 		2FA288FEE49CFAADEEA0BF55 /* BucketsNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28AA88E0D958362D9515B /* BucketsNode.m */; };
 		2FA28952F8519C00B911B914 /* Scaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CC1029F55EBD494A6F9 /* Scaler.m */; };
+		2FA2896F9C34F5E0E4487024 /* LevelCollectionProcedural.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */; };
 		2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA289D0745311A2FE81EF41 /* game-sprites-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2880C078D473DD00ACD95 /* game-sprites-ipadhd.plist */; };
@@ -80,6 +82,7 @@
 		2FA28B50C9E063A7A90D5662 /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA28B6B8AA4C797AB6541AF /* background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28C6C9890168F1B8300C0 /* background-ipadhd.png */; };
 		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
+		2FA28B90AA567533093C1591 /* LevelCollectionProcedural.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
 		2FA28C3BD6D0820F1456F781 /* ScaledSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */; };
@@ -100,7 +103,7 @@
 		2FA28E4937C3999A510C3470 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
 		2FA28EBE6573BD70FB5058EB /* CocosSizeStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */; };
 		2FA28EF3472AD27B423BA8EE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
-		2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */; };
+		2FA28EF3A60F4095A5A21F0D /* LevelCollectionArraySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28612B5FBC34E37E817B2 /* LevelCollectionArraySpec.m */; };
 		2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA28F54212A0DE8FAC5B443 /* Scaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CC1029F55EBD494A6F9 /* Scaler.m */; };
 		2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
@@ -154,6 +157,7 @@
 		2FA2820F7F26FF1AB604EBDF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		2FA2821851BD13F77BC6DB45 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		2FA2825B16BDD9E954374712 /* SizeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeService.h; sourceTree = "<group>"; };
+		2FA282744264D278C082A1BC /* LevelCollectionProcedural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollectionProcedural.h; sourceTree = "<group>"; };
 		2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledSprite.m; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
@@ -174,8 +178,9 @@
 		2FA28598FD82B4383D5476A4 /* LevelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLoader.h; sourceTree = "<group>"; };
 		2FA285B4F1CB77AEE9B1B660 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		2FA285C9DAB47003A6FBA0FA /* BucketsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsNode.h; sourceTree = "<group>"; };
-		2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionSpec.m; sourceTree = "<group>"; };
+		2FA28612B5FBC34E37E817B2 /* LevelCollectionArraySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionArraySpec.m; sourceTree = "<group>"; };
 		2FA28612CEA00A6F1F1D8BC2 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		2FA286604CD3EBA1BA926481 /* LevelCollectionProceduralSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionProceduralSpec.m; sourceTree = "<group>"; };
 		2FA286E20151357C47C0D9CF /* BomberSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BomberSprite.h; sourceTree = "<group>"; };
 		2FA286FCDD89AA9093552F70 /* BombSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BombSprite.h; sourceTree = "<group>"; };
 		2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosSizeStrategy.m; sourceTree = "<group>"; };
@@ -185,6 +190,7 @@
 		2FA2887C8E68A7489401797D /* GameBlackboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBlackboard.h; sourceTree = "<group>"; };
 		2FA288ADE3635DBCA6DA8C9C /* SizeStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeStrategy.h; sourceTree = "<group>"; };
 		2FA288C49F5E6138D1521493 /* Bomber2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2D.m; sourceTree = "<group>"; };
+		2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionProcedural.m; sourceTree = "<group>"; };
 		2FA288D7BB03CD150495F014 /* game-sprites-hd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites-hd.pvr.ccz"; path = "Resources/game-sprites-hd.pvr.ccz"; sourceTree = "<group>"; };
 		2FA28909FD433915F3B7FE42 /* KaboomContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContext.m; sourceTree = "<group>"; };
 		2FA2891355F773A6B44F6DEF /* RandomLocationChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomLocationChooser.h; sourceTree = "<group>"; };
@@ -435,6 +441,8 @@
 				2FA28F4FF183F08F0285ECF1 /* SizeService.m */,
 				2FA28A5708C527500B0E3157 /* Scaler.h */,
 				2FA28CC1029F55EBD494A6F9 /* Scaler.m */,
+				2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */,
+				2FA282744264D278C082A1BC /* LevelCollectionProcedural.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -443,9 +451,10 @@
 			isa = PBXGroup;
 			children = (
 				2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */,
-				2FA28612B5FBC34E37E817B2 /* LevelCollectionSpec.m */,
+				2FA28612B5FBC34E37E817B2 /* LevelCollectionArraySpec.m */,
 				2FA28C92BD5E24522964CED7 /* SizeServiceSpec.m */,
 				2FA28E68543525AEC83E8566 /* ScalerSpec.m */,
+				2FA286604CD3EBA1BA926481 /* LevelCollectionProceduralSpec.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -702,6 +711,7 @@
 				2FA28F54212A0DE8FAC5B443 /* Scaler.m in Sources */,
 				2FA28CBA92A5A6F7CA25505D /* Constants.m in Sources */,
 				2FA28C3BD6D0820F1456F781 /* ScaledSprite.m in Sources */,
+				2FA2896F9C34F5E0E4487024 /* LevelCollectionProcedural.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +738,7 @@
 				2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */,
 				2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */,
 				2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */,
-				2FA28EF3A60F4095A5A21F0D /* LevelCollectionSpec.m in Sources */,
+				2FA28EF3A60F4095A5A21F0D /* LevelCollectionArraySpec.m in Sources */,
 				2FA288ED10E147DC9C66C8A7 /* LevelCollectionArray.m in Sources */,
 				2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */,
 				2FA28C7735C51230240E21B1 /* SizeServiceSpec.m in Sources */,
@@ -736,6 +746,8 @@
 				2FA28617B8B29674F6E738CE /* ScalerSpec.m in Sources */,
 				2FA28952F8519C00B911B914 /* Scaler.m in Sources */,
 				2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */,
+				2FA2886317E0E94DFC24C2A0 /* LevelCollectionProceduralSpec.m in Sources */,
+				2FA28B90AA567533093C1591 /* LevelCollectionProcedural.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
