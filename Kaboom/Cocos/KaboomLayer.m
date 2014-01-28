@@ -11,7 +11,8 @@
 
 enum TAGS {
   kBucket,
-  kBomber
+  kBomber,
+  kEndScreen
 };
 
 @interface KaboomLayer ()
@@ -153,10 +154,14 @@ enum TAGS {
 {
   CGSize size = [CCDirector sharedDirector].winSize;
 
+  NSString *scoreText = [NSString stringWithFormat:@"You caught %d stars before the world ended. Try again?", self.game.score];
+  CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:scoreText fontName:@"Helvetica" fontSize:32];
+  [scoreLabel setPosition:ccp(size.width / 2, (size.height - (size.height / 3)))];
+  [self addChild:scoreLabel z:1 tag:kEndScreen];
+
   CCLabelTTF *newGameLabel = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica" fontSize:42];
   CCMenuItemLabel *item = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
   [item setPosition:ccp(size.width / 2, size.height / 2)];
-
 
   CCMenu *newGameMenu = [CCMenu menuWithItems:item, nil];
   newGameMenu.visible = YES;
@@ -167,6 +172,7 @@ enum TAGS {
 -(void) newGame:(CCMenuItem *) label
 {
   [label.parent removeFromParent];
+  [self removeChildByTag:kEndScreen];
   [self.game start];
 }
 
