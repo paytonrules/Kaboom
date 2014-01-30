@@ -47,5 +47,16 @@ OCDSpec2Context(Bucket2DSpec) {
 
       [ExpectBool(bucket.removed) toBeTrue];
     });
+
+    It(@"doesn't catch the bomb if it is removed", ^{
+      Bucket2D *bucket =  [Bucket2D newBucketWithPosition:CGPointMake(0, 0)];
+      bucket.boundingBox = CGRectMake(0, 0, 10, 10);
+      [bucket remove];
+
+      Bomb2D *bomb = [Bomb2D new];
+      bomb.boundingBox = CGRectMake(2, 2, 10, 10);
+
+      [ExpectBool([bucket caughtBomb:bomb]) toBeFalse];
+    });
   });
 }
