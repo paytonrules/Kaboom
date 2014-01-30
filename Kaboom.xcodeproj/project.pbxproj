@@ -38,6 +38,7 @@
 		2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
 		2FA280B66F5869C57ED9D032 /* background-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28A068DEBEF6897EC9A2B /* background-hd.png */; };
+		2FA280D926088C4536C0CEE4 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DBAFB46DEC4772166E /* CreditsLayer.m */; };
 		2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28430631AA55FE5C45FD3 /* Constants.m */; };
@@ -152,6 +153,7 @@
 		2FA280DEE4688ABC994032B6 /* ScaledSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledSprite.h; sourceTree = "<group>"; };
 		2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistLevelsLoader.m; sourceTree = "<group>"; };
 		2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
+		2FA281531A6C4B024945D694 /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
 		2FA281E7BE0861494079A694 /* Kaboom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kaboom.h; sourceTree = "<group>"; };
 		2FA281F9C8EF645AF53CC76D /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
 		2FA2820F7F26FF1AB604EBDF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomLocationChooserSpec.m; sourceTree = "<group>"; };
 		2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketsSpec.m; sourceTree = "<group>"; };
 		2FA289962B51500947CF5EA5 /* Bomber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber.h; sourceTree = "<group>"; };
+		2FA289DBAFB46DEC4772166E /* CreditsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsLayer.m; sourceTree = "<group>"; };
 		2FA289DFAA6766D477DC0BEF /* BombSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombSprite.m; sourceTree = "<group>"; };
 		2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites.pvr.ccz"; path = "Resources/game-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		2FA28A068DEBEF6897EC9A2B /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-hd.png"; path = "Resources/background-hd.png"; sourceTree = "<group>"; };
@@ -482,6 +485,8 @@
 				2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */,
 				2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */,
 				2FA280DEE4688ABC994032B6 /* ScaledSprite.h */,
+				2FA289DBAFB46DEC4772166E /* CreditsLayer.m */,
+				2FA281531A6C4B024945D694 /* CreditsLayer.h */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -712,6 +717,7 @@
 				2FA28CBA92A5A6F7CA25505D /* Constants.m in Sources */,
 				2FA28C3BD6D0820F1456F781 /* ScaledSprite.m in Sources */,
 				2FA2896F9C34F5E0E4487024 /* LevelCollectionProcedural.m in Sources */,
+				2FA280D926088C4536C0CEE4 /* CreditsLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

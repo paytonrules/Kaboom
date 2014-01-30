@@ -8,6 +8,7 @@
 #import "SimpleAudioEngine.h"
 #import "Buckets.h"
 #import "Scaler.h"
+#import "CreditsLayer.h"
 
 enum TAGS {
   kBucket,
@@ -63,7 +64,7 @@ enum TAGS {
     [self.game.buckets setBucketHeight:scaledBucketSize.y];
     [self addChild:bucketsNode z:0 tag:kBucket];
 
-    CCLabelTTF *score = [CCLabelTTF labelWithString:@"TEST"
+    CCLabelTTF *score = [CCLabelTTF labelWithString:@"0"
                                            fontName:@"Helvetica"
                                            fontSize:24];
     // DesignSize?
@@ -163,7 +164,11 @@ enum TAGS {
   CCMenuItemLabel *item = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
   [item setPosition:ccp(size.width / 2, size.height / 2)];
 
-  CCMenu *newGameMenu = [CCMenu menuWithItems:item, nil];
+  CCLabelTTF *creditsLabel = [CCLabelTTF labelWithString:@"Credits" fontName:@"Helvetica" fontSize:42];
+  CCMenuItemLabel *creditsItem = [CCMenuItemLabel itemWithLabel:creditsLabel target:self selector:@selector(showCredits:)];
+  [creditsItem setPosition:ccp(size.width / 2, size.height / 2 - (item.boundingBox.size.height))];
+
+  CCMenu *newGameMenu = [CCMenu menuWithItems:item, creditsItem, nil];
   newGameMenu.visible = YES;
   [newGameMenu setPosition:CGPointZero];
   [self addChild:newGameMenu z:1];
@@ -172,8 +177,13 @@ enum TAGS {
 -(void) newGame:(CCMenuItem *) label
 {
   [label.parent removeFromParent];
-  [self removeChildByTag:kEndScreen];
+  [self removeChildByTag:kEndScreen ];
   [self.game start];
+}
+
+-(void) showCredits:(CCMenuItem *) label
+{
+  [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreditsLayer scene] ]];
 }
 
 -(void) startLevel
