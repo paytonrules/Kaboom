@@ -1,6 +1,5 @@
 #import "Buckets.h"
 #import "Bucket2D.h"
-#import "SizeService.h"
 #import "Constants.h"
 #import <Underscore.m/Underscore.h>
 
@@ -14,7 +13,7 @@
 @property(assign) CGFloat tilt;
 @property(strong) NSMutableArray *theBuckets;
 @property(assign) CGPoint originalPosition;
--(void) setupBuckets:(int) height;
+-(void) setupBuckets;
 
 @end
 
@@ -31,7 +30,7 @@
         [Bucket2D new],
         [Bucket2D new],
         [Bucket2D new]]];
-    [self setupBuckets:0];
+    [self setupBuckets];
   }
   return self;
 }
@@ -89,7 +88,7 @@
 -(void) reset
 {
   self.position = self.originalPosition;
-  [self setupBuckets:_height];
+  [self setupBuckets];
 }
 
 -(int) bucketCount
@@ -103,10 +102,10 @@
 -(void) setBucketHeight:(int) height
 {
   _height = height;
-  [self setupBuckets:height];
+  [self setupBuckets];
 }
 
--(void) setupBuckets:(int) height
+-(void) setupBuckets
 {
 
   ((NSObject<Bucket> *) self.theBuckets[0]).position = CGPointMake(self.originalPosition.x,
