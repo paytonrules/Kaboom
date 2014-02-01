@@ -53,7 +53,7 @@
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c3be8db1607517c4da1c8a746bf3752b:31a490e455ac951c9f8ec08d93d38d4f:64b64a05b2a5c984ff6df54a3568955c$</string>
+            <string>$TexturePacker:SmartUpdate:5a7620d8161638f53c77967cf7e47e72:31a490e455ac951c9f8ec08d93d38d4f:64b64a05b2a5c984ff6df54a3568955c$</string>
             <key>textureFileName</key>
             <string>game-sprites-hd.pvr.ccz</string>
         </dict>
