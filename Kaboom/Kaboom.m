@@ -2,10 +2,10 @@
 #import "Bomber2D.h"
 #import "Buckets.h"
 #import "RandomLocationChooser.h"
-#import "PlistLevelsLoader.h"
 #import "LevelCollection.h"
 #import "KaboomContext.h"
 #import "Constants.h"
+#import "LevelCollectionProcedural.h"
 #import <TransitionKit/TransitionKit.h>
 
 @interface Kaboom ()
@@ -28,9 +28,10 @@
   return level;
 }
 
-+ (id)newLevelWithBomber:(NSObject <Bomber> *)bomber buckets:(Buckets *) buckets andLevelLoader:(Class <LevelLoader>)loader {
-  Kaboom *level = [self newLevelWithBuckets:buckets bomber:bomber];
-  level.gameContext.levelLoader = loader;
++(id) newLevelWithContext:(KaboomContext *) context
+{
+  Kaboom *level = [Kaboom new];
+  level.gameContext = context;
   return level;
 }
 
@@ -38,7 +39,7 @@
   if (self = [super init]) {
     self.gameStateMachine = [TKStateMachine new];
     self.gameContext = [KaboomContext newWithMachine:self];
-    self.gameContext.levelLoader = [PlistLevelsLoader class];
+    self.gameContext.levels = [LevelCollectionProcedural newWithSpeed:10 andBombs:5];
 
     // Seems not quite right from a dependency standpoint
     RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, GAME_WIDTH)];
@@ -99,15 +100,15 @@
   return self;
 }
 
-- (void)setScore:(int)score {
+-(void) setScore:(int)score {
   self.gameContext.score = score;
 }
 
-- (int)score {
+-(int) score {
   return self.gameContext.score;
 }
 
-- (NSObject <Bomber> *)bomber {
+-(NSObject <Bomber> *) bomber {
   return self.gameContext.bomber;
 }
 
@@ -121,21 +122,21 @@
   [self.gameStateMachine fireEvent:eventName userInfo:nil error:nil];
 }
 
-- (void)start {
+- (void) start {
   [self.gameStateMachine fireEvent:@"Start Game" userInfo:nil error:nil];
 }
 
-- (void)restart {
+- (void) restart {
   [self.gameStateMachine fireEvent:@"Restart Level" userInfo:nil error:nil];
 }
 
-- (void)update:(CGFloat)deltaTime {
+- (void) update:(CGFloat)deltaTime {
   NSDictionary *userInfo = @{@"deltaTime" : [NSNumber numberWithFloat:deltaTime]};
   [self.gameStateMachine fireEvent:@"Update" userInfo:userInfo error:nil];
 }
 
 // Does this belong here?  You don't tilt the game
-- (void)tilt:(CGFloat)tilt {
+- (void) tilt:(CGFloat)tilt {
   [self.gameContext tilt:tilt];
 }
 

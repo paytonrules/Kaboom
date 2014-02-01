@@ -1,6 +1,5 @@
 #import "KaboomContext.h"
 #import "LevelCollection.h"
-#import "LevelLoader.h"
 #import "Buckets.h"
 #import "Bomber.h"
 #import "Event.h"
@@ -11,7 +10,6 @@
 
 -(void) startBomberAtLevel:(Level *)level;
 @property(strong) NSObject<KaboomStateMachine> *machine;
-@property(strong) NSObject<LevelCollection> *levels;
 @end
 
 @implementation KaboomContext
@@ -25,7 +23,6 @@
 
 -(void) startBombing
 {
-  self.levels = [self.levelLoader load];
   [self restartLevel];
 }
 
@@ -38,6 +35,7 @@
 {
   self.score = 0;
   [self.buckets reset];
+  [self.levels reset];
   [self startBombing];
 }
 
@@ -82,6 +80,7 @@
     if ([self.buckets bucketCount] == 0) {
       [self.machine fire:@"End Game"];
     } else {
+      NSLog(@"ThE FUDK");
       [self.machine fire:@"Bomb Hit"];
     }
   } else if (self.bomber.isOut) {

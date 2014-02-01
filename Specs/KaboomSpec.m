@@ -4,24 +4,10 @@
 #import "Buckets.h"
 #import "CCActionInterval.h"
 #import "Constants.h"
-#import "LevelLoader.h"
 #import "GameBlackboard.h"
 #import "Event.h"
 #import "LevelCollectionArray.h"
-
-@interface PhonyLevelLoader : NSObject<LevelLoader>
-@end
-
-@implementation PhonyLevelLoader
-
-+(LevelCollectionArray *) load
-{
-  return [LevelCollectionArray newWithArray:@[
-      @{@"Speed" : @"60.0", @"Bombs" : @"1"},
-      @{@"Speed" : @"90.0", @"Bombs" : @"2"}
-  ]];
-}
-@end
+#import "KaboomContext.h"
 
 @interface BombHitWatcher : NSObject
 @property (assign) BOOL bombHit;
@@ -72,64 +58,45 @@ OCDSpec2Context(KaboomSpec) {
       [ExpectInt(level.buckets.position.y) toBe:180.0f];
     });
 
-    It(@"starts the bomber on the first level", ^{
-      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
+    It(@"starts bombing on the start event", ^{
+      id context = [OCMockObject mockForClass:[KaboomContext class]];
+      Kaboom *level = [Kaboom newLevelWithContext: context];
 
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
+      [[context expect] startBombing];
 
       [level start];
 
-      [bomber verify];
+      [context verify];
     });
 
-    It(@"moves to the next level when the bomber uses up the bombs", ^{
-      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
-
-      [[[bomber stub] andReturnValue:@1] droppedBombCount];
-      [[[bomber stub] andReturnValue:@YES] isOut];
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:90.0 withBombs:2];
+    It(@"advances to the next level when the level is finished", ^{
+      id context = [OCMockObject niceMockForClass:[KaboomContext class]];
+      Kaboom *level = [Kaboom newLevelWithContext: context];
 
       [level start];
-      [level update:10.0];
+      [level update:0];
 
-      [bomber verify];
+      [[context expect] advanceToNextLevel];
+
+      [level fire:@"Next Level"];
+
+      [context verify];
     });
 
     It(@"Starts updating the bomber again after moving to the next level", ^{
-      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
-
-      [[[bomber stub] andReturnValue:@1] droppedBombCount];
-      [[[bomber stub] andReturnValue:@YES] isOut];
-
-      [[bomber expect] update:10.0];
-      [[bomber expect] update:11.0];
+      id context = [OCMockObject niceMockForClass:[KaboomContext class]];
+      Kaboom *level = [Kaboom newLevelWithContext:context];
 
       [level start];
-      [level update:10.0];
-      [level update:11.0];
+      [level update:10];
+      [level fire:@"Next Level"];
+      [level fire:@"New Level"];
 
-      [bomber verify];
-    });
+      [[context expect] updatePlayers:11];
 
-    It(@"only starts the bomber once, not on each update", ^{
-      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      [[bomber stub] updateDroppedBombs:[OCMArg any]];
-      [[bomber stub] update:1.0];
-      [[[bomber stub] andReturnValue:@NO] bombHit];
-      [[[bomber stub] andReturnValue:@1] droppedBombCount];
-      [[[bomber stub] andReturnValue:@NO] isOut];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:nil andLevelLoader:[PhonyLevelLoader class]];
+      [level update:11];
 
-      [(NSObject<Bomber> *)[bomber expect] startAtSpeed:60.0 withBombs:1];
-
-      [level start];
-      [level update:1.0];
-
-      [bomber verify];
+      [context verify];
     });
 
     It(@"delegates update to the bomber", ^{
@@ -186,29 +153,6 @@ OCDSpec2Context(KaboomSpec) {
 
       [level tilt:2.0];
 
-      [buckets verify];
-    });
-
-    It(@"checks for caught buckets after updating their positions", ^{
-      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      [[bomber stub] startAtSpeed:0.0 withBombs:0];
-      [[[bomber stub] andReturnValue:@NO] bombHit];
-      [[[bomber stub] andReturnValue:@1] droppedBombCount];
-      [[[bomber stub] andReturnValue:@NO] isOut];
-      id buckets = [OCMockObject mockForClass:[Buckets class]];
-      [[[buckets stub] andReturnValue:@1] bucketCount];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
-      [bomber setExpectationOrderMatters:YES];
-      [[bomber expect] update:10];
-      [[buckets expect] update:10];
-
-      [[bomber expect] updateDroppedBombs:buckets];
-
-      [level start];
-      [level update:10];
-
-      [bomber verify];
       [buckets verify];
     });
     
@@ -365,24 +309,18 @@ OCDSpec2Context(KaboomSpec) {
     });
 
     It(@"starts bombing again on a new game", ^{
-      id bomber = [OCMockObject niceMockForProtocol:@protocol(Bomber)];
-      id buckets = [OCMockObject mockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBomber:bomber buckets:buckets andLevelLoader:[PhonyLevelLoader class]];
-
-      [[[bomber stub] andReturnValue:@YES] bombHit];
-      [[buckets stub] removeBucket];
-      [[buckets stub] update:10.0];
-      [[[buckets stub] andReturnValue:@0] bucketCount];
-      [[buckets stub] reset];
+      id kaboomContext = [OCMockObject niceMockForClass:[KaboomContext class]];
+      Kaboom *level = [Kaboom newLevelWithContext:kaboomContext];
 
       [level start];
-      [level update:10];
+      [level update:1];
+      [level fire:@"End Game"];
 
-      [[bomber expect] startAtSpeed:60.0 withBombs:1];
+      [[kaboomContext expect] resetGame];
 
       [level start];
 
-      [bomber verify];
+      [kaboomContext verify];
     });
 
     It(@"resets the buckets on new game", ^{
@@ -471,49 +409,36 @@ OCDSpec2Context(KaboomSpec) {
       [bomber verify];
     });
 
-    It(@"doesn't keep checking for bomb hits after a bomb hits", ^{
-      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      [[bomber stub] startAtSpeed:0.0 withBombs:0];
-      [[bomber stub] updateDroppedBombs:[OCMArg any]];
-      [[bomber stub] update:10];
-      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
-      [[[buckets stub] andReturnValue:@2] bucketCount];
-      [[[bomber stub] andReturnValue:@YES] bombHit];
-      [[bomber expect] explode];
+    It(@"doesn't do anything on updates when exploding", ^{
+      id kaboomContext = [OCMockObject niceMockForClass:[KaboomContext class]];
+      Kaboom *level = [Kaboom newLevelWithContext:kaboomContext];
 
       [level start];
       [level update:10];
-      [level update:10];
+      [level fire:@"Bomb Hit"];
 
-      [bomber verify];
+      [[kaboomContext reject] updatePlayers:12];
+
+      [level update:12];
+
+      [kaboomContext verify];
     });
 
-    It(@"starts checking for bomb hits again after the level is restarted", ^{
-      id bomber = [OCMockObject mockForProtocol:@protocol(Bomber)];
-      [[bomber stub] startAtSpeed:0.0 withBombs:0];
-      [[bomber stub] updateDroppedBombs:[OCMArg any]];
-      [[bomber stub] update:10];
-      id buckets = [OCMockObject niceMockForClass:[Buckets class]];
-      Kaboom *level = [Kaboom newLevelWithBuckets:buckets bomber:bomber];
-
-      [[[buckets stub] andReturnValue:@2] bucketCount];
-      [[[bomber stub] andReturnValue:@YES] bombHit];
-
-      [[bomber expect] explode];
-      [[bomber expect] explode];
+    It(@"starts updating again when the explosion is over", ^{
+      id kaboomContext = [OCMockObject niceMockForClass:[KaboomContext class]];
+      Kaboom *level = [Kaboom newLevelWithContext:kaboomContext];
 
       [level start];
       [level update:10];
+      [level fire:@"Bomb Hit"];
       [level restart];
-      [level update:10];
+      [level fire:@"Restarted"];
 
-      [bomber verify];
-    });
+      [[kaboomContext expect] updatePlayers:12];
 
-    It(@"redoes the current level when the level is restarted", ^{
+      [level update:12];
 
+      [kaboomContext verify];
     });
   });
 }

@@ -18,7 +18,12 @@
   return level;
 }
 
-- (void)next
+- (void)reset
+{
+
+}
+
+-(void) next
 {
   self.level++;
 }

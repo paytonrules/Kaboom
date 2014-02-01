@@ -80,9 +80,9 @@
 		2FA28AB5646A4158A188BCDA /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2821851BD13F77BC6DB45 /* fire.png */; };
 		2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
+		2FA28B0BEF2BDE743479EC33 /* KaboomContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */; };
 		2FA28B50C9E063A7A90D5662 /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA28B6B8AA4C797AB6541AF /* background-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28C6C9890168F1B8300C0 /* background-ipadhd.png */; };
-		2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28B90AA567533093C1591 /* LevelCollectionProcedural.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
 		2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
@@ -96,7 +96,6 @@
 		2FA28CBA92A5A6F7CA25505D /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28430631AA55FE5C45FD3 /* Constants.m */; };
 		2FA28D1BBCF9EAF7B2B86FA9 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA28D3CB596C6B8E6CF7A5C /* SizeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F4FF183F08F0285ECF1 /* SizeService.m */; };
-		2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */; };
 		2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
 		2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
 		2FA28DC2321038E98BA6527E /* game-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */; };
@@ -146,12 +145,12 @@
 		07D264EF1816B64A0060E3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D264F11816B64A0060E3E9 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		2E835FC4C4834368AA6DCF9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContextSpec.m; sourceTree = "<group>"; };
 		2FA2802FCB805A565D204AC7 /* catch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = catch.wav; path = Resources/catch.wav; sourceTree = "<group>"; };
 		2FA28055740E6095D019B0DA /* game-sprites.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "game-sprites.plist"; path = "Resources/game-sprites.plist"; sourceTree = "<group>"; };
 		2FA280A9F6A3A42AACBB0972 /* Buckets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buckets.h; sourceTree = "<group>"; };
 		2FA280BAB876740B963BBB44 /* BucketSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketSprite.h; sourceTree = "<group>"; };
 		2FA280DEE4688ABC994032B6 /* ScaledSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaledSprite.h; sourceTree = "<group>"; };
-		2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistLevelsLoader.m; sourceTree = "<group>"; };
 		2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
 		2FA281531A6C4B024945D694 /* CreditsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsLayer.h; sourceTree = "<group>"; };
 		2FA281E7BE0861494079A694 /* Kaboom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kaboom.h; sourceTree = "<group>"; };
@@ -177,7 +176,6 @@
 		2FA284B4C0D2EDB6A139A2E0 /* BombExplosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BombExplosion.m; sourceTree = "<group>"; };
 		2FA285481EF46AADB0F024DB /* BomberSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BomberSprite.m; sourceTree = "<group>"; };
 		2FA2857D24C15E52AF2D4F2F /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
-		2FA28598FD82B4383D5476A4 /* LevelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLoader.h; sourceTree = "<group>"; };
 		2FA285B4F1CB77AEE9B1B660 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		2FA285C9DAB47003A6FBA0FA /* BucketsNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketsNode.h; sourceTree = "<group>"; };
 		2FA28612B5FBC34E37E817B2 /* LevelCollectionArraySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionArraySpec.m; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 		2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites.pvr.ccz"; path = "Resources/game-sprites.pvr.ccz"; sourceTree = "<group>"; };
 		2FA28A068DEBEF6897EC9A2B /* background-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-hd.png"; path = "Resources/background-hd.png"; sourceTree = "<group>"; };
 		2FA28A0F951445B45AF12061 /* Bomb2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb2D.m; sourceTree = "<group>"; };
-		2FA28A17E04A7E30DBEBC6F6 /* PlistLevelsLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistLevelsLoader.h; sourceTree = "<group>"; };
 		2FA28A1F15291BDB03525501 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		2FA28A213D5E2AA4D42254DE /* LevelCollectionArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelCollectionArray.m; sourceTree = "<group>"; };
 		2FA28A4CA415D5DBA2C1798E /* StandardRandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardRandomNumberGenerator.h; sourceTree = "<group>"; };
@@ -345,7 +342,6 @@
 				2FA2857D24C15E52AF2D4F2F /* Bucket.h */,
 				2FA28CAED8819D4BCC149376 /* Bucket2D.h */,
 				2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */,
-				2FA28598FD82B4383D5476A4 /* LevelLoader.h */,
 				2FA28612CEA00A6F1F1D8BC2 /* Level.h */,
 				2FA285B4F1CB77AEE9B1B660 /* Level.m */,
 				2FA283ED09D1A0D33B271365 /* Utilities */,
@@ -418,6 +414,8 @@
 				2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */,
 				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
 				2FA28C348025798254AAD049 /* GameBlackboardSpec.m */,
+				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
+				2FA28A9EF103EBE3BCF6DD30 /* Mocks */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -436,8 +434,6 @@
 		2FA283ED09D1A0D33B271365 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2FA280FF5E4E6654E3914B24 /* PlistLevelsLoader.m */,
-				2FA28A17E04A7E30DBEBC6F6 /* PlistLevelsLoader.h */,
 				2FA28A213D5E2AA4D42254DE /* LevelCollectionArray.m */,
 				2FA28FC9C046626D7FB3CF48 /* LevelCollectionArray.h */,
 				2FA2825B16BDD9E954374712 /* SizeService.h */,
@@ -460,6 +456,13 @@
 				2FA286604CD3EBA1BA926481 /* LevelCollectionProceduralSpec.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2FA28A9EF103EBE3BCF6DD30 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		2FA28E47EE21C30A5784314C /* Cocos */ = {
@@ -705,7 +708,6 @@
 				2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */,
 				2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */,
 				2FA28522E9A7CE30113818E2 /* Level.m in Sources */,
-				2FA28B7AF94400B5D8FD3711 /* PlistLevelsLoader.m in Sources */,
 				2FA28A4C733A233C5C9C32A6 /* BombExplosion.m in Sources */,
 				2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */,
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
@@ -740,7 +742,6 @@
 				2FA28622B00C64CDC2A430FB /* Bucket2DSpec.m in Sources */,
 				2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */,
 				2FA28EF3472AD27B423BA8EE /* Level.m in Sources */,
-				2FA28D3D1A223A6AB8080628 /* PlistLevelsLoader.m in Sources */,
 				2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */,
 				2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */,
 				2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */,
@@ -754,6 +755,7 @@
 				2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */,
 				2FA2886317E0E94DFC24C2A0 /* LevelCollectionProceduralSpec.m in Sources */,
 				2FA28B90AA567533093C1591 /* LevelCollectionProcedural.m in Sources */,
+				2FA28B0BEF2BDE743479EC33 /* KaboomContextSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

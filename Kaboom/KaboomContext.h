@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "KaboomStateMachine.h"
 
+@protocol LevelCollection;
+
 @interface KaboomContext : NSObject
 
 +(id) newWithMachine:(NSObject<KaboomStateMachine> *) machine;
@@ -13,7 +15,7 @@
 -(void) tilt:(CGFloat) tilt;
 
 @property(assign) int score;
-@property(strong) Class<LevelLoader> levelLoader;
+@property(strong) NSObject<LevelCollection> *levels;
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
 

@@ -4,4 +4,5 @@
 
 -(void) next;
 -(Level *) current;
+-(void) reset;
 @end

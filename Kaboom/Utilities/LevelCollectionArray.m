@@ -8,12 +8,17 @@
 
 @implementation LevelCollectionArray
 
-+(id) newWithArray:(NSArray *)levels {
+-(void) reset
+{
+  self.currentLevel = 0;
+}
+
++(id) newWithArray:(NSArray *)levels
+{
   LevelCollectionArray *levelCollection = [LevelCollectionArray new];
   levelCollection.levels = levels;
   return levelCollection;
 }
-
 
 -(void) next
 {
