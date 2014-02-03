@@ -7,15 +7,15 @@
             <key>Star.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{67,148},{70,71}}</string>
+                <string>{{2,148},{105,105}}</string>
                 <key>offset</key>
-                <string>{0,-11}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,35},{70,71}}</string>
+                <string>{{0,0},{105,105}}</string>
                 <key>sourceSize</key>
-                <string>{70,119}</string>
+                <string>{105,105}</string>
             </dict>
             <key>bomber.png</key>
             <dict>
@@ -33,15 +33,15 @@
             <key>buckets.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,148},{63,75}}</string>
+                <string>{{114,2},{110,131}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{63,75}}</string>
+                <string>{{0,0},{110,131}}</string>
                 <key>sourceSize</key>
-                <string>{63,75}</string>
+                <string>{110,131}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -53,7 +53,7 @@
             <key>size</key>
             <string>{256,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5a7620d8161638f53c77967cf7e47e72:31a490e455ac951c9f8ec08d93d38d4f:64b64a05b2a5c984ff6df54a3568955c$</string>
+            <string>$TexturePacker:SmartUpdate:120112d5c4d282ff54fc690ddb8a7f42:dce0aff468245a48d9387a7904bc6ac9:64b64a05b2a5c984ff6df54a3568955c$</string>
             <key>textureFileName</key>
             <string>game-sprites-ipadhd.pvr.ccz</string>
         </dict>

@@ -7,15 +7,15 @@
             <key>Star.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{36,76},{35,36}}</string>
+                <string>{{59,59},{53,53}}</string>
                 <key>offset</key>
-                <string>{0,-6}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,18},{35,36}}</string>
+                <string>{{0,0},{53,53}}</string>
                 <key>sourceSize</key>
-                <string>{35,60}</string>
+                <string>{53,53}</string>
             </dict>
             <key>bomber.png</key>
             <dict>
@@ -33,15 +33,15 @@
             <key>buckets.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,76},{32,38}}</string>
+                <string>{{59,2},{55,66}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <false/>
+                <true/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{32,38}}</string>
+                <string>{{0,0},{55,66}}</string>
                 <key>sourceSize</key>
-                <string>{32,38}</string>
+                <string>{55,66}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -53,7 +53,7 @@
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:5a7620d8161638f53c77967cf7e47e72:31a490e455ac951c9f8ec08d93d38d4f:64b64a05b2a5c984ff6df54a3568955c$</string>
+            <string>$TexturePacker:SmartUpdate:120112d5c4d282ff54fc690ddb8a7f42:dce0aff468245a48d9387a7904bc6ac9:64b64a05b2a5c984ff6df54a3568955c$</string>
             <key>textureFileName</key>
             <string>game-sprites-hd.pvr.ccz</string>
         </dict>
