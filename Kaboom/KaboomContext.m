@@ -80,7 +80,6 @@
     if ([self.buckets bucketCount] == 0) {
       [self.machine fire:@"End Game"];
     } else {
-      NSLog(@"ThE FUDK");
       [self.machine fire:@"Bomb Hit"];
     }
   } else if (self.bomber.isOut) {
