@@ -101,6 +101,7 @@
 		2FA28DC2321038E98BA6527E /* game-sprites.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */; };
 		2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28E4937C3999A510C3470 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A1F15291BDB03525501 /* Event.m */; };
+		2FA28E823C526D7D60CFE462 /* Credits~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA282EC3DA96B90D95C72A7 /* Credits~ipad.png */; };
 		2FA28EBE6573BD70FB5058EB /* CocosSizeStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287BA3BADD11E5C604A31 /* CocosSizeStrategy.m */; };
 		2FA28EF3472AD27B423BA8EE /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
 		2FA28EF3A60F4095A5A21F0D /* LevelCollectionArraySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28612B5FBC34E37E817B2 /* LevelCollectionArraySpec.m */; };
@@ -164,6 +165,7 @@
 		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA282B0C605ED6F8A3369C7 /* LevelCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollection.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
+		2FA282EC3DA96B90D95C72A7 /* Credits~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Credits~ipad.png"; path = "Resources/Credits~ipad.png"; sourceTree = "<group>"; };
 		2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ccbParticleFire.png; path = Resources/ccbParticleFire.png; sourceTree = "<group>"; };
 		2FA2836A0F78CDAE43946430 /* game-sprites-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "game-sprites-hd.plist"; path = "Resources/game-sprites-hd.plist"; sourceTree = "<group>"; };
 		2FA28408982A64B570F0A04F /* bomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bomb.wav; path = Resources/bomb.wav; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				2FA28055740E6095D019B0DA /* game-sprites.plist */,
 				2FA289F2D6D3AA3A1247D194 /* game-sprites.pvr.ccz */,
 				2FA28A068DEBEF6897EC9A2B /* background-hd.png */,
+				2FA282EC3DA96B90D95C72A7 /* Credits~ipad.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				2FA2837BC25EB420FDDAD5D0 /* game-sprites.plist in Resources */,
 				2FA28DC2321038E98BA6527E /* game-sprites.pvr.ccz in Resources */,
 				2FA280B66F5869C57ED9D032 /* background-hd.png in Resources */,
+				2FA28E823C526D7D60CFE462 /* Credits~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

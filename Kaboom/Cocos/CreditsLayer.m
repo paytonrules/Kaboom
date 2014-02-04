@@ -16,7 +16,6 @@
 {
   if( (self = [super init])) {
 
-    // ask director for the window size
     CGSize size = [[CCDirector sharedDirector] winSize];
 
     CCSprite *background;
@@ -25,15 +24,29 @@
       background = [CCSprite spriteWithFile:@"Default.png"];
       background.rotation = 90;
     } else {
-      background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
+      background = [CCSprite spriteWithFile:@"Credits~ipad.png"];
     }
     background.position = ccp(size.width/2, size.height/2);
-
-    // add the label as a child to this Layer
     [self addChild: background];
+    [self setTouchEnabled:YES];
   }
 
   return self;
+}
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+  return YES;
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+  [[CCDirector sharedDirector] popScene];
+}
+
+-(void) registerWithTouchDispatcher
+{
+  [[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
 
