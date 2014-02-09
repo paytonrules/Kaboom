@@ -19,12 +19,6 @@
 		07D2633C1816B28E0060E3E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633B1816B28E0060E3E9 /* CoreGraphics.framework */; };
 		07D2633E1816B28E0060E3E9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633D1816B28E0060E3E9 /* CoreText.framework */; };
 		07D263401816B28E0060E3E9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633F1816B28E0060E3E9 /* GameKit.framework */; };
-		07D2634C1816B28E0060E3E9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634B1816B28E0060E3E9 /* Icon-72.png */; };
-		07D2634E1816B28E0060E3E9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */; };
-		07D263501816B28E0060E3E9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634F1816B28E0060E3E9 /* Icon-Small.png */; };
-		07D263521816B28E0060E3E9 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263511816B28E0060E3E9 /* Icon-Small@2x.png */; };
-		07D263541816B28E0060E3E9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263531816B28E0060E3E9 /* Icon.png */; };
-		07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263551816B28E0060E3E9 /* Icon@2x.png */; };
 		07D263591816B28E0060E3E9 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 07D263581816B28E0060E3E9 /* iTunesArtwork */; };
 		07D264D11816B28F0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264D01816B28F0060E3E9 /* main.m */; };
 		07D264E61816B64A0060E3E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263371816B28E0060E3E9 /* UIKit.framework */; };
@@ -121,12 +115,6 @@
 		07D2633B1816B28E0060E3E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		07D2633D1816B28E0060E3E9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		07D2633F1816B28E0060E3E9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		07D2634B1816B28E0060E3E9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
-		07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
-		07D2634F1816B28E0060E3E9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
-		07D263511816B28E0060E3E9 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
-		07D263531816B28E0060E3E9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		07D263551816B28E0060E3E9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		07D263571816B28E0060E3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		07D263581816B28E0060E3E9 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		07D264CF1816B28F0060E3E9 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -352,12 +340,6 @@
 		07D263421816B28E0060E3E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07D2634B1816B28E0060E3E9 /* Icon-72.png */,
-				07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */,
-				07D2634F1816B28E0060E3E9 /* Icon-Small.png */,
-				07D263511816B28E0060E3E9 /* Icon-Small@2x.png */,
-				07D263531816B28E0060E3E9 /* Icon.png */,
-				07D263551816B28E0060E3E9 /* Icon@2x.png */,
 				07D263571816B28E0060E3E9 /* Info.plist */,
 				07D263581816B28E0060E3E9 /* iTunesArtwork */,
 				2FA2821851BD13F77BC6DB45 /* fire.png */,
@@ -543,14 +525,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07D263541816B28E0060E3E9 /* Icon.png in Resources */,
-				07D263501816B28E0060E3E9 /* Icon-Small.png in Resources */,
-				07D2634C1816B28E0060E3E9 /* Icon-72.png in Resources */,
-				07D2634E1816B28E0060E3E9 /* Icon-Small-50.png in Resources */,
 				07D263591816B28E0060E3E9 /* iTunesArtwork in Resources */,
-				07D263521816B28E0060E3E9 /* Icon-Small@2x.png in Resources */,
 				0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */,
-				07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */,
 				2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */,
 				2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */,
 				2FA28A522C69779A46FC8B92 /* levels.plist in Resources */,
@@ -758,7 +734,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -778,7 +754,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
