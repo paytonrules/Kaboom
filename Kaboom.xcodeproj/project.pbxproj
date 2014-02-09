@@ -21,7 +21,6 @@
 		07D263441816B28E0060E3E9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263431816B28E0060E3E9 /* Default.png */; };
 		07D263461816B28E0060E3E9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263451816B28E0060E3E9 /* Default@2x.png */; };
 		07D263481816B28E0060E3E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263471816B28E0060E3E9 /* Default-568h@2x.png */; };
-		07D2634A1816B28E0060E3E9 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263491816B28E0060E3E9 /* Default-Landscape~ipad.png */; };
 		07D2634C1816B28E0060E3E9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634B1816B28E0060E3E9 /* Icon-72.png */; };
 		07D2634E1816B28E0060E3E9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */; };
 		07D263501816B28E0060E3E9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634F1816B28E0060E3E9 /* Icon-Small.png */; };
@@ -71,7 +70,6 @@
 		2FA2896F9C34F5E0E4487024 /* LevelCollectionProcedural.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */; };
 		2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */; };
-		2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CD73921DBD4533469C9 /* IntroLayer.m */; };
 		2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28288670853BDF8083AB2 /* BucketSprite.m */; };
 		2FA28A270551D32BE0807572 /* game-sprites0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA284004DB4B04BB8B8DA23 /* game-sprites0.plist */; };
 		2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */; };
@@ -126,7 +124,6 @@
 		07D263431816B28E0060E3E9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		07D263451816B28E0060E3E9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		07D263471816B28E0060E3E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
-		07D263491816B28E0060E3E9 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		07D2634B1816B28E0060E3E9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
 		07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
 		07D2634F1816B28E0060E3E9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
@@ -159,7 +156,6 @@
 		2FA282744264D278C082A1BC /* LevelCollectionProcedural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollectionProcedural.h; sourceTree = "<group>"; };
 		2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledSprite.m; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
-		2FA2828C94913DB7D43B33D7 /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		2FA2829A5DCBE4EAB01D6930 /* game-sprites0-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "game-sprites0-hd.plist"; path = "Resources/game-sprites0-hd.plist"; sourceTree = "<group>"; };
 		2FA282B0C605ED6F8A3369C7 /* LevelCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollection.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
@@ -213,7 +209,6 @@
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
 		2FA28CC1029F55EBD494A6F9 /* Scaler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scaler.m; sourceTree = "<group>"; };
 		2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomLayer.h; sourceTree = "<group>"; };
-		2FA28CD73921DBD4533469C9 /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		2FA28D7F03762665680A3DCF /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28D81C30296DC88C95456 /* levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = levels.plist; sourceTree = "<group>"; };
 		2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ".!13545!TemplateIcon.icns"; sourceTree = "<group>"; };
@@ -361,7 +356,6 @@
 				07D263431816B28E0060E3E9 /* Default.png */,
 				07D263451816B28E0060E3E9 /* Default@2x.png */,
 				07D263471816B28E0060E3E9 /* Default-568h@2x.png */,
-				07D263491816B28E0060E3E9 /* Default-Landscape~ipad.png */,
 				07D2634B1816B28E0060E3E9 /* Icon-72.png */,
 				07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */,
 				07D2634F1816B28E0060E3E9 /* Icon-Small.png */,
@@ -409,7 +403,6 @@
 				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
 				2FA28C348025798254AAD049 /* GameBlackboardSpec.m */,
 				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
-				2FA28A9EF103EBE3BCF6DD30 /* Mocks */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -452,20 +445,11 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2FA28A9EF103EBE3BCF6DD30 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mocks;
-			sourceTree = "<group>";
-		};
 		2FA28E47EE21C30A5784314C /* Cocos */ = {
 			isa = PBXGroup;
 			children = (
 				2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */,
-				2FA2828C94913DB7D43B33D7 /* IntroLayer.h */,
 				2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */,
-				2FA28CD73921DBD4533469C9 /* IntroLayer.m */,
 				2FA28F5202D6444CC2ABC705 /* AppDelegate.m */,
 				2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */,
 				2FA28AA88E0D958362D9515B /* BucketsNode.m */,
@@ -570,7 +554,6 @@
 				07D2634E1816B28E0060E3E9 /* Icon-Small-50.png in Resources */,
 				07D263591816B28E0060E3E9 /* iTunesArtwork in Resources */,
 				07D263521816B28E0060E3E9 /* Icon-Small@2x.png in Resources */,
-				07D2634A1816B28E0060E3E9 /* Default-Landscape~ipad.png in Resources */,
 				07D263481816B28E0060E3E9 /* Default-568h@2x.png in Resources */,
 				07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */,
 				2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */,
@@ -686,7 +669,6 @@
 			files = (
 				07D264D11816B28F0060E3E9 /* main.m in Sources */,
 				2FA28C81C391BD41E6ACAA07 /* KaboomLayer.m in Sources */,
-				2FA289EA7F577BC6EAFF9AAD /* IntroLayer.m in Sources */,
 				2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */,
 				2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */,
 				2FA288FEE49CFAADEEA0BF55 /* BucketsNode.m in Sources */,

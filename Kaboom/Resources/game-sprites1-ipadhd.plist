@@ -27,7 +27,7 @@
             <key>size</key>
             <string>{4096,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:33b002170eaea1ebe277d94bd7e06756:a27a45ec9c4607ca278edd40a20962a5:f802490e7240f681e858b41a16ade74a$</string>
+            <string>$TexturePacker:SmartUpdate:ebf9db46a79f53e496fe9b7b3aa889d1:a27a45ec9c4607ca278edd40a20962a5:f802490e7240f681e858b41a16ade74a$</string>
             <key>textureFileName</key>
             <string>game-sprites1-ipadhd.pvr.ccz</string>
         </dict>
