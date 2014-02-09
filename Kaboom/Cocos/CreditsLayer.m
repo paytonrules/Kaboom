@@ -18,16 +18,14 @@
 
     CGSize size = [[CCDirector sharedDirector] winSize];
 
-    CCSprite *background;
+    CCSprite *background = [CCSprite spriteWithSpriteFrameName:@"background-empty.png"];
+    [background setPosition:ccp(size.width / 2, size.height / 2)];
+    [self addChild:background z:0];
 
-    if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
-      background = [CCSprite spriteWithFile:@"Default.png"];
-      background.rotation = 90;
-    } else {
-      background = [CCSprite spriteWithFile:@"Credits~ipad.png"];
-    }
-    background.position = ccp(size.width/2, size.height/2);
-    [self addChild: background];
+    CCSprite *credits;
+    credits = [CCSprite spriteWithSpriteFrameName:@"Credits.png"];
+    credits.position = ccp(size.width / 2, size.height / 2);
+    [self addChild:credits];
     [self setTouchEnabled:YES];
   }
 

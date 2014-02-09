@@ -70,7 +70,7 @@
         <key>dataFormat</key>
         <string>cocos2d</string>
         <key>textureFileName</key>
-        <filename>../Kaboom/Resources/game-sprites{v}.pvr.ccz</filename>
+        <filename>../Kaboom/Resources/game-sprites{n}{v}.pvr.ccz</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -102,7 +102,7 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>4096</int>
             <key>height</key>
             <int>2048</int>
         </QSize>
@@ -161,11 +161,11 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../Kaboom/Resources/game-sprites{v}.plist</filename>
+                <filename>../Kaboom/Resources/game-sprites{n}{v}.plist</filename>
             </struct>
         </map>
         <key>multiPack</key>
-        <false/>
+        <true/>
         <key>forceIdenticalLayout</key>
         <false/>
         <key>outputFormat</key>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>background-empty.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{2048,1536}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{2048,1536}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>game-sprites1-ipadhd.pvr.ccz</string>
+            <key>size</key>
+            <string>{4096,2048}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:33b002170eaea1ebe277d94bd7e06756:a27a45ec9c4607ca278edd40a20962a5:f802490e7240f681e858b41a16ade74a$</string>
+            <key>textureFileName</key>
+            <string>game-sprites1-ipadhd.pvr.ccz</string>
+        </dict>
+    </dict>
+</plist>

@@ -46,14 +46,14 @@ enum TAGS {
 
     self.game = [Kaboom new];
 
-    CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+    CCSpriteBatchNode *gameArt;
+    gameArt = [CCSpriteBatchNode batchNodeWithFile:@"game-sprites0.pvr.ccz"];
+    [self addChild:gameArt];
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"game-sprites0.plist"];
+
+    CCSprite *background = [CCSprite spriteWithSpriteFrameName:@"background.png"];
     [background setPosition:ccp(size.width / 2, size.height / 2)];
     [self addChild:background z:0];
-
-    CCSpriteBatchNode *gameArt;
-    gameArt = [CCSpriteBatchNode batchNodeWithFile:@"game-sprites.pvr.ccz"];
-    [self addChild:gameArt];
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"game-sprites.plist"];
 
     BomberSprite *bomberSprite = [BomberSprite newSpriteWithBomber:self.game.bomber];
     [self addChild:bomberSprite z:0 tag:kBomber];
