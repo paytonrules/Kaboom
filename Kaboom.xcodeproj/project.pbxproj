@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
 		07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B38BE61817F2560065C07E /* Bomber2DSpec.m */; };
 		07D2632E1816B28E0060E3E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632D1816B28E0060E3E9 /* QuartzCore.framework */; };
 		07D263301816B28E0060E3E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632F1816B28E0060E3E9 /* OpenGLES.framework */; };
@@ -18,9 +19,6 @@
 		07D2633C1816B28E0060E3E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633B1816B28E0060E3E9 /* CoreGraphics.framework */; };
 		07D2633E1816B28E0060E3E9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633D1816B28E0060E3E9 /* CoreText.framework */; };
 		07D263401816B28E0060E3E9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633F1816B28E0060E3E9 /* GameKit.framework */; };
-		07D263441816B28E0060E3E9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263431816B28E0060E3E9 /* Default.png */; };
-		07D263461816B28E0060E3E9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263451816B28E0060E3E9 /* Default@2x.png */; };
-		07D263481816B28E0060E3E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D263471816B28E0060E3E9 /* Default-568h@2x.png */; };
 		07D2634C1816B28E0060E3E9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634B1816B28E0060E3E9 /* Icon-72.png */; };
 		07D2634E1816B28E0060E3E9 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */; };
 		07D263501816B28E0060E3E9 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2634F1816B28E0060E3E9 /* Icon-Small.png */; };
@@ -103,12 +101,14 @@
 		2FA28F487E88D7EBF1BDB766 /* game-sprites0.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28C0FCD010FE38E7163C7 /* game-sprites0.pvr.ccz */; };
 		2FA28F54212A0DE8FAC5B443 /* Scaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CC1029F55EBD494A6F9 /* Scaler.m */; };
 		2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
+		2FA28FAE434F1CDF86E96CDB /* IconsAndLaunchImages in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */; };
 		2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DFAA6766D477DC0BEF /* BombSprite.m */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07B38BE61817F2560065C07E /* Bomber2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2DSpec.m; sourceTree = "<group>"; };
 		07D2632A1816B28E0060E3E9 /* Kaboom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaboom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D2632D1816B28E0060E3E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -121,9 +121,6 @@
 		07D2633B1816B28E0060E3E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		07D2633D1816B28E0060E3E9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		07D2633F1816B28E0060E3E9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		07D263431816B28E0060E3E9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
-		07D263451816B28E0060E3E9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
-		07D263471816B28E0060E3E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		07D2634B1816B28E0060E3E9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
 		07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
 		07D2634F1816B28E0060E3E9 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
@@ -154,6 +151,7 @@
 		2FA2825B16BDD9E954374712 /* SizeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeService.h; sourceTree = "<group>"; };
 		2FA28270A068547733860AAF /* game-sprites0-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites0-ipadhd.pvr.ccz"; path = "Resources/game-sprites0-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
 		2FA282744264D278C082A1BC /* LevelCollectionProcedural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollectionProcedural.h; sourceTree = "<group>"; };
+		2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = IconsAndLaunchImages; path = Resources/IconsAndLaunchImages; sourceTree = "<group>"; };
 		2FA2827BAA6F31FC49BE0E29 /* ScaledSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaledSprite.m; sourceTree = "<group>"; };
 		2FA28288670853BDF8083AB2 /* BucketSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BucketSprite.m; sourceTree = "<group>"; };
 		2FA2829A5DCBE4EAB01D6930 /* game-sprites0-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "game-sprites0-hd.plist"; path = "Resources/game-sprites0-hd.plist"; sourceTree = "<group>"; };
@@ -346,6 +344,7 @@
 				2FA288ADE3635DBCA6DA8C9C /* SizeStrategy.h */,
 				2FA28430631AA55FE5C45FD3 /* Constants.m */,
 				2FA282B0C605ED6F8A3369C7 /* LevelCollection.h */,
+				0760AE6A18A7F318001BF64D /* Images.xcassets */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -353,9 +352,6 @@
 		07D263421816B28E0060E3E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07D263431816B28E0060E3E9 /* Default.png */,
-				07D263451816B28E0060E3E9 /* Default@2x.png */,
-				07D263471816B28E0060E3E9 /* Default-568h@2x.png */,
 				07D2634B1816B28E0060E3E9 /* Icon-72.png */,
 				07D2634D1816B28E0060E3E9 /* Icon-Small-50.png */,
 				07D2634F1816B28E0060E3E9 /* Icon-Small.png */,
@@ -375,6 +371,7 @@
 				2FA284C0376F996E7C784DEB /* game-sprites0-hd.pvr.ccz */,
 				2FA28BF6E5BC3FA799A9ABE6 /* game-sprites0-ipadhd.plist */,
 				2FA28270A068547733860AAF /* game-sprites0-ipadhd.pvr.ccz */,
+				2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -547,14 +544,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D263541816B28E0060E3E9 /* Icon.png in Resources */,
-				07D263461816B28E0060E3E9 /* Default@2x.png in Resources */,
 				07D263501816B28E0060E3E9 /* Icon-Small.png in Resources */,
 				07D2634C1816B28E0060E3E9 /* Icon-72.png in Resources */,
-				07D263441816B28E0060E3E9 /* Default.png in Resources */,
 				07D2634E1816B28E0060E3E9 /* Icon-Small-50.png in Resources */,
 				07D263591816B28E0060E3E9 /* iTunesArtwork in Resources */,
 				07D263521816B28E0060E3E9 /* Icon-Small@2x.png in Resources */,
-				07D263481816B28E0060E3E9 /* Default-568h@2x.png in Resources */,
+				0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */,
 				07D263561816B28E0060E3E9 /* Icon@2x.png in Resources */,
 				2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */,
 				2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */,
@@ -571,6 +566,7 @@
 				2FA2829A3C3769945D9185A0 /* game-sprites0-hd.pvr.ccz in Resources */,
 				2FA2874B87DFE4D62B9CE510 /* game-sprites0-ipadhd.plist in Resources */,
 				2FA2873CA30BED837038A7E1 /* game-sprites0-ipadhd.pvr.ccz in Resources */,
+				2FA28FAE434F1CDF86E96CDB /* IconsAndLaunchImages in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,6 +791,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -802,6 +800,7 @@
 				GCC_PREFIX_HEADER = Kaboom/Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Kaboom/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lz",
@@ -809,6 +808,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -819,12 +819,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Kaboom/Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Kaboom/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lz",
@@ -832,6 +835,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
