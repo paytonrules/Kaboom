@@ -20,7 +20,7 @@
 
 - (void)reset
 {
-
+  self.level = 0;
 }
 
 -(void) next

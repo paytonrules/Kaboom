@@ -31,6 +31,17 @@ OCDSpec2Context(LevelCollectionProcedural) {
       [ExpectInt(level.bombs) toBe:20];
     });
 
+    It(@"goes back to the first level on reset", ^{
+      NSObject<LevelCollection> *collection = [LevelCollectionProcedural newWithSpeed:3.0 andBombs:10];
+
+      [collection next];
+      [collection reset];
+      Level *level = [collection current];
+
+      [ExpectFloat(level.speed) toBe:3.0 withPrecision:0.001];
+      [ExpectInt(level.bombs) toBe:10];
+    });
+
   });
 
 }
