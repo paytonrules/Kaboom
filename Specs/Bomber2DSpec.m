@@ -176,18 +176,18 @@ OCDSpec2Context(Bomber2DSpec) {
       [ExpectInt(bomb.position.y) toBe:90];
     });
 
-    It(@"moves the bomb on each update", ^{
+    It(@"moves the bomb on each update - based on time", ^{
       RiggedLocations *locations = [RiggedLocations newWithValues:@[@18.0, @40.0]];
       Bomber2D *bomber = [[Bomber2D alloc] initWithPosition:CGPointMake(17.0, 90)
                                         locationChooser:locations];
 
       [bomber startAtSpeed:1.0 withBombs:3];
-      [bomber update:1.0];
-      [bomber update:1.0];
+      [bomber update:1.0]; // Drop the bomb
+      [bomber update:0.5];
 
       CGPoint bombPosition = ((NSObject<Bomb> *) bomber.bombs[0]).position;
       [ExpectInt(bombPosition.x) toBe:18];
-      [ExpectInt(bombPosition.y) toBe:90 - kGravity];
+      [ExpectInt(bombPosition.y) toBe:90 - (BOMB_GRAVITY * 0.5)];
     });
 
     It(@"does nothing if the bomber hasn't dropped bombs", ^{
@@ -377,7 +377,7 @@ OCDSpec2Context(Bomber2DSpec) {
       [bomber update:1];
 
       CGPoint bombPosition = ((NSObject<Bomb> *) bomber.bombs[0]).position;
-      [ExpectInt(bombPosition.y) toBe:90 - kGravity];
+      [ExpectInt(bombPosition.y) toBe:90 - BOMB_GRAVITY];
     });
   });
 }

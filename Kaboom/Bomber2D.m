@@ -18,7 +18,7 @@
 @property(assign) BOOL exploding;
 @property(assign) int bombCount;
 
--(void) updateBombs;
+-(void) updateBombs:(float) deltaTime;
 @end
 
 @implementation Bomber2D
@@ -101,7 +101,7 @@
       }
     }
 
-    [self updateBombs];
+    [self updateBombs: deltaTime];
 
     if (moveDistance >= distanceRemaining)
     {
@@ -126,11 +126,11 @@
   }
 }
 
--(void) updateBombs
+-(void) updateBombs:(float) deltaTime
 {
   for (NSObject<Bomb> *bomb in self.droppedBombs)
   {
-    bomb.position = CGPointMake(bomb.position.x, bomb.position.y - kGravity);
+    bomb.position = CGPointMake(bomb.position.x, bomb.position.y - (BOMB_GRAVITY * deltaTime));
   }
 }
 
