@@ -15,7 +15,6 @@
 @property(strong) NSObject<LocationChooser> *locations;
 @property(assign) float location;
 @property(strong) NSMutableArray *droppedBombs;
-@property(assign) BOOL exploding;
 @property(assign) int bombCount;
 
 -(void) updateBombs:(float) deltaTime;
@@ -53,7 +52,6 @@
 -(void) explode
 {
   self.droppedBombs = [NSMutableArray new];
-  self.exploding = YES;
 }
 
 -(int) droppedBombCount
@@ -75,7 +73,6 @@
 {
   self.location = [self.locations next];
   self.speed = speed;
-  self.exploding = NO;
   self.bombCount = count;
 }
 

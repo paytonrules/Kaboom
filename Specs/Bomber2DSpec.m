@@ -257,23 +257,6 @@ OCDSpec2Context(Bomber2DSpec) {
       [ExpectInt(bomber.droppedBombCount) toBe:0];
     });
 
-    It(@"Is exploding on explode", ^{
-      NSObject<Bomber> *bomber = [Bomber2D new];
-
-      [bomber explode];
-
-      [ExpectBool(bomber.exploding) toBeTrue];
-    });
-
-    It(@"stops exploding when you restart it", ^{
-      NSObject<Bomber> *bomber = [Bomber2D new];
-
-      [bomber explode];
-      [bomber startAtSpeed:1.0 withBombs:1];
-
-      [ExpectBool(bomber.exploding) toBeFalse];
-    });
-
     It(@"Writes an event to the blackboard when it drops a bomb", ^{
       GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
       [blackboard clear];
