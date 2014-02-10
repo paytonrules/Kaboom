@@ -39,7 +39,7 @@
   if (self = [super init]) {
     self.gameStateMachine = [TKStateMachine new];
     self.gameContext = [KaboomContext newWithMachine:self];
-    self.gameContext.levels = [LevelCollectionProcedural newWithSpeed:80 andBombs:5];
+    self.gameContext.levels = [LevelCollectionProcedural newWithSpeed:160 andBombs:5];
 
     // Seems not quite right from a dependency standpoint
     RandomLocationChooser *chooser = [RandomLocationChooser newChooserWithRange:NSMakeRange(0, GAME_WIDTH)];
