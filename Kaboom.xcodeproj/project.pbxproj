@@ -29,7 +29,6 @@
 		2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
 		2FA280D926088C4536C0CEE4 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DBAFB46DEC4772166E /* CreditsLayer.m */; };
-		2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */; };
 		2FA281A5E03EBB4D50B98D61 /* game-sprites0-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2829A5DCBE4EAB01D6930 /* game-sprites0-hd.plist */; };
 		2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
 		2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28430631AA55FE5C45FD3 /* Constants.m */; };
@@ -97,6 +96,7 @@
 		2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
 		2FA28FAE434F1CDF86E96CDB /* IconsAndLaunchImages in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */; };
 		2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DFAA6766D477DC0BEF /* BombSprite.m */; };
+		2FA28FCA846999174EDB0E36 /* DST-Garote.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA283F458F3A3C2EBDBD4DF /* DST-Garote.caf */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -146,6 +146,7 @@
 		2FA282B0C605ED6F8A3369C7 /* LevelCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollection.h; sourceTree = "<group>"; };
 		2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket2DSpec.m; sourceTree = "<group>"; };
 		2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ccbParticleFire.png; path = Resources/ccbParticleFire.png; sourceTree = "<group>"; };
+		2FA283F458F3A3C2EBDBD4DF /* DST-Garote.caf */ = {isa = PBXFileReference; lastKnownFileType = file.caf; name = "DST-Garote.caf"; path = "Resources/DST-Garote.caf"; sourceTree = "<group>"; };
 		2FA284004DB4B04BB8B8DA23 /* game-sprites0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = "game-sprites0.plist"; path = "Resources/game-sprites0.plist"; sourceTree = "<group>"; };
 		2FA28408982A64B570F0A04F /* bomb.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bomb.wav; path = Resources/bomb.wav; sourceTree = "<group>"; };
 		2FA2841EA0EC00D6B039FC7E /* CocosSizeStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosSizeStrategy.h; sourceTree = "<group>"; };
@@ -209,7 +210,6 @@
 		2FA28F4FF183F08F0285ECF1 /* SizeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeService.m; sourceTree = "<group>"; };
 		2FA28F5202D6444CC2ABC705 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2FA28F71CD039144C4E294F7 /* Bomber2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomber2D.h; sourceTree = "<group>"; };
-		2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Exhilarate.mp3; path = Resources/Exhilarate.mp3; sourceTree = "<group>"; };
 		2FA28FC9C046626D7FB3CF48 /* LevelCollectionArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollectionArray.h; sourceTree = "<group>"; };
 		3570B01B85C44B919B8556F1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3AC467CF45DB460C935BFE36 /* Pods-Kaboom.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaboom.xcconfig"; path = "Pods/Pods-Kaboom.xcconfig"; sourceTree = "<group>"; };
@@ -345,7 +345,6 @@
 				2FA2821851BD13F77BC6DB45 /* fire.png */,
 				2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */,
 				2FA28408982A64B570F0A04F /* bomb.wav */,
-				2FA28F9789EF669AF3B04EE7 /* Exhilarate.mp3 */,
 				2FA2802FCB805A565D204AC7 /* catch.wav */,
 				2FA284004DB4B04BB8B8DA23 /* game-sprites0.plist */,
 				2FA28C0FCD010FE38E7163C7 /* game-sprites0.pvr.ccz */,
@@ -354,6 +353,7 @@
 				2FA28BF6E5BC3FA799A9ABE6 /* game-sprites0-ipadhd.plist */,
 				2FA28270A068547733860AAF /* game-sprites0-ipadhd.pvr.ccz */,
 				2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */,
+				2FA283F458F3A3C2EBDBD4DF /* DST-Garote.caf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -534,7 +534,6 @@
 				2FA28AB5646A4158A188BCDA /* fire.png in Resources */,
 				2FA2848DBEA0DE68A420B424 /* ccbParticleFire.png in Resources */,
 				2FA28584F239869EB9CABEC0 /* bomb.wav in Resources */,
-				2FA2812FC72FC3B567F4EABB /* Exhilarate.mp3 in Resources */,
 				2FA28C8D7E43F5E71EA1F6DB /* catch.wav in Resources */,
 				2FA28A270551D32BE0807572 /* game-sprites0.plist in Resources */,
 				2FA28F487E88D7EBF1BDB766 /* game-sprites0.pvr.ccz in Resources */,
@@ -543,6 +542,7 @@
 				2FA2874B87DFE4D62B9CE510 /* game-sprites0-ipadhd.plist in Resources */,
 				2FA2873CA30BED837038A7E1 /* game-sprites0-ipadhd.pvr.ccz in Resources */,
 				2FA28FAE434F1CDF86E96CDB /* IconsAndLaunchImages in Resources */,
+				2FA28FCA846999174EDB0E36 /* DST-Garote.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

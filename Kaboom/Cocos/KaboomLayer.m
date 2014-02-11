@@ -76,8 +76,9 @@ enum TAGS {
     [blackboard registerWatcher:self action:@selector(addBomb:) event:kBombDropped];
     [blackboard registerWatcher:self action:@selector(gameOver:) event:kGameOver];
 
-   // [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"Exhilarate.mp3"];
+    [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"DST-Garote.caf"];
     [[SimpleAudioEngine sharedEngine] preloadEffect:@"catch.wav"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"bomb.wav"];
 
     [self addChild:score];
     self.score = score;
@@ -148,7 +149,7 @@ enum TAGS {
 -(void) startGame
 {
   [self.game start];
-  //[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Exhilarate.mp3"];
+  [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"DST-Garote.caf"];
 }
 
 -(void) gameOver:(Event *) evt
