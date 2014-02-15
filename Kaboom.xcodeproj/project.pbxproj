@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
 		07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B38BE61817F2560065C07E /* Bomber2DSpec.m */; };
+		07CA14D518AFD68200ED424C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CA14D418AFD68200ED424C /* iAd.framework */; };
 		07D2632E1816B28E0060E3E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632D1816B28E0060E3E9 /* QuartzCore.framework */; };
 		07D263301816B28E0060E3E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632F1816B28E0060E3E9 /* OpenGLES.framework */; };
 		07D263321816B28E0060E3E9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263311816B28E0060E3E9 /* OpenAL.framework */; };
@@ -104,7 +105,8 @@
 /* Begin PBXFileReference section */
 		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07B38BE61817F2560065C07E /* Bomber2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2DSpec.m; sourceTree = "<group>"; };
-		07D2632A1816B28E0060E3E9 /* Kaboom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaboom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CA14D418AFD68200ED424C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		07D2632A1816B28E0060E3E9 /* starbaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = starbaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D2632D1816B28E0060E3E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07D2632F1816B28E0060E3E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		07D263311816B28E0060E3E9 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -223,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CA14D518AFD68200ED424C /* iAd.framework in Frameworks */,
 				07D263321816B28E0060E3E9 /* OpenAL.framework in Frameworks */,
 				07D263381816B28E0060E3E9 /* UIKit.framework in Frameworks */,
 				07D2632E1816B28E0060E3E9 /* QuartzCore.framework in Frameworks */,
@@ -267,7 +270,7 @@
 		07D2632B1816B28E0060E3E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07D2632A1816B28E0060E3E9 /* Kaboom.app */,
+				07D2632A1816B28E0060E3E9 /* starbaby.app */,
 				07D264E51816B64A0060E3E9 /* Specs.app */,
 			);
 			name = Products;
@@ -276,6 +279,7 @@
 		07D2632C1816B28E0060E3E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07CA14D418AFD68200ED424C /* iAd.framework */,
 				07D2632D1816B28E0060E3E9 /* QuartzCore.framework */,
 				07D2632F1816B28E0060E3E9 /* OpenGLES.framework */,
 				07D263311816B28E0060E3E9 /* OpenAL.framework */,
@@ -470,7 +474,7 @@
 			);
 			name = Kaboom;
 			productName = Kaboom;
-			productReference = 07D2632A1816B28E0060E3E9 /* Kaboom.app */;
+			productReference = 07D2632A1816B28E0060E3E9 /* starbaby.app */;
 			productType = "com.apple.product-type.application";
 		};
 		07D264E41816B64A0060E3E9 /* Specs */ = {
@@ -501,6 +505,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Eric Smith";
+				TargetAttributes = {
+					07D263291816B28E0060E3E9 = {
+						DevelopmentTeam = D8768X4ZJR;
+					};
+				};
 			};
 			buildConfigurationList = 07D263251816B28E0060E3E9 /* Build configuration list for PBXProject "Kaboom" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -770,6 +779,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -783,7 +794,8 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = starbaby;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -798,6 +810,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Kaboom/Prefix.pch;
@@ -810,7 +824,8 @@
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = starbaby;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
