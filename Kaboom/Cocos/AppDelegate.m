@@ -12,42 +12,19 @@
 #import "KaboomLayer.h"
 #import "SizeService.h"
 #import "CocosSizeStrategy.h"
-
-@implementation MyNavigationController
-
--(NSUInteger)supportedInterfaceOrientations {
-	
-	// iPhone only
-	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationMaskLandscape;
-	
-	// iPad only
-	return UIInterfaceOrientationMaskLandscape;
-}
-
-
-// This is needed for iOS4 and iOS5 in order to ensure
-// that the 1st scene has the correct dimensions
-// This is not needed on iOS6 and could be added to the application:didFinish...
--(void) directorDidReshapeProjection:(CCDirector*)director
-{
-	if(director.runningScene == nil) {
-		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
-		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-		[director runWithScene: [KaboomLayer scene]];
-	}
-}
-@end
-
+#import <iAd/iAd.h>
 
 @implementation AppController
 
-@synthesize window=window_, navController=navController_, director=director_;
+@synthesize window=window_, director=director_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+  director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
+	director_.wantsFullScreenLayout = YES;
 	
 	
 	// CCGLView creation
@@ -70,19 +47,20 @@
 									sharegroup:nil
 								 multiSampling:NO
 							   numberOfSamples:0];
-	
-	director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
-	
-	director_.wantsFullScreenLayout = YES;
+  
+  // attach the openglView to the director
+	[director_ setView:glView];
+  [director_ setDelegate:self];
+  
+  ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+  banner.delegate = self;
+  [director_.view addSubview:banner]; 
 	
 	// Display FSP and SPF
 	[director_ setDisplayStats:YES];
 	
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
-	
-	// attach the openglView to the director
-	[director_ setView:glView];
 	
 	// 2D projection
 	[director_ setProjection:kCCDirectorProjection2D];
@@ -111,48 +89,44 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
   [SizeService setStrategy:[CocosSizeStrategy new]];
-
-  // Create a Navigation Controller with the Director
-	navController_ = [[MyNavigationController alloc] initWithRootViewController:director_];
-	navController_.navigationBarHidden = YES;
-
-	// for rotation and other messages
-	[director_ setDelegate:navController_];
 	
-	// set the Navigation Controller as the root view controller
-	[window_ setRootViewController:navController_];
+	// set the director as the root view controller
+	[window_ setRootViewController:director_];
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+  
+  [director_ runWithScene: [KaboomLayer scene]];
 
 	return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+	return UIInterfaceOrientationMaskLandscape;
 }
 
 // getting a call, pause the game
 -(void) applicationWillResignActive:(UIApplication *)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ pause];
+  [director_ pause];
 }
 
 // call got rejected
 -(void) applicationDidBecomeActive:(UIApplication *)application
 {
-	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];	
-	if( [navController_ visibleViewController] == director_ )
-		[director_ resume];
+	[director_ setNextDeltaTimeZero:YES];
+	[director_ resume];
 }
 
 -(void) applicationDidEnterBackground:(UIApplication*)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ stopAnimation];
+  [director_ stopAnimation];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application
 {
-	if( [navController_ visibleViewController] == director_ )
-		[director_ startAnimation];
+	[director_ startAnimation];
 }
 
 // application will be killed
