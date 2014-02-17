@@ -19,5 +19,12 @@
   [self.director resume];
 }
 
+-(BOOL) bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+  [self.director pause];
+  return YES;
+}
+
+
 
 @end

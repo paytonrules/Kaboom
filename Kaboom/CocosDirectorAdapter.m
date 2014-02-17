@@ -21,4 +21,9 @@
   [self.director resume];
 }
 
+- (void)pause
+{
+  [self.director pause];
+}
+
 @end

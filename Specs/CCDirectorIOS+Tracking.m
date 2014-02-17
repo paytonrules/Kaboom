@@ -26,5 +26,9 @@ static char kPlayingKey;
 
 }
 
+-(void) pause
+{
+  self.playing = false;
+}
 
 @end

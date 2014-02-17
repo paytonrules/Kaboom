@@ -15,7 +15,17 @@ OCDSpec2Context(CocosDirectorAdapterSpec) {
       
       [ExpectBool(director.playing) toBeTrue];
     });
-    
+
+    It(@"Passes along pause", ^{
+      CCDirectorIOS *director = [CCDirectorIOS new];
+      [director setPlaying:YES];
+      CocosDirectorAdapter *adapter = [CocosDirectorAdapter newWithCocosDirector:director];
+
+      [adapter pause];
+
+      [ExpectBool(director.playing) toBeFalse];
+    });
+
   });
   
 }
