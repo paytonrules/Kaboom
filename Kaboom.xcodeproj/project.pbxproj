@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
+		079B971E18B2403C00B53776 /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B971D18B2403C00B53776 /* CCDirectorIOS.m */; };
+		079B972118B2408C00B53776 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B972018B2408C00B53776 /* CCDirector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B38BE61817F2560065C07E /* Bomber2DSpec.m */; };
+		07C325AE18B1847800056340 /* AdDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325AD18B1847800056340 /* AdDelegateSpec.m */; };
+		07C325B618B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
+		07C325B718B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
+		07C325BA18B1998500056340 /* CocosDirectorAdapterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B918B1998500056340 /* CocosDirectorAdapterSpec.m */; };
+		07C325BE18B19A6200056340 /* CCDirectorIOS+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */; };
+		07C325C118B19E2F00056340 /* CocosDirectorAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325C018B19E2F00056340 /* CocosDirectorAdapter.m */; };
+		07C325C218B19E2F00056340 /* CocosDirectorAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325C018B19E2F00056340 /* CocosDirectorAdapter.m */; };
 		07CA14D518AFD68200ED424C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CA14D418AFD68200ED424C /* iAd.framework */; };
 		07D2632E1816B28E0060E3E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632D1816B28E0060E3E9 /* QuartzCore.framework */; };
 		07D263301816B28E0060E3E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632F1816B28E0060E3E9 /* OpenGLES.framework */; };
@@ -100,11 +109,23 @@
 		2FA28FCA846999174EDB0E36 /* DST-Garote.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA283F458F3A3C2EBDBD4DF /* DST-Garote.caf */; };
 		97625092F84B419FABCA0395 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B054B6BB2B7D42C19CBCC376 /* libPods-Specs.a */; };
 		D103E86B684445668EB844A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E835FC4C4834368AA6DCF9E /* libPods.a */; };
+		E4274A6DF83C48138A32FD8E /* libPods-Kaboom.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED61CA0C6924F2E930BD93C /* libPods-Kaboom.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		079B971D18B2403C00B53776 /* CCDirectorIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDirectorIOS.m; sourceTree = "<group>"; };
+		079B972018B2408C00B53776 /* CCDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDirector.m; sourceTree = "<group>"; };
 		07B38BE61817F2560065C07E /* Bomber2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2DSpec.m; sourceTree = "<group>"; };
+		07C325AD18B1847800056340 /* AdDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDelegateSpec.m; sourceTree = "<group>"; };
+		07C325B318B18ECC00056340 /* Director.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		07C325B418B1920600056340 /* AdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDelegate.h; sourceTree = "<group>"; };
+		07C325B518B1920600056340 /* AdDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDelegate.m; sourceTree = "<group>"; };
+		07C325B918B1998500056340 /* CocosDirectorAdapterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDirectorAdapterSpec.m; sourceTree = "<group>"; };
+		07C325BC18B19A6200056340 /* CCDirectorIOS+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDirectorIOS+Tracking.h"; sourceTree = "<group>"; };
+		07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCDirectorIOS+Tracking.m"; sourceTree = "<group>"; };
+		07C325BF18B19E2F00056340 /* CocosDirectorAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosDirectorAdapter.h; sourceTree = "<group>"; };
+		07C325C018B19E2F00056340 /* CocosDirectorAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDirectorAdapter.m; sourceTree = "<group>"; };
 		07CA14D418AFD68200ED424C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		07D2632A1816B28E0060E3E9 /* starbaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = starbaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D2632D1816B28E0060E3E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -237,6 +258,7 @@
 				07D263341816B28E0060E3E9 /* AudioToolbox.framework in Frameworks */,
 				07D263401816B28E0060E3E9 /* GameKit.framework in Frameworks */,
 				D103E86B684445668EB844A3 /* libPods.a in Frameworks */,
+				E4274A6DF83C48138A32FD8E /* libPods-Kaboom.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +276,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07C325B118B18EAC00056340 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				07C325B318B18ECC00056340 /* Director.h */,
+				07C325B418B1920600056340 /* AdDelegate.h */,
+				07C325B518B1920600056340 /* AdDelegate.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		07C325B818B1921600056340 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				07C325AD18B1847800056340 /* AdDelegateSpec.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		07C325BB18B19A2E00056340 /* CocosFakes */ = {
+			isa = PBXGroup;
+			children = (
+				07C325BC18B19A6200056340 /* CCDirectorIOS+Tracking.h */,
+				07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */,
+				079B971D18B2403C00B53776 /* CCDirectorIOS.m */,
+				079B972018B2408C00B53776 /* CCDirector.m */,
+			);
+			name = CocosFakes;
+			sourceTree = "<group>";
+		};
 		07D263211816B28E0060E3E9 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				07D263421816B28E0060E3E9 /* Resources */,
+				07C325B118B18EAC00056340 /* iOS */,
 				07D264CE1816B28F0060E3E9 /* Supporting Files */,
 				2FA28E47EE21C30A5784314C /* Cocos */,
 				2FA284445034A66D23A69772 /* Buckets.m */,
@@ -337,6 +389,8 @@
 				2FA28430631AA55FE5C45FD3 /* Constants.m */,
 				2FA282B0C605ED6F8A3369C7 /* LevelCollection.h */,
 				0760AE6A18A7F318001BF64D /* Images.xcassets */,
+				07C325BF18B19E2F00056340 /* CocosDirectorAdapter.h */,
+				07C325C018B19E2F00056340 /* CocosDirectorAdapter.m */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -375,6 +429,8 @@
 		07D264E91816B64A0060E3E9 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				07C325BB18B19A2E00056340 /* CocosFakes */,
+				07C325B818B1921600056340 /* iOS */,
 				07D264EA1816B64A0060E3E9 /* Supporting Files */,
 				2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */,
 				2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */,
@@ -386,6 +442,7 @@
 				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
 				2FA28C348025798254AAD049 /* GameBlackboardSpec.m */,
 				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
+				07C325B918B1998500056340 /* CocosDirectorAdapterSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -663,8 +720,10 @@
 				2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */,
 				2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */,
 				2FA28522E9A7CE30113818E2 /* Level.m in Sources */,
+				07C325B618B1920600056340 /* AdDelegate.m in Sources */,
 				2FA28A4C733A233C5C9C32A6 /* BombExplosion.m in Sources */,
 				2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */,
+				07C325C118B19E2F00056340 /* CocosDirectorAdapter.m in Sources */,
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
 				2FA2847B7ADE3F3A576E13ED /* LevelCollectionArray.m in Sources */,
 				2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */,
@@ -684,8 +743,10 @@
 			files = (
 				07D264F01816B64A0060E3E9 /* main.m in Sources */,
 				07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */,
+				079B971E18B2403C00B53776 /* CCDirectorIOS.m in Sources */,
 				2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */,
 				2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */,
+				07C325B718B1920600056340 /* AdDelegate.m in Sources */,
 				2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */,
 				2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */,
 				2FA2897B2FC16B183100CF7F /* RandomLocationChooser.m in Sources */,
@@ -698,11 +759,16 @@
 				2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */,
 				2FA28EF3472AD27B423BA8EE /* Level.m in Sources */,
 				2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */,
+				07C325AE18B1847800056340 /* AdDelegateSpec.m in Sources */,
 				2FA28DAE8944A9C8292E2CBF /* Event.m in Sources */,
+				07C325BE18B19A6200056340 /* CCDirectorIOS+Tracking.m in Sources */,
 				2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */,
+				07C325BA18B1998500056340 /* CocosDirectorAdapterSpec.m in Sources */,
 				2FA28EF3A60F4095A5A21F0D /* LevelCollectionArraySpec.m in Sources */,
 				2FA288ED10E147DC9C66C8A7 /* LevelCollectionArray.m in Sources */,
+				079B972118B2408C00B53776 /* CCDirector.m in Sources */,
 				2FA28D424079F98F48463E58 /* KaboomContext.m in Sources */,
+				07C325C218B19E2F00056340 /* CocosDirectorAdapter.m in Sources */,
 				2FA28C7735C51230240E21B1 /* SizeServiceSpec.m in Sources */,
 				2FA282BEEFACA43B0F69E24E /* SizeService.m in Sources */,
 				2FA28617B8B29674F6E738CE /* ScalerSpec.m in Sources */,
@@ -863,6 +929,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Headers/external/kazmath/include",
+				);
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
@@ -898,6 +968,10 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Headers/external/kazmath/include",
+				);
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";

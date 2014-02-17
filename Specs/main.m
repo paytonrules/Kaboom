@@ -32,7 +32,7 @@
 }
 @end
 
-int main(int argc, const char * argv[])
+int main(int argc, char *argv[])
 {
     @autoreleasepool {
       return UIApplicationMain(argc, argv, NSStringFromClass([OCDSpec2ApplicationRunner class]), @"OCDSpec2AppDelegate");

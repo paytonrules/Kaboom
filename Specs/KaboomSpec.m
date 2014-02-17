@@ -2,7 +2,7 @@
 #import <OCMock/OCMock.h>
 #import "Kaboom.h"
 #import "Buckets.h"
-#import "CCActionInterval.h"
+
 #import "Constants.h"
 #import "GameBlackboard.h"
 #import "Event.h"

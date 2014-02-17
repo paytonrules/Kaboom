@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  Kaboom
-//
-//  Created by Eric Smith on 10/22/13.
-//  Copyright Eric Smith 2013. All rights reserved.
-//
-
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
@@ -13,6 +5,7 @@
 #import "SizeService.h"
 #import "CocosSizeStrategy.h"
 #import <iAd/iAd.h>
+#import "AdDelegate.h"
 
 @implementation AppController
 
@@ -52,10 +45,6 @@
 	[director_ setView:glView];
   [director_ setDelegate:self];
   
-  ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-  banner.delegate = self;
-  [director_.view addSubview:banner]; 
-	
 	// Display FSP and SPF
 	[director_ setDisplayStats:YES];
 	
@@ -95,6 +84,11 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+  
+  ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+  banner.delegate = [AdDelegate newWithDirector:
+                     [CocosDirectorAdapter:director_]];
+  [director_.view addSubview:banner];
   
   [director_ runWithScene: [KaboomLayer scene]];
 
