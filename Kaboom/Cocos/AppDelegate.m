@@ -7,6 +7,12 @@
 #import "AdDelegate.h"
 #import "CocosDirectorAdapter.h"
 
+@interface AppController()
+
+@property(strong) AdDelegate *adDelegate;
+
+@end
+
 @implementation AppController
 
 @synthesize window=window_, director=director_;
@@ -86,8 +92,9 @@
 	[window_ makeKeyAndVisible];
   
   ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-  banner.delegate = [AdDelegate newWithDirector:
-                     [CocosDirectorAdapter newWithCocosDirector:director_]];
+  // Need to store a ref to adDelegate so ARC doesnt let it get deleted
+  self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director_]];
+  banner.delegate = _adDelegate;
   [director_.view addSubview:banner];
   
   [director_ runWithScene: [KaboomLayer scene]];
