@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "cocos2d.h"
-#import <iAd/iAd.h>
+#import <cocos2d/cocos2d.h>
 
-@interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate, ADBannerViewDelegate>
+@interface AppController : NSObject <UIApplicationDelegate, CCDirectorDelegate>
 {
 	UIWindow *window_;
 

@@ -1,11 +1,11 @@
-#import "cocos2d.h"
-
+#import <cocos2d/cocos2d.h>
+#import <iAd/iAd.h>
 #import "AppDelegate.h"
 #import "KaboomLayer.h"
 #import "SizeService.h"
 #import "CocosSizeStrategy.h"
-#import <iAd/iAd.h>
 #import "AdDelegate.h"
+#import "CocosDirectorAdapter.h"
 
 @implementation AppController
 
@@ -87,7 +87,7 @@
   
   ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
   banner.delegate = [AdDelegate newWithDirector:
-                     [CocosDirectorAdapter:director_]];
+                     [CocosDirectorAdapter newWithCocosDirector:director_]];
   [director_.view addSubview:banner];
   
   [director_ runWithScene: [KaboomLayer scene]];
