@@ -1,11 +1,3 @@
-//
-//  main.m
-//  Specs
-//
-//  Created by Eric Smith on 10/22/13.
-//  Copyright (c) 2013 Eric Smith. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 #import <OCDSpec2/OCDSpec2.h>
