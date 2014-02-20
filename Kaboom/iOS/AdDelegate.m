@@ -25,6 +25,11 @@
   return YES;
 }
 
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+  banner.hidden = YES;
+}
+
 
 
 @end

@@ -36,6 +36,19 @@ OCDSpec2Context(AdDelegateSpec) {
 
       [ExpectBool([del bannerViewActionShouldBegin:nil willLeaveApplication:NO]) toBeTrue];
     });
+
+    It(@"hides the add when there are errors", ^{
+      id view = [OCMockObject mockForClass:[ADBannerView class]]; // ADBannerView dies on instantiation. Fucker.
+      id director = [OCMockObject niceMockForProtocol:@protocol(Director)];
+
+      AdDelegate *del = [AdDelegate newWithDirector:director];
+
+      [[view expect] setHidden:YES]; // Fucking lame
+
+      [del bannerView:view didFailToReceiveAdWithError:nil];
+
+      [view verify];
+    });
   });
   
 }
