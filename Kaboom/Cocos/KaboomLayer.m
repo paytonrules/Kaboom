@@ -68,7 +68,7 @@ enum TAGS {
                                            fontName:@"Helvetica"
                                            fontSize:24];
     // DesignSize?
-    score.position = ccp(size.width - 40, size.height - 40);
+    score.position = ccp(size.width - 40, size.height - 80);
 
     GameBlackboard *blackboard = [GameBlackboard sharedBlackboard];
     [blackboard registerWatcher:self action:@selector(removeBomb:) event:kBombCaught];
