@@ -24,8 +24,7 @@
   
   director_ = (CCDirectorIOS*) [CCDirector sharedDirector];
 	director_.wantsFullScreenLayout = YES;
-	
-	
+
 	// CCGLView creation
 	// viewWithFrame: size of the OpenGL view. For full screen use [_window bounds]
 	//  - Possible values: any CGRect
@@ -40,12 +39,12 @@
 	// numberOfSamples: Only valid if multisampling is enabled
 	//  - Possible values: 0 to glGetIntegerv(GL_MAX_SAMPLES_APPLE)
 	CCGLView *glView = [CCGLView viewWithFrame:[window_ bounds]
-								   pixelFormat:kEAGLColorFormatRGB565
-								   depthFormat:0
-							preserveBackbuffer:NO
-									sharegroup:nil
-								 multiSampling:NO
-							   numberOfSamples:0];
+                                 pixelFormat:kEAGLColorFormatRGB565
+                                 depthFormat:0
+                          preserveBackbuffer:NO
+                                  sharegroup:nil
+                               multiSampling:NO
+                             numberOfSamples:0];
   
   // attach the openglView to the director
 	[director_ setView:glView];
@@ -92,6 +91,10 @@
 	[window_ makeKeyAndVisible];
   
   ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+  CGSize flippedSize = CGSizeMake(window_.bounds.size.height, window_.bounds.size.width);
+  CGSize bannerBounds = [banner sizeThatFits:flippedSize];
+  [banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
+
   // Need to store a ref to adDelegate so ARC doesnt let it get deleted
   self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director_]];
   banner.delegate = _adDelegate;
@@ -102,7 +105,7 @@
 	return YES;
 }
 
--(NSUInteger)supportedInterfaceOrientations
+-(NSUInteger) supportedInterfaceOrientations
 {
 	return UIInterfaceOrientationMaskLandscape;
 }
