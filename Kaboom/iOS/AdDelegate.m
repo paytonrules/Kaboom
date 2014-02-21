@@ -25,10 +25,18 @@
   return YES;
 }
 
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+-(void) bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
+  NSLog(@"HIDE FUCKING BANNER");
   banner.hidden = YES;
 }
+
+-(void)bannerViewWillLoadAd:(ADBannerView *)banner
+{
+  NSLog(@"SHOW FUCKING BANNER");
+  banner.hidden = NO;
+}
+
 
 
 
