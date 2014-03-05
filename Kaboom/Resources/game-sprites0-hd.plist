@@ -20,7 +20,7 @@
             <key>Star.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1940,724},{53,53}}</string>
+                <string>{{2,1684},{53,53}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -46,11 +46,11 @@
             <key>background.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1028,724},{1024,768}}</string>
+                <string>{{2,772},{1024,768}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{1024,768}}</string>
                 <key>sourceSize</key>
@@ -59,11 +59,11 @@
             <key>bomber.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1798,724},{55,72}}</string>
+                <string>{{2,1542},{55,72}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{55,72}}</string>
                 <key>sourceSize</key>
@@ -72,15 +72,28 @@
             <key>buckets.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1872,724},{55,66}}</string>
+                <string>{{2,1616},{55,66}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
                 <string>{{0,0},{55,66}}</string>
                 <key>sourceSize</key>
                 <string>{55,66}</string>
+            </dict>
+            <key>main-menu-background.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1028,724},{980,720}}</string>
+                <key>offset</key>
+                <string>{-10,-24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{12,48},{980,720}}</string>
+                <key>sourceSize</key>
+                <string>{1024,768}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -92,7 +105,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:614915250472d75c80ba03fe79015d6a:3516f168d0f41799783aa98669287f0c:f802490e7240f681e858b41a16ade74a$</string>
+            <string>$TexturePacker:SmartUpdate:8394224f2c30c11700a48a95e3516be8:b699e3683a26dbf18a4e512ebdfb9fd3:6a6dc823c0f4a906f72c5061c2ffc6fc$</string>
             <key>textureFileName</key>
             <string>game-sprites0-hd.pvr.ccz</string>
         </dict>

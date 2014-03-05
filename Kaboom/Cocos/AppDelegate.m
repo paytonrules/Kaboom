@@ -1,11 +1,12 @@
 #import <cocos2d/cocos2d.h>
 #import <iAd/iAd.h>
 #import "AppDelegate.h"
-#import "KaboomLayer.h"
 #import "SizeService.h"
 #import "CocosSizeStrategy.h"
 #import "AdDelegate.h"
 #import "CocosDirectorAdapter.h"
+#import "GCHelperSpike.h"
+#import "MainMenuLayer.h"
 
 @interface AppController()
 
@@ -95,12 +96,13 @@
   CGSize bannerBounds = [banner sizeThatFits:flippedSize];
   [banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
 
-  // Need to store a ref to adDelegate so ARC doesnt let it get deleted
+  // Need to store a ref to adDelegate so ARC doesn't let it get deleted
   self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director_]];
   banner.delegate = _adDelegate;
   [director_.view addSubview:banner];
-  
-  [director_ runWithScene: [KaboomLayer scene]];
+
+  [[GCHelperSpike sharedInstance] authenticateLocalUser];
+  [director_ runWithScene: [MainMenuLayer scene]];
 
 	return YES;
 }

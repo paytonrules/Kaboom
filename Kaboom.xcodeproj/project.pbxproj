@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073972C518BE1EA00093812A /* GCHelperSpike.m in Sources */ = {isa = PBXBuildFile; fileRef = 073972C418BE1EA00093812A /* GCHelperSpike.m */; };
 		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
 		079B971E18B2403C00B53776 /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B971D18B2403C00B53776 /* CCDirectorIOS.m */; };
 		079B972118B2408C00B53776 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B972018B2408C00B53776 /* CCDirector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -62,6 +63,7 @@
 		2FA2883B02F5B0DE568C0706 /* Kaboom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28DCCDD0B042977B8775F /* Kaboom.m */; };
 		2FA2885FB423D63C32A85F02 /* GameBlackboardSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C348025798254AAD049 /* GameBlackboardSpec.m */; };
 		2FA2886317E0E94DFC24C2A0 /* LevelCollectionProceduralSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA286604CD3EBA1BA926481 /* LevelCollectionProceduralSpec.m */; };
+		2FA288989FCAB68F9681B376 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CE317604F54EED0AD84 /* MainMenuLayer.m */; };
 		2FA2889AADDBAFFEC7433782 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F5202D6444CC2ABC705 /* AppDelegate.m */; };
 		2FA2889FA9FC0F6AF87FD3EB /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA288ED10E147DC9C66C8A7 /* LevelCollectionArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollectionArray.m */; };
@@ -112,6 +114,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		073972C318BE1EA00093812A /* GCHelperSpike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelperSpike.h; sourceTree = "<group>"; };
+		073972C418BE1EA00093812A /* GCHelperSpike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelperSpike.m; sourceTree = "<group>"; };
 		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		079B971D18B2403C00B53776 /* CCDirectorIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDirectorIOS.m; sourceTree = "<group>"; };
 		079B972018B2408C00B53776 /* CCDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDirector.m; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 		07D264EF1816B64A0060E3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D264F11816B64A0060E3E9 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
 		2E835FC4C4834368AA6DCF9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA280106D45FEA255598154 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContextSpec.m; sourceTree = "<group>"; };
 		2FA2802FCB805A565D204AC7 /* catch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = catch.wav; path = Resources/catch.wav; sourceTree = "<group>"; };
 		2FA280A9F6A3A42AACBB0972 /* Buckets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buckets.h; sourceTree = "<group>"; };
@@ -215,6 +220,7 @@
 		2FA28CAED8819D4BCC149376 /* Bucket2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket2D.h; sourceTree = "<group>"; };
 		2FA28CC1029F55EBD494A6F9 /* Scaler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scaler.m; sourceTree = "<group>"; };
 		2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KaboomLayer.h; sourceTree = "<group>"; };
+		2FA28CE317604F54EED0AD84 /* MainMenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
 		2FA28D7F03762665680A3DCF /* RandomNumberGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumberGenerator.h; sourceTree = "<group>"; };
 		2FA28D81C30296DC88C95456 /* levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = levels.plist; sourceTree = "<group>"; };
 		2FA28DA11ADAA5FD74711564 /* CocosDirectorAdapterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosDirectorAdapterSpec.m; sourceTree = "<group>"; };
@@ -282,6 +288,8 @@
 				07C325B518B1920600056340 /* AdDelegate.m */,
 				2FA28E6B3906CC834272B745 /* CocosDirectorAdapter.m */,
 				2FA28E2937981F0336F002E6 /* CocosDirectorAdapter.h */,
+				073972C318BE1EA00093812A /* GCHelperSpike.h */,
+				073972C418BE1EA00093812A /* GCHelperSpike.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -487,8 +495,8 @@
 			isa = PBXGroup;
 			children = (
 				2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */,
-				2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */,
 				2FA28F5202D6444CC2ABC705 /* AppDelegate.m */,
+				2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */,
 				2FA28CD18454BBC990A7AD78 /* KaboomLayer.h */,
 				2FA28AA88E0D958362D9515B /* BucketsNode.m */,
 				2FA285C9DAB47003A6FBA0FA /* BucketsNode.h */,
@@ -506,6 +514,8 @@
 				2FA280DEE4688ABC994032B6 /* ScaledSprite.h */,
 				2FA289DBAFB46DEC4772166E /* CreditsLayer.m */,
 				2FA281531A6C4B024945D694 /* CreditsLayer.h */,
+				2FA28CE317604F54EED0AD84 /* MainMenuLayer.m */,
+				2FA280106D45FEA255598154 /* MainMenuLayer.h */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -576,8 +586,6 @@
 			mainGroup = 07D263211816B28E0060E3E9;
 			productRefGroup = 07D2632B1816B28E0060E3E9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				07D263291816B28E0060E3E9 /* Kaboom */,
@@ -717,6 +725,7 @@
 				2FA2883B02F5B0DE568C0706 /* Kaboom.m in Sources */,
 				2FA286855900F769D7D19113 /* Bomb2D.m in Sources */,
 				2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */,
+				073972C518BE1EA00093812A /* GCHelperSpike.m in Sources */,
 				2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */,
 				2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */,
 				2FA28522E9A7CE30113818E2 /* Level.m in Sources */,
@@ -734,6 +743,7 @@
 				2FA2896F9C34F5E0E4487024 /* LevelCollectionProcedural.m in Sources */,
 				2FA280D926088C4536C0CEE4 /* CreditsLayer.m in Sources */,
 				2FA28905668E783012CD756C /* CocosDirectorAdapter.m in Sources */,
+				2FA288989FCAB68F9681B376 /* MainMenuLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
