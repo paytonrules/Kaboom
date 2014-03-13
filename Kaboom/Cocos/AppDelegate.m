@@ -1,18 +1,9 @@
 #import <cocos2d/cocos2d.h>
-#import <iAd/iAd.h>
 #import "AppDelegate.h"
 #import "SizeService.h"
 #import "CocosSizeStrategy.h"
-#import "AdDelegate.h"
-#import "CocosDirectorAdapter.h"
 #import "GCHelperSpike.h"
 #import "MainMenuLayer.h"
-
-@interface AppController()
-
-@property(strong) AdDelegate *adDelegate;
-
-@end
 
 @implementation AppController
 
@@ -90,17 +81,6 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-
-  // Need to store a ref to adDelegate so ARC doesn't let it get deleted
-  // Stick this on KaboomLayer
-  ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-  CGSize flippedSize = CGSizeMake(window_.bounds.size.height, window_.bounds.size.width);
-  CGSize bannerBounds = [banner sizeThatFits:flippedSize];
-  [banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
-
-  self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director_]];
-  banner.delegate = _adDelegate;
-  [director_.view addSubview:banner];
 
   [[GCHelperSpike sharedInstance] authenticateLocalUser];
   [director_ runWithScene: [MainMenuLayer scene]];

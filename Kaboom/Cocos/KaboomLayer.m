@@ -1,3 +1,4 @@
+#import <iAd/iAd.h>
 #import "KaboomLayer.h"
 #import "BucketsNode.h"
 #import "BomberSprite.h"
@@ -9,6 +10,8 @@
 #import "Buckets.h"
 #import "Scaler.h"
 #import "CreditsLayer.h"
+#import "AdDelegate.h"
+#import "CocosDirectorAdapter.h"
 
 enum TAGS {
   kBucket,
@@ -19,6 +22,7 @@ enum TAGS {
 @interface KaboomLayer ()
 @property(strong) Kaboom *game;
 @property(strong) CCLabelTTF *score;
+@property(strong) AdDelegate *adDelegate;
 @end
 
 @implementation KaboomLayer
@@ -82,6 +86,17 @@ enum TAGS {
 
     [self addChild:score];
     self.score = score;
+
+    CCDirectorIOS *director = (CCDirectorIOS*) [CCDirector sharedDirector];
+    // Need to store a ref to adDelegate so ARC doesn't let it get deleted
+    ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+    CGSize flippedSize = CGSizeMake(size.height, size.width);
+    CGSize bannerBounds = [banner sizeThatFits:flippedSize];
+    [banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
+
+    self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director]];
+    banner.delegate = _adDelegate;
+    [director.view addSubview:banner];
 
     [self scheduleUpdate];
 
