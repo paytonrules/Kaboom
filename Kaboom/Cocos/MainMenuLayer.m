@@ -48,7 +48,21 @@
 
 -(void) displayMainMenu
 {
+  CGSize screenSize = [CCDirector sharedDirector].winSize;
 
+  CCLabelTTF *newGameLabel = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica" fontSize:42];
+  CCMenuItemLabel *newGame = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
+  [newGame setPosition:ccp(screenSize.width * 3 / 4, screenSize.height / 2 - (newGame.boundingBox.size.height))];
+
+  CCLabelTTF *creditsLabel = [CCLabelTTF labelWithString:@"Credits" fontName:@"Helvetica" fontSize:42];
+  CCMenuItemLabel *credits = [CCMenuItemLabel itemWithLabel:creditsLabel target:self selector:@selector(showCredits:)];
+  float y = (screenSize.height / 2)  - (newGame.boundingBox.size.height * 1.5) - credits.boundingBox.size.height;
+  [credits setPosition:ccp(screenSize.width * 3 / 4, y)];
+
+  CCMenu *newGameMenu = [CCMenu menuWithItems:newGame, credits, nil];
+  newGameMenu.visible = YES;
+  [newGameMenu setPosition:CGPointZero];
+  [self addChild:newGameMenu z:1];
 }
 
 @end

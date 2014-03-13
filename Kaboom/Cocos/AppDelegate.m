@@ -90,13 +90,14 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
-  
+
+  // Need to store a ref to adDelegate so ARC doesn't let it get deleted
+  // Stick this on KaboomLayer
   ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
   CGSize flippedSize = CGSizeMake(window_.bounds.size.height, window_.bounds.size.width);
   CGSize bannerBounds = [banner sizeThatFits:flippedSize];
   [banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
 
-  // Need to store a ref to adDelegate so ARC doesn't let it get deleted
   self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director_]];
   banner.delegate = _adDelegate;
   [director_.view addSubview:banner];
