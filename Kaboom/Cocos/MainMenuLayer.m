@@ -50,11 +50,11 @@
 {
   CGSize screenSize = [CCDirector sharedDirector].winSize;
 
-  CCLabelTTF *newGameLabel = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica" fontSize:42];
+  CCLabelBMFont *newGameLabel = [CCLabelBMFont labelWithString:@"New Game" fntFile:@"titlefnt.fnt"];
   CCMenuItemLabel *newGame = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
   [newGame setPosition:ccp(screenSize.width * 3 / 4, screenSize.height / 2 - (newGame.boundingBox.size.height))];
 
-  CCLabelTTF *creditsLabel = [CCLabelTTF labelWithString:@"Credits" fontName:@"Helvetica" fontSize:42];
+  CCLabelTTF *creditsLabel = [CCLabelBMFont labelWithString:@"Credits" fntFile:@"titlefnt.fnt"];
   CCMenuItemLabel *credits = [CCMenuItemLabel itemWithLabel:creditsLabel target:self selector:@selector(showCredits:)];
   float y = (screenSize.height / 2)  - (newGame.boundingBox.size.height * 1.5) - credits.boundingBox.size.height;
   [credits setPosition:ccp(screenSize.width * 3 / 4, y)];
