@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		073972C518BE1EA00093812A /* GCHelperSpike.m in Sources */ = {isa = PBXBuildFile; fileRef = 073972C418BE1EA00093812A /* GCHelperSpike.m */; };
 		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
-		079B971E18B2403C00B53776 /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B971D18B2403C00B53776 /* CCDirectorIOS.m */; };
 		079B972118B2408C00B53776 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B972018B2408C00B53776 /* CCDirector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B38BE61817F2560065C07E /* Bomber2DSpec.m */; };
+		07BA15F418DF1683000CD614 /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B971D18B2403C00B53776 /* CCDirectorIOS.m */; };
 		07C325AE18B1847800056340 /* AdDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325AD18B1847800056340 /* AdDelegateSpec.m */; };
 		07C325B618B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
 		07C325B718B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
@@ -34,6 +34,7 @@
 		07D264E81816B64A0060E3E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2633B1816B28E0060E3E9 /* CoreGraphics.framework */; };
 		07D264EE1816B64A0060E3E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D264EC1816B64A0060E3E9 /* InfoPlist.strings */; };
 		07D264F01816B64A0060E3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D264EF1816B64A0060E3E9 /* main.m */; };
+		07D47E9318DF263C005AFA9B /* RunIPhoneLaunchDaemons.sh in Resources */ = {isa = PBXBuildFile; fileRef = 07D47E9218DF263C005AFA9B /* RunIPhoneLaunchDaemons.sh */; };
 		2FA280449616A84071160E28 /* RandomLocationChooserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */; };
 		2FA28067662F9A354E862A05 /* StandardRandomNumberGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F21DFF4F53C8AC9C4EA /* StandardRandomNumberGenerator.m */; };
 		2FA280D926088C4536C0CEE4 /* CreditsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DBAFB46DEC4772166E /* CreditsLayer.m */; };
@@ -46,6 +47,7 @@
 		2FA28446EDF0DD2103EEDC43 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA2847B7ADE3F3A576E13ED /* LevelCollectionArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A213D5E2AA4D42254DE /* LevelCollectionArray.m */; };
 		2FA2848DBEA0DE68A420B424 /* ccbParticleFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2834D0BFC9AED16E8A193 /* ccbParticleFire.png */; };
+		2FA284C3992F3F77B375852F /* NavigationStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280314410E325AF264C38 /* NavigationStateMachine.m */; };
 		2FA2850029BDCDB0D2BE7EBC /* KaboomSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomSpec.m */; };
 		2FA28522E9A7CE30113818E2 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
 		2FA28584F239869EB9CABEC0 /* bomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28408982A64B570F0A04F /* bomb.wav */; };
@@ -107,6 +109,7 @@
 		2FA28EFCBF7E9A44AB505581 /* Bomber2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288C49F5E6138D1521493 /* Bomber2D.m */; };
 		2FA28F487E88D7EBF1BDB766 /* game-sprites0.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28C0FCD010FE38E7163C7 /* game-sprites0.pvr.ccz */; };
 		2FA28F54212A0DE8FAC5B443 /* Scaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28CC1029F55EBD494A6F9 /* Scaler.m */; };
+		2FA28F5FF0EA2C257D86CF35 /* NavigationStateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA280314410E325AF264C38 /* NavigationStateMachine.m */; };
 		2FA28F76808879FBD6B5FDFE /* GameBlackboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28F2ED082B6BB64024A4E /* GameBlackboard.m */; };
 		2FA28FAE434F1CDF86E96CDB /* IconsAndLaunchImages in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */; };
 		2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA289DFAA6766D477DC0BEF /* BombSprite.m */; };
@@ -149,10 +152,12 @@
 		07D264ED1816B64A0060E3E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07D264EF1816B64A0060E3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07D264F11816B64A0060E3E9 /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		07D47E9218DF263C005AFA9B /* RunIPhoneLaunchDaemons.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = RunIPhoneLaunchDaemons.sh; path = Specs/RunIPhoneLaunchDaemons.sh; sourceTree = SOURCE_ROOT; };
 		2E835FC4C4834368AA6DCF9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA280106D45FEA255598154 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContextSpec.m; sourceTree = "<group>"; };
 		2FA2802FCB805A565D204AC7 /* catch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = catch.wav; path = Resources/catch.wav; sourceTree = "<group>"; };
+		2FA280314410E325AF264C38 /* NavigationStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationStateMachine.m; sourceTree = "<group>"; };
 		2FA280467F68158FD9401ACF /* titlefnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlefnt.png; path = Resources/titlefnt.png; sourceTree = "<group>"; };
 		2FA280A9F6A3A42AACBB0972 /* Buckets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buckets.h; sourceTree = "<group>"; };
 		2FA280BAB876740B963BBB44 /* BucketSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BucketSprite.h; sourceTree = "<group>"; };
@@ -164,6 +169,7 @@
 		2FA2820F7F26FF1AB604EBDF /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		2FA2821851BD13F77BC6DB45 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fire.png; path = Resources/fire.png; sourceTree = "<group>"; };
 		2FA2825B16BDD9E954374712 /* SizeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeService.h; sourceTree = "<group>"; };
+		2FA282609BDDC1F2873357A3 /* NavigationStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationStateMachine.h; sourceTree = "<group>"; };
 		2FA28270A068547733860AAF /* game-sprites0-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file.ccz; name = "game-sprites0-ipadhd.pvr.ccz"; path = "Resources/game-sprites0-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
 		2FA282744264D278C082A1BC /* LevelCollectionProcedural.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelCollectionProcedural.h; sourceTree = "<group>"; };
 		2FA28274FBE09AC781269CB5 /* IconsAndLaunchImages */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = IconsAndLaunchImages; path = Resources/IconsAndLaunchImages; sourceTree = "<group>"; };
@@ -284,6 +290,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0770CD6A18DF2F4C00A616D3 /* OldTests */ = {
+			isa = PBXGroup;
+			children = (
+				07C325BB18B19A2E00056340 /* CocosFakes */,
+				07C325B818B1921600056340 /* iOS */,
+				2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */,
+				07B38BE61817F2560065C07E /* Bomber2DSpec.m */,
+				2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */,
+				2FA287C679C14D69014463AE /* Utilities */,
+				2FA28C951EF791E384FF0C5E /* KaboomSpec.m */,
+				2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */,
+				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
+				2FA28C348025798254AAD049 /* GameBlackboardSpec.m */,
+				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
+			);
+			name = OldTests;
+			sourceTree = "<group>";
+		};
 		07C325B118B18EAC00056340 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +426,8 @@
 				2FA28430631AA55FE5C45FD3 /* Constants.m */,
 				2FA282B0C605ED6F8A3369C7 /* LevelCollection.h */,
 				0760AE6A18A7F318001BF64D /* Images.xcassets */,
+				2FA280314410E325AF264C38 /* NavigationStateMachine.m */,
+				2FA282609BDDC1F2873357A3 /* NavigationStateMachine.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -432,6 +458,7 @@
 		07D264CE1816B28F0060E3E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07D47E9218DF263C005AFA9B /* RunIPhoneLaunchDaemons.sh */,
 				07D264CF1816B28F0060E3E9 /* Prefix.pch */,
 				07D264D01816B28F0060E3E9 /* main.m */,
 				2FA28D81C30296DC88C95456 /* levels.plist */,
@@ -442,19 +469,9 @@
 		07D264E91816B64A0060E3E9 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				07C325BB18B19A2E00056340 /* CocosFakes */,
-				07C325B818B1921600056340 /* iOS */,
+				0770CD6A18DF2F4C00A616D3 /* OldTests */,
 				07D264EA1816B64A0060E3E9 /* Supporting Files */,
 				2FA28105F8AD8513D6714DA3 /* .!13545!TemplateIcon.icns */,
-				2FA2893A4D9A61B3A1D7A549 /* BucketsSpec.m */,
-				07B38BE61817F2560065C07E /* Bomber2DSpec.m */,
-				2FA289283D7553CFAE0C517E /* RandomLocationChooserSpec.m */,
-				2FA287C679C14D69014463AE /* Utilities */,
-				2FA28C951EF791E384FF0C5E /* KaboomSpec.m */,
-				2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */,
-				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
-				2FA28C348025798254AAD049 /* GameBlackboardSpec.m */,
-				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -556,7 +573,6 @@
 				07D264E01816B64A0060E3E9 /* Sources */,
 				07D264E11816B64A0060E3E9 /* Frameworks */,
 				07D264E21816B64A0060E3E9 /* Resources */,
-				07D264E31816B64A0060E3E9 /* ShellScript */,
 				D89A119804564803AC6F6B34 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -632,6 +648,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D47E9318DF263C005AFA9B /* RunIPhoneLaunchDaemons.sh in Resources */,
 				07D264EE1816B64A0060E3E9 /* InfoPlist.strings in Resources */,
 				2FA28DF15037C1C0F5A6C777 /* .!13545!TemplateIcon.icns in Resources */,
 				2FA2889FA9FC0F6AF87FD3EB /* Level.h in Resources */,
@@ -641,19 +658,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07D264E31816B64A0060E3E9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n#  RunIPhoneUnitTest.sh\n#  Copyright 2008 Google Inc.\n#\n#  Licensed under the Apache License, Version 2.0 (the \"License\"); you may not\n#  use this file except in compliance with the License.  You may obtain a copy\n#  of the License at\n#\n#  http://www.apache.org/licenses/LICENSE-2.0\n#\n#  Unless required by applicable law or agreed to in writing, software\n#  distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT\n#  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the\n#  License for the specific language governing permissions and limitations under\n#  the License.\n#\n#  Runs all unittests through the iPhone simulator. We don't handle running them\n#  on the device. To run on the device just choose \"run\".\n\nset -o errexit\nset -o nounset\nset -o verbose\n\n#  Controlling environment variables:\n# GTM_DISABLE_ZOMBIES -\n#   Set to a non-zero value to turn on zombie checks. You will probably\n#   want to turn this off if you enable leaks.\nGTM_DISABLE_ZOMBIES=${GTM_DISABLE_ZOMBIES:=1}\n\n# GTM_ENABLE_LEAKS -\n#   Set to a non-zero value to turn on the leaks check. You will probably want\n#   to disable zombies, otherwise you will get a lot of false positives.\n\n# GTM_DISABLE_TERMINATION\n#   Set to a non-zero value so that the app doesn't terminate when it's finished\n#   running tests. This is useful when using it with external tools such\n#   as Instruments.\n\n# GTM_LEAKS_SYMBOLS_TO_IGNORE\n#   List of comma separated symbols that leaks should ignore. Mainly to control\n#   leaks in frameworks you don't have control over.\n#   Search this file for GTM_LEAKS_SYMBOLS_TO_IGNORE to see examples.\n#   Please feel free to add other symbols as you find them but make sure to\n#   reference Radars or other bug systems so we can track them.\n\n# GTM_REMOVE_GCOV_DATA\n#   Before starting the test, remove any *.gcda files for the current run so\n#   you won't get failures when the source file has changed and the data can't\n#   be merged.\n#\nGTM_REMOVE_GCOV_DATA=${GTM_REMOVE_GCOV_DATA:=0}\n\n# GTM_DISABLE_USERDIR_SETUP\n#   Controls whether or not CFFIXED_USER_HOME is erased and set up from scratch\n#   for you each time the script is run. In some cases you may have a wrapper\n#   script calling this one that takes care of that for us so you can set up\n#   a certain user configuration.\nGTM_DISABLE_USERDIR_SETUP=${GTM_DISABLE_USERDIR_SETUP:=0}\n\n# GTM_DISABLE_IPHONE_LAUNCH_DAEMONS\n#   Controls whether or not we launch up the iPhone Launch Daemons before\n#   we start testing. You need Launch Daemons to test anything that interacts\n#   with security.\nGTM_DISABLE_IPHONE_LAUNCH_DAEMONS=1 #${GTM_DISABLE_IPHONE_LAUNCH_DAEMONS:=0}\n\nScriptDir=$(dirname \"$(echo $0 | sed -e \"s,^\\([^/]\\),$(pwd)/\\1,\")\")\nScriptName=$(basename \"$0\")\nThisScript=\"${ScriptDir}/${ScriptName}\"\n\nGTMXcodeNote() {\n    echo ${ThisScript}:${1}: note: GTM ${2}\n}\n\nif [ \"$PLATFORM_NAME\" == \"iphonesimulator\" ]; then\n  # We kill the iPhone simulator because otherwise we run into issues where\n  # the unittests fail becuase the simulator is currently running, and\n  # at this time the iPhone SDK won't allow two simulators running at the same\n  # time.\n  set +e\n  /usr/bin/killall \"iPhone Simulator\"\n  set -e\n\n  if [ $GTM_REMOVE_GCOV_DATA -ne 0 ]; then\n    if [ \"${OBJECT_FILE_DIR}-${CURRENT_VARIANT}\" != \"-\" ]; then\n      if [ -d \"${OBJECT_FILE_DIR}-${CURRENT_VARIANT}\" ]; then\n        GTMXcodeNote ${LINENO} \"Removing any .gcda files\"\n        (cd \"${OBJECT_FILE_DIR}-${CURRENT_VARIANT}\" && \\\n            find . -type f -name \"*.gcda\" -print0 | xargs -0 rm -f )\n      fi\n    fi\n  fi\n\n  export DYLD_ROOT_PATH=\"$SDKROOT\"\n  export DYLD_FRAMEWORK_PATH=\"$CONFIGURATION_BUILD_DIR\"\n  export IPHONE_SIMULATOR_ROOT=\"$SDKROOT\"\n  export CFFIXED_USER_HOME=\"$TEMP_FILES_DIR/iPhone Simulator User Dir\"\n\n  # See http://developer.apple.com/technotes/tn2004/tn2124.html for an\n  # explanation of these environment variables.\n\n  #export MallocScribble=YES\n  export MallocPreScribble=YES\n  #export MallocGuardEdges=YES\n  #export MallocStackLogging=YES\n  export NSAutoreleaseFreedObjectCheckEnabled=YES\n\n  # Turn on the mostly undocumented OBJC_DEBUG stuff.\n  export OBJC_DEBUG_FRAGILE_SUPERCLASSES=YES\n  export OBJC_DEBUG_UNLOAD=YES\n  # Turned off due to the amount of false positives from NS classes.\n  # export OBJC_DEBUG_FINALIZERS=YES\n  export OBJC_DEBUG_NIL_SYNC=YES\n  export OBJC_PRINT_REPLACED_METHODS=NO\n\n  if [ $GTM_DISABLE_ZOMBIES -eq 0 ]; then\n    GTMXcodeNote ${LINENO} \"Enabling zombies\"\n    export CFZombieLevel=3\n    export NSZombieEnabled=YES\n  fi\n\n  if [ $GTM_DISABLE_USERDIR_SETUP -eq 0 ]; then\n    # Cleanup user home directory\n    if [ -d \"$CFFIXED_USER_HOME\" ]; then\n      rm -rf \"$CFFIXED_USER_HOME\"\n    fi\n    mkdir \"$CFFIXED_USER_HOME\"\n    mkdir \"$CFFIXED_USER_HOME/Documents\"\n    mkdir -p \"$CFFIXED_USER_HOME/Library/Caches\"\n  fi\n\n  # 6251475 iPhone simulator leaks @ CFHTTPCookieStore shutdown if\n  #         CFFIXED_USER_HOME empty\n  GTM_LEAKS_SYMBOLS_TO_IGNORE=\"CFHTTPCookieStore\"\n\n  if [ $GTM_DISABLE_IPHONE_LAUNCH_DAEMONS -eq 0 ]; then\n    # If we want to test anything that interacts with the keychain, we need\n    # securityd up and running. See RunIPhoneLaunchDaemons.sh for details.\n    launchctl submit -l RunIPhoneLaunchDaemons -- \"${ScriptDir}/RunIPhoneLaunchDaemons.sh\" $IPHONE_SIMULATOR_ROOT $CFFIXED_USER_HOME\n    # No matter how we exit, we want to shut down our launchctl job.\n    trap \"launchctl remove RunIPhoneLaunchDaemons\" INT TERM EXIT\n  fi\n\n  # Start our app.\n  \"$TARGET_BUILD_DIR/$EXECUTABLE_PATH\" -RegisterForSystemEvents\n\nelse\n  GTMXcodeNote ${LINENO} \"Skipping running of unittests for device build.\"\nfi\nexit 0";
-		};
 		7C8B8E5889074FA189FBEE7F /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -752,6 +756,7 @@
 				2FA280D926088C4536C0CEE4 /* CreditsLayer.m in Sources */,
 				2FA28905668E783012CD756C /* CocosDirectorAdapter.m in Sources */,
 				2FA288989FCAB68F9681B376 /* MainMenuLayer.m in Sources */,
+				2FA284C3992F3F77B375852F /* NavigationStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,9 +764,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BA15F418DF1683000CD614 /* CCDirectorIOS.m in Sources */,
 				07D264F01816B64A0060E3E9 /* main.m in Sources */,
 				07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */,
-				079B971E18B2403C00B53776 /* CCDirectorIOS.m in Sources */,
 				2FA28A2FCE93A3EFF656B840 /* BucketsSpec.m in Sources */,
 				2FA28275A7EDE30FE9BC8AE6 /* Buckets.m in Sources */,
 				07C325B718B1920600056340 /* AdDelegate.m in Sources */,
@@ -795,6 +800,7 @@
 				2FA28B0BEF2BDE743479EC33 /* KaboomContextSpec.m in Sources */,
 				2FA2871A0CAE5085D7576269 /* CocosDirectorAdapterSpec.m in Sources */,
 				2FA280DE9A8FD209D289EFA0 /* CocosDirectorAdapter.m in Sources */,
+				2FA28F5FF0EA2C257D86CF35 /* NavigationStateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
