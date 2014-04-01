@@ -5,5 +5,6 @@
 
 @protocol KaboomStateMachine
 -(void) fire:(NSString *)eventName;
+-(void) start;
 
 @end
