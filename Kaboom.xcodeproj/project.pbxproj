@@ -56,7 +56,6 @@
 		2FA2850029BDCDB0D2BE7EBC /* KaboomSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28C951EF791E384FF0C5E /* KaboomSpec.m */; };
 		2FA28522E9A7CE30113818E2 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA285B4F1CB77AEE9B1B660 /* Level.m */; };
 		2FA28584F239869EB9CABEC0 /* bomb.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28408982A64B570F0A04F /* bomb.wav */; };
-		2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28DA8913787EE54AD3EA3 /* .!13545!TemplateIcon.icns */; };
 		2FA28591DA97CC60FF6CFBB8 /* RandomLocationChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2841FD75301789CE52605 /* RandomLocationChooser.m */; };
 		2FA285A0E29ED47D1417F7BC /* Bomb2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28A0F951445B45AF12061 /* Bomb2D.m */; };
 		2FA285B1824CBBFED0CDF631 /* Buckets.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA284445034A66D23A69772 /* Buckets.m */; };
@@ -137,6 +136,7 @@
 /* Begin PBXFileReference section */
 		073972C318BE1EA00093812A /* GCHelperSpike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelperSpike.h; sourceTree = "<group>"; };
 		073972C418BE1EA00093812A /* GCHelperSpike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelperSpike.m; sourceTree = "<group>"; };
+		0741FD2718EAE2780041EC9C /* NavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationDelegate.h; sourceTree = "<group>"; };
 		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0770CD6F18DF30B800A616D3 /* KaboomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaboomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0770CD7018DF30B800A616D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -503,6 +503,7 @@
 				0760AE6A18A7F318001BF64D /* Images.xcassets */,
 				2FA280314410E325AF264C38 /* NavigationStateMachine.m */,
 				2FA282609BDDC1F2873357A3 /* NavigationStateMachine.h */,
+				0741FD2718EAE2780041EC9C /* NavigationDelegate.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -689,7 +690,7 @@
 				ORGANIZATIONNAME = "Eric Smith";
 				TargetAttributes = {
 					0770CD6E18DF30B800A616D3 = {
-						TestTargetID = 07D263291816B28E0060E3E9 /* Kaboom */;
+						TestTargetID = 07D263291816B28E0060E3E9;
 					};
 					07D263291816B28E0060E3E9 = {
 						DevelopmentTeam = D8768X4ZJR;
@@ -706,8 +707,6 @@
 			mainGroup = 07D263211816B28E0060E3E9;
 			productRefGroup = 07D2632B1816B28E0060E3E9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				07D263291816B28E0060E3E9 /* Kaboom */,
@@ -733,7 +732,6 @@
 				07D263591816B28E0060E3E9 /* iTunesArtwork in Resources */,
 				0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */,
 				2FA2898DEF1DCCF802D7C7C2 /* .!13545!TemplateIcon.icns in Resources */,
-				2FA2858789EE92F19F7716C3 /* .!13545!TemplateIcon.icns in Resources */,
 				2FA28A522C69779A46FC8B92 /* levels.plist in Resources */,
 				2FA28B50C9E063A7A90D5662 /* Level.h in Resources */,
 				2FA28AB5646A4158A188BCDA /* fire.png in Resources */,
@@ -1303,6 +1301,7 @@
 				0770CD8118DF30B800A616D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07D263251816B28E0060E3E9 /* Build configuration list for PBXProject "Kaboom" */ = {
 			isa = XCConfigurationList;

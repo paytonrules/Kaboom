@@ -35,7 +35,4 @@
   banner.hidden = NO;
 }
 
-
-
-
 @end

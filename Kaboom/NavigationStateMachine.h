@@ -1,11 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "KaboomStateMachine.h"
-
-@protocol NavigationDelegate
-
--(void) showCredits;
--(void) hideCredits;
-@end
+#import "NavigationDelegate.h"
 
 @interface NavigationStateMachine : NSObject
 

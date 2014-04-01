@@ -9,7 +9,7 @@ describe(@"NavigationStateMachine", ^{
   it(@"can go to the credits", ^{
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
     NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
-    [[del should] receive:@selector(showCredits)];
+    [[del should] receive:@selector(displayCredits)];
     
     [sm showCredits];
   });
@@ -29,7 +29,7 @@ describe(@"NavigationStateMachine", ^{
     NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine
                                                             delegate: del];
 
-    [[del should] receive:@selector(showCredits)];
+    [[del should] receive:@selector(displayCredits)];
     
     [sm showCredits];
   });
@@ -37,7 +37,7 @@ describe(@"NavigationStateMachine", ^{
   it(@"will go from credits back to main menu", ^{
     id gameStateMachine = [KWMock mockForProtocol:@protocol(KaboomStateMachine)];
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
-    [del stub:@selector(showCredits)];
+    [del stub:@selector(displayCredits)];
     NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine
                                                             delegate: del];
     
@@ -51,7 +51,7 @@ describe(@"NavigationStateMachine", ^{
   it(@"doesn't start the game when on credits screen", ^{
     id gameStateMachine = [KWMock mockForProtocol:@protocol(KaboomStateMachine)];
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
-    [del stub:@selector(showCredits)];
+    [del stub:@selector(displayCredits)];
     NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine
                                                               delegate: del];
     [sm showCredits];

@@ -31,7 +31,16 @@
     self.navigationSM = [TKStateMachine new];
     TKState *mainMenu = [TKState stateWithName:@"MainMenu"];
     TKState *game = [TKState stateWithName:@"Game"];
+    
+    [game setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
+      [self.game start];
+    }];
+    
     TKState *credits = [TKState stateWithName:@"Credits"];
+    
+    [credits setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
+      [self.del displayCredits];
+    }];
     [self.navigationSM addStates:@[mainMenu, game, credits]];
     
     TKEvent *startGame = [TKEvent eventWithName:@"StartGame" transitioningFromStates:@[ mainMenu ] toState:game];
@@ -39,27 +48,21 @@
     TKEvent *showCredits = [TKEvent eventWithName:@"ShowCredits" transitioningFromStates:@[ mainMenu ] toState:credits];
     [self.navigationSM addEvents:@[startGame, showCredits]];
     
-    
     [self.navigationSM activate];
-    
   }
   return self;
 }
 
 -(void) showCredits {
   [self.navigationSM fireEvent:@"ShowCredits" userInfo:nil error:nil];
-  [self.del showCredits];
 }
 
 -(void) startGame {
   NSError *error = nil;
   [self.navigationSM fireEvent:@"StartGame" userInfo:nil error:&error];
-  if (error == nil) {
-    [self.game start];
-  } else {
+  if (error != nil) {
     [NSException raise:@"Invalid Transition" format:nil];
-  }
-  
+  }  
 }
 
 -(void) closeCredits {
