@@ -1,5 +1,6 @@
 #import "MainMenuLayer.h"
 #import "NavigationStateMachine.h"
+#import "CreditsLayer.h"
 
 @interface MainMenuLayer()
 @property(strong) CCMenu *menu;
@@ -79,6 +80,7 @@
 
 -(void) displayCredits
 {
+  [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreditsLayer scene] ]];
 }
 
 -(void) hideCredits
