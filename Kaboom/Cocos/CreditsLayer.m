@@ -1,13 +1,26 @@
 #import "CreditsLayer.h"
+#import "NavigationStateMachine.h"
+
+@interface CreditsLayer()
+
+@property(strong) NavigationStateMachine *sm;
+
+@end
 
 @implementation CreditsLayer
 
 +(CCScene *) scene
 {
+  return [self sceneWithMachine:nil];
+}
+
++(CCScene *) sceneWithMachine:(NavigationStateMachine *)sm
+{
   CCScene *scene = [CCScene node];
   CreditsLayer *layer = [CreditsLayer node];
+  layer.sm = sm;
   [scene addChild: layer];
-
+  
   return scene;
 }
 
@@ -39,7 +52,9 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-  [[CCDirector sharedDirector] popScene];
+  if (self.sm != nil) {
+    [self.sm closeCredits];
+  }
 }
 
 -(void) registerWithTouchDispatcher

@@ -1,6 +1,7 @@
 #import "MainMenuLayer.h"
 #import "NavigationStateMachine.h"
 #import "CreditsLayer.h"
+#import "CCDirector+PopTransition.h"
 
 @interface MainMenuLayer()
 @property(strong) CCMenu *menu;
@@ -80,12 +81,12 @@
 
 -(void) displayCredits
 {
-  [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreditsLayer scene] ]];
+  [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreditsLayer sceneWithMachine:self.sm] ]];
 }
 
 -(void) hideCredits
 {
-  
+  [[CCDirector sharedDirector] popSceneWithTransition:[CCTransitionFade class] duration:1.0];
 }
 
 @end
