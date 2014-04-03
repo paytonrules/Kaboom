@@ -4,7 +4,6 @@
 @interface NavigationStateMachine()
 
 @property(strong) NSObject<NavigationDelegate> *del;
-@property(strong) NSObject<KaboomStateMachine> *game;
 
 @property(strong) TKStateMachine *navigationSM;
 
@@ -13,15 +12,7 @@
 @implementation NavigationStateMachine
 
 +(instancetype) newWithDelegate:(NSObject <NavigationDelegate> *)del {
-  return [NavigationStateMachine newWithGame:nil delegate:del];}
-
-+(instancetype) newWithGame:(NSObject <KaboomStateMachine> *)game {
-  return [NavigationStateMachine newWithGame:game delegate:nil];
-}
-
-+(instancetype) newWithGame:(NSObject<KaboomStateMachine> *)game delegate:(NSObject<NavigationDelegate> *)del {
   NavigationStateMachine *sm = [NavigationStateMachine new];
-  sm.game = game;
   sm.del = del;
   return sm;
 }
@@ -33,7 +24,7 @@
     TKState *game = [TKState stateWithName:@"Game"];
     
     [game setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
-      [self.game start];
+      [self.del displayGame];
     }];
     
     TKState *credits = [TKState stateWithName:@"Credits"];
@@ -45,7 +36,9 @@
     
     TKEvent *startGame = [TKEvent eventWithName:@"StartGame" transitioningFromStates:@[ mainMenu ] toState:game];
     
-    TKEvent *showCredits = [TKEvent eventWithName:@"ShowCredits" transitioningFromStates:@[ mainMenu ] toState:credits];
+    TKEvent *showCredits = [TKEvent eventWithName:@"ShowCredits"
+                          transitioningFromStates:@[ mainMenu, game ]
+                                          toState:credits];
     [self.navigationSM addEvents:@[startGame, showCredits]];
     
     [self.navigationSM activate];
@@ -53,11 +46,13 @@
   return self;
 }
 
--(void) showCredits {
+-(void) showCredits
+{
   [self.navigationSM fireEvent:@"ShowCredits" userInfo:nil error:nil];
 }
 
--(void) startGame {
+-(void) startGame
+{
   NSError *error = nil;
   [self.navigationSM fireEvent:@"StartGame" userInfo:nil error:&error];
   if (error != nil) {
@@ -65,7 +60,8 @@
   }  
 }
 
--(void) closeCredits {
+-(void) closeCredits
+{
   [self.del hideCredits];
 }
 

@@ -57,7 +57,7 @@
     TKState *finishingLevel = [TKState stateWithName:@"Finishing Level"];
 
     [waitingForStart setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
-      [self.gameContext startBombing];;
+      [self.gameContext startBombing];
     }];
 
     [updatingSystem setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {

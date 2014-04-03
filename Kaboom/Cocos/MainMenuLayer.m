@@ -1,6 +1,7 @@
 #import "MainMenuLayer.h"
 #import "NavigationStateMachine.h"
 #import "CreditsLayer.h"
+#import "KaboomLayer.h"
 #import "CCDirector+PopTransition.h"
 
 @interface MainMenuLayer()
@@ -14,7 +15,6 @@
 
 // Boilerplate, boilerplate, bo bo ba boilerplate
 +(CCScene *) scene {
-
   CCScene *scene = [CCScene node];
 
   // 'layer' is an autorelease object.
@@ -67,6 +67,11 @@
   [self addChild:newGameMenu z:1];
   
   self.sm = [NavigationStateMachine newWithDelegate: self];
+}
+
+-(void) displayGame
+{
+  [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1. scene:[KaboomLayer scene]]];
 }
 
 -(void) showCredits:(CCMenuItem *) label

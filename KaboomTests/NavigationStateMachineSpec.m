@@ -14,32 +14,30 @@ describe(@"NavigationStateMachine", ^{
     [sm showCredits];
   });
   
-  it(@"can go to the new game", ^{
-    id gameStateMachine = [KWMock mockForProtocol:@protocol(KaboomStateMachine)];
-    NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine];
+  it(@"can start the game", ^{
+    id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
+    NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
     
-    [[gameStateMachine should] receive:@selector(start)];
+    [[del should] receive:@selector(displayGame)];
     
     [sm startGame];
   });
   
   it(@"will go from new game to credits", ^{
-    id gameStateMachine = [KWMock mockForProtocol:@protocol(KaboomStateMachine)];
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
-    NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine
-                                                            delegate: del];
+    NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
+    [del stub:@selector(displayGame)];
 
     [[del should] receive:@selector(displayCredits)];
-    
+
+    [sm startGame];
     [sm showCredits];
   });
   
   it(@"will go from credits back to main menu", ^{
-    id gameStateMachine = [KWMock mockForProtocol:@protocol(KaboomStateMachine)];
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
     [del stub:@selector(displayCredits)];
-    NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine
-                                                            delegate: del];
+    NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
     
     [sm showCredits];
     
@@ -49,11 +47,9 @@ describe(@"NavigationStateMachine", ^{
   });
   
   it(@"doesn't start the game when on credits screen", ^{
-    id gameStateMachine = [KWMock mockForProtocol:@protocol(KaboomStateMachine)];
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
     [del stub:@selector(displayCredits)];
-    NavigationStateMachine *sm = [NavigationStateMachine newWithGame:gameStateMachine
-                                                              delegate: del];
+    NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate: del];
     [sm showCredits];
     
     [[theBlock(^{[sm startGame];}) should] raiseWithName:@"Invalid Transition"];
