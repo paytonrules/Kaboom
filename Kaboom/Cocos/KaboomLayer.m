@@ -12,6 +12,7 @@
 #import "CreditsLayer.h"
 #import "AdDelegate.h"
 #import "CocosDirectorAdapter.h"
+#import "CCDirector+PopTransition.h"
 
 enum TAGS {
   kBucket,
@@ -172,19 +173,19 @@ enum TAGS {
   CGSize size = [CCDirector sharedDirector].winSize;
 
   NSString *scoreText = [NSString stringWithFormat:@"You caught %d stars before the world ended. Try again?", self.game.score];
-  CCLabelTTF *scoreLabel = [CCLabelTTF labelWithString:scoreText fontName:@"Helvetica" fontSize:32];
+  CCLabelBMFont *scoreLabel = [CCLabelBMFont labelWithString:scoreText fntFile:@"gamefnt.fnt"];
   [scoreLabel setPosition:ccp(size.width / 2, (size.height - (size.height / 3)))];
   [self addChild:scoreLabel z:1 tag:kEndScreen];
 
-  CCLabelTTF *newGameLabel = [CCLabelTTF labelWithString:@"New Game" fontName:@"Helvetica" fontSize:42];
+  CCLabelBMFont *newGameLabel = [CCLabelBMFont labelWithString:@"Replay" fntFile:@"gamefnt.fnt"];
   CCMenuItemLabel *item = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
   [item setPosition:ccp(size.width / 2, size.height / 2)];
 
-  CCLabelTTF *creditsLabel = [CCLabelTTF labelWithString:@"Credits" fontName:@"Helvetica" fontSize:42];
-  CCMenuItemLabel *creditsItem = [CCMenuItemLabel itemWithLabel:creditsLabel target:self selector:@selector(showCredits:)];
-  [creditsItem setPosition:ccp(size.width / 2, size.height / 2 - (item.boundingBox.size.height))];
+  CCLabelBMFont *quitLabel = [CCLabelBMFont labelWithString:@"Give Up" fntFile:@"gamefnt.fnt"];
+  CCMenuItemLabel *quitItem = [CCMenuItemLabel itemWithLabel:quitLabel target:self selector:@selector(showCredits:)];
+  [quitItem setPosition:ccp(size.width / 2, size.height / 2 - (item.boundingBox.size.height))];
 
-  CCMenu *newGameMenu = [CCMenu menuWithItems:item, creditsItem, nil];
+  CCMenu *newGameMenu = [CCMenu menuWithItems:item, quitItem, nil];
   newGameMenu.visible = YES;
   [newGameMenu setPosition:CGPointZero];
   [self addChild:newGameMenu z:1];
@@ -199,7 +200,8 @@ enum TAGS {
 
 -(void) showCredits:(CCMenuItem *) label
 {
-  [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreditsLayer scene] ]];
+  [[CCDirector sharedDirector] popSceneWithTransition:[CCTransitionFade class] duration:1.0];
+  [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 }
 
 -(void) startLevel

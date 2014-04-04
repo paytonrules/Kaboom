@@ -34,7 +34,9 @@
     }];
     [self.navigationSM addStates:@[mainMenu, game, credits]];
     
-    TKEvent *startGame = [TKEvent eventWithName:@"StartGame" transitioningFromStates:@[ mainMenu ] toState:game];
+    TKEvent *startGame = [TKEvent eventWithName:@"StartGame"
+                        transitioningFromStates:@[ mainMenu, game ]
+                                        toState:game];
     
     TKEvent *showCredits = [TKEvent eventWithName:@"ShowCredits"
                           transitioningFromStates:@[ mainMenu, game ]

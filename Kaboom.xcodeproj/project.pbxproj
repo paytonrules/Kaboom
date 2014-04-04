@@ -23,6 +23,8 @@
 		07C325B718B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
 		07C325BE18B19A6200056340 /* CCDirectorIOS+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */; };
 		07CA14D518AFD68200ED424C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CA14D418AFD68200ED424C /* iAd.framework */; };
+		07CD70FC18EEDC6C00D39665 /* gamefnt.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 07CD70FA18EEDC6C00D39665 /* gamefnt.fnt */; };
+		07CD70FD18EEDC6C00D39665 /* gamefnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 07CD70FB18EEDC6C00D39665 /* gamefnt.png */; };
 		07D2632E1816B28E0060E3E9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632D1816B28E0060E3E9 /* QuartzCore.framework */; };
 		07D263301816B28E0060E3E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D2632F1816B28E0060E3E9 /* OpenGLES.framework */; };
 		07D263321816B28E0060E3E9 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263311816B28E0060E3E9 /* OpenAL.framework */; };
@@ -161,6 +163,8 @@
 		07C325BC18B19A6200056340 /* CCDirectorIOS+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDirectorIOS+Tracking.h"; sourceTree = "<group>"; };
 		07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCDirectorIOS+Tracking.m"; sourceTree = "<group>"; };
 		07CA14D418AFD68200ED424C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		07CD70FA18EEDC6C00D39665 /* gamefnt.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gamefnt.fnt; path = Resources/gamefnt.fnt; sourceTree = "<group>"; };
+		07CD70FB18EEDC6C00D39665 /* gamefnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gamefnt.png; path = Resources/gamefnt.png; sourceTree = "<group>"; };
 		07D2632A1816B28E0060E3E9 /* starbaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = starbaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D2632D1816B28E0060E3E9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		07D2632F1816B28E0060E3E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -514,6 +518,8 @@
 		07D263421816B28E0060E3E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07CD70FA18EEDC6C00D39665 /* gamefnt.fnt */,
+				07CD70FB18EEDC6C00D39665 /* gamefnt.png */,
 				07D263571816B28E0060E3E9 /* Info.plist */,
 				07D263581816B28E0060E3E9 /* iTunesArtwork */,
 				2FA2821851BD13F77BC6DB45 /* fire.png */,
@@ -745,7 +751,9 @@
 				2FA28C8D7E43F5E71EA1F6DB /* catch.wav in Resources */,
 				2FA28A270551D32BE0807572 /* game-sprites0.plist in Resources */,
 				2FA28F487E88D7EBF1BDB766 /* game-sprites0.pvr.ccz in Resources */,
+				07CD70FC18EEDC6C00D39665 /* gamefnt.fnt in Resources */,
 				2FA281A5E03EBB4D50B98D61 /* game-sprites0-hd.plist in Resources */,
+				07CD70FD18EEDC6C00D39665 /* gamefnt.png in Resources */,
 				2FA2829A3C3769945D9185A0 /* game-sprites0-hd.pvr.ccz in Resources */,
 				2FA2874B87DFE4D62B9CE510 /* game-sprites0-ipadhd.plist in Resources */,
 				2FA2873CA30BED837038A7E1 /* game-sprites0-ipadhd.pvr.ccz in Resources */,

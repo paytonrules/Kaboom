@@ -3,6 +3,7 @@
 #import "CreditsLayer.h"
 #import "KaboomLayer.h"
 #import "CCDirector+PopTransition.h"
+#import "AppDelegate.h"
 
 @interface MainMenuLayer()
 @property(strong) CCMenu *menu;
@@ -56,12 +57,17 @@
   CCMenuItemLabel *newGame = [CCMenuItemLabel itemWithLabel:newGameLabel target:self selector:@selector(newGame:)];
   [newGame setPosition:ccp(screenSize.width * 3 / 4, screenSize.height / 2 - (newGame.boundingBox.size.height))];
 
+  CCLabelTTF *highScoresLabel = [CCLabelBMFont labelWithString:@"High Scores" fntFile:@"titlefnt.fnt"];
+  CCMenuItemLabel *highScores = [CCMenuItemLabel itemWithLabel:highScoresLabel target:self selector:@selector(showHighScores:)];
+  float y = (screenSize.height / 2)  - (newGame.boundingBox.size.height * 1.1) - highScores.boundingBox.size.height;
+  [highScores setPosition:ccp(screenSize.width * 3 / 4, y)];
+
   CCLabelTTF *creditsLabel = [CCLabelBMFont labelWithString:@"Credits" fntFile:@"titlefnt.fnt"];
   CCMenuItemLabel *credits = [CCMenuItemLabel itemWithLabel:creditsLabel target:self selector:@selector(showCredits:)];
-  float y = (screenSize.height / 2)  - (newGame.boundingBox.size.height * 1.5) - credits.boundingBox.size.height;
+  y = (screenSize.height / 2)  - (2 * (newGame.boundingBox.size.height * 1.1)) - credits.boundingBox.size.height;
   [credits setPosition:ccp(screenSize.width * 3 / 4, y)];
 
-  CCMenu *newGameMenu = [CCMenu menuWithItems:newGame, credits, nil];
+  CCMenu *newGameMenu = [CCMenu menuWithItems:newGame, highScores, credits, nil];
   newGameMenu.visible = YES;
   [newGameMenu setPosition:CGPointZero];
   [self addChild:newGameMenu z:1];
@@ -84,6 +90,16 @@
   [self.sm startGame];
 }
 
+-(void) showHighScores:(CCMenuItem *) label
+{
+  GKGameCenterViewController *gc = [GKGameCenterViewController new];
+  gc.viewState = GKGameCenterViewControllerStateLeaderboards;
+  gc.delegate = self;
+  [[CCDirector sharedDirector] presentViewController:gc animated:YES completion:^{}];
+
+  
+}
+
 -(void) displayCredits
 {
   [[CCDirector sharedDirector] pushScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreditsLayer sceneWithMachine:self.sm] ]];
@@ -93,5 +109,7 @@
 {
   [[CCDirector sharedDirector] popSceneWithTransition:[CCTransitionFade class] duration:1.0];
 }
+
+
 
 @end

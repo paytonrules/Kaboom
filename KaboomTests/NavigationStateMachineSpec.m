@@ -23,6 +23,16 @@ describe(@"NavigationStateMachine", ^{
     [sm startGame];
   });
   
+  it(@"can start the game if its already started", ^{
+    id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
+    NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
+    
+    [[del should] receive:@selector(displayGame) withCount:2];
+    
+    [sm startGame];
+    [sm startGame];
+  });
+  
   it(@"will go from new game to credits", ^{
     id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
     NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
