@@ -32,6 +32,11 @@
     [credits setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
       [self.del displayCredits];
     }];
+    
+    [credits setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
+      [self.del hideCredits];
+    }];
+    
     [self.navigationSM addStates:@[mainMenu, game, credits]];
     
     TKEvent *startGame = [TKEvent eventWithName:@"StartGame"
@@ -41,7 +46,12 @@
     TKEvent *showCredits = [TKEvent eventWithName:@"ShowCredits"
                           transitioningFromStates:@[ mainMenu, game ]
                                           toState:credits];
-    [self.navigationSM addEvents:@[startGame, showCredits]];
+    
+    TKEvent *hideCredits = [TKEvent eventWithName:@"HideCredits"
+                          transitioningFromStates:@[credits]
+                                          toState:mainMenu];
+    
+    [self.navigationSM addEvents:@[startGame, showCredits, hideCredits]];
     
     [self.navigationSM activate];
   }
@@ -64,7 +74,7 @@
 
 -(void) closeCredits
 {
-  [self.del hideCredits];
+  [self.navigationSM fireEvent:@"HideCredits" userInfo:nil error:nil];
 }
 
 

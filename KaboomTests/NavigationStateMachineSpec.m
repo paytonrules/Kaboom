@@ -65,6 +65,19 @@ describe(@"NavigationStateMachine", ^{
     [[theBlock(^{[sm startGame];}) should] raiseWithName:@"Invalid Transition"];
   });
   
+  it(@"can sart the game after going from credits back to main menu", ^{
+    id del = [KWMock mockForProtocol:@protocol(NavigationDelegate)];
+    [del stub:@selector(displayCredits)];
+    [del stub:@selector(hideCredits)];
+    NavigationStateMachine *sm = [NavigationStateMachine newWithDelegate:del];
+    
+    [sm showCredits];
+    [sm closeCredits];
+    
+    [[del should] receive:@selector(displayGame)];
+    [sm startGame];
+  });
+  
   
 });
 
