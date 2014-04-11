@@ -17,7 +17,7 @@ DEPENDENCIES:
   - Underscore.m (~> 0.2.1)
 
 SPEC CHECKSUMS:
-  cocos2d: 1ee107ccb03edf8f72f846e87b7d71c96fbfe6bc
+  cocos2d: 96c7c4f17e88415840f5acd38b4d4c1e50915ea4
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
   TransitionKit: 433284465abacdc07852d7db6dd0cc075010059a
   Underscore.m: 593ea54a19d3cc4439387a83d36eb7ba6ffd1707

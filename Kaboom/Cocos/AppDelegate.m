@@ -2,7 +2,7 @@
 #import "AppDelegate.h"
 #import "SizeService.h"
 #import "CocosSizeStrategy.h"
-#import "GCHelperSpike.h"
+#import "GameCenterAuthentication.h"
 #import "MainMenuLayer.h"
 
 @implementation AppController
@@ -82,8 +82,8 @@
 	// make main window visible
 	[window_ makeKeyAndVisible];
 
-  [[GCHelperSpike sharedInstance] authenticateLocalUser];
   [director_ runWithScene: [MainMenuLayer scene]];
+  [[GameCenterAuthentication sharedInstance] authenticateLocalUser];
 
 	return YES;
 }

@@ -96,8 +96,6 @@
   gc.viewState = GKGameCenterViewControllerStateLeaderboards;
   gc.delegate = self;
   [[CCDirector sharedDirector] presentViewController:gc animated:YES completion:^{}];
-
-  
 }
 
 -(void) displayCredits

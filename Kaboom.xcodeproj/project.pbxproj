@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0711C36D18F4288500F3FBE1 /* GameCenterAuthenticationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0711C36C18F4288500F3FBE1 /* GameCenterAuthenticationSpec.m */; };
 		0719465C18EC34F0006D3995 /* CCDirector+PopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719465B18EC34F0006D3995 /* CCDirector+PopTransition.m */; };
-		073972C518BE1EA00093812A /* GCHelperSpike.m in Sources */ = {isa = PBXBuildFile; fileRef = 073972C418BE1EA00093812A /* GCHelperSpike.m */; };
+		073972C518BE1EA00093812A /* GameCenterAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 073972C418BE1EA00093812A /* GameCenterAuthentication.m */; };
 		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
 		0770CD7118DF30B800A616D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0770CD7018DF30B800A616D3 /* XCTest.framework */; };
 		0770CD7218DF30B800A616D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263391816B28E0060E3E9 /* Foundation.framework */; };
@@ -137,10 +138,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0711C36C18F4288500F3FBE1 /* GameCenterAuthenticationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameCenterAuthenticationSpec.m; path = iOS/GameCenterAuthenticationSpec.m; sourceTree = "<group>"; };
 		0719465A18EC34F0006D3995 /* CCDirector+PopTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDirector+PopTransition.h"; sourceTree = "<group>"; };
 		0719465B18EC34F0006D3995 /* CCDirector+PopTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCDirector+PopTransition.m"; sourceTree = "<group>"; };
-		073972C318BE1EA00093812A /* GCHelperSpike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelperSpike.h; sourceTree = "<group>"; };
-		073972C418BE1EA00093812A /* GCHelperSpike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelperSpike.m; sourceTree = "<group>"; };
+		073972C318BE1EA00093812A /* GameCenterAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterAuthentication.h; sourceTree = "<group>"; };
+		073972C418BE1EA00093812A /* GameCenterAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterAuthentication.m; sourceTree = "<group>"; };
 		0741FD2718EAE2780041EC9C /* NavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationDelegate.h; sourceTree = "<group>"; };
 		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0770CD6F18DF30B800A616D3 /* KaboomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaboomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +338,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0711C36B18F4285C00F3FBE1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0711C36C18F4288500F3FBE1 /* GameCenterAuthenticationSpec.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		0770CD6A18DF2F4C00A616D3 /* OldTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +367,7 @@
 		0770CD7418DF30B800A616D3 /* KaboomTests */ = {
 			isa = PBXGroup;
 			children = (
+				0711C36B18F4285C00F3FBE1 /* iOS */,
 				0770CD7A18DF30B800A616D3 /* NavigationStateMachineSpec.m */,
 				0770CD7518DF30B800A616D3 /* Supporting Files */,
 			);
@@ -391,8 +402,8 @@
 				07C325B518B1920600056340 /* AdDelegate.m */,
 				2FA28E6B3906CC834272B745 /* CocosDirectorAdapter.m */,
 				2FA28E2937981F0336F002E6 /* CocosDirectorAdapter.h */,
-				073972C318BE1EA00093812A /* GCHelperSpike.h */,
-				073972C418BE1EA00093812A /* GCHelperSpike.m */,
+				073972C318BE1EA00093812A /* GameCenterAuthentication.h */,
+				073972C418BE1EA00093812A /* GameCenterAuthentication.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -876,6 +887,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0770CD7B18DF30B800A616D3 /* NavigationStateMachineSpec.m in Sources */,
+				0711C36D18F4288500F3FBE1 /* GameCenterAuthenticationSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,7 +907,7 @@
 				2FA2883B02F5B0DE568C0706 /* Kaboom.m in Sources */,
 				2FA286855900F769D7D19113 /* Bomb2D.m in Sources */,
 				2FA28FB8F0CD2AA6F8628946 /* BombSprite.m in Sources */,
-				073972C518BE1EA00093812A /* GCHelperSpike.m in Sources */,
+				073972C518BE1EA00093812A /* GameCenterAuthentication.m in Sources */,
 				2FA28A2308B558C0FA0218CD /* BucketSprite.m in Sources */,
 				2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */,
 				2FA28522E9A7CE30113818E2 /* Level.m in Sources */,

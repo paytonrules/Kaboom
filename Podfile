@@ -11,6 +11,7 @@ target :KaboomTests do
   pod 'TransitionKit', '~> 2.0.0'
   pod 'Underscore.m', '~> 0.2.1'
 
+  pod 'cocos2d'
   pod 'Kiwi/XCTest'
 end
 
