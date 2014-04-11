@@ -94,8 +94,12 @@
 {
   GKGameCenterViewController *gc = [GKGameCenterViewController new];
   gc.viewState = GKGameCenterViewControllerStateLeaderboards;
-  gc.delegate = self;
+  gc.gameCenterDelegate = self;
   [[CCDirector sharedDirector] presentViewController:gc animated:YES completion:^{}];
+}
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
+  [[CCDirector sharedDirector] dismissViewControllerAnimated:YES completion:^{}];
 }
 
 -(void) displayCredits
