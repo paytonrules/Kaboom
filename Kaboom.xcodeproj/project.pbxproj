@@ -11,6 +11,7 @@
 		0719465C18EC34F0006D3995 /* CCDirector+PopTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719465B18EC34F0006D3995 /* CCDirector+PopTransition.m */; };
 		073972C518BE1EA00093812A /* GameCenterAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 073972C418BE1EA00093812A /* GameCenterAuthentication.m */; };
 		0760AE6B18A7F318001BF64D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0760AE6A18A7F318001BF64D /* Images.xcassets */; };
+		07637A5818F99BA0009C1141 /* KaboomContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */; };
 		0770CD7118DF30B800A616D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0770CD7018DF30B800A616D3 /* XCTest.framework */; };
 		0770CD7218DF30B800A616D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263391816B28E0060E3E9 /* Foundation.framework */; };
 		0770CD7318DF30B800A616D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263371816B28E0060E3E9 /* UIKit.framework */; };
@@ -91,7 +92,6 @@
 		2FA28AB5646A4158A188BCDA /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FA2821851BD13F77BC6DB45 /* fire.png */; };
 		2FA28AC343FF904DAB2BF688 /* Bucket2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA287DA0D8E53F7D32A1E3C /* Bucket2D.m */; };
 		2FA28ACA306F3795C98AACE1 /* KaboomContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28909FD433915F3B7FE42 /* KaboomContext.m */; };
-		2FA28B0BEF2BDE743479EC33 /* KaboomContextSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */; };
 		2FA28B50C9E063A7A90D5662 /* Level.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FA28612CEA00A6F1F1D8BC2 /* Level.h */; };
 		2FA28B90AA567533093C1591 /* LevelCollectionProcedural.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA288CD6F2A6B463AD13C13 /* LevelCollectionProcedural.m */; };
 		2FA28BBBEFF99088AAB6453B /* Bomb2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */; };
@@ -190,7 +190,7 @@
 		07D47E9218DF263C005AFA9B /* RunIPhoneLaunchDaemons.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = RunIPhoneLaunchDaemons.sh; path = Specs/RunIPhoneLaunchDaemons.sh; sourceTree = SOURCE_ROOT; };
 		2E835FC4C4834368AA6DCF9E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA280106D45FEA255598154 /* MainMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
-		2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KaboomContextSpec.m; sourceTree = "<group>"; };
+		2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KaboomContextSpec.m; path = ../Specs/KaboomContextSpec.m; sourceTree = "<group>"; };
 		2FA2802FCB805A565D204AC7 /* catch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = catch.wav; path = Resources/catch.wav; sourceTree = "<group>"; };
 		2FA280314410E325AF264C38 /* NavigationStateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationStateMachine.m; sourceTree = "<group>"; };
 		2FA280467F68158FD9401ACF /* titlefnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = titlefnt.png; path = Resources/titlefnt.png; sourceTree = "<group>"; };
@@ -359,7 +359,6 @@
 				2FA282D9ED0C82F0A0F4CE3C /* Bucket2DSpec.m */,
 				2FA28B4FE3808BC2ED19D445 /* Bomb2DSpec.m */,
 				2FA28C348025798254AAD049 /* GameBlackboardSpec.m */,
-				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
 			);
 			name = OldTests;
 			sourceTree = "<group>";
@@ -367,6 +366,7 @@
 		0770CD7418DF30B800A616D3 /* KaboomTests */ = {
 			isa = PBXGroup;
 			children = (
+				2FA2802A728717D4501CDA2B /* KaboomContextSpec.m */,
 				0711C36B18F4285C00F3FBE1 /* iOS */,
 				0770CD7A18DF30B800A616D3 /* NavigationStateMachineSpec.m */,
 				0770CD7518DF30B800A616D3 /* Supporting Files */,
@@ -886,6 +886,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07637A5818F99BA0009C1141 /* KaboomContextSpec.m in Sources */,
 				0770CD7B18DF30B800A616D3 /* NavigationStateMachineSpec.m in Sources */,
 				0711C36D18F4288500F3FBE1 /* GameCenterAuthenticationSpec.m in Sources */,
 			);
@@ -968,7 +969,6 @@
 				2FA28277CBE37E442EE28CA2 /* Constants.m in Sources */,
 				2FA2886317E0E94DFC24C2A0 /* LevelCollectionProceduralSpec.m in Sources */,
 				2FA28B90AA567533093C1591 /* LevelCollectionProcedural.m in Sources */,
-				2FA28B0BEF2BDE743479EC33 /* KaboomContextSpec.m in Sources */,
 				2FA2871A0CAE5085D7576269 /* CocosDirectorAdapterSpec.m in Sources */,
 				2FA280DE9A8FD209D289EFA0 /* CocosDirectorAdapter.m in Sources */,
 				2FA28F5FF0EA2C257D86CF35 /* NavigationStateMachine.m in Sources */,
