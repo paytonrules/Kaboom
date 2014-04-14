@@ -89,4 +89,9 @@
   }
 }
 
+-(void) reportScore:(int) score
+{
+  [self.scoreReporter report:score];
+}
+
 @end

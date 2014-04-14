@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "KaboomStateMachine.h"
+#import "ScoreReporter.h"
 
 @protocol LevelCollection;
 
@@ -13,10 +14,12 @@
 -(void) advanceToNextLevel;
 -(void) restartLevel;
 -(void) tilt:(CGFloat) tilt;
+-(void) reportScore:(int) score;
 
 @property(assign) int score;
 @property(strong) NSObject<LevelCollection> *levels;
 @property(strong) NSObject<Bomber> *bomber;
 @property(strong) Buckets *buckets;
+@property(strong) NSObject<ScoreReporter> *scoreReporter;
 
 @end

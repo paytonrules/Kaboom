@@ -17,6 +17,7 @@
 		0770CD7318DF30B800A616D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D263371816B28E0060E3E9 /* UIKit.framework */; };
 		0770CD7918DF30B800A616D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0770CD7718DF30B800A616D3 /* InfoPlist.strings */; };
 		0770CD7B18DF30B800A616D3 /* NavigationStateMachineSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0770CD7A18DF30B800A616D3 /* NavigationStateMachineSpec.m */; };
+		079B2BF218FC0DCA007D631C /* GameCenterReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B2BF118FC0DCA007D631C /* GameCenterReporter.m */; };
 		079B972118B2408C00B53776 /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B972018B2408C00B53776 /* CCDirector.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07B38BE71817F2560065C07E /* Bomber2DSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B38BE61817F2560065C07E /* Bomber2DSpec.m */; };
 		07BA15F418DF1683000CD614 /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 079B971D18B2403C00B53776 /* CCDirectorIOS.m */; };
@@ -143,6 +144,7 @@
 		0719465B18EC34F0006D3995 /* CCDirector+PopTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCDirector+PopTransition.m"; sourceTree = "<group>"; };
 		073972C318BE1EA00093812A /* GameCenterAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterAuthentication.h; sourceTree = "<group>"; };
 		073972C418BE1EA00093812A /* GameCenterAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterAuthentication.m; sourceTree = "<group>"; };
+		073A9F8218FC0BBB00D438B9 /* ScoreReporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreReporter.h; sourceTree = "<group>"; };
 		0741FD2718EAE2780041EC9C /* NavigationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationDelegate.h; sourceTree = "<group>"; };
 		0760AE6A18A7F318001BF64D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0770CD6F18DF30B800A616D3 /* KaboomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaboomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,8 @@
 		0770CDB018DF3FB400A616D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0770CDB118DF3FB400A616D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0770CDB218DF3FB400A616D3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		079B2BF018FC0DCA007D631C /* GameCenterReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterReporter.h; sourceTree = "<group>"; };
+		079B2BF118FC0DCA007D631C /* GameCenterReporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterReporter.m; sourceTree = "<group>"; };
 		079B971D18B2403C00B53776 /* CCDirectorIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDirectorIOS.m; sourceTree = "<group>"; };
 		079B972018B2408C00B53776 /* CCDirector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDirector.m; sourceTree = "<group>"; };
 		07B38BE61817F2560065C07E /* Bomber2DSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomber2DSpec.m; sourceTree = "<group>"; };
@@ -404,6 +408,8 @@
 				2FA28E2937981F0336F002E6 /* CocosDirectorAdapter.h */,
 				073972C318BE1EA00093812A /* GameCenterAuthentication.h */,
 				073972C418BE1EA00093812A /* GameCenterAuthentication.m */,
+				079B2BF018FC0DCA007D631C /* GameCenterReporter.h */,
+				079B2BF118FC0DCA007D631C /* GameCenterReporter.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 				2FA280314410E325AF264C38 /* NavigationStateMachine.m */,
 				2FA282609BDDC1F2873357A3 /* NavigationStateMachine.h */,
 				0741FD2718EAE2780041EC9C /* NavigationDelegate.h */,
+				073A9F8218FC0BBB00D438B9 /* ScoreReporter.h */,
 			);
 			path = Kaboom;
 			sourceTree = "<group>";
@@ -929,6 +936,7 @@
 				2FA28905668E783012CD756C /* CocosDirectorAdapter.m in Sources */,
 				2FA288989FCAB68F9681B376 /* MainMenuLayer.m in Sources */,
 				2FA284C3992F3F77B375852F /* NavigationStateMachine.m in Sources */,
+				079B2BF218FC0DCA007D631C /* GameCenterReporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

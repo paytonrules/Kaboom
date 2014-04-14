@@ -1,3 +1,4 @@
+#import <TransitionKit/TransitionKit.h>
 #import "Kaboom.h"
 #import "Bomber2D.h"
 #import "Buckets.h"
@@ -6,7 +7,7 @@
 #import "KaboomContext.h"
 #import "Constants.h"
 #import "LevelCollectionProcedural.h"
-#import <TransitionKit/TransitionKit.h>
+#import "GameCenterReporter.h"
 
 @interface Kaboom ()
 
@@ -39,6 +40,7 @@
   if (self = [super init]) {
     self.gameStateMachine = [TKStateMachine new];
     self.gameContext = [KaboomContext newWithMachine:self];
+    self.gameContext.scoreReporter = [GameCenterReporter new];
     self.gameContext.levels = [LevelCollectionProcedural newWithSpeed:INITIAL_SPEED andBombs:INITIAL_BOMBS];
 
     // Seems not quite right from a dependency standpoint

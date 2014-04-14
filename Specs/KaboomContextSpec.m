@@ -3,6 +3,18 @@
 #import "LevelCollectionArray.h"
 #import "Bomber.h"
 #import "Buckets.h"
+#import "ScoreReporter.h"
+
+void setGameToEnd(id bomber, id buckets) {
+  [[bomber stubAndReturn:theValue(YES)] bombHit];
+  [[bomber stub] update:10];
+  [[bomber stub] updateDroppedBombs:buckets];
+  [[bomber stub] explode];
+  [[buckets stub] removeBucket];
+  [[buckets stub] update:10.0];
+  [[buckets stubAndReturn:theValue(0)] bucketCount];
+  [[buckets stub] reset];
+}
 
 // Most of these specs are still in the KaboomSpec
 SPEC_BEGIN(KaboomContextSpec)
@@ -95,10 +107,8 @@ SPEC_BEGIN(KaboomContextSpec)
         kaboomContext.bomber = bomber;
         kaboomContext.buckets = buckets;
 
-   //     [bomber setExpectationOrderMatters:YES];
         [[bomber expect] update:10];
         [[buckets expect] update:10];
-
         [[bomber expect] updateDroppedBombs:buckets];
 
         [kaboomContext updatePlayers:10];
@@ -107,26 +117,35 @@ SPEC_BEGIN(KaboomContextSpec)
     });
 
     describe(@"ending a game", ^{
-
-      it(@"will fire an end game when the user is out of buckets", ^{
-        id bomber = [KWMock mockForProtocol:@protocol(Bomber)];
-        id buckets = [Buckets mock];
+      __block id bomber;
+      __block id buckets;
+      
+      beforeEach(^{
+        bomber = [KWMock mockForProtocol:@protocol(Bomber)];
+        buckets = [Buckets mock];
         kaboomContext.bomber = bomber;
         kaboomContext.buckets = buckets;
+        setGameToEnd(bomber, buckets);
+      });
 
-        [[bomber stubAndReturn:theValue(YES)] bombHit];
-        [[bomber stub] update:10];
-        [[bomber stub] updateDroppedBombs:buckets];
-        [[bomber stub] explode];
-        [[buckets stub] removeBucket];
-        [[buckets stub] update:10.0];
-        [[buckets stubAndReturn:theValue(0)] bucketCount];
-        [[buckets stub] reset];
-
+      it(@"will fire an end game when the user is out of buckets", ^{
         [[machine expect] fire:@"End Game"];
 
         [kaboomContext updatePlayers:10];
       });
+    });
+    
+    describe(@"high scores are ", ^{
+
+      it(@"reported via the score reporter", ^{
+        id gameCenterReporter = [KWMock mockForProtocol:@protocol(ScoreReporter)];
+        kaboomContext.scoreReporter = gameCenterReporter;
+        
+        [[gameCenterReporter expect] report:10];
+        
+        [kaboomContext reportScore:10];
+      });
+
     });
 
     describe(@"bombs hitting", ^{
