@@ -90,7 +90,7 @@
 
 -(NSUInteger) supportedInterfaceOrientations
 {
-	return UIInterfaceOrientationMaskLandscape;
+	return UIInterfaceOrientationMaskLandscapeRight;
 }
 
 // getting a call, pause the game
