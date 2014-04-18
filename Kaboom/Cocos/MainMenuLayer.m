@@ -3,6 +3,8 @@
 #import "CreditsLayer.h"
 #import "KaboomLayer.h"
 #import "CCDirector+PopTransition.h"
+#import "CCScene+SupportsAuthentication.h"
+#import "CCLayer+DontSupportAuthentication.h"
 #import "AppDelegate.h"
 
 @interface MainMenuLayer()
@@ -112,6 +114,10 @@
   [[CCDirector sharedDirector] popSceneWithTransition:[CCTransitionFade class] duration:1.0];
 }
 
+-(BOOL) supportsAuthentication
+{
+  return YES;
+}
 
 
 @end

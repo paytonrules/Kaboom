@@ -12,6 +12,7 @@
 #import "CreditsLayer.h"
 #import "AdDelegate.h"
 #import "CocosDirectorAdapter.h"
+#import "CCScene+SupportsAuthentication.h"
 #import "CCDirector+PopTransition.h"
 
 enum TAGS {

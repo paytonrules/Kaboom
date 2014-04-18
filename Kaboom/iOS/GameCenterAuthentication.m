@@ -1,6 +1,8 @@
-#import "GameCenterAuthentication.h"
 #import <GameKit/GameKit.h>
 #import <cocos2d/cocos2d.h>
+#import "GameCenterAuthentication.h"
+#import "CocosDirectorAdapter.h"
+
 
 @interface GameCenterAuthentication()
 
@@ -29,6 +31,7 @@ static GameCenterAuthentication *sharedHelper = nil;
            selector:@selector(authenticationChanged)
                name:GKPlayerAuthenticationDidChangeNotificationName
              object:nil];
+    self.director = [CocosDirectorAdapter newWithCocosDirector:(CCDirectorIOS  *)[CCDirector sharedDirector]];
   }
   return self;
 }
@@ -45,8 +48,8 @@ static GameCenterAuthentication *sharedHelper = nil;
 -(void) authenticateLocalUser
 {
   [GKLocalPlayer localPlayer].authenticateHandler = ^(UIViewController* vc, NSError *error) {
-    if (vc != nil) {
-      [[CCDirector sharedDirector] presentViewController:vc animated:YES completion:^{}];
+    if (vc != nil && [self.director supportsAuthentication]) {
+      [self.director presentViewController:vc];
     }
   };
 }

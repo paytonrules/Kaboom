@@ -26,6 +26,8 @@
 		07C325B618B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
 		07C325B718B1920600056340 /* AdDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325B518B1920600056340 /* AdDelegate.m */; };
 		07C325BE18B19A6200056340 /* CCDirectorIOS+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */; };
+		07C558F4190198E700E8F87E /* CCScene+SupportsAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C558F3190198E700E8F87E /* CCScene+SupportsAuthentication.m */; };
+		07C558FA19019B0E00E8F87E /* CCLayer+DontSupportAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C558F919019B0E00E8F87E /* CCLayer+DontSupportAuthentication.m */; };
 		07CA14D518AFD68200ED424C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CA14D418AFD68200ED424C /* iAd.framework */; };
 		07CD70FC18EEDC6C00D39665 /* gamefnt.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 07CD70FA18EEDC6C00D39665 /* gamefnt.fnt */; };
 		07CD70FD18EEDC6C00D39665 /* gamefnt.png in Resources */ = {isa = PBXBuildFile; fileRef = 07CD70FB18EEDC6C00D39665 /* gamefnt.png */; };
@@ -168,6 +170,10 @@
 		07C325B518B1920600056340 /* AdDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDelegate.m; sourceTree = "<group>"; };
 		07C325BC18B19A6200056340 /* CCDirectorIOS+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCDirectorIOS+Tracking.h"; sourceTree = "<group>"; };
 		07C325BD18B19A6200056340 /* CCDirectorIOS+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCDirectorIOS+Tracking.m"; sourceTree = "<group>"; };
+		07C558F21901981D00E8F87E /* CCScene+SupportsAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCScene+SupportsAuthentication.h"; sourceTree = "<group>"; };
+		07C558F3190198E700E8F87E /* CCScene+SupportsAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCScene+SupportsAuthentication.m"; sourceTree = "<group>"; };
+		07C558F819019B0E00E8F87E /* CCLayer+DontSupportAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCLayer+DontSupportAuthentication.h"; sourceTree = "<group>"; };
+		07C558F919019B0E00E8F87E /* CCLayer+DontSupportAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCLayer+DontSupportAuthentication.m"; sourceTree = "<group>"; };
 		07CA14D418AFD68200ED424C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		07CD70FA18EEDC6C00D39665 /* gamefnt.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gamefnt.fnt; path = Resources/gamefnt.fnt; sourceTree = "<group>"; };
 		07CD70FB18EEDC6C00D39665 /* gamefnt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gamefnt.png; path = Resources/gamefnt.png; sourceTree = "<group>"; };
@@ -404,9 +410,9 @@
 				07C325B318B18ECC00056340 /* Director.h */,
 				07C325B418B1920600056340 /* AdDelegate.h */,
 				07C325B518B1920600056340 /* AdDelegate.m */,
-				2FA28E6B3906CC834272B745 /* CocosDirectorAdapter.m */,
-				2FA28E2937981F0336F002E6 /* CocosDirectorAdapter.h */,
 				073972C318BE1EA00093812A /* GameCenterAuthentication.h */,
+				2FA28E2937981F0336F002E6 /* CocosDirectorAdapter.h */,
+				2FA28E6B3906CC834272B745 /* CocosDirectorAdapter.m */,
 				073972C418BE1EA00093812A /* GameCenterAuthentication.m */,
 				079B2BF018FC0DCA007D631C /* GameCenterReporter.h */,
 				079B2BF118FC0DCA007D631C /* GameCenterReporter.m */,
@@ -620,6 +626,8 @@
 		2FA28E47EE21C30A5784314C /* Cocos */ = {
 			isa = PBXGroup;
 			children = (
+				07C558F819019B0E00E8F87E /* CCLayer+DontSupportAuthentication.h */,
+				07C558F919019B0E00E8F87E /* CCLayer+DontSupportAuthentication.m */,
 				2FA28DDCC3BE80B871DCA293 /* AppDelegate.h */,
 				2FA28F5202D6444CC2ABC705 /* AppDelegate.m */,
 				2FA28F43377C8334BFCE6A95 /* KaboomLayer.m */,
@@ -644,6 +652,8 @@
 				2FA280106D45FEA255598154 /* MainMenuLayer.h */,
 				0719465A18EC34F0006D3995 /* CCDirector+PopTransition.h */,
 				0719465B18EC34F0006D3995 /* CCDirector+PopTransition.m */,
+				07C558F21901981D00E8F87E /* CCScene+SupportsAuthentication.h */,
+				07C558F3190198E700E8F87E /* CCScene+SupportsAuthentication.m */,
 			);
 			path = Cocos;
 			sourceTree = "<group>";
@@ -922,6 +932,7 @@
 				2FA28522E9A7CE30113818E2 /* Level.m in Sources */,
 				07C325B618B1920600056340 /* AdDelegate.m in Sources */,
 				2FA28A4C733A233C5C9C32A6 /* BombExplosion.m in Sources */,
+				07C558FA19019B0E00E8F87E /* CCLayer+DontSupportAuthentication.m in Sources */,
 				0719465C18EC34F0006D3995 /* CCDirector+PopTransition.m in Sources */,
 				2FA28BFED97CB28C1B9DB0CA /* GameBlackboard.m in Sources */,
 				2FA28E4937C3999A510C3470 /* Event.m in Sources */,
@@ -938,6 +949,7 @@
 				2FA288989FCAB68F9681B376 /* MainMenuLayer.m in Sources */,
 				2FA284C3992F3F77B375852F /* NavigationStateMachine.m in Sources */,
 				079B2BF218FC0DCA007D631C /* GameCenterReporter.m in Sources */,
+				07C558F4190198E700E8F87E /* CCScene+SupportsAuthentication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
