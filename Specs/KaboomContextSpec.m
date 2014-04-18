@@ -140,10 +140,11 @@ SPEC_BEGIN(KaboomContextSpec)
       it(@"reported via the score reporter", ^{
         id gameCenterReporter = [KWMock mockForProtocol:@protocol(ScoreReporter)];
         kaboomContext.scoreReporter = gameCenterReporter;
+        kaboomContext.score = 10;
         
         [[gameCenterReporter expect] report:10];
         
-        [kaboomContext reportScore:10];
+        [kaboomContext reportScore];
       });
 
     });

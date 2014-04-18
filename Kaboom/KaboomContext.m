@@ -89,9 +89,9 @@
   }
 }
 
--(void) reportScore:(int) score
+-(void) reportScore
 {
-  [self.scoreReporter report:score];
+  [self.scoreReporter report:self.score];
 }
 
 @end

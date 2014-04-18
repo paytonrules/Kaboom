@@ -364,10 +364,7 @@ SPEC_BEGIN(KaboomSpec)
     });
 
     it(@"starts bombing again on a new game", ^{
-      id kaboomContext = [KaboomContext mock];
-      [[kaboomContext stub] startBombing];
-      [[kaboomContext stub] updatePlayers:1];
-      [[kaboomContext stub] gameOverNotification];
+      id kaboomContext = [KaboomContext nullMock];
       Kaboom *level = [Kaboom newLevelWithContext:kaboomContext];
 
       [level start];
@@ -514,6 +511,18 @@ SPEC_BEGIN(KaboomSpec)
       [[[kaboomContext should] receive] updatePlayers:12];
 
       [level update:12];
+    });
+    
+    it(@"reports the current score", ^{
+      id kaboomContext = [KaboomContext nullMock];
+      [[kaboomContext stubAndReturn:theValue(10)] score];
+      
+      Kaboom *level = [Kaboom newLevelWithContext:kaboomContext];
+      [level start];
+      [level update:10];
+      
+      [[[kaboomContext should] receive] reportScore];
+      [level fire:@"End Game"];
     });
   });
 

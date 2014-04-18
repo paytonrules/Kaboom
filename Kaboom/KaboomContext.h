@@ -14,7 +14,7 @@
 -(void) advanceToNextLevel;
 -(void) restartLevel;
 -(void) tilt:(CGFloat) tilt;
--(void) reportScore:(int) score;
+-(void) reportScore;
 
 @property(assign) int score;
 @property(strong) NSObject<LevelCollection> *levels;

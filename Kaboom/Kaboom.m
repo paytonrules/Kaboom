@@ -68,6 +68,7 @@
 
     [gameOver setDidEnterStateBlock:^(TKState *state, TKTransition *transition) {
       [self.gameContext gameOverNotification];
+      [self.gameContext reportScore];
     }];
 
     [gameOver setDidExitStateBlock:^(TKState *state, TKTransition *transition) {
