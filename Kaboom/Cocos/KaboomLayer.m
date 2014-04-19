@@ -24,7 +24,7 @@ enum TAGS {
 @interface KaboomLayer ()
 @property(strong) Kaboom *game;
 @property(strong) CCLabelTTF *score;
-@property(strong) AdDelegate *adDelegate;
+@property(strong) ADBannerView *banner;
 @end
 
 @implementation KaboomLayer
@@ -90,15 +90,17 @@ enum TAGS {
     self.score = score;
 
     CCDirectorIOS *director = (CCDirectorIOS*) [CCDirector sharedDirector];
-    // Need to store a ref to adDelegate so ARC doesn't let it get deleted
-    ADBannerView *banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
-    CGSize flippedSize = CGSizeMake(size.height, size.width);
-    CGSize bannerBounds = [banner sizeThatFits:flippedSize];
-    [banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
 
-    self.adDelegate = [AdDelegate newWithDirector: [CocosDirectorAdapter newWithCocosDirector:director]];
-    banner.delegate = _adDelegate;
-    [director.view addSubview:banner];
+    self.banner = [[ADBannerView alloc] initWithAdType:ADAdTypeBanner];
+    CGSize flippedSize = CGSizeMake(size.height, size.width);
+    CGSize bannerBounds = [self.banner sizeThatFits:flippedSize];
+    [self.banner setFrame:CGRectMake(0, 0, bannerBounds.width, bannerBounds.height)];
+
+
+    AdDelegate *adDelegate = [AdDelegate newWithDirector:
+                              [CocosDirectorAdapter newWithCocosDirector:director]];
+    self.banner.delegate = adDelegate;
+    [director.view addSubview:self.banner];
 
     [self scheduleUpdate];
 
@@ -183,7 +185,7 @@ enum TAGS {
   [item setPosition:ccp(size.width / 2, size.height / 2)];
 
   CCLabelBMFont *quitLabel = [CCLabelBMFont labelWithString:@"Give Up" fntFile:@"gamefnt.fnt"];
-  CCMenuItemLabel *quitItem = [CCMenuItemLabel itemWithLabel:quitLabel target:self selector:@selector(showCredits:)];
+  CCMenuItemLabel *quitItem = [CCMenuItemLabel itemWithLabel:quitLabel target:self selector:@selector(stopShowingGame:)];
   [quitItem setPosition:ccp(size.width / 2, size.height / 2 - (item.boundingBox.size.height))];
 
   CCMenu *newGameMenu = [CCMenu menuWithItems:item, quitItem, nil];
@@ -199,9 +201,10 @@ enum TAGS {
   [self.game start];
 }
 
--(void) showCredits:(CCMenuItem *) label
+-(void) stopShowingGame:(CCMenuItem *) label
 {
   [[CCDirector sharedDirector] popSceneWithTransition:[CCTransitionFade class] duration:1.0];
+  [self.banner removeFromSuperview];
   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 }
 
